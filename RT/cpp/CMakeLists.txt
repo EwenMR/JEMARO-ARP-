@@ -1,0 +1,1 @@
+cmake_minimum_required(VERSION3.0) set(CMAKE_BUILD_TYPERelease) project(classes)add_executable(classesclasses.cpp)
