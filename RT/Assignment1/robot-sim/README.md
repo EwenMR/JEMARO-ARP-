@@ -1,11 +1,19 @@
 ## Pseudocode
 
 
-### Initialization
-python3, pypybox2d, pygame, time, threading
+### Installing and running
+To run this code, python 3 must be installed, as well as some libraries (pypybox2d, pygame, time, threading). Once all the libraries are installed, clone this github repository using the command below.
+```bash
+$ git clone https://github.com/kohei-tateyama/JEMARO/tree/master/RT/Assignment1/robot-sim.git
+```
+Now to run the code, in the robot-sim directory, 
 
-- Import necessary libraries.
-- Initialize the robot and set various thresholds.
+```bash
+$ python3 run.py assignment.py
+```
+This should successfully open a new window for the simulator, and the simulator should collect all the boxes to the center.
+
+![alt text](https://github.com/kohei-tateyama/JEMARO/tree/master/RT/Assignment1/robot-sim/Result.png)
 
 ### Movement Functions
 
