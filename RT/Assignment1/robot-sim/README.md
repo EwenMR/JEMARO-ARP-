@@ -190,7 +190,6 @@ def go_to_goal(goal):
 
 
 
-## Exercise
 -----------------------------
 
 Robot API
