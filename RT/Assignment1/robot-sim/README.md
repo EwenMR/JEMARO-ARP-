@@ -19,11 +19,11 @@ This should successfully open a new window for the simulator, and the simulator 
 
 #### `drive(speed, seconds)`
 
-- Set linear velocity for the robot's wheels.
+- Start and stop the motors for the specified duration.
 - Args:
   - `speed (int)`: Speed of the wheels.
   - `seconds (int)`: Time interval.
-- Start and stop the motors for the specified duration.
+
 
 
 ```python
@@ -40,11 +40,11 @@ def drive(speed, seconds):
 
 #### `turn(speed, seconds)`
 
-- Set angular velocity for the robot's wheels.
+- Start and stop the motors for the specified duration while turning the robot.
 - Args:
   - `speed (int)`: Speed of the wheels.
   - `seconds (int)`: Time interval.
-- Start and stop the motors for the specified duration while turning the robot.
+
 
 
 
@@ -66,6 +66,7 @@ def turn(speed, seconds):
 - Returns:
   - `dist (float)`: Distance of the closest token (-1 if none detected).
   - `rot_y (float)`: Angle between the robot and the token (-1 if none detected).
+  - `goal (int)`: The 'code' of the closest token will be returned.
 
 ```python
 def find_token(goal):
@@ -85,7 +86,9 @@ def find_token(goal):
 
 #### `find_goal(goal)`
 
-- Find the location of the gathered tokens.
+- Find the location of the gathered tokens(goal location).
+- Arg:
+  - `goal (list of ints)`: The 'code' of tokens that have been picked up and gathered together, will be stored in this list. In this function, goal will be used to find the token that is gathered together, to set that token as a goal.
 - Returns:
   - `dist (float)`: Distance of the closest token (-1 if none detected).
   - `rot_y (float)`: Angle between the robot and the token (-1 if none detected).
@@ -111,9 +114,11 @@ def find_goal(goal):
 
 #### `pick_up(goal)`
 
-- Pick up the closest token that hasn't been picked up.
+- Pick up the closest token that hasn't been picked up already.
+- Args:
+  - `goal (list of ints)`: The 'code' of tokens that have been picked up and gathered together, will be stored in this list. In this function, goal will be used to prevent picking the same token once it is already gathered up.
 - Returns:
-  - `dist (int)`: Code number of the picked-up marker.
+  - `code (int)`: Code number of the picked-up token.
 
 
 ```python
@@ -147,6 +152,8 @@ def pick_up(goal):
 #### `go_to_goal(goal)`
 
 - Move the robot to the gathered place.
+- Args: 
+  - `goal (list of ints)`: The 'code' of tokens that have been picked up and gathered together, will be stored in this list. In this function, goal will be used as an argument to call the 'find_goal' function.
 
 
 ```python
