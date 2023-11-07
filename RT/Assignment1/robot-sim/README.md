@@ -1,7 +1,5 @@
-## Pseudocode
 
-
-### Installing and running
+## Installing and running
 To run this code, python 3 must be installed, as well as some libraries (pypybox2d, pygame, time, threading). Once all the libraries are installed, clone this github repository using the command below.
 ```bash
 $ git clone https://github.com/kohei-tateyama/JEMARO/tree/master/RT/Assignment1/robot-sim.git
@@ -15,9 +13,9 @@ This should successfully open a new window for the simulator, and the simulator 
 
 ![Result](https://github.com/kohei-tateyama/JEMARO/tree/master/RT/Assignment1/robot-sim/Result.png)
 
-### Movement Functions
+## Functions
 
-#### `drive(speed, seconds)`
+### `drive(speed, seconds)`
 
 - Start and stop the motors for the specified duration.
 - Args:
@@ -38,7 +36,7 @@ def drive(speed, seconds):
 
 
 
-#### `turn(speed, seconds)`
+### `turn(speed, seconds)`
 
 - Start and stop the motors for the specified duration while turning the robot.
 - Args:
@@ -58,9 +56,8 @@ def turn(speed, seconds):
 
 ```
 
-### Marker Detection
 
-#### `find_token(goal)`
+### `find_token(goal)`
 
 - Find the closest token that hasn't been picked up.
 - Returns:
@@ -84,7 +81,7 @@ def find_token(goal):
 ```
 
 
-#### `find_goal(goal)`
+### `find_goal(goal)`
 
 - Find the location of the gathered tokens(goal location).
 - Arg:
@@ -110,9 +107,8 @@ def find_goal(goal):
 
 ```
 
-### Marker Handling
 
-#### `pick_up(goal)`
+### `pick_up(goal)`
 
 - Pick up the closest token that hasn't been picked up already.
 - Args:
@@ -149,7 +145,7 @@ def pick_up(goal):
 
 ```
 
-#### `go_to_goal(goal)`
+### `go_to_goal(goal)`
 
 - Move the robot to the gathered place.
 - Args: 
