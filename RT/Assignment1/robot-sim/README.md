@@ -263,3 +263,4 @@ for m in markers:
 - There is still room for improvement when searching for new token. If a token was hidden behind another token, maybe an algorithm to make the robot roam around, and search for new token could have been developed. But at the same time, that will make it difficult to know when to stop searching.
 - The speed of robot when moving to the token can be opimized. This will shorten the time for the whole process.
 - If I could get the coordinates of the grey square, I could have set the gathering point to the square. Rather than manually moving the first token to the square, and setting that as the goal.
+- My robot fails to grab the token once in 4,5 times, so a method to prevent that could have been implemented.
