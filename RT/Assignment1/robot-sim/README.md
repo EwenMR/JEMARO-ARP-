@@ -11,7 +11,7 @@ $ python3 run.py assignment.py
 ```
 This should successfully open a new window for the simulator, and the simulator should collect all the boxes to the center.
 
-![Result](https://github.com/kohei-tateyama/JEMARO/tree/master/RT/Assignment1/robot-sim/Result.png)
+![Result](https://github.com/kohei-tateyama/JEMARO/tree/master/RT/Assignment1/robot-sim/Resources/Result.png)
 
 ## Functions
 
@@ -188,7 +188,7 @@ def go_to_goal(goal):
 - Release the markers and continue the process.
 
 
-![Flowchart](https://github.com/kohei-tateyama/JEMARO/tree/master/RT/Assignment1/robot-sim/Flowchart.jpeg)
+![Flowchart](https://github.com/kohei-tateyama/JEMARO/tree/master/RT/Assignment1/robot-sim/Resources/Flowchart.jpeg)
 
 
 -----------------------------
