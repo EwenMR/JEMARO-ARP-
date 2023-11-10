@@ -119,27 +119,35 @@ def find_goal(goal):
 
 ```python
 def pick_up(goal):
-    dist,rot_y,code=find_token(goal)
-    turn(rot_y/3,1)
-
-    if(dist==-1):
-        exit()
-
-    # Move quickly when it's far away
-    while(dist>=close):
-        drive(50,1)
+    dist=-1
+    while(1):
         dist,rot_y,code=find_token(goal)
 
-    # Align the robot with the token
-    while(-a_th > rot_y or rot_y > a_th):
-        turn(10,0.1)
-        dist,rot_y,code=find_token(goal)
+        if (dist == -1):
+            turn(100,0.1)
+        elif(dist <= d_th):
+            R.grab()
+            break
+        # Align the robot with the token
+        elif -a_th<= rot_y <= a_th: # if the robot is well aligned with the goal, we go forward
+            print("Ah, here we are!.")
+            if dist> d_th + 0.3:
+                drive(100,0.1)
+            else:
+                drive(10, 0.5)
+        elif rot_y < -a_th: # if the robot is not well aligned with the goal, we move it on the left or on the right
+            print("Left a bit...")
+            turn(-2, 0.5)
+        elif rot_y > a_th:
+            print("Right a bit...")
+            turn(+2, 0.5)
+        # Approach slowly to the token until it is close enough to grab
+        elif (dist<d_th+0.3):
+            drive(10,0.1)
+        # Move quickly when it's far away
+        elif (dist>=d_th+0.3):
+            drive(50,1)
 
-    # Approach slowly to the token until it is close enough to grab
-    while(dist>d_th):
-        drive(10,1)
-        dist,rot_y,code=find_token(goal)
-    R.grab()
     return code
 
 
@@ -158,13 +166,13 @@ def go_to_goal(goal):
         dist,rot_y=find_goal(goal)
         if dist==-1: # if no markers are detected, the program ends
             print("I don't see the goal!!")
-            exit()  
-        elif dist <goal_th_d: 
+            turn(20,1)
+        elif dist <= d_th + 0.3: 
             break
         elif -a_th<= rot_y <= a_th: # if the robot is well aligned with the goal, we go forward
             print("Ah, here we are!.")
-            if dist>close:
-                drive(50,1)
+            if dist> d_th + 0.3:
+                drive(100,0.1)
             else:
                 drive(10, 0.5)
         elif rot_y < -a_th: # if the robot is not well aligned with the goal, we move it on the left or on the right
