@@ -94,11 +94,13 @@ def pick_up(goal):
         dist (int): code number of the picked up marker
 
     """
-    dist,rot_y,code=find_token(goal)
-    turn(rot_y/3,1)
+    dist=-1
+    while(dist == -1):
+        dist,rot_y,code=find_token(goal)
+        turn(rot_y/3,1)
 
-    if(dist==-1):
-        exit()
+        if(dist==-1):
+            turn(60,1)
 
     # Move quickly when it's far away
     while(dist>=close):
@@ -112,9 +114,12 @@ def pick_up(goal):
 
     # Approach slowly to the token until it is close enough to grab
     while(dist>d_th):
-        drive(10,1)
+        drive(10,0.1)
         dist,rot_y,code=find_token(goal)
-    R.grab()
+    while(R.grab() == False):
+        R.grab()
+        
+
     return code
 
 
@@ -126,7 +131,7 @@ def go_to_goal(goal):
         dist,rot_y=find_goal(goal)
         if dist==-1: # if no markers are detected, the program ends
             print("I don't see the goal!!")
-            exit()  
+            turn(60,1)
         elif dist <goal_th_d: 
             break
         elif -a_th<= rot_y <= a_th: # if the robot is well aligned with the goal, we go forward
@@ -148,8 +153,9 @@ def go_to_goal(goal):
 # here goes the code
 def main():
     goal = []
+    i = 0
     
-    for i in range (NUM_OF_MARKERS):
+    while(1):
         code = pick_up(goal)
         # set the picked up token as a gather up point(goal)
         goal.append(code)
@@ -157,12 +163,14 @@ def main():
         if i==0:
             turn(-15,1)
             drive(100,2)
+            i=1
+        elif len(goal) == NUM_OF_MARKERS:
+            break
         else:
-            turn(60,1)
             go_to_goal(goal)
         
         R.release()
-        drive(-15,1)
+        drive(-30,1)
         turn(30,1)
         drive(50,1)
 
