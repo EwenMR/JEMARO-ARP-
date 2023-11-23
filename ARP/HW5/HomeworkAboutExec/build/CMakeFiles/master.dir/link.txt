@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/master.dir/master.c.o CMakeFiles/master.dir/utility/wrapfunc.c.o -o /home/tonello/Desktop/RobotEngPersonal/ARP/Ex6/master  -lcurses -lform -lm 

@@ -26,8 +26,7 @@ int main() {
         fgets(send_string, 80, stdin);
 
         if (send_string[0] != 'q') {
-            printf(
-                "Please, write two integer numbers, separated by commas (,)\n");
+            printf("Please, write two integer numbers, separated by commas (,)\n");
             /* to be sure that the previous is executed immediately */
             fflush(stdout);
 

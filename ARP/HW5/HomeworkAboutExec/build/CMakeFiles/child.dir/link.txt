@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/child.dir/child.c.o CMakeFiles/child.dir/utility/wrapfunc.c.o -o /home/tonello/Desktop/RobotEngPersonal/ARP/Ex6/child  -lcurses -lform -lm 

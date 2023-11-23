@@ -12,7 +12,7 @@ void summon(char** programArgs){
     exit(EXIT_FAILURE);
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int childExitStatus;
     char* argsFirst[] = {"konsole", "-e", "./writer", NULL};
     char* argsSecond[] = {"konsole", "-e", "./reader", "0", NULL};
