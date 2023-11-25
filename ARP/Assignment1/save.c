@@ -38,7 +38,7 @@ void ncursesSetup(WINDOW **display, WINDOW **score)
 
 int main() {
     initscr();
-    cbreak();
+    // cbreak();
     // WINDOW *win, *score;
     // ncursesSetup(&win, &score);
 
@@ -51,18 +51,17 @@ int main() {
 
     int counter=0;
     while (1) {
-        WINDOW *win, *score;
-        ncursesSetup(&win, &score);
         if (counter==0){
-            mvwprintw(win,drone_pos->y,drone_pos->x,"X");
+            move(drone_pos->y,drone_pos->x);
+            printw("X");
             counter++;
         }else{
-            mvwprintw(win,drone_pos->y,drone_pos->x,"O");
+            move(drone_pos->y,drone_pos->x);
+            printw("O");
         }
-        wrefresh(win);
         
-        drone_pos->key = wgetch(win);
-
+        refresh();
+        drone_pos->key = getch();
         if (drone_pos->key=='o' || drone_pos->key=='l' || drone_pos->key=='.' || drone_pos->key=='r' || drone_pos->key=='f' || drone_pos->key=='v'){ //right or diagonalRight
             drone_pos->x=drone_pos->x+1;
         }if(drone_pos->key=='u'|| drone_pos->key=='j' || drone_pos->key=='m' || drone_pos->key=='w' || drone_pos->key=='s' || drone_pos->key=='x'){ //left or diagonalLeft
@@ -72,8 +71,7 @@ int main() {
         }if(drone_pos->key == 'm'|| drone_pos->key==',' || drone_pos->key=='.' || drone_pos->key=='x' || drone_pos->key=='c' || drone_pos->key=='v') // down
             drone_pos->y=drone_pos->y+1;
 
-        wclear(win);
-        
+        clear();
         
     }
 
@@ -81,60 +79,3 @@ int main() {
 
     return 0;
 }
-
-
-
-
-
-// #include <curses.h>
-
-// int main() {
-//     WINDOW *mywin;
-
-//     // Initialize the curses library
-//     if (initscr() == NULL) {
-//         fprintf(stderr, "Error initializing curses.\n");
-//         return 1;
-//     }
-
-//     cbreak();  // Disable line buffering
-//     noecho();  // Don't display typed characters
-
-//     // Create a new window
-//     mywin = newwin(10, 20, 0, 0);
-//     if (mywin == NULL) {
-//         fprintf(stderr, "Error creating window.\n");
-//         endwin(); // End curses mode
-//         return 1;
-//     }
-
-//     box(mywin, 0, 0); // Add a box around the window
-//     wrefresh(mywin); // Refresh the window to display the box
-
-//     int ch;
-//     while ((ch = wgetch(mywin)) != 'q') { // Loop until 'q' is pressed
-//         // Do something with the input, for example, move the window
-//         switch (ch) {
-//             case KEY_UP:
-//                 mvwin(mywin, getbegy(mywin) - 1, getbegx(mywin));
-//                 break;
-//             case KEY_DOWN:
-//                 mvwin(mywin, getbegy(mywin) + 1, getbegx(mywin));
-//                 break;
-//             case KEY_LEFT:
-//                 mvwin(mywin, getbegy(mywin), getbegx(mywin) - 1);
-//                 break;
-//             case KEY_RIGHT:
-//                 mvwin(mywin, getbegy(mywin), getbegx(mywin) + 1);
-//                 break;
-//         }
-//         wrefresh(mywin); // Refresh the window after moving
-//     }
-
-//     endwin(); // End curses mode
-
-//     return 0;
-// }
-
-
-// window and getch() doesnt go along

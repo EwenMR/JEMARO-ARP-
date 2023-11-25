@@ -20,6 +20,7 @@ int main(int argc, char *argv[]){
     char *argsWindow[] = {"konsole",  "-e", "./build/window", NULL};
     char *argsDrone[] = {"konsole",  "-e", "./build/drone", NULL};
     char *argsKeyboard[] = {"konsole",  "-e", "./build/keyboard", NULL};
+    char *argsSave[] = {"konsole",  "-e", "./build/save", NULL};
     // char *argsWatchdog[] = {"konsole",  "-e", "./build/watchdog", NULL};
 
 
@@ -39,11 +40,11 @@ int main(int argc, char *argv[]){
             }else if(i==1){
                 summon(argsWindow);
             }else if(i==2){
-                summon(argsDrone);
+                summon(argsSave);
             }else if(i==3){
                 summon(argsKeyboard);
             }else{
-                // summon(argsTest);
+                summon(argsTest);
             }   
         }else {
             printf("Summoned child with pid %d\n", pid);
