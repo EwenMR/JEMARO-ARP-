@@ -24,6 +24,9 @@ watchdog:
 
 test: 
 	gcc test.c -o build/test -lncurses
+	
+save: 
+	gcc save.c -o build/save -lncurses
 
 # server: 
 # 	gcc $(INC) server.c -o server -lncurses
