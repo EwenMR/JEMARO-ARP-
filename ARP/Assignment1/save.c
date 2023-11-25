@@ -38,7 +38,7 @@ void ncursesSetup(WINDOW **display, WINDOW **score)
 
 int main() {
     initscr();
-    // cbreak();
+    cbreak();
     // WINDOW *win, *score;
     // ncursesSetup(&win, &score);
 
@@ -51,17 +51,19 @@ int main() {
 
     int counter=0;
     while (1) {
+        WINDOW *win, *score;
+        ncursesSetup(&win, &score);
         if (counter==0){
-            move(drone_pos->y,drone_pos->x);
-            printw("X");
+            mvwprintw(win,drone_pos->y,drone_pos->x,"X");
             counter++;
         }else{
-            move(drone_pos->y,drone_pos->x);
-            printw("O");
+            mvwprintw(win,drone_pos->y,drone_pos->x,"X");
         }
         
-        refresh();
-        drone_pos->key = getch();
+        wrefresh(win);
+
+        drone_pos->key = wgetch(win);
+
         if (drone_pos->key=='o' || drone_pos->key=='l' || drone_pos->key=='.' || drone_pos->key=='r' || drone_pos->key=='f' || drone_pos->key=='v'){ //right or diagonalRight
             drone_pos->x=drone_pos->x+1;
         }if(drone_pos->key=='u'|| drone_pos->key=='j' || drone_pos->key=='m' || drone_pos->key=='w' || drone_pos->key=='s' || drone_pos->key=='x'){ //left or diagonalLeft
