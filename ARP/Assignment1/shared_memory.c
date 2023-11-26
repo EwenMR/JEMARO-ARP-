@@ -1,57 +1,53 @@
-// shared_memory.c
+#include "include/shared_memory.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/shm.h>
 #include <fcntl.h>
 #include <sys/stat.h>
-#include <semaphore.h>
-#include "include/constants.h"
+#include <sys/mman.h>
+#include <unistd.h> 
 
-// Define a semaphore
-sem_t *sem_id;
-
-int getSharedMemorySegment(key_t key, size_t size) {
-    if(key<0){
-        perror("key");
-    }
-    if(size<0){
-        perror("size");
-    }
-    
-    int shmid = shmget(key, size, 0666 | IPC_CREAT);
+int createSharedMemory() {
+    int shmid = shm_open(SHARED_MEMORY_NAME, O_CREAT | O_RDWR, S_IRWXU | S_IRWXG);
     if (shmid == -1) {
-        perror("shmget");
-        // exit(EXIT_FAILURE);
+        perror("shm_open");
+        exit(EXIT_FAILURE);
     }
+
+    if (ftruncate(shmid, sizeof(struct SharedData)) == -1) {
+        perror("ftruncate");
+        exit(EXIT_FAILURE);
+    }
+
     return shmid;
 }
 
-struct Position *attachSharedMemory(int shmid) {
-    // Wait for the semaphore before attaching
-    sem_wait(sem_id);
-    
-    return (struct Position *)shmat(shmid, NULL, 0);
+struct SharedData *attachSharedMemory(int shmid) {
+    struct SharedData *shared_data = (struct SharedData *)mmap(NULL, sizeof(struct SharedData),
+                                                               PROT_READ | PROT_WRITE, MAP_SHARED, shmid, 0);
+    if (shared_data == MAP_FAILED) {
+        perror("mmap");
+        exit(EXIT_FAILURE);
+    }
+    return shared_data;
 }
 
-void detachSharedMemory(struct Position *ptr) {
-    // Detach from shared memory
-    shmdt(ptr);
-    
-    // Post the semaphore after detaching
-    sem_post(sem_id);
-}
-
-// Initialize the semaphore
-void initSemaphore() {
-    sem_id = sem_open(SEM_PATH, O_CREAT, S_IRUSR | S_IWUSR, 1);
-    if (sem_id == SEM_FAILED) {
-        perror("sem_open");
+void detachSharedMemory(struct SharedData *shared_data) {
+    if (munmap(shared_data, sizeof(struct SharedData)) == -1) {
+        perror("munmap");
         exit(EXIT_FAILURE);
     }
 }
 
-// Cleanup the semaphore
-void cleanupSemaphore() {
-    sem_close(sem_id);
-    sem_unlink(SEM_PATH);
+sem_t *createSemaphore() {
+    sem_t *semaphore = sem_open(SEMAPHORE_NAME, O_CREAT, S_IRUSR | S_IWUSR, 1);
+    if (semaphore == SEM_FAILED) {
+        perror("sem_open");
+        exit(EXIT_FAILURE);
+    }
+    return semaphore;
+}
+
+void cleanupSemaphore(sem_t *semaphore) {
+    sem_close(semaphore);
+    sem_unlink(SEMAPHORE_NAME);
 }

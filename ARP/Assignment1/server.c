@@ -14,31 +14,6 @@
 #include "shared_memory.c"
 
 
-WINDOW *create_newwin(int height, int width, int starty, int startx)
-{
-    WINDOW *local_win;
-
-    local_win = newwin(height, width, starty, startx);
-    box(local_win, 0, 0);
-    wrefresh(local_win);
-
-    return local_win;
-}
-
-void ncursesSetup(WINDOW **display, WINDOW **logger)
-{
-    int initPos[2] = {
-        LINES/200,
-        COLS/200
-    };
-
-    *display = create_newwin(LINES - (LINES/100), COLS - (COLS/100), initPos[0], initPos[1]);
-    
-    *logger = create_newwin(LINES / 2, COLS / 2, initPos[0], initPos[1]);
-
-    wrefresh(*display);
-}
-
 
 int main(int argc, char *argv[])
 {
@@ -53,10 +28,10 @@ int main(int argc, char *argv[])
 
 
     // // Shared memory segments for drone position, goals, and obstacles
-    int shmid_pos = getSharedMemorySegment(KEY_POS, sizeof(struct Position));
+    // int shmid_pos = getSharedMemorySegment(KEY_POS, sizeof(struct Position));
     
     // // Attach shared memory segments to the process
-    struct Position *drone_pos = shmat(shmid_pos, NULL, 0);
+    // struct Position *drone_pos = shmat(shmid_pos, NULL, 0);
 
 
 
@@ -72,7 +47,7 @@ int main(int argc, char *argv[])
 
 
 
-    detachSharedMemory(drone_pos);
+    // detachSharedMemory(drone_pos);
     endwin();
     return 0;
 }

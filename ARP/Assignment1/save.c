@@ -46,8 +46,8 @@ int main() {
 
     
 
-    drone_pos->x = COLS/2;
-    drone_pos->y = LINES/2;
+    drone_pos->xafter = COLS/2;
+    drone_pos->yafter = LINES/2;
 
     int counter=0;
     while (1) {
@@ -65,13 +65,13 @@ int main() {
         drone_pos->key = wgetch(win);
 
         if (drone_pos->key=='o' || drone_pos->key=='l' || drone_pos->key=='.' || drone_pos->key=='r' || drone_pos->key=='f' || drone_pos->key=='v'){ //right or diagonalRight
-            drone_pos->x=drone_pos->x+1;
+            drone_pos->xafter=drone_pos->xafter+1;
         }if(drone_pos->key=='u'|| drone_pos->key=='j' || drone_pos->key=='m' || drone_pos->key=='w' || drone_pos->key=='s' || drone_pos->key=='x'){ //left or diagonalLeft
-            drone_pos->x=drone_pos->x-1;
+            drone_pos->xafter=drone_pos->xafter-1;
         }if(drone_pos->key == 'u'|| drone_pos->key=='i' || drone_pos->key=='o' || drone_pos->key=='w' || drone_pos->key=='e' || drone_pos->key=='r'){ //up
-            drone_pos->y=drone_pos->y-1;
+            drone_pos->yafter=drone_pos->yafter-1;
         }if(drone_pos->key == 'm'|| drone_pos->key==',' || drone_pos->key=='.' || drone_pos->key=='x' || drone_pos->key=='c' || drone_pos->key=='v') // down
-            drone_pos->y=drone_pos->y+1;
+            drone_pos->yafter=drone_pos->yafter+1;
 
         clear();
         
