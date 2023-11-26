@@ -11,19 +11,15 @@
 #define MAX_LOGGER_LEN 100
 
 #define SEM_PATH "/my_sem_path"     // Customize the path
-#define SHMOBJ_PATH "/my_shm_path"
+#define SHM_PATH "/my_shm_path"
 
-#define SEM_PROD_PATH "/producer"
-#define SEM_CONS_PATH "/consumer"
-
-#define SHARED_DATA_SIZE sizeof(struct Position)
+#define SHM_SIZE sizeof(struct Position)
 
 struct Position {
     int xbefore;
     int ybefore;
-    int xafter;
-    int yafter;
-    int key;
+    int xnow;
+    int ynow;
 };
 
 #endif

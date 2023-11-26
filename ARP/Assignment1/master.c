@@ -26,13 +26,13 @@ int main(int argc, char *argv[]){
     int window_keyboard[2];
     int keyboard_window[2];
 
-    pipe(window_keyboard);
-    pipe(keyboard_window);
+    // pipe(window_keyboard);
+    // pipe(keyboard_window);
 
-    // if (pipe(window_keyboard) == -1 || pipe(keyboard_window) == -1) {
-    //     perror("pipe");
-    //     exit(EXIT_FAILURE);
-    // }
+    if (pipe(window_keyboard) == -1 || pipe(keyboard_window) == -1) {
+        perror("pipe");
+        exit(EXIT_FAILURE);
+    }
 
     // char *argsWatchdog[] = {"konsole",  "-e", "./build/watchdog", NULL};
 
@@ -63,8 +63,8 @@ int main(int argc, char *argv[]){
                 argsKeyboard[3]=args;
 
                 summon(argsKeyboard);
-            // }else if(i==3){
-                // summon(argsTest);
+            }else if(i==3){
+                summon(argsTest);
 
             }else{
                 // summon(argsTest);

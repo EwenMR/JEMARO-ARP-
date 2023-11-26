@@ -17,12 +17,12 @@ int main(int argc, char *argv[])
     sem_t * sem_id = sem_open(SEM_PATH, O_CREAT, S_IRUSR | S_IWUSR, 1);
     sem_init(sem_id, 1, 0); //initialized to 0 until shared memory is instantiated
 
-    int position[4] = {0, 0,0,0};
-    int shared_seg_size = (1 * sizeof(position));
+    int cells[2] = {0, 1};
+    int shared_seg_size = (1 * sizeof(cells));
 
 
     // create shared memory object
-    int shmfd  = shm_open(SHM_PATH, O_CREAT | O_RDWR, S_IRWXU | S_IRWXG);
+    int shmfd  = shm_open(SHMOBJ_PATH, O_CREAT | O_RDWR, S_IRWXU | S_IRWXG);
     if (shmfd < 0)
     {
         perror("shm_open");
@@ -41,13 +41,15 @@ int main(int argc, char *argv[])
     while (1) 
     {      
         sem_wait(sem_id);
-        memcpy(position, shm_ptr, shared_seg_size);
+        memcpy(cells, shm_ptr, shared_seg_size);
         sem_post(sem_id);
+        printf("serving %i %i\n", cells[0], cells[1]);
 
+        sleep(2);
     } 
 
     // clean up
-    shm_unlink(SHM_PATH);
+    shm_unlink(SHMOBJ_PATH);
     sem_close(sem_id);
     sem_unlink(SEM_PATH);
     munmap(shm_ptr, shared_seg_size);

@@ -1,3 +1,5 @@
+
+// window.c
 #include <curses.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
@@ -5,7 +7,7 @@
 
 #include "include/constants.h"
 #include "shared_memory.c"
-
+#define SHM_SIZE sizeof(struct Position)
 
 WINDOW *create_newwin(int height, int width, int starty, int startx)
 {
@@ -30,51 +32,60 @@ void ncursesSetup(WINDOW **display, WINDOW **score)
     *score = create_newwin(LINES / 5, COLS - (COLS/100), initPos[2], initPos[3]);
     *display = create_newwin(LINES - (LINES/5), COLS - (COLS/100), initPos[0], initPos[1]);
     
-    // mvwprintw(*display,1,2,"O");
-    // wrefresh(*display);
     wrefresh(*display);
     wrefresh(*score);
 }
 
-int main() {
+
+
+int main(int argc, char* argv[]) {
     initscr();
     cbreak();
-    // WINDOW *win, *score;
-    // ncursesSetup(&win, &score);
 
-    struct Position *drone_pos = malloc(sizeof(struct Position));
+    int pos_key[3];
 
-    
+    // file descriptors for both writing and reading
+    int window_keyboard[2];
+    int keyboard_window[2];
+    pos_key[0] = COLS/2;
+    pos_key[1] = LINES/2;
+    sscanf(argv[1], "%d %d|%d %d", &window_keyboard[0],&window_keyboard[1], &keyboard_window[0], &keyboard_window[1]);
+    close(window_keyboard[0]);
+    close(keyboard_window[1]);
 
-    drone_pos->xafter = COLS/2;
-    drone_pos->yafter = LINES/2;
-
-    int counter=0;
     while (1) {
+        // refresh window
         WINDOW *win, *score;
         ncursesSetup(&win, &score);
-        if (counter==0){
-            mvwprintw(win,drone_pos->y,drone_pos->x,"X");
-            counter++;
-        }else{
-            mvwprintw(win,drone_pos->y,drone_pos->x,"X");
-        }
-        
+
+        // move to the desired position and print "X", 
+        mvwprintw(win, pos_key[1], pos_key[0], "X");
         wrefresh(win);
 
-        drone_pos->key = wgetch(win);
+        // wait for user input
+        pos_key[2]=wgetch(win);
 
-        if (drone_pos->key=='o' || drone_pos->key=='l' || drone_pos->key=='.' || drone_pos->key=='r' || drone_pos->key=='f' || drone_pos->key=='v'){ //right or diagonalRight
-            drone_pos->xafter=drone_pos->xafter+1;
-        }if(drone_pos->key=='u'|| drone_pos->key=='j' || drone_pos->key=='m' || drone_pos->key=='w' || drone_pos->key=='s' || drone_pos->key=='x'){ //left or diagonalLeft
-            drone_pos->xafter=drone_pos->xafter-1;
-        }if(drone_pos->key == 'u'|| drone_pos->key=='i' || drone_pos->key=='o' || drone_pos->key=='w' || drone_pos->key=='e' || drone_pos->key=='r'){ //up
-            drone_pos->yafter=drone_pos->yafter-1;
-        }if(drone_pos->key == 'm'|| drone_pos->key==',' || drone_pos->key=='.' || drone_pos->key=='x' || drone_pos->key=='c' || drone_pos->key=='v') // down
-            drone_pos->yafter=drone_pos->yafter+1;
+        // writes the current position of drone and user input to keyboardManager
+        int ret= write(window_keyboard[1], pos_key, sizeof(pos_key));
+        if (ret<0){ 
+            perror("writing error\n");
+            exit(EXIT_FAILURE);
+        }
+
+        if((char)pos_key[2]==' '){
+            close(window_keyboard[1]);
+            close(keyboard_window[0]);
+            exit(EXIT_SUCCESS);
+        }
+
+        // reads position of drone from keyboardManager
+        int ret2 = read(keyboard_window[0], pos_key, sizeof(pos_key));
+        if (ret2<0){
+            perror("reading error\n");
+            exit(EXIT_FAILURE);
+        }
 
         clear();
-        
     }
 
     endwin();
