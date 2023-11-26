@@ -8,7 +8,7 @@
 #define MAX_MSG_LEN 100
 
 void summon(char **programArgs){
-    execvp("konsole", programArgs);
+    execvp(programArgs[0], programArgs);
     perror("Execution failed");
 
     // avoid unwanted forking
@@ -17,10 +17,10 @@ void summon(char **programArgs){
 
 
 int main(int argc, char *argv[]){
-    char *argsServer[] = {"konsole",  "-e", "./build/server","placeholder", NULL};
+    char *argsServer[] = {"./build/server","placeholder", NULL};
     char *argsWindow[] = {"konsole",  "-e", "./build/window", "placeholder",NULL};
     char *argsDrone[] = {"konsole",  "-e", "./build/drone", "placeholder",NULL};
-    char *argsKeyboard[] = {"konsole",  "-e", "./build/keyboard", "placeholder",NULL};
+    char *argsKeyboard[] = {"konsole",  "-e","./build/keyboard", "placeholder",NULL};
     char *argsSave[] = {"konsole",  "-e", "./build/save", NULL};
 
     int window_keyboard[2];
@@ -58,21 +58,17 @@ int main(int argc, char *argv[]){
                 argsWindow[3]=args;
                 summon(argsWindow);
             }else if(i==2){
-                summon(argsTest);
-            }else if(i==3){
                 char args[MAX_MSG_LEN];
                 sprintf(args,"%d %d|%d %d",window_keyboard[0],window_keyboard[1],keyboard_window[0],keyboard_window[1]);
                 argsKeyboard[3]=args;
 
                 summon(argsKeyboard);
+            // }else if(i==3){
+                // summon(argsTest);
 
             }else{
                 // summon(argsTest);
             }   
-            close(window_keyboard[0]);
-            close(window_keyboard[1]);
-            close(keyboard_window[0]);
-            close(keyboard_window[1]);
         }else {
             printf("Summoned child with pid %d\n", pid);
         }

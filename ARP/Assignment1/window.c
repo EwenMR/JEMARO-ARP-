@@ -36,40 +36,52 @@ void ncursesSetup(WINDOW **display, WINDOW **score)
     wrefresh(*score);
 }
 
-int window_keyboard[2];
-int keyboard_window[2];
+
 
 int main(int argc, char* argv[]) {
     initscr();
     cbreak();
 
     int pos_key[3];
+
+    // file descriptors for both writing and reading
+    int window_keyboard[2];
+    int keyboard_window[2];
     pos_key[0] = COLS/2;
     pos_key[1] = LINES/2;
+    sscanf(argv[1], "%d %d|%d %d", &window_keyboard[0],&window_keyboard[1], &keyboard_window[0], &keyboard_window[1]);
+    close(window_keyboard[0]);
+    close(keyboard_window[1]);
 
     while (1) {
+        // refresh window
         WINDOW *win, *score;
         ncursesSetup(&win, &score);
 
-        sscanf(argv[1], "%d %d|%d %d", &window_keyboard[0],&window_keyboard[1], &keyboard_window[0], &keyboard_window[1]);
-
+        // move to the desired position and print "X", 
         mvwprintw(win, pos_key[1], pos_key[0], "X");
         wrefresh(win);
 
+        // wait for user input
         pos_key[2]=wgetch(win);
 
+        // writes the current position of drone and user input to keyboardManager
         int ret= write(window_keyboard[1], pos_key, sizeof(pos_key));
         if (ret<0){ 
             perror("writing error\n");
-            fflush(stdout);
             exit(EXIT_FAILURE);
         }
 
+        if((char)pos_key[2]==' '){
+            close(window_keyboard[1]);
+            close(keyboard_window[0]);
+            exit(EXIT_SUCCESS);
+        }
 
+        // reads position of drone from keyboardManager
         int ret2 = read(keyboard_window[0], pos_key, sizeof(pos_key));
         if (ret2<0){
             perror("reading error\n");
-            fflush(stdout);
             exit(EXIT_FAILURE);
         }
 
