@@ -1,0 +1,199 @@
+%% Exercises Modelling Part 1
+% Rotation matrices, Equivalent angle-axis representations, Quaternions
+addpath('include') %%DO NOT CHANGE STUFF INSIDE THIS PATH
+
+%% Exercise 1
+% Write a function called ComputeAngleAxis() implementing the Rodrigues Formula, 
+% taking in input the geometric unit vector v and the rotation angle theta
+% and returning the orientation matrix.
+% and test it for the following cases:
+
+% 1.2.
+theta = pi/4;
+v = [1, 0, 0];
+aRb = ComputeAngleAxis(theta, v);
+
+myplot(1.2,aRb,theta,v);
+
+% 1.3.
+theta = pi/6;
+v = [0, 1, 0];
+aRb = ComputeAngleAxis(theta, v);
+
+myplot(1.3,aRb,theta,v);
+
+% 1.4.
+theta = 3*(pi/4);
+v = [0, 0, 1];
+aRb = ComputeAngleAxis(theta, v);
+
+myplot(1.4,aRb,theta,v);
+
+% 1.5.
+theta = 2.8;
+v = [0.3202, 0.5337, 0.7827];
+aRb = ComputeAngleAxis(theta, v);
+
+myplot(1.5,aRb,theta,v);
+
+% 1.6.
+[theta, v] = ro(0, 1, 0);
+aRb = ComputeAngleAxis(theta, v);
+
+myplot(1.6,aRb,theta,v);
+
+% 1.7.
+[theta, v] = ro(0.25, -1.3, 0.15);
+aRb = ComputeAngleAxis(theta, v);
+
+myplot(1.7,aRb,theta,v);
+
+% 1.8
+[theta, v] = ro((-pi/4), (-pi/3), (-pi/6));
+aRb = ComputeAngleAxis(theta, v);
+
+myplot(1.8,aRb,theta,v);
+
+
+%% Exercise 2
+% 2.1. Write the relative rotation matrix aRb
+% 2.2. Solve the Inverse Equivalent Angle-Axis Problem for the orientation matrix aRb. 
+% 2.3. Repeat the exercises using the wRc instead of wRa (more general example)
+% NB: check the notation used !
+
+
+% 2.1 
+    % Initialize the rotation matrices, using the suggested notation
+    %     %rotation matrix from <w> to frame <a>
+    aRw=[1,0,0;
+         0,1,0;
+         0,0,1]; 
+    %rotation matrix from <w> to <b> (represent 90° around z)
+    bRw=[0,-1,0;
+         1,0,0;
+         0,0,1];
+    % Compute the rotation matrix between frame <a> and <b>
+    
+    
+    aRb = aRw*bRw';
+    [theta,v] = ro(0,0,pi/2);
+    myplot(2.1,aRb,theta,v);
+
+
+% 2.2
+    % Compute the inverse equivalent angle-axis repr. of aRb 
+    [theta, v] = ComputeInverseAngleAxis(aRb);
+    % Plot Results
+    myplot(2.2,aRb,theta,v);
+
+% 2.3
+    wRc = [0.835959, -0.283542, -0.46986  ;
+           0.271321,  0.957764, -0.0952472;
+           0.47703 , -0.0478627, 0.877583 ];
+    
+    % Compute the rotation matrix between frame <c> and <b>
+    cRb = wRc'* bRw';
+
+    % Compute inverse equivalent angle-axis repr. of cRb
+    [theta, v] = ComputeInverseAngleAxis(cRb);    
+
+    % Plot Results
+    myplot(2.3,cRb,theta,v);
+
+%% Exercise 3
+% 3.1 Given two generic frames < w > and < b >, define the elementary 
+% orientation matrices for frame < b > with respect to frame < w >, knowing
+% that:
+    % a. < b > is rotated of 45◦ around the z-axis of < w >
+    % b. < b > is rotated of 60◦ around the y-axis of < w >
+    % c. < b > is rotated of -30◦ around the x-axis of < w >
+% 3.2 Compute the equivalent angle-axis representation for each elementary rotation
+% 3.3 Compute the z-y-x (yaw,pitch,roll) representation using the already
+% computed matrices and solve the Inverse Equivalent Angle-Axis Problem
+% 3.4 Compute the z-x-z representation using the already computed matrices 
+% and solve the Inverse Equivalent Angle-Axis Problem 
+
+% 3.1
+% hint: define angle of rotation in the initialization
+
+    % a
+        %rotation matrix from <w> to frame <b> by rotating around z-axes
+        wRb_z = [cos(pi/4) -sin(pi/4) 0;
+                 sin(pi/4) cos(pi/4) 0;
+                 0 0 1] ;
+
+    % b
+        %rotation matrix from <w> to frame <b> by rotating around y-axes
+        wRb_y = [cos(pi/3) 0 sin(pi/3);
+                 0 1 0;
+                 -sin(pi/3) 0 cos(pi/3)] ;
+
+    % c
+        %rotation matrix from <w> to frame <b> by rotating around x-axes
+        wRb_x = [1 0 0;
+                 0 cos(-pi/6) -sin(-pi/6)
+                 0 sin(-pi/6) cos(-pi/6)] ;
+        disp('es 3.1:');disp(wRb_z);disp(wRb_y);disp(wRb_x);
+
+% 3.2
+    % a
+        [theta, v] = ComputeInverseAngleAxis(wRb_z);
+        % Plot Results
+        myplot(3.2,wRb_z,theta,v);
+        
+    % b
+        [theta, v] = ComputeInverseAngleAxis(wRb_y);
+        % Plot Results
+        myplot(3.2,wRb_y,theta,v);
+    % c
+        [theta, v] = ComputeInverseAngleAxis(wRb_x);
+        % Plot Results
+        myplot(3.2,wRb_x,theta,v);
+% 3.3 
+    % Compute the rotation matrix corresponding to the z-y-x representation;
+    Rxyz = wRb_z * wRb_y * wRb_x;
+    % Compute equivalent angle-axis repr.
+    [theta, v] = ComputeInverseAngleAxis(Rxyz);
+    % Plot Results
+    myplot(3.3,Rxyz,theta,v);
+
+% 3.4
+    % Compute the rotation matrix corresponding to the z-x-z representation;
+    Rzxz = wRb_z * wRb_x * wRb_z;
+	% Compute equivalent angle-axis repr.
+    [theta, v] = ComputeInverseAngleAxis(Rzxz);
+    % Plot Results
+    myplot(3.4,Rzxz,theta,v);
+
+%% Exercise 4
+% 4.1 Represent the following quaternion with the equivalent angle-axis
+% representation. q = 0.1647 + 0.31583i + 0.52639j + 0.77204k
+% 4.2 Solve the Inverse Equivalent Angle-Axis Problem for the obtained orientation matrix
+% 4.3 Repeat the exercise using the built-in matlab functions see:
+% https://it.mathworks.com/help/nav/referencelist.html?type=function&category=coordinate-system-transformations&s_tid=CRUX_topnav
+% CHECK IF THE RESULT IS THE SAME 
+    %%%%%%%%%%%%
+    %%%%%%%%%%%%%
+    % Compute the rotation matrix associated with the given quaternion
+    q0 = 0.1647;
+    q1 = 0.31583;
+    q2 = 0.52639;
+    q3 = 0.77204;
+    rotMatrix = quatToRot(q0,q1,q2,q3);
+    disp('rot matrix es 4.1');disp(rotMatrix)
+
+    % solve using matlab functions quaternion(), rotmat(),
+    % rotMatrix = ...
+    quat2rotm([q0,q1,q2,q3]);
+    disp('rot matrix es 4.1 using matlab function');disp(rotMatrix)
+
+    % Evaluate angle-axis representation and display rotations - check if the
+    % same results as before
+    [theta, v] = ComputeInverseAngleAxis(rotMatrix);
+    myplot(4.2,rotMatrix,theta,v);
+
+    ang = quat2axang([q0,q1,q2,q3]);
+    v = ang(1:3);
+    theta = ang(4);
+% Plot Results
+    myplot(4.3,rotMatrix,theta,v);

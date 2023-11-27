@@ -1,78 +1,61 @@
-//server.c
-#include <curses.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <stdio.h> 
+#include <string.h> 
+#include <fcntl.h> 
+#include <sys/stat.h> 
+#include <sys/types.h> 
 #include <sys/select.h>
-#include <unistd.h>
-#include <semaphore.h>
-#include <sys/shm.h>
-#include <sys/mman.h>
-#include <sys/types.h>
-#include <sys/ipc.h>
+#include <unistd.h> 
+#include <stdlib.h>
 #include "include/constants.h"
-#include "shared_memory.c"
+#include <semaphore.h>
+#include <sys/mman.h>
+#include <ncurses.h>
 
 
-WINDOW *create_newwin(int height, int width, int starty, int startx)
+int main(int argc, char *argv[]) 
 {
-    WINDOW *local_win;
+    // initialize semaphore
+    sem_t * sem_id = sem_open(SEM_PATH, O_CREAT, S_IRUSR | S_IWUSR, 1);
+    sem_init(sem_id, 1, 0); //initialized to 0 until shared memory is instantiated
 
-    local_win = newwin(height, width, starty, startx);
-    box(local_win, 0, 0);
-    wrefresh(local_win);
-
-    return local_win;
-}
-
-void ncursesSetup(WINDOW **display, WINDOW **logger)
-{
-    int initPos[2] = {
-        LINES/200,
-        COLS/200
-    };
-
-    *display = create_newwin(LINES - (LINES/100), COLS - (COLS/100), initPos[0], initPos[1]);
-    
-    *logger = create_newwin(LINES / 2, COLS / 2, initPos[0], initPos[1]);
-
-    wrefresh(*display);
-}
+    double position[6];
+    int shared_seg_size = (1 * sizeof(position));
 
 
-int main(int argc, char *argv[])
-{
-    int key;
-    initscr();
+    // create shared memory object
+    int shmfd  = shm_open(SHM_PATH, O_CREAT | O_RDWR, S_IRWXU | S_IRWXG);
+    if (shmfd < 0)
+    {
+        perror("shm_open");
+        exit(EXIT_FAILURE);
+    }
+    // truncate size of shared memory
+    ftruncate(shmfd, shared_seg_size);
+    // map pointer
+    void* shm_ptr = mmap(NULL, shared_seg_size, PROT_READ | PROT_WRITE, MAP_SHARED, shmfd, 0);
+    if (shm_ptr == MAP_FAILED) {
+        perror("mmap");
+        exit(EXIT_FAILURE);
+    }
+    // copy initial data into cells
+    // memcpy(shm_ptr, position, shared_seg_size);
+    // // post semaphore
+    sem_post(sem_id);
 
-    // cbreak();
-    // WINDOW *display, *logger;
-    // ncursesSetup(&display, &logger);
-    
-   
+    // every two seconds print the current values in the server (for debugging)
+    while (1) 
+    {      
+        sem_wait(sem_id);
+        memcpy(position, shm_ptr, shared_seg_size);
+        sem_post(sem_id);
 
+    } 
 
-    // // Shared memory segments for drone position, goals, and obstacles
-    int shmid_pos = getSharedMemorySegment(KEY_POS, sizeof(struct Position));
-    
-    // // Attach shared memory segments to the process
-    struct Position *drone_pos = shmat(shmid_pos, NULL, 0);
+    // clean up
+    shm_unlink(SHM_PATH);
+    sem_close(sem_id);
+    sem_unlink(SEM_PATH);
+    munmap(shm_ptr, shared_seg_size);
 
-
-
-
-
-    // while(1){
-    //     move(drone_pos->y,drone_pos->x);
-    //     printw("X");
-    //     refresh();
-    //     drone_pos->key = getch();
-    //     // clear();
-    // }
-
-
-
-    detachSharedMemory(drone_pos);
-    endwin();
-    return 0;
-}
+    return 0; 
+} 
