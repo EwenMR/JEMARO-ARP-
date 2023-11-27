@@ -81,6 +81,7 @@ int main(int argc, char* argv[]) {
         // refresh window
         WINDOW *win, *score;
         ncursesSetup(&win, &score);
+        curs_set(0);
         nodelay(win, TRUE);
 
         // move to the desired position and print "X", 
@@ -102,7 +103,7 @@ int main(int argc, char* argv[]) {
                 exit(EXIT_SUCCESS);
             }
         }
-        
+        usleep(50000);
         sem_wait(sem_id);
         // READ THE UPDATED X,Y POSITION FROM SHARED MEMORY
         memcpy(position,shm_ptr,shared_seg_size);
