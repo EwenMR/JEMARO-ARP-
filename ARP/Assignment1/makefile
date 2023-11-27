@@ -11,7 +11,7 @@ server:
 	gcc server.c -o build/server -lncurses
 
 drone: 
-	gcc drone.c -o build/drone 
+	gcc drone.c -o build/drone -lncurses
 
 keyboard: 
 	gcc keyboardManager.c -o build/keyboard 
@@ -24,7 +24,7 @@ watchdog:
 
 test: 
 	gcc test.c -o build/test -lncurses
-	
+
 save: 
 	gcc save.c -o build/save -lncurses
 

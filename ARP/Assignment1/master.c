@@ -8,7 +8,7 @@
 #define MAX_MSG_LEN 100
 
 void summon(char **programArgs){
-    execvp(programArgs[0], programArgs);
+    execvp("konsole", programArgs);
     perror("Execution failed");
 
     // avoid unwanted forking
@@ -17,19 +17,19 @@ void summon(char **programArgs){
 
 
 int main(int argc, char *argv[]){
-    char *argsServer[] = {"./build/server","placeholder", NULL};
+    char *argsServer[] = {"konsole",  "-e","./build/server", NULL};
     char *argsWindow[] = {"konsole",  "-e", "./build/window", "placeholder",NULL};
     char *argsDrone[] = {"konsole",  "-e", "./build/drone", "placeholder",NULL};
     char *argsKeyboard[] = {"konsole",  "-e","./build/keyboard", "placeholder",NULL};
     char *argsSave[] = {"konsole",  "-e", "./build/save", NULL};
 
     int window_keyboard[2];
-    int keyboard_window[2];
+    int keyboard_drone[2];
 
     // pipe(window_keyboard);
-    // pipe(keyboard_window);
+    // pipe(keyboard_drone);
 
-    if (pipe(window_keyboard) == -1 || pipe(keyboard_window) == -1) {
+    if (pipe(window_keyboard) == -1 || pipe(keyboard_drone) == -1) {
         perror("pipe");
         exit(EXIT_FAILURE);
     }
@@ -54,17 +54,20 @@ int main(int argc, char *argv[]){
                 summon(argsServer);
             }else if(i==1){ 
                 char args[MAX_MSG_LEN];
-                sprintf(args,"%d %d|%d %d",window_keyboard[0],window_keyboard[1],keyboard_window[0],keyboard_window[1]);
+                sprintf(args,"%d %d",window_keyboard[0],window_keyboard[1]);
                 argsWindow[3]=args;
                 summon(argsWindow);
             }else if(i==2){
                 char args[MAX_MSG_LEN];
-                sprintf(args,"%d %d|%d %d",window_keyboard[0],window_keyboard[1],keyboard_window[0],keyboard_window[1]);
+                sprintf(args,"%d %d|%d %d",window_keyboard[0],window_keyboard[1],keyboard_drone[0],keyboard_drone[1]);
                 argsKeyboard[3]=args;
 
                 summon(argsKeyboard);
             }else if(i==3){
-                summon(argsTest);
+                char args[MAX_MSG_LEN];
+                sprintf(args,"%d %d",keyboard_drone[0],keyboard_drone[1]);
+                argsDrone[3]=args;
+                summon(argsDrone);
 
             }else{
                 // summon(argsTest);
@@ -72,8 +75,15 @@ int main(int argc, char *argv[]){
         }else {
             printf("Summoned child with pid %d\n", pid);
         }
-}
     }
+    int stat;
+
+    for (int i = 0; i < 5; i++) {
+        pid_t pid = wait(&stat);
+        printf("Child %d terminated with status %d\n", pid, stat);
+    }
+    return EXIT_SUCCESS;
+}
     
     
 

@@ -14,7 +14,7 @@ int main() {
     // Don't display cursor
     curs_set(0);
 
-    int position[4];
+    int position[6];
     int shared_seg_size = (1 * sizeof(position));
 
     sem_t * sem_id = sem_open(SEM_PATH, 0);

@@ -39,23 +39,20 @@ void ncursesSetup(WINDOW **display, WINDOW **score)
 int main(int argc, char* argv[]) {
     initscr();
     cbreak();
+    
 
-    int pos_key[3];
+    int key;
 
-    // file descriptors for both writing and reading to keyboardManager
+    // fds to communicate with keyboardManager
     int window_keyboard[2];
-    int keyboard_window[2];
-    pos_key[0] = COLS/2;
-    pos_key[1] = LINES/2;
-    sscanf(argv[1], "%d %d|%d %d", &window_keyboard[0],&window_keyboard[1], &keyboard_window[0], &keyboard_window[1]);
+    sscanf(argv[1], "%d %d", &window_keyboard[0],&window_keyboard[1]);
     close(window_keyboard[0]);
-    close(keyboard_window[1]);
 
-    int send_int = 1;
-    int writer_num = -1;
-
-   
-    int position[4] = {0, 0, 0, 0};
+    // position[0],position[1]; position of the drone(x,y) of t_i-2
+    // position[2],position[3]; position of the drone(x,y) of t_i-1
+    // position[4],position[5]; position of the drone(x,y) now
+    double position[6] = {COLS/2, LINES/2, COLS/2, LINES/2, COLS/2, LINES/2};
+    // double position[6];
     int shared_seg_size = (1 * sizeof(position));
 
     // create semaphore ids
@@ -69,67 +66,51 @@ int main(int argc, char* argv[]) {
         return -1;
     }
     void* shm_ptr = mmap(NULL, shared_seg_size, PROT_READ | PROT_WRITE, MAP_SHARED, shmfd, 0);
-
-
+    if (shm_ptr == MAP_FAILED) {
+        perror("mmap");
+        exit(EXIT_FAILURE);
+    }
+    int first=0;
     while (1) {
+        if(first==0){
+            sem_wait(sem_id);
+            memcpy(shm_ptr, position, shared_seg_size);
+            sem_post(sem_id);
+            first=1;
+        }
         // refresh window
         WINDOW *win, *score;
         ncursesSetup(&win, &score);
+        nodelay(win, TRUE);
 
         // move to the desired position and print "X", 
-        mvwprintw(win, pos_key[1], pos_key[0], "X");
+        mvwprintw(win, (int)position[5], (int)position[4], "X");
         wrefresh(win);
 
         // wait for user input
-        pos_key[2]=wgetch(win);
-
-
-
-
-
-
+        key=wgetch(win);
+        if (key != ERR) {
+            // A key was pressed
+            int ret= write(window_keyboard[1], &key, sizeof(key));
+            if (ret<0){ 
+                perror("writing error\n");
+                close(window_keyboard[1]);
+                exit(EXIT_FAILURE);
+            }
+            if((char)key==' '){
+                close(window_keyboard[1]);
+                exit(EXIT_SUCCESS);
+            }
+        }
+        
         sem_wait(sem_id);
-        // copy cells
-        memcpy(position, shm_ptr, shared_seg_size);
-
-        for(int i=0;i<3;i++){
-            position[i]=pos_key[i];
-        }
-        // copy local cells to memory
-        memcpy(shm_ptr, position, shared_seg_size);
-    
-        // post semaphore
+        // READ THE UPDATED X,Y POSITION FROM SHARED MEMORY
+        memcpy(position,shm_ptr,shared_seg_size);
         sem_post(sem_id);
-
-
-
-
-
-
-        // writes the current position of drone and user input to keyboardManager
-        int ret= write(window_keyboard[1], pos_key, sizeof(pos_key));
-        if (ret<0){ 
-            perror("writing error\n");
-            exit(EXIT_FAILURE);
-        }
-
-        if((char)pos_key[2]==' '){
-            close(window_keyboard[1]);
-            close(keyboard_window[0]);
-            exit(EXIT_SUCCESS);
-        }
-
-        // reads position of drone from keyboardManager
-        int ret2 = read(keyboard_window[0], pos_key, sizeof(pos_key));
-        if (ret2<0){
-            perror("reading error\n");
-            exit(EXIT_FAILURE);
-        }
-
         clear();
     }
 
-    
+    close(window_keyboard[1]);
     shm_unlink(SHM_PATH);
     sem_close(sem_id);
     sem_unlink(SEM_PATH);
