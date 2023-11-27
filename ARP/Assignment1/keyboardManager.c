@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
             case 'o':
             case 'r':
                 xy[0]++;
-                xy[1]++;
+                xy[1]--;
                 break;
             case 'l':
             case 'f':
@@ -52,14 +52,14 @@ int main(int argc, char *argv[])
             case '.':
             case 'v':
                 xy[0]++;
-                xy[1]--;
+                xy[1]++;
                 break;
 
             // LEFT
             case 'u':
             case 'w':
                 xy[0]--;
-                xy[1]++;
+                xy[1]--;
                 break;
             case 'j':
             case 's':
@@ -68,19 +68,19 @@ int main(int argc, char *argv[])
             case 'm':
             case 'x':
                 xy[0]--;
-                xy[1]--;
+                xy[1]++;
                 break;
             
             // UP
             case 'i':
             case 'e':
-                xy[1]++;
+                xy[1]--;
                 break;
 
             // DOWN
             case ',':
             case 'c':
-                xy[1]--;
+                xy[1]++;
                 break;
 
             default:

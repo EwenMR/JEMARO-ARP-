@@ -90,14 +90,20 @@ int main(int argc, char* argv[]) {
         ncursesSetup(&win, &score);
         curs_set(0);
         nodelay(win, TRUE);
-        wprintw(win,"%d,%d,%f,%f,%f,%f",COLS,LINES,scalex,scaley,position[5],position[5]/scaley);
+        // wprintw(win,"%d,%d,%f,%f,%f,%f",COLS,LINES,scalex,scaley,position[5],position[5]/scaley);
 
         // move to the desired position and print "X", 
+
+        // gets the semaphore number. use it to check for deadlock
         int sem;
         sem_getvalue(sem_id,&sem);
-        mvwprintw(win, (int)(position[5]/scaley), (int)(position[4]/scalex), "X %d", sem);
+
+
+        mvwprintw(win, (int)(position[5]/scaley), (int)(position[4]/scalex), "X");
+        mvwprintw(score,1,20,"%f,%f", position[4],position[5]);
         // mvwprintw(win, 5, 5, "X");
         wrefresh(win);
+        wrefresh(score);
         
         if(first==0){
             sem_wait(sem_id);

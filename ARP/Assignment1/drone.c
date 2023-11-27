@@ -116,7 +116,7 @@ int main(int argc, char *argv[]) {
 
         mvprintw(5, 0, "Before2:%f %f Before1:%f %f  Now: %f %f",position[0],position[1],position[2], position[3],position[4],position[5]);
         refresh();
-        sleep(1);
+        usleep(200000);
         // Refresh the screen
         
     }
