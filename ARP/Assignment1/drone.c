@@ -10,23 +10,27 @@
 #include "shared_memory.c"
 #define M 1.0
 #define K 1.0
+#define T 1
 #define FORCEX 1.0
 #define FORCEY 1.0
 
-double calc_acceleration(double force,double velocity){
-    double acceleration;
-    acceleration = (force-K*velocity)/M;
-    velocity+=acceleration;
+double calc_position(double force,double x1,double x2){
+    double x;
+    x= (force*T*T-M*x2+2*M*x1+K*T*x1)/(M+K*T);
 
-    return velocity;
+
+    // acceleration = (force-K*velocity)/M;
+    // velocity+=acceleration;
+
+    return x;
 }
 
 int main(int argc, char *argv[]) {
     // xy = force direction of x,y as such -> [0,1]
     int xy[2];
     // initialize velocity
-    double velx,vely;
-    velx=vely=0;
+    double posx,posy;
+    posx=posy=0;
 
     // pipe with keyboard
     int keyboard_drone[2];
@@ -60,51 +64,59 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
+    int first=0;
+
     while (1) {
         sem_wait(sem_id);
         memcpy(position,shm_ptr,shared_seg_size);
         sem_post(sem_id);
+        printw("%f,%f",position[5],position[4]);
         // reads message sent from keyboard
         ssize_t bytesRead = read(keyboard_drone[0], xy, sizeof(xy));
-        if (bytesRead<0){
-            if (errno != EAGAIN) {
-                perror("reading error");
-                close(keyboard_drone[0]);
-                exit(EXIT_FAILURE);
+        if (first==0){
+            if (bytesRead<0){
+                if (errno != EAGAIN) {
+                    perror("reading error");
+                    // close(keyboard_drone[0]);
+                    exit(EXIT_FAILURE);
+                }
+            }else if(bytesRead>0){
+                
+                posx=calc_position(xy[0],position[4],position[2]);
+                posy=calc_position(xy[1],position[5],position[3]);
+                printw("This %d %d", xy[0],xy[1]);
+                first++;
+                refresh();
+                // MODIFY IT SO THAT IT MOVES EVERY SECOND
+                // update position
+                for(int i=0; i<4; i++){
+                    position[i]=position[i+2];
+                }
+                position[4]=posx;
+                position[5]=posy;
             }
-        }else if(bytesRead>0){
-            velx=calc_acceleration(FORCEX*xy[0],velx);
-            vely=calc_acceleration(FORCEY*xy[1],vely);
+
+        }else{
+            posx=calc_position(xy[0],position[4],position[2]);
+            posy=calc_position(xy[1],position[5],position[3]);
             printw("%d %d", xy[0],xy[1]);
             refresh();
+            // MODIFY IT SO THAT IT MOVES EVERY SECOND
+            // update position
+            for(int i=0; i<4; i++){
+                position[i]=position[i+2];
+            }
+            position[4]=posx;
+            position[5]=posy;
         }
-        // ssize_t bytesRead = read(keyboard_drone[0], xy, sizeof(xy));
-
-        
-        
-        // dispaly the 3 positions onto the screen
-        int row, col;
-        getmaxyx(stdscr, row, col);
-        
-
-        // MODIFY IT SO THAT IT MOVES EVERY SECOND
-        // update position
-        for(int i=0; i<4; i++){
-            position[i]=position[i+2];
-        }
-        position[4]+=velx;
-        position[5]-=vely;
-        sleep(1);
-        
-        
 
         sem_wait(sem_id);
         memcpy(shm_ptr, position, shared_seg_size);
         sem_post(sem_id);
 
-        mvprintw(row / 2, 0, "Before2:%f %f Before1:%f %f  Now: %f %f",position[0],position[1],position[2], position[3],position[4],position[5]);
+        mvprintw(5, 0, "Before2:%f %f Before1:%f %f  Now: %f %f",position[0],position[1],position[2], position[3],position[4],position[5]);
         refresh();
-
+        sleep(1);
         // Refresh the screen
         
     }

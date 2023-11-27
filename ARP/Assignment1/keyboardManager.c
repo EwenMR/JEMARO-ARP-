@@ -41,50 +41,46 @@ int main(int argc, char *argv[])
             // RIGHT 
             case 'o':
             case 'r':
-                xy[0]=1;
-                xy[1]=1;
+                xy[0]++;
+                xy[1]++;
                 break;
             case 'l':
             case 'f':
-                xy[0]=1;
-                xy[1]=0;
+                xy[0]++;
                 break;
 
             case '.':
             case 'v':
-                xy[0]=1;
-                xy[1]=-1;
+                xy[0]++;
+                xy[1]--;
                 break;
 
             // LEFT
             case 'u':
             case 'w':
-                xy[0]=-1;
-                xy[1]=1;
+                xy[0]--;
+                xy[1]++;
                 break;
             case 'j':
             case 's':
-                xy[0]=-1;
-                xy[1]=0;
+                xy[0]--;
                 break;
             case 'm':
             case 'x':
-                xy[0]=-1;
-                xy[1]=-1;
+                xy[0]--;
+                xy[1]--;
                 break;
             
             // UP
             case 'i':
             case 'e':
-                xy[0]=0;
-                xy[1]=1;
+                xy[1]++;
                 break;
 
             // DOWN
             case ',':
             case 'c':
-                xy[0]=0;
-                xy[1]=-1;
+                xy[1]--;
                 break;
 
             default:
