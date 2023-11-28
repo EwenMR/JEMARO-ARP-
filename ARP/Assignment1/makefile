@@ -1,5 +1,5 @@
 # INC=-I headers
-all:  master server drone keyboard window watchdog test save
+all:  master server drone keyboard window watchdog 
 
 # clean:
 # 	rm build/*
@@ -22,13 +22,6 @@ window:
 watchdog: 
 	gcc watchdog.c -o build/watchdog
 
-test: 
-	gcc test.c -o build/test -lncurses
-save: 
-	gcc save.c -o build/save -lncurses
-
-save: 
-	gcc save.c -o build/save -lncurses
 
 # server: 
 # 	gcc $(INC) server.c -o server -lncurses

@@ -15,6 +15,15 @@
 
 #define SHM_SIZE sizeof(struct Position)
 
+#define M 1.0
+#define K 1.0
+#define T 1
+#define FORCEX 1.0
+#define FORCEY 1.0
+
+#define BOARD_SIZE 100
+
+
 struct Position {
     int xbefore;
     int ybefore;
