@@ -5,7 +5,7 @@
 #include <wait.h>
 #include <sys/wait.h>
 #include <unistd.h>
-#include "include/constants.h"
+#include "../include/constants.h"
 
 
 void summon(char **programArgs){

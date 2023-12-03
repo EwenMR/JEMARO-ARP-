@@ -9,7 +9,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 
-#include "include/constants.h"
+#include "../include/constants.h"
 #define TIMER_THRESH 5
 
 // Global variables

@@ -12,7 +12,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <stdio.h>
-#include "include/constants.h"
+#include "../include/constants.h"
 #include <signal.h>
 
 void signal_handler(int signo, siginfo_t *siginfo, void *context){

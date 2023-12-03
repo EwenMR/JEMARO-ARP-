@@ -5,22 +5,22 @@ clean:
 	rm build/*
 
 master: 
-	gcc master.c -o build/master 
+	gcc src/master.c -o build/master 
 
 server: 
-	gcc server.c -o build/server
+	gcc src/server.c -o build/server
 
 drone: 
-	gcc drone.c -o build/drone 
+	gcc src/drone.c -o build/drone 
 
 keyboard: 
-	gcc keyboardManager.c -o build/keyboard 
+	gcc src/keyboardManager.c -o build/keyboard 
 
 window: 
-	gcc window.c -o build/window -lncurses
+	gcc src/window.c -o build/window -lncurses
 
 watchdog: 
-	gcc watchdog.c -o build/watchdog 
+	gcc src/watchdog.c -o build/watchdog 
 
 run:
 	./build/master

@@ -5,7 +5,7 @@
 #include <sys/shm.h>
 #include <unistd.h>
 #include <string.h>
-#include "include/constants.h"
+#include "../include/constants.h"
 #include <fcntl.h>
 #include <stdlib.h>
 #include <semaphore.h>

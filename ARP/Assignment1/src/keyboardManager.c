@@ -13,7 +13,7 @@
 #include <signal.h>
 
 
-#include "include/constants.h"
+#include "../include/constants.h"
 
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
     if(signo == SIGINT){
