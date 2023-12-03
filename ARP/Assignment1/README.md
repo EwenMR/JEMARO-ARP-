@@ -33,9 +33,6 @@ insert image
 
 ## Instruction for installing and running
 
-- `src/`: Source code files.
-- `include/`: Header files.
-- `docs/`: Documentation files.
-- ...
+## Operational instructions
 
-## Files
+## Anything else????
