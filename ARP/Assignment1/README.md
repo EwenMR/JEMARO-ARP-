@@ -14,7 +14,7 @@ A brief description of the project and its purpose.
 The has 3 folders 'build', 'include' and 'src' as well as a makefile. The build folder holds all the compiled and executbale files that ar made by running the makefile. The 'include' directory contains a header file "constants.h". The 'src' direcotry contains 'drone.c', 'keyboardManager.c', 'master.c', 'server.c', 'watchdog.c' and 'window.c'. 
 
 
-### constants.h
+## constants.h
 
 The 'constants.h' file defnes various constants and parameters taht are used through the program. 
 This includes, shared memory key, size and path, semaphore path, constants about the rows and columns of the window, values for the mass of the drone, the viscosity constant, the integration interval and the length of messages. 
@@ -31,7 +31,7 @@ At the beginning of the file a 'summon()' function is created that serves the pu
 Furthermore, the master file creates the file descriptors and pipes for the passing of data inbetween the processes. Lastly, a 'for' loop is created to make the master terminate if any of the children are terminated. 
 
 
-### watchdog.c
+## watchdog.c
 
 The 'watchdog.c' file si resposnible for the monitoring (the 'health') and managaing of the other processes. It checks to see if the processes are running correctly. The program uses 'signals' and 'pipes' to carry out this taks. Once it has received a signal trhough pipes and the ID of the process that sent the signal is the same as the original ID it resets the timers. If the timer were to exceed a defined threshold, a signal would be sent to terminate all processes and exits. In all different files you will find elements that are related to the watchdog for this purpose.
 
@@ -51,7 +51,7 @@ The 'keyboardManager.c' file is made to manage the user input from the keyboard 
 The 'drone.c' files as briefly alluded to in the previous part is made to control the movement and updating the position of the drone based off of the control commands received from the keyboarManager though pipes. It calculates the position using Euler's method of a given equation of motion. The file uses shared memory and semaphores to send the updated position to the window file. This file contains signal handling to be able to send a signal to the watchdog.
 
 
-# window.c
+## window.c
 
 The 'window.c' creates the graphical user interface of the game. Using the ncurses library, a main window where the drone can be controlled and a smaller window with the position of the drone are made. The file communicates with the keyboardManager using pipes and uses shared memory to read the updates position of the drone. Once again signal handling is taken care of as to send a signal to the watchdog.
 
