@@ -43,8 +43,8 @@ Make sure you have the following installed:
 ### Clone the Repository
 
 ```bash
-$ git clone https://github.com/your-username/your-repository.git
-$ cd your-repository
+$ git clone https://github.com/kohei-tateyama/JEMARO.git
+$ cd JEMARO/ARP/Assignment1 
 ```
 
 ### Build the Project
