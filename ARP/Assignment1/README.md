@@ -11,12 +11,12 @@ A brief description of the project and its purpose.
 
 # Short definition of all Active Components
 
-There are 3 folders 'build', 'include' and 'src' as well as a makefile. The build folder holds all the compiled and executbale files that ar made by running the makefile. The 'include' directory contains a header file "constants.h". The 'src' directory contains 'drone.c', 'keyboardManager.c', 'master.c', 'server.c', 'watchdog.c' and 'window.c'. 
+There are 3 folders `build`, `include` and `src` as well as a makefile. The build folder holds all the compiled and executbale files that ar made by running the makefile. The `include` directory contains a header file "constants.h". The 'src' directory contains 'drone.c', 'keyboardManager.c', 'master.c', 'server.c', 'watchdog.c' and 'window.c'. 
 
 
 ## constants.h
 
-The 'constants.h' file defines various constants and parameters that are used through the program. 
+The `constants.h` file defines various constants and parameters that are used through the program. 
 This includes, shared memory key, size and path, semaphore path, constants about the rows and columns of the window, values for the mass of the drone, the viscosity constant, the integration interval and the length of messages. 
 
 This header file is included in every .c file as to ensure that changes to these values can be easily managed and changed from a centralized location.
