@@ -53,6 +53,12 @@ double update_pos(double* position, int* xy){
     return *position;
 }
 
+double stop(double *position){
+    for(int i=0; i<4; i++){
+        position[i]=position[i+2];}
+    return *position;
+}
+
 int main(int argc, char *argv[]) {
 
     // SIGNALS
@@ -116,7 +122,12 @@ int main(int argc, char *argv[]) {
                 first++;
             }
         }else{ // After first second input
-            update_pos(position,xy); 
+            if(xy[0]==0 && xy[1]==0){
+                stop(position);
+            }else{
+                update_pos(position,xy); 
+            }
+            
         }
     
         // 4

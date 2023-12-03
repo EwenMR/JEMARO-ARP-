@@ -111,6 +111,12 @@ int main(int argc, char *argv[]){
                 xy[1]++;
                 break;
 
+
+            // STOP
+            case 'k':
+            case 'd':
+                xy[0]=0;
+                xy[1]=0;
             default:
                 break;
         }
