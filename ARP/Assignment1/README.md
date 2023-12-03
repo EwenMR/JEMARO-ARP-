@@ -93,7 +93,7 @@ In the `window` konsole, there should be a drone displayed as 'X'. Use the keys
 
 `w` `e` `r`      `u` `i` `o`     
 
-`s`     `f`  or  `j`     `l`     
+`s` `d` `f`  or  `j` `k` `l`     
 
 `x` `c` `v`      `m` `,` `.`     
 
