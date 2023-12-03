@@ -67,27 +67,36 @@ Make sure you have the following installed:
 - [Make](https://www.gnu.org/software/make/)
 
 ### Clone the Repository
+To clone this project to the local file, enter:
 
 ```bash
 $ git clone https://github.com/kohei-tateyama/JEMARO.git
 $ cd JEMARO/ARP/Assignment1 
 ```
+or unzip the file that is submitted to the aulaweb page.
 
-### Build the Project
+### Build and Execute the Project
+In the 'Assignment1' directory, hit:
 
 ```bash
 $ make
 ```
-This command will compile all the necessary files.
-
-### Execute the Project
+to compile all the necessary files. And to run the project, enter:
 
 ```bash
 $ make run
 ```
-This command will run the master file which will fork all the child processes.
-
+This command will open 5 konsole windows `drone`, `keyboard`, `server`, `window`, and `watchdog`.
 
 ## Operational instructions
+In the `window` konsole, there should be a drone displayed as 'X'. Use the keys 
+
+`w` `e` `r`      `u` `i` `o`     
+
+`s`     `f`  or  `j`     `l`     
+
+`x` `c` `v`      `m` `,` `.`     
+
+to add velocity to the drone. Press it multiple times to make it move faster. To stop the drone immediately, press the keys `d` or `k`. And to terminate all processes, press `space` in the `window`, or close any of the processes.
 
 ## Anything else????
