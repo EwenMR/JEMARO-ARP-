@@ -15,6 +15,17 @@
 
 #include "include/constants.h"
 
+#include <signal.h>
+
+void signal_handler(int signo, siginfo_t *siginfo, void *context){
+    if(signo == SIGINT){
+        exit(1);
+    }
+    if(signo == SIGUSR1){
+        pid_t wd_pid = siginfo->si_pid;
+        kill(wd_pid, SIGUSR2);
+    }
+}
 
 double calc_position(double force,double x1,double x2){
     double x;
@@ -26,7 +37,7 @@ double calc_position(double force,double x1,double x2){
     }else if(x>BOARD_SIZE){
         return BOARD_SIZE;
     }
-    
+
     return x;
 }
 
@@ -44,8 +55,14 @@ double update_pos(double* position, int* xy){
 }
 
 int main(int argc, char *argv[]) {
-    initscr(); // Initialize ncurses
+    // initscr(); // Initialize ncurses
     curs_set(0); // Don't display cursor
+
+    struct sigaction signal;
+    signal.sa_sigaction = signal_handler;
+    signal.sa_flags = SA_SIGINFO;
+    sigaction(SIGINT, &signal, NULL);
+    sigaction(SIGUSR1, &signal, NULL);
 
     // VARABLES
     int xy[2]; // xy = force direction of x,y as such -> [0,1]
@@ -53,9 +70,20 @@ int main(int argc, char *argv[]) {
     int first=0;
 
     // PIPES
-    int keyboard_drone[2];
-    sscanf(argv[1],"%d %d", &keyboard_drone[0], &keyboard_drone[1]);
+    int keyboard_drone[2],wd_drone[2];
+    pid_t drone_pid;
+    drone_pid=getpid();
+    sscanf(argv[1],"%d %d|%d %d", &keyboard_drone[0], &keyboard_drone[1],
+                                    &wd_drone[0],&wd_drone[1]);
     close(keyboard_drone[1]);
+    
+    printf("%d %d\n", keyboard_drone[0], keyboard_drone[1]);
+    refresh();
+    close(wd_drone[0]);
+    write(wd_drone[1], &drone_pid, sizeof(drone_pid));
+    printf("%d\n",drone_pid);
+    close(wd_drone[1]);
+
     int flags = fcntl(keyboard_drone[0], F_GETFL); // make the read non blocking so the drone can move without user input 
     fcntl(keyboard_drone[0], F_SETFL, flags | O_NONBLOCK);
 
@@ -78,7 +106,8 @@ int main(int argc, char *argv[]) {
         // 3
         ssize_t bytesRead = read(keyboard_drone[0], xy, sizeof(xy)); // Receive command force from keyboard_manager
 
-        if (first==0){ // Wait until user's first input
+        // Wait until user's first input
+        if (first==0){ 
             // 1 Get the initial position of the drone
             sem_wait(sem_id);
             memcpy(position,shm_ptr,shared_seg_size);
@@ -105,8 +134,8 @@ int main(int argc, char *argv[]) {
         sem_post(sem_id);
 
         // Print the positions on window
-        mvprintw(5, 0, "Before2:%f %f Before1:%f %f  Now: %f %f",position[0],position[1],position[2], position[3],position[4],position[5]);
-        refresh();
+        // mvprintw(5, 0, "Before2:%f %f Before1:%f %f  Now: %f %f",position[0],position[1],position[2], position[3],position[4],position[5]);
+        // refresh();
 
         usleep(200000);
         

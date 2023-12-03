@@ -23,6 +23,8 @@
 
 #define BOARD_SIZE 100
 
+#define NUM_PROCESSES 5
+
 
 struct Position {
     int xbefore;

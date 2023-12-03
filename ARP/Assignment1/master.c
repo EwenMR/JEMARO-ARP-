@@ -18,11 +18,11 @@ void summon(char **programArgs){
 
 int main(int argc, char *argv[]){
     // arguments to summon child konsole
-    char *argsServer[] = {"konsole",  "-e","./build/server", NULL};
+    char *argsServer[] = {"konsole", "-e","./build/server", "placeholder",NULL};
     char *argsWindow[] = {"konsole",  "-e", "./build/window", "placeholder",NULL};
     char *argsDrone[] = {"konsole",  "-e", "./build/drone", "placeholder",NULL};
     char *argsKeyboard[] = {"konsole",  "-e","./build/keyboard", "placeholder",NULL};
-    char *argsWatchdog[] = {"konsole",  "-e", "./build/watchdog", NULL};
+    char *argsWatchdog[] = {"konsole",  "-e", "./build/watchdog", "placeholder",NULL};
 
 
     // pipes fd
@@ -34,9 +34,30 @@ int main(int argc, char *argv[]){
     }
 
 
-    for (int i=0; i<5; i++){
+    //fds and pipes for watchdog
+    int wd_server[2];
+    int wd_window[2];
+    // int wd_keyboard[2];
+    int wd_drone[2];
+    int key_wd[2];
+    // pipe(wd_keyboard);
+    // pipe(wd_drone);
+    // pipe(wd_server);
+    // pipe(wd_window);
+    if (pipe(wd_drone) == -1 || pipe(key_wd) == -1 || pipe(wd_server) == -1 || pipe(wd_window) == -1) {
+        perror("pipe");
+        exit(EXIT_FAILURE);
+    }
+    
+
+    
+
+    pid_t all_pid[5];
+
+    for (int i=0; i<NUM_PROCESSES; i++){
         // fork children
         pid_t pid = fork(); 
+        all_pid[i]=pid;
         char args[MAX_MSG_LEN];
         if(!pid){ //if child
             if (pid < 0) {
@@ -44,24 +65,33 @@ int main(int argc, char *argv[]){
                 exit(EXIT_FAILURE);
             }
             if(i==0){
+                sprintf(args,"%d %d",wd_server[0], wd_server[1]);
+                argsServer[3]=args;
                 summon(argsServer);
             }else if(i==1){ //WINDOW
                 // pass pipes fds to the argument
-                sprintf(args,"%d %d",window_keyboard[0],window_keyboard[1]);
+                sprintf(args,"%d %d|%d %d",window_keyboard[0],window_keyboard[1],wd_window[0], wd_window[1]);
                 argsWindow[3]=args;
                 summon(argsWindow);
 
             }else if(i==2){ //KEYBOARD MANAGER
-                sprintf(args,"%d %d|%d %d",window_keyboard[0],window_keyboard[1],keyboard_drone[0],keyboard_drone[1]);
+                sprintf(args,"%d %d|%d %d|%d %d", window_keyboard[0],window_keyboard[1],
+                                                keyboard_drone[0],keyboard_drone[1],
+                                                key_wd[0], key_wd[1]);
                 argsKeyboard[3]=args;
                 summon(argsKeyboard);
 
             }else if(i==3){ //DRONE
-                sprintf(args,"%d %d",keyboard_drone[0],keyboard_drone[1]);
+                sprintf(args,"%d %d|%d %d",keyboard_drone[0],keyboard_drone[1], wd_drone[0],wd_drone[1]);
                 argsDrone[3]=args;
                 summon(argsDrone);
 
             }else{ //WATCH DOG
+                sprintf(args, "%d %d|%d %d|%d %d|%d %d", wd_server[0],wd_server[1],
+                                        wd_window[0], wd_window[1],
+                                        key_wd[0],key_wd[1],
+                                        wd_drone[0], wd_drone[1]);
+                argsWatchdog[3]=args;
                 summon(argsWatchdog);
             }   
         }else { //else if parent
@@ -70,7 +100,7 @@ int main(int argc, char *argv[]){
     }
     // terminate if any of the children are terminated
     int stat;
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < NUM_PROCESSES; i++) {
         pid_t pid = wait(&stat);
         printf("Child %d terminated with status %d\n", pid, stat);
     }

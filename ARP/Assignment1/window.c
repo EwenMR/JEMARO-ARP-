@@ -12,6 +12,17 @@
 #include <sys/mman.h>
 #include <unistd.h>
 #include <sys/stat.h>
+#include <signal.h>
+
+void signal_handler(int signo, siginfo_t *siginfo, void *context){
+    if(signo == SIGINT){
+        exit(1);
+    }
+    if(signo == SIGUSR1){
+        pid_t wd_pid = siginfo->si_pid;
+        kill(wd_pid, SIGUSR2);
+    }
+}
 
 
 WINDOW *create_newwin(int height, int width, int starty, int startx)
@@ -45,16 +56,30 @@ void ncursesSetup(WINDOW **display, WINDOW **score)
 int main(int argc, char* argv[]) {
     initscr();
     
-    int key;
-    int first=0;
+    struct sigaction signal;
+    signal.sa_sigaction = signal_handler;
+    signal.sa_flags = SA_SIGINFO;
+    sigaction(SIGINT, &signal, NULL);
+    sigaction(SIGUSR1, &signal, NULL);
 
+    int key,first;
+    first=0;
+
+    pid_t window_pid;
+    window_pid=getpid();
     // PIPES
-    int window_keyboard[2]; // fds to communicate with keyboardManager
-    sscanf(argv[1], "%d %d", &window_keyboard[0],&window_keyboard[1]);
+    int window_keyboard[2],wd_window[2]; // fds to communicate with keyboardManager
+    sscanf(argv[1], "%d %d|%d %d", &window_keyboard[0],&window_keyboard[1],
+                                    &wd_window[0],&wd_window[1]);
     close(window_keyboard[0]);
+    close(wd_window[0]);
+    write(wd_window[1], &window_pid, sizeof(window_pid));
+    printf("%d\n",window_pid);
+    close(wd_window[1]);
+
 
     double position[6]={BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2}; //position of the drone (t-2,t-1,t)
-    int shared_seg_size = (1 * sizeof(position));
+    int shared_seg_size = (sizeof(position));
 
     
     // SHARED MEMORY STUFF
@@ -92,6 +117,26 @@ int main(int argc, char* argv[]) {
         int sem;
         sem_getvalue(sem_id,&sem);
 
+         // 1 
+        // Send the initial drone position to drone.c via shared memory
+        if(first==0){
+            sem_wait(sem_id);
+            memcpy(shm_ptr, position, shared_seg_size);
+            sem_post(sem_id);
+
+            // mvwprintw(win,0,(int)(position[4]/scalex)-5, "DRONE GAME");
+            // mvwprintw(win,1,7,"q w e");
+            // mvwprintw(win,1,1,"Press s d f to move the drone or space to quit");
+            // mvwprintw(win,2,7, "x c v");
+            // mvwprintw(win,1,1,"hello");
+            // wrefresh(win);
+            // key=wgetch(win);
+            
+            first++;
+        }
+        
+        // mvwprintw(win,1,1,"hello");
+        // wrefresh(win);
 
         // print drone and score onto the window
         mvwprintw(win, (int)(position[5]/scaley), (int)(position[4]/scalex), "X");
@@ -99,15 +144,7 @@ int main(int argc, char* argv[]) {
         wrefresh(win);
         wrefresh(score);
         
-        // 1 
-        // Send the initial drone position to drone.c via shared memory
-        if(first==0){
-            sem_wait(sem_id);
-            memcpy(shm_ptr, position, shared_seg_size);
-            sem_post(sem_id);
-            first=1;
-        }
-        
+       
         
         // 2
         key=wgetch(win); // wait for user input

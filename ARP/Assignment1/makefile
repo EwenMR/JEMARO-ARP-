@@ -4,6 +4,9 @@ all:  master server drone keyboard window watchdog
 # clean:
 # 	rm build/*
 
+run:
+	./build/master
+
 master: 
 	gcc master.c -o build/master 
 
@@ -20,7 +23,7 @@ window:
 	gcc window.c -o build/window -lncurses
 
 watchdog: 
-	gcc watchdog.c -o build/watchdog
+	gcc watchdog.c -o build/watchdog -lncurses
 
 
 # server: 
