@@ -59,11 +59,6 @@ The `window.c` creates the graphical user interface of the game. Using the ncurs
 ## Instruction for installing and running
 These instructions will help you get a copy of the project up and running on your local machine.
 
-### Prerequisites
-
-Make sure you have the following installed:
-
-- [Make](https://www.gnu.org/software/make/)
 
 ### Clone the Repository
 To clone this project to the local file, enter:
