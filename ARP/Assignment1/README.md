@@ -32,6 +32,35 @@ A brief description of the project and its purpose.
 
 
 ## Instruction for installing and running
+These instructions will help you get a copy of the project up and running on your local machine.
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Make](https://www.gnu.org/software/make/)
+
+### Clone the Repository
+
+```bash
+$ git clone https://github.com/your-username/your-repository.git
+$ cd your-repository
+```
+
+### Build the Project
+
+```bash
+$ make
+```
+This command will compile all the necessary files.
+
+### Execute the Project
+
+```bash
+$ make run
+```
+This command will run the master file which will fork all the child processes.
+
 
 ## Operational instructions
 
