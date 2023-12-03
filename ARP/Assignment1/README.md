@@ -89,14 +89,14 @@ $ make run
 This command will open 5 konsole windows `drone`, `keyboard`, `server`, `window`, and `watchdog`.
 
 ## Operational instructions
-In the `window` konsole, there should be a drone displayed as 'X'. Use the keys 
+In the 'window' konsole, there should be a drone displayed as 'X'. Use the keys 
 
-`w` `e` `r`      `u` `i` `o`     
+`w` `e` `r` &nbsp; &nbsp;    `u` `i` `o`     
 
-`s` `d` `f`  or  `j` `k` `l`     
+`s` `d` `f`  or              `j` `k` `l`     
 
-`x` `c` `v`      `m` `,` `.`     
+`x` `c` `v` &nbsp; &nbsp;    `m` `,` `.`     
 
-to add velocity to the drone. Press it multiple times to make it move faster. To stop the drone immediately, press the keys `d` or `k`. And to terminate all processes, press `space` in the `window`, or close any of the processes.
+to add velocity to the drone. Press it multiple times to make it move faster. To stop the drone immediately, press the keys `d` or `k`. And to terminate all processes, press `space` in the 'window', or close any of the processes.
 
 ## Anything else????
