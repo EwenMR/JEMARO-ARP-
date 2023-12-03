@@ -6,7 +6,7 @@ A brief description of the project and its purpose.
 
 ## Architecture Sketch
 
-insert image
+![Architecture sketch]([URL](https://github.com/kohei-tateyama/JEMARO/blob/master/ARP/Assignment1/Architecture.jpg))
 
 ## Short definition of all Active Components
 
