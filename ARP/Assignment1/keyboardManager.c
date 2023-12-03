@@ -25,31 +25,23 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
     }
 }
 
-int main(int argc, char *argv[])
-
-{   
-    
+int main(int argc, char *argv[]){   
     // PIPES
     int keyboard_drone[2],window_keyboard[2], wd_keyboard[2],key_wd[2];
     pid_t keyboard_pid,wd_pid;
-    int dummy;
     keyboard_pid=getpid();
+
     sscanf(argv[1],"%d %d|%d %d|%d %d", &window_keyboard[0], &window_keyboard[1], 
                                         &keyboard_drone[0], &keyboard_drone[1],
-                                        &key_wd[0], &key_wd[1]);
+                                        &wd_keyboard[0], &wd_keyboard[1]);
     // close unnecessary pipes
-
     close(window_keyboard[1]); // fd of write to window
     close(keyboard_drone[0]);  // fd of read from drone
-    // close(key_wd[1]);
-    printf("%d\n", keyboard_pid);
+    close(wd_keyboard[0]);
+    // write(wd_keyboard[1], &keyboard_pid, sizeof(keyboard_pid));
+    close(wd_keyboard[1]);
 
-    // read(key_wd[0], &wd_pid, sizeof(wd_pid));
-    // printf("%d\n", wd_pid);
-
-
-    close(key_wd[0]);
-
+    // SGINAL
     struct sigaction signal;
     signal.sa_sigaction = signal_handler;
     signal.sa_flags = SA_SIGINFO;
@@ -124,8 +116,7 @@ int main(int argc, char *argv[])
         }
 
 
-        // 3
-        // Send the command force to drone.c
+        // 3 Send the command force to drone.c
         int ret2=write(keyboard_drone[1], xy, sizeof(xy));
         if (ret2<0){
             close(window_keyboard[0]);

@@ -7,8 +7,9 @@
 #include <unistd.h>
 #include "include/constants.h"
 
+
 void summon(char **programArgs){
-    execvp("konsole", programArgs);
+    execvp(programArgs[0], programArgs);
     perror("Execution failed");
 
     // avoid unwanted forking
@@ -25,7 +26,7 @@ int main(int argc, char *argv[]){
     char *argsWatchdog[] = {"konsole",  "-e", "./build/watchdog", "placeholder",NULL};
 
 
-    // pipes fd
+    // fds for pipes
     int window_keyboard[2];
     int keyboard_drone[2];
     if (pipe(window_keyboard) == -1 || pipe(keyboard_drone) == -1) {
@@ -33,26 +34,20 @@ int main(int argc, char *argv[]){
         exit(EXIT_FAILURE);
     }
 
-
-    //fds and pipes for watchdog
+    //fds and pipes to send pids to watchdog
     int wd_server[2];
     int wd_window[2];
-    // int wd_keyboard[2];
+    int wd_keyboard[2];
     int wd_drone[2];
-    int key_wd[2];
-    // pipe(wd_keyboard);
-    // pipe(wd_drone);
-    // pipe(wd_server);
-    // pipe(wd_window);
-    if (pipe(wd_drone) == -1 || pipe(key_wd) == -1 || pipe(wd_server) == -1 || pipe(wd_window) == -1) {
+    if (pipe(wd_drone) == -1 || pipe(wd_keyboard) == -1 || pipe(wd_server) == -1 || pipe(wd_window) == -1) {
         perror("pipe");
         exit(EXIT_FAILURE);
     }
     
 
     
-
-    pid_t all_pid[5];
+    //pids of all konsoles
+    pid_t all_pid[NUM_PROCESSES];
 
     for (int i=0; i<NUM_PROCESSES; i++){
         // fork children
@@ -68,16 +63,14 @@ int main(int argc, char *argv[]){
                 sprintf(args,"%d %d",wd_server[0], wd_server[1]);
                 argsServer[3]=args;
                 summon(argsServer);
+
             }else if(i==1){ //WINDOW
-                // pass pipes fds to the argument
-                sprintf(args,"%d %d|%d %d",window_keyboard[0],window_keyboard[1],wd_window[0], wd_window[1]);
+                sprintf(args,"%d %d|%d %d",window_keyboard[0],window_keyboard[1], wd_window[0], wd_window[1]); // pass fds to the argument
                 argsWindow[3]=args;
                 summon(argsWindow);
 
             }else if(i==2){ //KEYBOARD MANAGER
-                sprintf(args,"%d %d|%d %d|%d %d", window_keyboard[0],window_keyboard[1],
-                                                keyboard_drone[0],keyboard_drone[1],
-                                                key_wd[0], key_wd[1]);
+                sprintf(args,"%d %d|%d %d|%d %d", window_keyboard[0],window_keyboard[1],keyboard_drone[0],keyboard_drone[1], wd_keyboard[0], wd_keyboard[1]);
                 argsKeyboard[3]=args;
                 summon(argsKeyboard);
 
@@ -87,10 +80,7 @@ int main(int argc, char *argv[]){
                 summon(argsDrone);
 
             }else{ //WATCH DOG
-                sprintf(args, "%d %d|%d %d|%d %d|%d %d", wd_server[0],wd_server[1],
-                                        wd_window[0], wd_window[1],
-                                        key_wd[0],key_wd[1],
-                                        wd_drone[0], wd_drone[1]);
+                sprintf(args, "%d %d|%d %d|%d %d|%d %d|%d", wd_server[0],wd_server[1], wd_window[0], wd_window[1], wd_keyboard[0],wd_keyboard[1], wd_drone[0], wd_drone[1],all_pid[2]);
                 argsWatchdog[3]=args;
                 summon(argsWatchdog);
             }   

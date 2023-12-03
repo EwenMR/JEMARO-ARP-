@@ -1,6 +1,5 @@
-#include <ncurses.h>
+
 // window.c
-#include <curses.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
 #include <unistd.h>
@@ -12,9 +11,8 @@
 #include <sys/mman.h>
 #include <unistd.h>
 #include <sys/stat.h>
-
+#include <stdio.h>
 #include "include/constants.h"
-
 #include <signal.h>
 
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
@@ -41,6 +39,7 @@ double calc_position(double force,double x1,double x2){
     return x;
 }
 
+// Get the new position using calc_function and store the previous positions
 double update_pos(double* position, int* xy){
     double new_posx,new_posy;
     new_posx=calc_position(xy[0],position[4],position[2]);
@@ -55,16 +54,15 @@ double update_pos(double* position, int* xy){
 }
 
 int main(int argc, char *argv[]) {
-    // initscr(); // Initialize ncurses
-    curs_set(0); // Don't display cursor
 
+    // SIGNALS
     struct sigaction signal;
     signal.sa_sigaction = signal_handler;
     signal.sa_flags = SA_SIGINFO;
     sigaction(SIGINT, &signal, NULL);
     sigaction(SIGUSR1, &signal, NULL);
 
-    // VARABLES
+    // VARIABLES
     int xy[2]; // xy = force direction of x,y as such -> [0,1]
     double position[6];
     int first=0;
@@ -73,19 +71,15 @@ int main(int argc, char *argv[]) {
     int keyboard_drone[2],wd_drone[2];
     pid_t drone_pid;
     drone_pid=getpid();
-    sscanf(argv[1],"%d %d|%d %d", &keyboard_drone[0], &keyboard_drone[1],
-                                    &wd_drone[0],&wd_drone[1]);
+    sscanf(argv[1],"%d %d|%d %d", &keyboard_drone[0], &keyboard_drone[1], &wd_drone[0],&wd_drone[1]);
     close(keyboard_drone[1]);
-    
-    printf("%d %d\n", keyboard_drone[0], keyboard_drone[1]);
-    refresh();
     close(wd_drone[0]);
     write(wd_drone[1], &drone_pid, sizeof(drone_pid));
-    printf("%d\n",drone_pid);
     close(wd_drone[1]);
 
     int flags = fcntl(keyboard_drone[0], F_GETFL); // make the read non blocking so the drone can move without user input 
     fcntl(keyboard_drone[0], F_SETFL, flags | O_NONBLOCK);
+
 
     // SHARED MEMORY STUFF
     int shared_seg_size = (1 * sizeof(position));
@@ -103,28 +97,26 @@ int main(int argc, char *argv[]) {
 
 
     while (1) {
-        // 3
-        ssize_t bytesRead = read(keyboard_drone[0], xy, sizeof(xy)); // Receive command force from keyboard_manager
+        // 3 Receive command force from keyboard_manager
+        ssize_t bytesRead = read(keyboard_drone[0], xy, sizeof(xy)); 
 
         // Wait until user's first input
         if (first==0){ 
-            // 1 Get the initial position of the drone
             sem_wait(sem_id);
-            memcpy(position,shm_ptr,shared_seg_size);
+            memcpy(position,shm_ptr,shared_seg_size); // 1 Get the initial position of the drone
             sem_post(sem_id);
 
-            if (bytesRead<0){ // No user input, do nothing
+            if (bytesRead<0){ 
                 if (errno != EAGAIN) {
                     perror("reading error");
-                    // close(keyboard_drone[0]);
                     exit(EXIT_FAILURE);
                 }
-            }else if(bytesRead>0){ // Yes user input
-                update_pos(position,xy); // get drone's next position
+            }else if(bytesRead>0){ // User's first input
+                update_pos(position,xy);
                 first++;
             }
-        }else{ // After user has inputed atleast once
-            update_pos(position,xy); // get drone's next position
+        }else{ // After first second input
+            update_pos(position,xy); 
         }
     
         // 4
@@ -133,11 +125,9 @@ int main(int argc, char *argv[]) {
         memcpy(shm_ptr, position, shared_seg_size);
         sem_post(sem_id);
 
-        // Print the positions on window
-        // mvprintw(5, 0, "Before2:%f %f Before1:%f %f  Now: %f %f",position[0],position[1],position[2], position[3],position[4],position[5]);
-        // refresh();
 
-        usleep(200000);
+
+        usleep(400000);
         
     }
 
@@ -146,7 +136,6 @@ int main(int argc, char *argv[]) {
     shm_unlink(SHM_PATH);
     sem_close(sem_id);
     sem_unlink(SEM_PATH);
-    endwin();
 
     return 0;
 }

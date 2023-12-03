@@ -18,19 +18,12 @@
 #define M 1.0
 #define K 1.0
 #define T 1
-#define FORCEX 1.0
-#define FORCEY 1.0
 
 #define BOARD_SIZE 100
-
 #define NUM_PROCESSES 5
 
-
-struct Position {
-    int xbefore;
-    int ybefore;
-    int xnow;
-    int ynow;
-};
+#define WINDOW_COL 0.99
+#define SCORE_WINDOW_ROW 0.20
+#define WINDOW_ROW 0.80
 
 #endif
