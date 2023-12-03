@@ -160,7 +160,7 @@ int main(int argc, char* argv[]) {
                 exit(EXIT_SUCCESS);
             }
         }
-        usleep(50000);
+        usleep(200000);
 
 
         // 4 Read from shared memory
