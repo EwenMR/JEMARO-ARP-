@@ -97,5 +97,3 @@ In the 'window' konsole, there should be a drone displayed as 'X'. Use the keys
 `x` `c` `v` &nbsp; &nbsp;    `m` `,` `.`     
 
 to add velocity to the drone. Press it multiple times to make it move faster. To stop the drone immediately, press the keys `d` or `k`. And to terminate all processes, press `space` in the 'window', or close any of the processes.
-
-## Anything else????
