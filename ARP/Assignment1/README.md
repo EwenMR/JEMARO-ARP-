@@ -1,8 +1,7 @@
-# Project Name
+# Assignment 1
+Team Name: WhereIsTheMarket?
 
-## Overview
-
-A brief description of the project and its purpose.
+Team Members: Ewen Michel Claude Gay, Kohei Tateyama
 
 ## Architecture Sketch
 
