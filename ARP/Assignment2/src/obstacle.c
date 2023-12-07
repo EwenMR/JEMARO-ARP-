@@ -57,63 +57,43 @@ int main(int argc, char* argv[]){
 
 #define SCREEN_WIDTH  10
 #define SCREEN_HEIGHT 10
-#define OBSTACLE_DURATION 5 // in seconds
+#define MIN_DISAPPEARANCE_DURATION 2 // Minimum disappearance duration in seconds
+#define MAX_DISAPPEARANCE_DURATION 7 // Maximum disappearance duration in seconds
 
 typedef struct {
     int x;
     int y;
     time_t timestamp; // Timestamp when the obstacle was created
+    time_t disappearanceTime; // Time when the obstacle will disappear
 } Obstacle;
 
-void placeObstacle(Obstacle *obstacle, int droneX, int droneY) {
-    do {
-        obstacle->x = rand() % SCREEN_WIDTH + 1;
-        obstacle->y = rand() % SCREEN_HEIGHT + 1;
-    } while (obstacle->x == droneX && obstacle->y == droneY);
-
+void placeObstacle(Obstacle *obstacle) {
+    obstacle->x = rand() % SCREEN_WIDTH + 1;
+    obstacle->y = rand() % SCREEN_HEIGHT + 1;
     obstacle->timestamp = time(NULL);
+    obstacle->disappearanceTime = obstacle->timestamp + (rand() % (MAX_DISAPPEARANCE_DURATION - MIN_DISAPPEARANCE_DURATION + 1) + MIN_DISAPPEARANCE_DURATION);
 }
 
-void updateObstacle(Obstacle *obstacle, int droneX, int droneY, time_t currentTime) {
-    if (currentTime - obstacle->timestamp > OBSTACLE_DURATION) {
-        placeObstacle(obstacle, droneX, droneY);
-    }
-}
-
-void printScreenWithDroneAndObstacle(int droneX, int droneY, Obstacle *obstacle) {
-    for (int i = 1; i <= SCREEN_HEIGHT; i++) {
-        for (int j = 1; j <= SCREEN_WIDTH; j++) {
-            if (j == droneX && i == droneY) {
-                printf("D"); // Print drone
-            } else if (j == obstacle->x && i == obstacle->y) {
-                printf("O"); // Print obstacle
-            } else {
-                printf("."); // Print empty space
-            }
-        }
-        printf("\n");
+void updateObstacle(Obstacle *obstacle, time_t currentTime) {
+    if (currentTime >= obstacle->disappearanceTime) {
+        placeObstacle(obstacle);
     }
 }
 
 int main() {
     srand(time(NULL)); // Seed the random number generator with current time
 
-    int droneX = 5; // Initial drone x-coordinate
-    int droneY = 5; // Initial drone y-coordinate
-
     Obstacle obstacle;
-    placeObstacle(&obstacle, droneX, droneY);
+    placeObstacle(&obstacle);
 
     time_t startTime = time(NULL);
 
-    while (time(NULL) - startTime <= OBSTACLE_DURATION) {
-        updateObstacle(&obstacle, droneX, droneY, time(NULL));
-        printScreenWithDroneAndObstacle(droneX, droneY, &obstacle);
-        
+    while (time(NULL) - startTime <= MAX_DISAPPEARANCE_DURATION) {
+        updateObstacle(&obstacle, time(NULL));
+
         // You can perform other game logic here
-        
+
         usleep(500000); // Sleep for 500 milliseconds (adjust as needed)
-        system("clear"); // Clear the console (works on Unix-like systems)
     }
 
     return 0;
