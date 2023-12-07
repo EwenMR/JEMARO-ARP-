@@ -43,3 +43,78 @@ int main(int argc, char* argv[]){
     }
 
 }
+
+
+
+
+// for INSPO
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
+
+#define TARGET_COUNT 9
+
+typedef struct {
+    int x;
+    int y;
+    int value;
+    int collected;
+} Target;
+
+void placeTarget(Target *target, int droneX, int droneY) {
+    do {
+        target->x = rand() % 10 + 1; // Random x-coordinate
+        target->y = rand() % 10 + 1; // Random y-coordinate
+    } while (target->x == droneX && target->y == droneY);
+
+    target->value = rand() % TARGET_COUNT + 1;
+    target->collected = 0;
+}
+
+int updateTarget(Target *target, int droneX, int droneY, int currentTarget) {
+    if (!target->collected && droneX == target->x && droneY == target->y) {
+        if (target->value == currentTarget) {
+            target->collected = 1;
+            return 1; // Target collected in the correct order
+        } else {
+            return -1; // Target collected, but in the wrong order
+        }
+    }
+    return 0; // Target not collected
+}
+
+int main() {
+    srand(time(NULL)); // Seed the random number generator with current time
+
+    int droneX = 5; // Initial drone x-coordinate
+    int droneY = 5; // Initial drone y-coordinate
+
+    Target targets[TARGET_COUNT];
+    for (int i = 0; i < TARGET_COUNT; i++) {
+        placeTarget(&targets[i], droneX, droneY);
+    }
+
+    int currentTarget = 1;
+
+    while (currentTarget <= TARGET_COUNT) {
+        int result = updateTarget(&targets[currentTarget - 1], droneX, droneY, currentTarget);
+
+        if (result == 1) {
+            printf("Target %d collected!\n", currentTarget);
+            currentTarget++;
+        } else if (result == -1) {
+            printf("Wrong order! Target %d collected out of order.\n", targets[currentTarget - 1].value);
+            // Handle wrong order logic here if needed
+        }
+
+        // You can perform other game logic here
+
+        usleep(500000); // Sleep for 500 milliseconds (adjust as needed)
+    }
+
+    printf("All targets collected in the correct order!\n");
+
+    return 0;
+}
