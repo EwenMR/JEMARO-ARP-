@@ -55,6 +55,8 @@ void ncursesSetup(WINDOW **display, WINDOW **score)
 int main(int argc, char* argv[]) {
     // INITIALIZATION
     initscr();
+    noecho();
+    cbreak();
     int key,first;
     first=0;
     
@@ -102,7 +104,8 @@ int main(int argc, char* argv[]) {
         -3 Command force          | keyboard_manager.c -> drone.c  | PIPES
         -4 Next drone position    | drone.c -> window.c            | SHARED MEMORY
     */
-
+   start_color();
+   init_pair(1, COLOR_BLUE, COLOR_BLACK);
     while (1) {
         // refresh window
         WINDOW *win, *score;
@@ -125,7 +128,9 @@ int main(int argc, char* argv[]) {
         }
         
         // print drone and score onto the window
-        mvwprintw(win, (int)(position[5]/scaley), (int)(position[4]/scalex), "X");
+        wattron(win,COLOR_PAIR(1));
+        mvwprintw(win, (int)(position[5]/scaley), (int)(position[4]/scalex), "+");
+        wattroff(win,COLOR_PAIR(1));
         mvwprintw(score,1,1,"Position of the drone is: %f,%f", position[4],position[5]);
         wrefresh(win);
         wrefresh(score);

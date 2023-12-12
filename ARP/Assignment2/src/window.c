@@ -56,7 +56,9 @@ void ncursesSetup(WINDOW **display, WINDOW **score)
 int main(int argc, char* argv[]) {
     // INITIALIZATION
     printf("THIS IS WINDOW\n");
-    initscr();
+    // initscr();
+    // noecho();
+    // cbreak();
     int key;
     printf("initialized screen\n");
 
@@ -75,16 +77,14 @@ int main(int argc, char* argv[]) {
     printf("this is the error\n");
     sscanf(argv[1], "%d %d|%d %d",  &window_server[0], &window_server[1], &server_window[0], &server_window[1]);
     printf("fixed error\n");
-    close(window_server[0]); //Close unnecessary pipes
+    // close(window_server[0]); //Close unnecessary pipes
     close(server_window[1]);
 
     printf("set up pipes\n");
 
     pid_t window_pid;
     window_pid=getpid();
-    printf("NOTHING WRITTEN\n");
-    my_write(window_server[1], &window_pid, server_window[0]);
-    printf("WRITTEN TO SERVER\n");
+    my_write(window_server[1], &window_pid, server_window[0],sizeof(window_pid));
 
 
 
@@ -93,46 +93,53 @@ int main(int argc, char* argv[]) {
 
 
     while (1) {
+        printf("NOTHING WRITTEN\n");
+        
+        printf("%d\n", window_pid);
+        sleep(100);
         // refresh window
-        WINDOW *win, *score;
-        ncursesSetup(&win, &score);
-        curs_set(0); // don't show cursor
-        nodelay(win, TRUE);
-
-        double scalex,scaley; // get the scale, to scale up the window to the real world scale
-        scalex=(double)BOARD_SIZE /((double)COLS*(WINDOW_COL-0.01));
-        scaley=(double)BOARD_SIZE/((double)LINES*(WINDOW_ROW-0.01));
+        // WINDOW *win, *score;
+        // ncursesSetup(&win, &score);
+        // curs_set(0); // don't show cursor
+        // nodelay(win, TRUE);
 
 
-        // 1 Send the initial drone position to drone.c via shared memory
-        my_write(window_server[1],position,server_window[0]);
+        // double scalex,scaley; // get the scale, to scale up the window to the real world scale
+        // scalex=(double)BOARD_SIZE /((double)COLS*(WINDOW_COL-0.01));
+        // scaley=(double)BOARD_SIZE/((double)LINES*(WINDOW_ROW-0.01));
+
+
+        // // 1 Send the initial drone position to drone.c via shared memory
+        // my_write(window_server[1],position,server_window[0]);
 
         
-        // print drone and score onto the window
-        mvwprintw(win, (int)(position[5]/scaley), (int)(position[4]/scalex), "X");
-        mvwprintw(score,1,1,"Position of the drone is: %f,%f", position[4],position[5]);
-        wrefresh(win);
-        wrefresh(score);
+        // // print drone and score onto the window
+        // wattron(win,COLOR_PAIR(1));
+        // mvwprintw(win, (int)(position[5]/scaley), (int)(position[4]/scalex), "+");
+        // wattroff(win,COLOR_PAIR(1));
+        // mvwprintw(score,1,1,"Position of the drone is: %f,%f", position[4],position[5]);
+        // wrefresh(win);
+        // wrefresh(score);
         
        
         
-        // 2 Send user input to keyboard manager
-        key=wgetch(win); // wait for user input
-        if (key != ERR) { // If a key was pressed properly
-            my_write(window_server[1], &key, server_window[0]); //write to keyboard via pipe
-            if((char)key==' '){ //if space was pressed, close window
-                close(window_server[1]);
-                close(server_window[0]);
-                exit(EXIT_SUCCESS);
-            }
-        }
-        usleep(200000);
+        // // 2 Send user input to keyboard manager
+        // key=wgetch(win); // wait for user input
+        // if (key != ERR) { // If a key was pressed properly
+        //     my_write(window_server[1], &key, server_window[0]); //write to keyboard via pipe
+        //     if((char)key==' '){ //if space was pressed, close window
+        //         close(window_server[1]);
+        //         close(server_window[0]);
+        //         exit(EXIT_SUCCESS);
+        //     }
+        // }
+        // usleep(200000);
 
 
-        // 4 Read from shared memory
-        my_read(server_window[0], position, window_server[1]);
+        // // 4 Read from shared memory
+        // my_read(server_window[0], position, window_server[1]);
 
-        clear();
+        // clear();
     }
 
     // Clean up

@@ -4,6 +4,7 @@
 #include <sys/types.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "../include/utility.c"
 
 
 // Signal handler for watchdog
@@ -30,14 +31,13 @@ int main(int argc, char* argv[]){
     int target_server[2], server_target[2];
     char args_format[80]="%d %d|%d %d";
     sscanf(argv[1], args_format,  &target_server[0], &target_server[1], &server_target[0], &server_target[1]);
-    printf("%d %d|%d %d\n",  target_server[0],   target_server[1],   server_target[0],   server_target[1]);
-    close(target_server[0]); //Close unnecessary pipes
+    // close(target_server[0]); //Close unnecessary pipes
     close(server_target[1]);
 
     pid_t target_pid;
     target_pid=getpid();
-    write(target_server[1], &target_pid, sizeof(target_pid));
-
+    my_write(target_server[1], &target_pid, target_server[0],sizeof(target_pid));
+    printf("%d\n",target_pid);
     while(1){
 
     }

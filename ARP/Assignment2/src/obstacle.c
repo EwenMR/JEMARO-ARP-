@@ -30,13 +30,13 @@ int main(int argc, char* argv[]){
     int obstacle_server[2], server_obstacle[2];
     char args_format[80]="%d %d|%d %d";
     sscanf(argv[1], args_format,  &obstacle_server[0], &obstacle_server[1], &server_obstacle[0], &server_obstacle[1]);
-    printf("%d %d %d %d\n",  obstacle_server[0], obstacle_server[1], server_obstacle[0], server_obstacle[1]);
-    close(obstacle_server[0]); //Close unnecessary pipes
+    // close(obstacle_server[0]); //Close unnecessary pipes
     close(server_obstacle[1]);
 
     pid_t obstacle_pid;
     obstacle_pid=getpid();
     write(obstacle_server[1], &obstacle_pid, sizeof(obstacle_pid));
+    printf("%d\n",obstacle_pid);
 
     while(1){
 

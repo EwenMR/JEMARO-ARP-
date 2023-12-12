@@ -77,13 +77,15 @@ int main(int argc, char *argv[]) {
     int drone_server[2], server_drone[2];
     char args_format[80]="%d %d|%d %d";
     sscanf(argv[1], args_format,  &drone_server[0], &drone_server[1], &server_drone[0], &server_drone[1]);
-    close(drone_server[0]); //Close unnecessary pipes
+    // close(drone_server[0]); //Close unnecessary pipes
     close(server_drone[1]);
 
     pid_t drone_pid;
     drone_pid=getpid();
 
     write(drone_server[1], &drone_pid, sizeof(drone_pid));
+    printf("%d\n",drone_pid);
+    sleep(100);
 
 
     // int flags = fcntl(server_drone[0], F_GETFL); // make the read non blocking so the drone can move without user input 

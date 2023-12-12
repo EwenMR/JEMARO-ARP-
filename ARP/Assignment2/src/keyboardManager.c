@@ -37,13 +37,13 @@ int main(int argc, char *argv[]){
     int keyboard_server[2], server_keyboard[2];
     char args_format[80]="%d %d|%d %d";
     sscanf(argv[1], args_format,  &keyboard_server[0], &keyboard_server[1], &server_keyboard[0], &server_keyboard[1]);
-    close(keyboard_server[0]); //Close unnecessary pipes
+    // close(keyboard_server[0]); //Close unnecessary pipes
     close(server_keyboard[1]);
 
     pid_t keyboard_pid;
     keyboard_pid=getpid();
 
-    my_write(keyboard_server[1], &keyboard_pid, server_keyboard[0]);
+    my_write(keyboard_server[1], &keyboard_pid, server_keyboard[0],sizeof(keyboard_pid));
 
     // SGINAL
 
@@ -53,7 +53,9 @@ int main(int argc, char *argv[]){
     
     while (1) {
         // reads the position and user input from window
-        my_read(server_keyboard[0], &key, keyboard_server[1]);
+        printf("%d\n", keyboard_pid);
+        sleep(100);
+        my_read(server_keyboard[0], &key, keyboard_server[1],sizeof(key));
         
         switch ((char)key) {
             case ' ': // enter space to exit
@@ -118,7 +120,7 @@ int main(int argc, char *argv[]){
 
 
         // 3 Send the command force to drone.c
-        my_write(keyboard_server[1], xy, server_keyboard[0]);
+        my_write(keyboard_server[1], xy, server_keyboard[0],sizeof(xy));
 
     }
     close(keyboard_server[1]);
