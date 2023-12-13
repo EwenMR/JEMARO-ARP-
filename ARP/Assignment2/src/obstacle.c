@@ -50,50 +50,53 @@ int main(int argc, char* argv[]){
 
 //stuff for inspo
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <unistd.h>
-
-#define SCREEN_WIDTH  10
-#define SCREEN_HEIGHT 10
-#define MIN_DISAPPEARANCE_DURATION 2 // Minimum disappearance duration in seconds
-#define MAX_DISAPPEARANCE_DURATION 7 // Maximum disappearance duration in seconds
+#define NUM_OBSTACLES 10
 
 typedef struct {
-    int x;
-    int y;
-    time_t timestamp; // Timestamp when the obstacle was created
-    time_t disappearanceTime; // Time when the obstacle will disappear
+    double x;  // Change the type to float or double
+    double y;  // Change the type to float or double
 } Obstacle;
 
-void placeObstacle(Obstacle *obstacle) {
-    obstacle->x = rand() % SCREEN_WIDTH + 1;
-    obstacle->y = rand() % SCREEN_HEIGHT + 1;
-    obstacle->timestamp = time(NULL);
-    obstacle->disappearanceTime = obstacle->timestamp + (rand() % (MAX_DISAPPEARANCE_DURATION - MIN_DISAPPEARANCE_DURATION + 1) + MIN_DISAPPEARANCE_DURATION);
-}
-
-void updateObstacle(Obstacle *obstacle, time_t currentTime) {
-    if (currentTime >= obstacle->disappearanceTime) {
-        placeObstacle(obstacle);
+void printObstacles(Obstacle obstacles[]) {
+    for (int i = 0; i < NUM_OBSTACLES; i++) {
+        printf("Obstacle %d: x = %.3f, y = %.3f\n", i + 1, obstacles[i].x, obstacles[i].y);
     }
 }
 
+void generateObstacles(Obstacle obstacles[]) {
+    for (int i = 0; i < NUM_OBSTACLES; i++) {
+        obstacles[i].x = ((double)rand() / RAND_MAX) * 100.0;  // Random value between 0 and 100
+        obstacles[i].y = ((double)rand() / RAND_MAX) * 100.0;  // Random value between 0 and 100
+    }
+}
+
+void sendObstacles(int pipe_fd, Obstacle obstacles[]) {
+    write(pipe_fd, obstacles, sizeof(Obstacle) * NUM_OBSTACLES);
+}
+
 int main() {
-    srand(time(NULL)); // Seed the random number generator with current time
+    srand(time(NULL));
 
-    Obstacle obstacle;
-    placeObstacle(&obstacle);
+    while (1) {
+        int pipe_fd[2];
+        if (pipe(pipe_fd) == -1) {
+            perror("Pipe creation failed");
+            exit(EXIT_FAILURE);
+        }
 
-    time_t startTime = time(NULL);
+        Obstacle obstacles[NUM_OBSTACLES];
 
-    while (time(NULL) - startTime <= MAX_DISAPPEARANCE_DURATION) {
-        updateObstacle(&obstacle, time(NULL));
+        generateObstacles(obstacles);
+        // sendObstacles(pipe_fd[1], obstacles);
 
-        // You can perform other game logic here
+        printObstacles(obstacles);
+        sleep(rand() % 6 + 5);  // Sleep for 5 to 10 seconds
 
-        usleep(500000); // Sleep for 500 milliseconds (adjust as needed)
+        // generateObstacles(obstacles);
+        // sendObstacles(pipe_fd[1], obstacles);
+
+        close(pipe_fd[0]);
+        close(pipe_fd[1]);
     }
 
     return 0;
