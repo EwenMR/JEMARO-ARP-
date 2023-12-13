@@ -51,70 +51,61 @@ int main(int argc, char* argv[]){
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include <unistd.h>
+#include <time.h>
+#include <math.h>
 
-#define TARGET_COUNT 9
+#define THRESHOLD 10          // threshold distance for the closeness an obstacle canbe to the drone
+#define NUM_TAR 7               // number of targets
+#define MAX_TAR_ARR_SIZE  20    // max array size for targets
 
+
+// struct for the targets
 typedef struct {
-    int x;
-    int y;
-    int value;
-    int collected;
+    double x;  
+    double y;  
 } Target;
 
-void placeTarget(Target *target, int droneX, int droneY) {
-    do {
-        target->x = rand() % 10 + 1; // Random x-coordinate
-        target->y = rand() % 10 + 1; // Random y-coordinate
-    } while (target->x == droneX && target->y == droneY);
 
-    target->value = rand() % TARGET_COUNT + 1;
-    target->collected = 0;
+// print the coordinates for value checking
+void printTargs( Target tar[]){
+    for ( int i=0; i < NUM_TAR; i++){
+        printf("Target %d: x = %.3f, y = %.3f\n", i+1, tar[i].x, tar[i].y);
+    }
 }
 
-int updateTarget(Target *target, int droneX, int droneY, int currentTarget) {
-    if (!target->collected && droneX == target->x && droneY == target->y) {
-        if (target->value == currentTarget) {
-            target->collected = 1;
-            return 1; // Target collected in the correct order
-        } else {
-            return -1; // Target collected, but in the wrong order
+// make the target coordinates
+void makeTargs (Target tar[], double droneX, double droneY){
+    for (int i=0; i< NUM_TAR; i++){
+        tar[i].x = ((double)rand() / RAND_MAX) * 500.0;
+        tar[i].y = ((double)rand() / RAND_MAX) * 500.0;
+
+    // check if they aren't within threshold of drone
+    while (tar[i].x >= droneX - THRESHOLD && tar[i].x <= droneX + THRESHOLD) {
+            // Regenerate x-coordinate
+            tar[i].x = ((double)rand() / RAND_MAX) * 500.0;
         }
+
+    while (tar[i].y >= droneY - THRESHOLD && tar[i].y <= droneY + THRESHOLD) {
+        // Regenerate y-coordinate
+        tar[i].y = ((double)rand() / RAND_MAX) * 500.0;
+        }
+
     }
-    return 0; // Target not collected
 }
 
-int main() {
-    srand(time(NULL)); // Seed the random number generator with current time
 
-    int droneX = 5; // Initial drone x-coordinate
-    int droneY = 5; // Initial drone y-coordinate
+int main(){
 
-    Target targets[TARGET_COUNT];
-    for (int i = 0; i < TARGET_COUNT; i++) {
-        placeTarget(&targets[i], droneX, droneY);
-    }
+    // seeds the random number generator
+    srand(time(NULL));
 
-    int currentTarget = 1;
+    // examples starting pos
+    double droneX = 50;
+    double droneY = 50;
 
-    while (currentTarget <= TARGET_COUNT) {
-        int result = updateTarget(&targets[currentTarget - 1], droneX, droneY, currentTarget);
-
-        if (result == 1) {
-            printf("Target %d collected!\n", currentTarget);
-            currentTarget++;
-        } else if (result == -1) {
-            printf("Wrong order! Target %d collected out of order.\n", targets[currentTarget - 1].value);
-            // Handle wrong order logic here if needed
-        }
-
-        // You can perform other game logic here
-
-        usleep(500000); // Sleep for 500 milliseconds (adjust as needed)
-    }
-
-    printf("All targets collected in the correct order!\n");
-
-    return 0;
+    // declare array, make the targets and print them
+    Target tar[NUM_TAR];
+    makeTargs(tar, droneX, droneY);
+    printTargs(tar);
 }
