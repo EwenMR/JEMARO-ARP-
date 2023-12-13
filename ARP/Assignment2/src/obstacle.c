@@ -50,54 +50,87 @@ int main(int argc, char* argv[]){
 
 //stuff for inspo
 
-#define NUM_OBSTACLES 10
 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <time.h>
+#include <math.h>
+
+#define THRESHOLD 5.0   // threshold distance for the closeness an obstacle canbe to the drone
+#define NUM_OBS 10      // number of obstacles
+#define MAX_OBST_ARR_SIZE  20
+
+// struct for obstacle x and y coordinates
 typedef struct {
-    double x;  // Change the type to float or double
-    double y;  // Change the type to float or double
+    double x;  
+    double y;  
 } Obstacle;
 
-void printObstacles(Obstacle obstacles[]) {
-    for (int i = 0; i < NUM_OBSTACLES; i++) {
-        printf("Obstacle %d: x = %.3f, y = %.3f\n", i + 1, obstacles[i].x, obstacles[i].y);
+
+// printing the obstacle coordinates for checking values
+void printObs(Obstacle obs[]) {
+    for (int i = 0; i < NUM_OBS; i++) {
+        printf("Obstacle %d: x = %.3f, y = %.3f\n", i + 1, obs[i].x, obs[i].y);
     }
 }
 
-void generateObstacles(Obstacle obstacles[]) {
-    for (int i = 0; i < NUM_OBSTACLES; i++) {
-        obstacles[i].x = ((double)rand() / RAND_MAX) * 100.0;  // Random value between 0 and 100
-        obstacles[i].y = ((double)rand() / RAND_MAX) * 100.0;  // Random value between 0 and 100
-    }
-}
 
-void sendObstacles(int pipe_fd, Obstacle obstacles[]) {
-    write(pipe_fd, obstacles, sizeof(Obstacle) * NUM_OBSTACLES);
-}
+void makeObs(Obstacle obs[], double droneX, double droneY) {
+    for (int i = 0; i < NUM_OBS; i++) {
+        // generating obstacle coordinates
+        obs[i].x = ((double)rand() / RAND_MAX) * 500.0;  // Random value between 0 and 100
+        obs[i].y = ((double)rand() / RAND_MAX) * 500.0;  // Random value between 0 and 100
 
-int main() {
-    srand(time(NULL));
-
-    while (1) {
-        int pipe_fd[2];
-        if (pipe(pipe_fd) == -1) {
-            perror("Pipe creation failed");
-            exit(EXIT_FAILURE);
+        // check if the x obstacle coordinate isn't too close to drone
+        while (obs[i].x >= droneX - THRESHOLD && obs[i].x <= droneX + THRESHOLD) {
+            // Regenerate x-coordinate
+            obs[i].x = ((double)rand() / RAND_MAX) * 500.0;
         }
 
-        Obstacle obstacles[NUM_OBSTACLES];
+        // check if the y obstacle coordinate isn't too close to drone
+        while (obs[i].y >= droneY - THRESHOLD && obs[i].y <= droneY + THRESHOLD) {
+            // Regenerate y-coordinate
+            obs[i].y = ((double)rand() / RAND_MAX) * 500.0;
+        }
+    }
+}
 
-        generateObstacles(obstacles);
-        // sendObstacles(pipe_fd[1], obstacles);
 
-        printObstacles(obstacles);
-        sleep(rand() % 6 + 5);  // Sleep for 5 to 10 seconds
 
-        // generateObstacles(obstacles);
-        // sendObstacles(pipe_fd[1], obstacles);
 
-        close(pipe_fd[0]);
-        close(pipe_fd[1]);
+
+
+int main() {
+    // seeds the random number generator
+    srand(time(NULL));  
+
+    // example values of the drone position, need to read the drone position from pipe instead
+    double droneX = 50;
+    double droneY = 50;
+
+    // decalres 'obs' array of type Obstacle of size 10
+    Obstacle obs[NUM_OBS];
+
+    // generate first obstacle coordinates
+    generateObstacles(obs, droneX, droneY);
+
+
+    while (1) {
+        // need to send Obstacles via pipe;
+
+        // value checking 
+        printObstacles(obs);
+
+        // Sleep for 5 to 10 seconds
+        sleep(rand() % 6 + 5);  
+
+        generateObstacles(obs, droneX, droneY);
+        
     }
 
     return 0;
 }
+
+
