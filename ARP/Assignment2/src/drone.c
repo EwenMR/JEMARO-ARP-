@@ -72,6 +72,7 @@ int main(int argc, char *argv[]) {
     int xy[2]; // xy = force direction of x,y as such -> [0,1]
     double position[6];
     int first=0;
+    
 
     // PIPES
     int drone_server[2], server_drone[2];
@@ -82,11 +83,10 @@ int main(int argc, char *argv[]) {
 
     pid_t drone_pid;
     drone_pid=getpid();
-
+    
     write(drone_server[1], &drone_pid, sizeof(drone_pid));
+    
     printf("%d\n",drone_pid);
-    sleep(100);
-
 
     // int flags = fcntl(server_drone[0], F_GETFL); // make the read non blocking so the drone can move without user input 
     // fcntl(server_drone[0], F_SETFL, flags | O_NONBLOCK);
@@ -122,10 +122,6 @@ int main(int argc, char *argv[]) {
         write(drone_server[1], position, sizeof(position));
 
 
-
-
-        usleep(400000);
-        
     }
 
     // Clean up

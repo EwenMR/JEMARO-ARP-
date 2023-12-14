@@ -54,7 +54,6 @@ int main(int argc, char *argv[]){
     while (1) {
         // reads the position and user input from window
         printf("%d\n", keyboard_pid);
-        sleep(100);
         my_read(server_keyboard[0], &key, keyboard_server[1],sizeof(key));
         
         switch ((char)key) {
