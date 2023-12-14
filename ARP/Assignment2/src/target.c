@@ -43,3 +43,69 @@ int main(int argc, char* argv[]){
     }
 
 }
+
+
+
+
+// for INSPO
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <time.h>
+#include <math.h>
+
+#define THRESHOLD 10          // threshold distance for the closeness an obstacle canbe to the drone
+#define NUM_TAR 7               // number of targets
+#define MAX_TAR_ARR_SIZE  20    // max array size for targets
+
+
+// struct for the targets
+typedef struct {
+    double x;  
+    double y;  
+} Target;
+
+
+// print the coordinates for value checking
+void printTargs( Target tar[]){
+    for ( int i=0; i < NUM_TAR; i++){
+        printf("Target %d: x = %.3f, y = %.3f\n", i+1, tar[i].x, tar[i].y);
+    }
+}
+
+// make the target coordinates
+void makeTargs (Target tar[], double droneX, double droneY){
+    for (int i=0; i< NUM_TAR; i++){
+        tar[i].x = ((double)rand() / RAND_MAX) * 500.0;
+        tar[i].y = ((double)rand() / RAND_MAX) * 500.0;
+
+    // check if they aren't within threshold of drone
+    while (tar[i].x >= droneX - THRESHOLD && tar[i].x <= droneX + THRESHOLD) {
+            // Regenerate x-coordinate
+            tar[i].x = ((double)rand() / RAND_MAX) * 500.0;
+        }
+
+    while (tar[i].y >= droneY - THRESHOLD && tar[i].y <= droneY + THRESHOLD) {
+        // Regenerate y-coordinate
+        tar[i].y = ((double)rand() / RAND_MAX) * 500.0;
+        }
+
+    }
+}
+
+
+int main(){
+
+    // seeds the random number generator
+    srand(time(NULL));
+
+    // examples starting pos
+    double droneX = 50;
+    double droneY = 50;
+
+    // declare array, make the targets and print them
+    Target tar[NUM_TAR];
+    makeTargs(tar, droneX, droneY);
+    printTargs(tar);
+}
