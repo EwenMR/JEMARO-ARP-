@@ -55,12 +55,14 @@ void ncursesSetup(WINDOW **display, WINDOW **score)
 
 int main(int argc, char* argv[]) {
     // INITIALIZATION
-    printf("THIS IS WINDOW\n");
-    // initscr();
-    // noecho();
-    // cbreak();
-    int key;
-    printf("initialized screen\n");
+    initscr();
+    noecho();
+    cbreak();
+    
+    WINDOW *win, *score;
+    ncursesSetup(&win, &score);
+    curs_set(0); // don't show cursor
+    nodelay(win, TRUE);
 
     // SIGNALS
     struct sigaction signal;
@@ -69,18 +71,11 @@ int main(int argc, char* argv[]) {
     sigaction(SIGINT, &signal, NULL);
     sigaction(SIGUSR1, &signal, NULL);
 
-    printf("signal handled\n");
-
     // PIPES
     int window_server[2], server_window[2];
     char args_format[80]="%d %d|%d %d";
-    printf("this is the error\n");
     sscanf(argv[1], "%d %d|%d %d",  &window_server[0], &window_server[1], &server_window[0], &server_window[1]);
-    printf("fixed error\n");
-    // close(window_server[0]); //Close unnecessary pipes
-    close(server_window[1]);
 
-    printf("set up pipes\n");
 
     pid_t window_pid;
     window_pid=getpid();
@@ -89,61 +84,74 @@ int main(int argc, char* argv[]) {
 
 
     // SHARED MEMORY
-    double position[6]={BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2}; //position of the drone (t-2,t-1,t)
-
+    struct shared_data data;
+    double drone_pos[6]={BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2}; //position of the drone (t-2,t-1,t)
+    double target_pos[NUM_TARGETS*2];
+    double obstacle_pos[NUM_OBSTACLES*2];
+    int key;
+    int first=0;
 
     while (1) {
-        printf("NOTHING WRITTEN\n");
-        
-        printf("%d\n", window_pid);
-        sleep(100);
+        wrefresh(win);
+        wtimeout(win, 100);
+        // wrefresh;
         // refresh window
+        // sleep(1);
         // WINDOW *win, *score;
         // ncursesSetup(&win, &score);
         // curs_set(0); // don't show cursor
         // nodelay(win, TRUE);
-
-
-        // double scalex,scaley; // get the scale, to scale up the window to the real world scale
-        // scalex=(double)BOARD_SIZE /((double)COLS*(WINDOW_COL-0.01));
-        // scaley=(double)BOARD_SIZE/((double)LINES*(WINDOW_ROW-0.01));
-
-
-        // // 1 Send the initial drone position to drone.c via shared memory
-        // my_write(window_server[1],position,server_window[0]);
-
         
-        // // print drone and score onto the window
-        // wattron(win,COLOR_PAIR(1));
-        // mvwprintw(win, (int)(position[5]/scaley), (int)(position[4]/scalex), "+");
-        // wattroff(win,COLOR_PAIR(1));
-        // mvwprintw(score,1,1,"Position of the drone is: %f,%f", position[4],position[5]);
-        // wrefresh(win);
-        // wrefresh(score);
+        // READ SHARED DATA and store it into local variables.
+        my_read(server_window[0],&data,server_window[1],sizeof(data));
+        memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
+        memcpy(target_pos, data.target_pos, sizeof(data.target_pos));
+        memcpy(obstacle_pos, data.obst_pos, sizeof(data.obst_pos));
+
+        double scalex,scaley; // get the scale, to scale up the window to the real world scale
+        scalex=(double)BOARD_SIZE /((double)COLS*(WINDOW_COL-0.01));
+        scaley=(double)BOARD_SIZE/((double)LINES*(WINDOW_ROW-0.01));
+
+        // Only for the first time, send the drone position from the window. 
+        // From the second time, drone.c will be in charge of drone positions
+        if(first==0){
+            for(int i=0; i<6; i++){
+                data.drone_pos[i]=BOARD_SIZE/2;
+            }
+            first=1;
+        }
+        
+        
+        // print drone and score onto the window
+        wattron(win,COLOR_PAIR(1));
+        mvwprintw(win, (int)(drone_pos[5]/scaley), (int)(drone_pos[4]/scalex), "+");
+        wattroff(win,COLOR_PAIR(1));
+        mvwprintw(score,1,1,"Position of the drone is: %f,%f", drone_pos[4],drone_pos[5]);
+        wrefresh(win);
+        wrefresh(score);
         
        
         
-        // // 2 Send user input to keyboard manager
-        // key=wgetch(win); // wait for user input
-        // if (key != ERR) { // If a key was pressed properly
-        //     my_write(window_server[1], &key, server_window[0]); //write to keyboard via pipe
-        //     if((char)key==' '){ //if space was pressed, close window
-        //         close(window_server[1]);
-        //         close(server_window[0]);
-        //         exit(EXIT_SUCCESS);
-        //     }
-        // }
-        // usleep(200000);
+        // 2 Send user input to keyboard manager
+        key=wgetch(win); // wait for user input
+        if (key != ERR) { // If a key was pressed properly
+            data.key=key;
+            my_write(window_server[1],&data,window_server[0],sizeof(data));
+            if((char)key==' '){ //if space was pressed, close window
+                close(window_server[1]);
+                close(server_window[0]);
+                exit(EXIT_SUCCESS);
+            }
+        }
 
 
-        // // 4 Read from shared memory
-        // my_read(server_window[0], position, window_server[1]);
-
-        // clear();
+        clear();
     }
 
     // Clean up
     close(window_server[1]);
+    close(window_server[0]); 
+    close(server_window[1]);
     close(server_window[0]);
 
 

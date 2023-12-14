@@ -5,7 +5,16 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "../include/utility.c"
+#include "../include/constants.h"
+#include <time.h>
+#include <math.h>
+#define THRESHOLD 10          // threshold distance for the closeness an obstacle canbe to the drone
+#define NUM_TAR 7               // number of targets
+#define MAX_TAR_ARR_SIZE  20    // max array size for targets
 
+
+
+double drone_pos[6], target_pos[NUM_TARGETS*2],obstacle_pos[NUM_OBSTACLES*2];
 
 // Signal handler for watchdog
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
@@ -18,6 +27,22 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
     }
 }
 
+
+
+// make the targets coordinates
+void makeTargs (double targets[], double drone_pos[]){
+    for (int i=0; i< NUM_TARGETS*2; i+=2){
+        targets[i]   = ((double)rand() / RAND_MAX) * BOARD_SIZE;
+        targets[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;
+
+        // check if they aren't within threshold of drone
+        while (targets[i] >= drone_pos[4] - THRESHOLD && targets[i] <= drone_pos[4] + THRESHOLD && targets[i+1] >= drone_pos[5] - THRESHOLD && targets[i+1] <= drone_pos[5] + THRESHOLD) {
+            // Regenerate targets coordinates
+            targets[i] = ((double)rand() / RAND_MAX) * BOARD_SIZE;
+            targets[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;
+        }
+    }
+}
 
 int main(int argc, char* argv[]){
     // SIGNALS
@@ -38,7 +63,22 @@ int main(int argc, char* argv[]){
     target_pid=getpid();
     my_write(target_server[1], &target_pid, target_server[0],sizeof(target_pid));
     printf("%d\n",target_pid);
+
+    struct shared_data data;
+    
+
     while(1){
+        // Get shared data and store it into local variables
+        my_read(server_target[0],&data,target_server[1],sizeof(data));
+        memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
+        memcpy(target_pos, data.target_pos, sizeof(data.target_pos));
+        memcpy(obstacle_pos, data.obst_pos, sizeof(data.obst_pos));
+
+        makeTargs(target_pos, drone_pos);
+
+        // copy target position to shared data and send it
+        memcpy(data.target_pos, target_pos, sizeof(target_pos));
+        my_write(target_server[1], &data, server_target[0], sizeof(data));
 
     }
 
@@ -46,21 +86,7 @@ int main(int argc, char* argv[]){
 
 
 
-
-// // for INSPO
-
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <unistd.h>
-// #include <time.h>
-// #include <math.h>
-
-// #define THRESHOLD 10          // threshold distance for the closeness an obstacle canbe to the drone
-// #define NUM_TAR 7               // number of targets
-// #define MAX_TAR_ARR_SIZE  20    // max array size for targets
-
-
-// // struct for the targets
+// struct for the targets
 // typedef struct {
 //     double x;  
 //     double y;  
@@ -77,22 +103,19 @@ int main(int argc, char* argv[]){
 // // make the target coordinates
 // void makeTargs (Target tar[], double droneX, double droneY){
 //     for (int i=0; i< NUM_TAR; i++){
-//         tar[i].x = ((double)rand() / RAND_MAX) * 500.0;
-//         tar[i].y = ((double)rand() / RAND_MAX) * 500.0;
+//         tar[i].x = ((double)rand() / RAND_MAX) * BOARD_SIZE;
+//         tar[i].y = ((double)rand() / RAND_MAX) * BOARD_SIZE;
 
-//     // check if they aren't within threshold of drone
-//     while (tar[i].x >= droneX - THRESHOLD && tar[i].x <= droneX + THRESHOLD) {
-//             // Regenerate x-coordinate
-//             tar[i].x = ((double)rand() / RAND_MAX) * 500.0;
+//         // check if they aren't within threshold of drone
+//         while (tar[i].x >= droneX - THRESHOLD && tar[i].x <= droneX + THRESHOLD && tar[i].y >= droneY - THRESHOLD && tar[i].y <= droneY + THRESHOLD) {
+//             // Regenerate target coordinates
+//             tar[i].x = ((double)rand() / RAND_MAX) * BOARD_SIZE;
+//             tar[i].y = ((double)rand() / RAND_MAX) * BOARD_SIZE;
 //         }
-
-//     while (tar[i].y >= droneY - THRESHOLD && tar[i].y <= droneY + THRESHOLD) {
-//         // Regenerate y-coordinate
-//         tar[i].y = ((double)rand() / RAND_MAX) * 500.0;
-//         }
-
 //     }
 // }
+
+
 
 
 // int main(){
@@ -109,3 +132,6 @@ int main(int argc, char* argv[]){
 //     makeTargs(tar, droneX, droneY);
 //     printTargs(tar);
 // }
+
+
+

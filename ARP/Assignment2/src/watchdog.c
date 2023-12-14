@@ -99,7 +99,8 @@ int main(int argc, char* argv[]){
         // Send signals to all processes
         for(int i=0; i<(NUM_PROCESSES-1); i++){
             kill(all_pids[i],SIGUSR1);
-            usleep(50000);
+            // usleep(50000);
+            // usleep(50000);
         }
         
         //MAKE THIS CODE CLEANER

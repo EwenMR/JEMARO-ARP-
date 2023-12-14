@@ -13,6 +13,7 @@
 #include "../include/utility.c"
 #include "../include/constants.h"
 
+
 // Signal handler for watchdog
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
     if(signo == SIGINT){
@@ -62,6 +63,15 @@ int main(int argc, char *argv[])
     int send_pipes[NUM_PROCESSES-1][2];
     int rec_pipes[NUM_PROCESSES-1][2];
 
+    //PIPES 
+    /*
+    WINDOW
+    KEYBOARD
+    DRONE
+    OBSTACLE
+    TARGET
+    WD
+    */
 
     char server_format[100]= "%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d";
     
@@ -79,14 +89,16 @@ int main(int argc, char *argv[])
                                     &rec_pipes[4][0],   &rec_pipes[4][1], &server_target[0],   &server_target[1],
                                     &rec_pipes[5][0],   &rec_pipes[5][1], &server_wd[0],       &server_wd[1]); // Get the fds of the pipe to watchdog
     
+    sscanf(argv[1],server_format,   &rec_pipes[0][0],   &rec_pipes[0][1], &send_pipes[0][0],   &send_pipes[0][1],
+                                    &rec_pipes[1][0],   &rec_pipes[1][1], &send_pipes[1][0],   &send_pipes[1][1],
+                                    &rec_pipes[2][0],   &rec_pipes[2][1], &send_pipes[2][0],   &send_pipes[2][1],
+                                    &rec_pipes[3][0],   &rec_pipes[3][1], &send_pipes[3][0],   &send_pipes[3][1],
+                                    &rec_pipes[4][0],   &rec_pipes[4][1], &send_pipes[4][0],   &send_pipes[4][1],
+                                    &rec_pipes[5][0],   &rec_pipes[5][1], &send_pipes[5][0],   &send_pipes[5][1]); // Get the fds of the pipe to watchdog
     
     
-    // printf(server_format,window_server[0],   window_server[1],   server_window[0],   server_window[1],
-    //                                         keyboard_server[0], keyboard_server[1], server_keyboard[0], server_keyboard[1],
-    //                                         drone_server[0],    drone_server[1],    server_drone[0],    server_drone[1],
-    //                                         obstacle_server[0], obstacle_server[1], server_obstacle[0], server_obstacle[1],
-    //                                         target_server[0],   target_server[1],   server_target[0],   server_target[1],
-    //                                         wd_server[0], wd_server[1], server_wd[0], server_wd[1]);
+    
+
     close(server_drone[0]);
     close(server_keyboard[0]);
     close(server_window[0]);
@@ -96,12 +108,10 @@ int main(int argc, char *argv[])
 
 
 
-    double position[6]; // Array to store the position of drone
+
     pid_t all_pids[NUM_PROCESSES];
-    
     fd_set reading;
-
-
+    //PIDS FOR WATCHDOG
     // while(1){
         FD_ZERO(&reading);
         for(int i=0; i<(NUM_PROCESSES-2);i++){
@@ -122,30 +132,69 @@ int main(int argc, char *argv[])
                 my_read(rec_pipes[j][0],&all_pids[j],rec_pipes[j][1], sizeof(int));
                 printf("%d\n",all_pids[j]);
             }
-            
         }
-        
-    // my_write(server_wd[1],all_pids,server_wd[0]);  
     all_pids[NUM_PROCESSES-2] = getpid();
     my_write(server_wd[1],all_pids,sizeof(all_pids),sizeof(all_pids));
     // }
+
+
+    struct shared_data data;
+    double drone_pos[6]; // Array to store the position of drone
+    double obst_pos[20];
+    double target_pos[20];
+    int key,command_force[2];
+
     while(1){
+        fd_set reading;
+        FD_ZERO(&reading);
+
+        //CHANGE THIS READING SECTION INTO A FUNCTION
+        for(int i=0; i<(NUM_PROCESSES-2);i++){
+            FD_SET(rec_pipes[i][0], &reading);
+        }
+        for (int i = 0; i < (NUM_PROCESSES-2); ++i) {
+            if (rec_pipes[i][0] > max_pipe_fd) {
+                max_pipe_fd = rec_pipes[i][0];
+            }
+        }
+
+        int ret_val= 0;
+        ret_val = select(max_pipe_fd, &reading, NULL, NULL, NULL);
+        for(int j=0; j<(NUM_PROCESSES-2); j++){
+            if(ret_val>0){
+                FD_ISSET(rec_pipes[j][0],&reading);
+                my_read(rec_pipes[j][0],&data,rec_pipes[j][1], sizeof(data));
+
+                // CHANGE THIS INTO A FUNCTION
+                //Store shared data into local variable
+                for (int k = 0; k < 6; k++) {
+                    drone_pos[k] = data.drone_pos[k];
+                }
+                for (int k = 0; k < NUM_OBSTACLES; k++) {
+                    obst_pos[k] = data.obst_pos[k];
+                }
+                for (int k = 0; k < NUM_TARGETS; k++) {
+                    obst_pos[k] = data.target_pos[k];
+                }
+                key=data.key;
+                memcpy(command_force, data.command_force, sizeof(data.command_force));
+
+
+
+            }
+        }
+        if (ret_val>0){
+            for(int i=0; i<NUM_PROCESSES-2; i++){
+                my_write(send_pipes[i][1],&data,send_pipes[i][0],sizeof(data));
+            }
+        }
+
+
+    // ALL PROCESSES WILL READ FIRST, UPDATE IF NECESSARY, AND THEN WRITE
+    // SERVER SHOULD READ EVERYTHING AND WRITE 
 
     }
 
-    
-    //reset reading set
-
-
-    
-
-
-
-
-
-    
-    int key, first,force[2];
-    first =0;
 
     // while (1) 
     // {      

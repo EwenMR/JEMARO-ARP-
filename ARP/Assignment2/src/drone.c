@@ -13,6 +13,7 @@
 #include <sys/stat.h>
 #include <stdio.h>
 #include "../include/constants.h"
+#include "../include/utility.c"
 #include <signal.h>
 
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
@@ -25,7 +26,7 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
     }
 }
 
-double calc_position(double force,double x1,double x2){
+double calc_drone_pos(double force,double x1,double x2){
     double x;
     x= (force*T*T-M*x2+2*M*x1+K*T*x1)/(M+K*T); //Eulers method
 
@@ -39,25 +40,28 @@ double calc_position(double force,double x1,double x2){
     return x;
 }
 
-// Get the new position using calc_function and store the previous positions
-double update_pos(double* position, int* xy){
+// Get the new drone_pos using calc_function and store the previous drone_poss
+double update_pos(double* drone_pos, int* xy){
     double new_posx,new_posy;
-    new_posx=calc_position(xy[0],position[4],position[2]);
-    new_posy=calc_position(xy[1],position[5],position[3]);
+    new_posx=calc_drone_pos(xy[0],drone_pos[4],drone_pos[2]);
+    new_posy=calc_drone_pos(xy[1],drone_pos[5],drone_pos[3]);
 
-    // update position
+    // update drone_pos
     for(int i=0; i<4; i++){
-        position[i]=position[i+2];}
-    position[4]=new_posx;
-    position[5]=new_posy;
-    return *position;
+        drone_pos[i]=drone_pos[i+2];
+    }
+    drone_pos[4]=new_posx;
+    drone_pos[5]=new_posy;
+    return *drone_pos;
 }
 
-double stop(double *position){
+double stop(double *drone_pos){
     for(int i=0; i<4; i++){
-        position[i]=position[i+2];}
-    return *position;
+        drone_pos[i]=drone_pos[i+2];}
+    return *drone_pos;
 }
+
+
 
 int main(int argc, char *argv[]) {
 
@@ -69,64 +73,76 @@ int main(int argc, char *argv[]) {
     sigaction(SIGUSR1, &signal, NULL);
 
     // VARIABLES
+    struct shared_data data;
     int xy[2]; // xy = force direction of x,y as such -> [0,1]
-    double position[6];
-    int first=0;
+    double drone_pos[6];
+    // int first=0;
     
 
     // PIPES
     int drone_server[2], server_drone[2];
     char args_format[80]="%d %d|%d %d";
     sscanf(argv[1], args_format,  &drone_server[0], &drone_server[1], &server_drone[0], &server_drone[1]);
-    // close(drone_server[0]); //Close unnecessary pipes
-    close(server_drone[1]);
 
+
+    // PIDS FOR WATCHDOG
     pid_t drone_pid;
     drone_pid=getpid();
-    
-    write(drone_server[1], &drone_pid, sizeof(drone_pid));
-    
+    my_write(drone_server[1], &drone_pid, server_drone[0],sizeof(drone_pid));
     printf("%d\n",drone_pid);
 
     // int flags = fcntl(server_drone[0], F_GETFL); // make the read non blocking so the drone can move without user input 
     // fcntl(server_drone[0], F_SETFL, flags | O_NONBLOCK);
 
 
+
+
     while (1) {
         // 3 Receive command force from keyboard_manager
         ssize_t bytesRead = read(server_drone[0], xy, sizeof(xy)); 
 
-        // Wait until user's first input
-        if (first==0){ 
-            read(server_drone[0],position,sizeof(position)); // 1 Get the initial position of the drone
-            if (bytesRead<0){ 
-                if (errno != EAGAIN) {
-                    perror("reading error");
-                    exit(EXIT_FAILURE);
-                }
-            }else if(bytesRead>0){ // User's first input
-                update_pos(position,xy);
-                first++;
-            }
-        }else{ // After first second input
-            if(xy[0]==0 && xy[1]==0){
-                stop(position);
-            }else{
-                update_pos(position,xy); 
-            }
-            
+        my_read(server_drone[0], &data, drone_server[1], sizeof(data));
+        memcpy(xy, data.command_force, sizeof(data.command_force));
+        memcpy(drone_pos, data.drone_pos, sizeof(drone_pos));
+
+        if(xy[0]==0 && xy[1]==0){
+            stop(drone_pos);
+        }else{
+            update_pos(drone_pos,xy); 
         }
+
+        // Wait until user's first input
+        // if (first==0){ 
+        //     my_read(server_drone[0],drone_pos,drone_server[1],sizeof(drone_pos)); // 1 Get the initial drone_pos of the drone
+        //     if (bytesRead<0){ 
+        //         if (errno != EAGAIN) {
+        //             perror("reading error");
+        //             exit(EXIT_FAILURE);
+        //         }
+        //     }else if(bytesRead>0){ // User's first input
+        //         update_pos(drone_pos,xy);
+        //         first++;
+        //     }
+        // }else{ // After first second input
+        //     if(xy[0]==0 && xy[1]==0){
+        //         stop(drone_pos);
+        //     }else{
+        //         update_pos(drone_pos,xy); 
+        //     }
+            
+        // }
     
         // 4
-        // Send updated drone position to window via shared memory
-        write(drone_server[1], position, sizeof(position));
-
-
+        // Send updated drone drone_pos to window via shared memory
+        memcpy(data.drone_pos, drone_pos, sizeof(drone_pos));
+        my_write(drone_server[1], &data, server_drone[0],sizeof(data));
     }
 
     // Clean up
     close(server_drone[0]);
     close(drone_server[1]);
+    close(drone_server[0]); //Close unnecessary pipes
+    close(server_drone[1]);
 
     return 0;
 }
