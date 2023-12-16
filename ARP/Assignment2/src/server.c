@@ -27,7 +27,6 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
 
 int main(int argc, char *argv[]) 
 {
-    printf("HELLO\n");
     // SIGNALS FOR THE WATCHDOG
     struct sigaction sig_act;
     sig_act.sa_sigaction = signal_handler;
@@ -96,7 +95,6 @@ int main(int argc, char *argv[])
     //                                 &rec_pipes[4][0],   &rec_pipes[4][1], &send_pipes[4][0],   &send_pipes[4][1],
     //                                 &rec_pipes[5][0],   &rec_pipes[5][1], &send_pipes[5][0],   &send_pipes[5][1]); // Get the fds of the pipe to watchdog
     
-    printf("%d %d\n",rec_pipes[4][1],rec_pipes[4][0]);
     
 
     // close(server_drone[0]);
@@ -124,8 +122,6 @@ int main(int argc, char *argv[])
             }
         }
         int ret_val = select(max_pipe_fd, &reading, NULL, NULL, NULL);
-        // printf("%d\n",ret_val);
-
         for(int j=0; j<(NUM_PROCESSES-2); j++){
             if(ret_val>0){
                 FD_ISSET(rec_pipes[j][0],&reading);
@@ -159,9 +155,6 @@ int main(int argc, char *argv[])
     data.key=key;
     memcpy(data.command_force, command_force, sizeof(command_force));
     
-    // my_read(target_server[0],&data,server_target[1],sizeof(data));
-    // memcpy(target_pos, data.target_pos, sizeof(data.target_pos));
-    // printf("TARGET %f %f\n", target_pos[0],target_pos[1]);
 
     while(1){
         fd_set reading;
@@ -212,17 +205,14 @@ int main(int argc, char *argv[])
                     // printf("OBSTCALE %f %f\n", obst_pos[0],obst_pos[1]);
                         memcpy(obst_pos, updated_data.obst_pos, sizeof(updated_data.obst_pos));
                         memcpy(data.obst_pos, updated_data.obst_pos, sizeof(updated_data.obst_pos));
-                        printf("OBSTACLE %f %f\n", obst_pos[0],obst_pos[1]);
 
                         my_write(server_drone[1],&data,server_drone[0],sizeof(data));
                         // my_write(server_window[1],&data,server_window[0],sizeof(data));
                         break;
                     case 4: //target
-                        printf("TARGET\n");
                         memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
                         memcpy(data.target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
                         
-                        printf("TARGET %f %f\n", target_pos[0],target_pos[1]);
 
                         my_write(server_obstacle[1],&data,obstacle_server[0],sizeof(data));
                         // my_write(server_drone[1],&data, server_drone[0],sizeof(data));

@@ -11,7 +11,7 @@
 
 #include "../include/constants.h"
 #include "../include/utility.c"
-#define TIMER_THRESH 100
+#define TIMER_THRESH 3
 
 // Global variables
 int all_timer[NUM_PROCESSES-1];
@@ -38,21 +38,21 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
             all_timer[1]=0;
         }
         if(siginfo->si_pid == all_pids[1]){
-            // printf("Signal sent from KEYBOARD\n");
+            printf("Signal sent from KEYBOARD\n");
             all_timer[2]=0;
         }
         if(siginfo->si_pid == all_pids[2]){
-            // printf("Signal sent from DRONE\n");
+            printf("Signal sent from DRONE\n");
             all_timer[3]=0;
         }if(siginfo->si_pid == all_pids[3]){
-            // printf("Signal sent from OBSTACLE\n");
+            printf("Signal sent from OBSTACLE\n");
             all_timer[4]=0;
         }
         if(siginfo->si_pid == all_pids[4]){
-            // printf("Signal sent from TARGET\n");
+            printf("Signal sent from TARGET\n");
             all_timer[5]=0;
         }if(siginfo->si_pid == all_pids[5]){
-            // printf("Signal sent from pid %d\n", all_pids[0]);
+            printf("Signal sent from pid %d\n", all_pids[0]);
             all_timer[0]=0;
         }
     }
@@ -92,20 +92,21 @@ int main(int argc, char* argv[]){
 
 
     while(1){
-        for(int i=0; i<NUM_PROCESSES-1-2; i++){
+        for(int i=0; i<NUM_PROCESSES-1; i++){
             all_timer[i]++;
         }
 
         // Send signals to all processes
         for(int i=0; i<(NUM_PROCESSES-1); i++){
             kill(all_pids[i],SIGUSR1);
-            // usleep(50000);
-            // usleep(50000);
+            // THIS TIME INTERVAL IS HARD CODED BUT ITS NECESSARY
+            usleep(50000);
+            usleep(50000);
         }
         
         //MAKE THIS CODE CLEANER
         int kill = 0;  // Initialize as false
-        for (int i = 0; i < (NUM_PROCESSES-1); ++i) {
+        for (int i = 0; i < (NUM_PROCESSES-1); i++) {
             if (all_timer[i] > TIMER_THRESH) {
                 kill = 1;  // Set to true
                 break;  // No need to check further, we found one
@@ -115,7 +116,7 @@ int main(int argc, char* argv[]){
         // Use the result in your conditional statement
         if (kill) {
             printf("kill\n");
-            // kill_all();
+            kill_all();
         }
     }
 

@@ -78,7 +78,7 @@ int main(int argc, char* argv[]){
     struct shared_data data;
 
 
-    printf("OBSTACLE\n");
+    // printf("OBSTACLE\n");
 
     while(1){
         my_read(server_obstacle[0],&data,obstacle_server[1],sizeof(data));
@@ -90,12 +90,12 @@ int main(int argc, char* argv[]){
             makeObs(drone_pos);
             memcpy(data.obst_pos,obstacle_pos,sizeof(obstacle_pos));
             my_write(obstacle_server[1],&data,server_obstacle[0],sizeof(data));
-            printf("obstacle: %f %f| %f %f |%f %f |%f %f|%f %f \n",obstacle_pos[0],obstacle_pos[1],obstacle_pos[2],obstacle_pos[3],obstacle_pos[4],obstacle_pos[5],obstacle_pos[6],obstacle_pos[7],obstacle_pos[8],obstacle_pos[9]);
+            // printf("obstacle: %f %f| %f %f |%f %f |%f %f|%f %f \n",obstacle_pos[0],obstacle_pos[1],obstacle_pos[2],obstacle_pos[3],obstacle_pos[4],obstacle_pos[5],obstacle_pos[6],obstacle_pos[7],obstacle_pos[8],obstacle_pos[9]);
 
         }
         
         
-        usleep(500000);
+        usleep(50000);
     }
 
 }

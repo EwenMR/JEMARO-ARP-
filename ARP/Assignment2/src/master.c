@@ -19,13 +19,21 @@ void summon(char **programArgs){
 
 int main(int argc, char *argv[]){
     // arguments to summon child konsole
-    char *argsServer[] = {"konsole", "-e","./build/server", "placeholder",NULL};
+    char *argsServer[] = {"./build/server", "placeholder",NULL};
     char *argsWindow[] = {"konsole", "-e", "./build/window", "placeholder",NULL};
-    char *argsDrone[] = { "konsole", "-e","./build/drone", "placeholder",NULL};
-    char *argsKeyboard[] = {"konsole", "-e","./build/keyboard", "placeholder",NULL};
+    char *argsDrone[] = {"./build/drone", "placeholder",NULL};
+    char *argsKeyboard[] = {"./build/keyboard", "placeholder",NULL};
     char *argsObstacle[] = {"./build/obstacle", "placeholder", NULL};
     char *argsTarget[] =  {"./build/target", "placeholder", NULL};
     char *argsWatchdog[] = {"./build/watchdog", "placeholder",NULL};
+
+    // char *argsServer[] = {"konsole", "-e","./build/server", "placeholder",NULL};
+    // char *argsWindow[] = {"konsole", "-e", "./build/window", "placeholder",NULL};
+    // char *argsDrone[] = {"konsole", "-e","./build/drone", "placeholder",NULL};
+    // char *argsKeyboard[] = {"konsole", "-e","./build/keyboard", "placeholder",NULL};
+    // char *argsObstacle[] = {"konsole", "-e","./build/obstacle", "placeholder", NULL};
+    // char *argsTarget[] =  {"konsole", "-e","./build/target", "placeholder", NULL};
+    // char *argsWatchdog[] = {"konsole", "-e","./build/watchdog", "placeholder",NULL};
 
     // PIPES
     int window_server[2];
@@ -79,7 +87,7 @@ int main(int argc, char *argv[]){
                                             obstacle_server[0], obstacle_server[1], server_obstacle[0], server_obstacle[1],
                                             target_server[0],   target_server[1],   server_target[0],   server_target[1],
                                             wd_server[0], wd_server[1], server_wd[0], server_wd[1]);
-                argsServer[3]=args;
+                argsServer[1]=args;
                 summon(argsServer);
 
             }else if(i==1){ //WINDOW
@@ -89,12 +97,12 @@ int main(int argc, char *argv[]){
 
             }else if(i==2){ //KEYBOARD MANAGER
                 sprintf(args, args_format,  keyboard_server[0], keyboard_server[1], server_keyboard[0], server_keyboard[1]);
-                argsKeyboard[3]=args;
+                argsKeyboard[1]=args;
                 summon(argsKeyboard);
 
             }else if(i==3){ //DRONE
                 sprintf(args, args_format,  drone_server[0],    drone_server[1],    server_drone[0],    server_drone[1]);
-                argsDrone[3]=args;
+                argsDrone[1]=args;
                 summon(argsDrone);
 
             }else if(i==4){ //OBSTACLE
@@ -110,7 +118,7 @@ int main(int argc, char *argv[]){
             }else if(i==6){ //WATCH DOG
                 sprintf(args, "%d %d", server_wd[0], server_wd[1]);
                 argsWatchdog[1]=args;
-                // summon(argsWatchdog);
+                summon(argsWatchdog);
             }   
         }else { //else if parent
             // printf(server_format, window_server[0],   window_server[1],   server_window[0],   server_window[1],

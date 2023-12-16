@@ -55,7 +55,7 @@ int main(int argc, char *argv[]){
         // reads the position and user input from window
         my_read(server_keyboard[0], &data, server_keyboard[1],sizeof(data));
         key=data.key;
-        printf("%d\n", key);
+        // printf("%d\n", key);
 
         switch ((char)key) {
             case ' ': // enter space to exit

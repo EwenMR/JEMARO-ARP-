@@ -105,8 +105,8 @@ int main(int argc, char *argv[]) {
         memcpy(xy, data.command_force, sizeof(data.command_force));
         memcpy(drone_pos, data.drone_pos, sizeof(drone_pos));
 
-        printf("%d %d\n", xy[0], xy[1]);
-        printf("%f %f %f %f %f %f\n",drone_pos[0], drone_pos[1], drone_pos[2], drone_pos[3], drone_pos[4], drone_pos[5]);
+        // printf("%d %d\n", xy[0], xy[1]);
+        // printf("%f %f %f %f %f %f\n",drone_pos[0], drone_pos[1], drone_pos[2], drone_pos[3], drone_pos[4], drone_pos[5]);
 
         if(xy[0]==0 && xy[1]==0){
             stop(drone_pos);

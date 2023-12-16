@@ -90,7 +90,7 @@ int main(int argc, char* argv[]){
     pid_t target_pid;
     target_pid=getpid();
     my_write(target_server[1], &target_pid, target_server[0],sizeof(target_pid));
-    printf("%d\n",target_pid);
+    // printf("%d\n",target_pid);
 
     struct shared_data data;
 
@@ -100,7 +100,7 @@ int main(int argc, char* argv[]){
 
     memcpy(data.target_pos, target_pos,sizeof(target_pos));
     write(target_server[1],&data,sizeof(data));
-    printf("%d %d\n", target_server[1],target_server[0]);
+    // printf("%d %d\n", target_server[1],target_server[0]);
 
     while(1){
         // Get shared data and store it into local variables
@@ -108,7 +108,7 @@ int main(int argc, char* argv[]){
         memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
 
         target_update(drone_pos, target_pos);
-        printf("target: %f %f %f %f\n",target_pos[0],target_pos[1],target_pos[2],target_pos[3]);
+        // printf("target: %f %f %f %f\n",target_pos[0],target_pos[1],target_pos[2],target_pos[3]);
         // target_update(drone_pos, target_pos);
 
         // copy target position to shared data and send it
