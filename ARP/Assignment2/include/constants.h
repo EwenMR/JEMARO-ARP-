@@ -20,7 +20,7 @@
 #define BOARD_SIZE 100
 #define NUM_PROCESSES 7
 #define NUM_OBSTACLES 10
-#define NUM_TARGETS 10
+#define NUM_TARGETS 9
 
 #define WINDOW_COL 0.99
 #define SCORE_WINDOW_ROW 0.20

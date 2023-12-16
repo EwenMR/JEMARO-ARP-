@@ -38,21 +38,21 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
             all_timer[1]=0;
         }
         if(siginfo->si_pid == all_pids[1]){
-            printf("Signal sent from KEYBOARD\n");
+            // printf("Signal sent from KEYBOARD\n");
             all_timer[2]=0;
         }
         if(siginfo->si_pid == all_pids[2]){
-            printf("Signal sent from DRONE\n");
+            // printf("Signal sent from DRONE\n");
             all_timer[3]=0;
         }if(siginfo->si_pid == all_pids[3]){
-            printf("Signal sent from OBSTACLE\n");
+            // printf("Signal sent from OBSTACLE\n");
             all_timer[4]=0;
         }
         if(siginfo->si_pid == all_pids[4]){
-            printf("Signal sent from TARGET\n");
+            // printf("Signal sent from TARGET\n");
             all_timer[5]=0;
         }if(siginfo->si_pid == all_pids[5]){
-            printf("Signal sent from pid %d\n", all_pids[0]);
+            // printf("Signal sent from pid %d\n", all_pids[0]);
             all_timer[0]=0;
         }
     }
@@ -86,7 +86,7 @@ int main(int argc, char* argv[]){
     all_pids[NUM_PROCESSES-1]=getpid();
 
     for(int i=0; i<NUM_PROCESSES; i++){
-        printf("%d\n", all_pids[i]);
+        // printf("%d\n", all_pids[i]);
     }
 
 

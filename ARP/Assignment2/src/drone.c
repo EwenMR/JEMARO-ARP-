@@ -75,7 +75,7 @@ int main(int argc, char *argv[]) {
     // VARIABLES
     struct shared_data data;
     int xy[2]; // xy = force direction of x,y as such -> [0,1]
-    double drone_pos[6];
+    double drone_pos[6]={BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2};
     // int first=0;
     
 
@@ -89,21 +89,25 @@ int main(int argc, char *argv[]) {
     pid_t drone_pid;
     drone_pid=getpid();
     my_write(drone_server[1], &drone_pid, server_drone[0],sizeof(drone_pid));
-    printf("%d\n",drone_pid);
+    // printf("%d\n",drone_pid);
 
     // int flags = fcntl(server_drone[0], F_GETFL); // make the read non blocking so the drone can move without user input 
     // fcntl(server_drone[0], F_SETFL, flags | O_NONBLOCK);
 
-
+    memcpy(data.drone_pos,drone_pos, sizeof(drone_pos));
+    my_write(drone_server[1],&data, server_drone[0],sizeof(data));
 
 
     while (1) {
         // 3 Receive command force from keyboard_manager
-        ssize_t bytesRead = read(server_drone[0], xy, sizeof(xy)); 
+        // ssize_t bytesRead = read(server_drone[0], xy, sizeof(xy)); 
 
         my_read(server_drone[0], &data, drone_server[1], sizeof(data));
         memcpy(xy, data.command_force, sizeof(data.command_force));
         memcpy(drone_pos, data.drone_pos, sizeof(drone_pos));
+
+        printf("%d %d\n", xy[0], xy[1]);
+        printf("%f %f %f %f %f %f\n",drone_pos[0], drone_pos[1], drone_pos[2], drone_pos[3], drone_pos[4], drone_pos[5]);
 
         if(xy[0]==0 && xy[1]==0){
             stop(drone_pos);

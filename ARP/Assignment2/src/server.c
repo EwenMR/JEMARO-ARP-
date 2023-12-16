@@ -89,22 +89,22 @@ int main(int argc, char *argv[])
                                     &rec_pipes[4][0],   &rec_pipes[4][1], &server_target[0],   &server_target[1],
                                     &rec_pipes[5][0],   &rec_pipes[5][1], &server_wd[0],       &server_wd[1]); // Get the fds of the pipe to watchdog
     
-    sscanf(argv[1],server_format,   &rec_pipes[0][0],   &rec_pipes[0][1], &send_pipes[0][0],   &send_pipes[0][1],
-                                    &rec_pipes[1][0],   &rec_pipes[1][1], &send_pipes[1][0],   &send_pipes[1][1],
-                                    &rec_pipes[2][0],   &rec_pipes[2][1], &send_pipes[2][0],   &send_pipes[2][1],
-                                    &rec_pipes[3][0],   &rec_pipes[3][1], &send_pipes[3][0],   &send_pipes[3][1],
-                                    &rec_pipes[4][0],   &rec_pipes[4][1], &send_pipes[4][0],   &send_pipes[4][1],
-                                    &rec_pipes[5][0],   &rec_pipes[5][1], &send_pipes[5][0],   &send_pipes[5][1]); // Get the fds of the pipe to watchdog
+    // sscanf(argv[1],server_format,   &rec_pipes[0][0],   &rec_pipes[0][1], &send_pipes[0][0],   &send_pipes[0][1],
+    //                                 &rec_pipes[1][0],   &rec_pipes[1][1], &send_pipes[1][0],   &send_pipes[1][1],
+    //                                 &rec_pipes[2][0],   &rec_pipes[2][1], &send_pipes[2][0],   &send_pipes[2][1],
+    //                                 &rec_pipes[3][0],   &rec_pipes[3][1], &send_pipes[3][0],   &send_pipes[3][1],
+    //                                 &rec_pipes[4][0],   &rec_pipes[4][1], &send_pipes[4][0],   &send_pipes[4][1],
+    //                                 &rec_pipes[5][0],   &rec_pipes[5][1], &send_pipes[5][0],   &send_pipes[5][1]); // Get the fds of the pipe to watchdog
     
-    
+    printf("%d %d\n",rec_pipes[4][1],rec_pipes[4][0]);
     
 
-    close(server_drone[0]);
-    close(server_keyboard[0]);
-    close(server_window[0]);
-    close(server_obstacle[0]);
-    close(server_target[0]);
-    close(server_wd[0]);
+    // close(server_drone[0]);
+    // close(server_keyboard[0]);
+    // close(server_window[0]);
+    // close(server_obstacle[0]);
+    // close(server_target[0]);
+    // close(server_wd[0]);
 
 
 
@@ -137,22 +137,33 @@ int main(int argc, char *argv[])
     my_write(server_wd[1],all_pids,sizeof(all_pids),sizeof(all_pids));
     // }
 
+    
 
-    struct shared_data data;
-    double drone_pos[6]; // Array to store the position of drone
+
+
+    struct shared_data data, updated_data;
+    double drone_pos[6];// Array to store the position of drone
     double obst_pos[20];
     double target_pos[20];
-    int key,command_force[2];
+    int key=0;
+    int command_force[2]={0,0};
+    
+    data.key=key;
+    memcpy(data.command_force, command_force, sizeof(command_force));
+    
+    // my_read(target_server[0],&data,server_target[1],sizeof(data));
+    // memcpy(target_pos, data.target_pos, sizeof(data.target_pos));
+    // printf("TARGET %f %f\n", target_pos[0],target_pos[1]);
 
     while(1){
         fd_set reading;
         FD_ZERO(&reading);
 
         //CHANGE THIS READING SECTION INTO A FUNCTION
-        for(int i=0; i<(NUM_PROCESSES-2);i++){
+        for(int i=0; i<6;i++){
             FD_SET(rec_pipes[i][0], &reading);
         }
-        for (int i = 0; i < (NUM_PROCESSES-2); ++i) {
+        for (int i = 0; i < 6; i++) {
             if (rec_pipes[i][0] > max_pipe_fd) {
                 max_pipe_fd = rec_pipes[i][0];
             }
@@ -162,64 +173,71 @@ int main(int argc, char *argv[])
         ret_val = select(max_pipe_fd, &reading, NULL, NULL, NULL);
         for(int j=0; j<(NUM_PROCESSES-2); j++){
             if(ret_val>0){
-                FD_ISSET(rec_pipes[j][0],&reading);
-                my_read(rec_pipes[j][0],&data,rec_pipes[j][1], sizeof(data));
+                if(FD_ISSET(rec_pipes[j][0],&reading)){
+                    my_read(rec_pipes[j][0],&updated_data,rec_pipes[j][1], sizeof(data));
 
-                // CHANGE THIS INTO A FUNCTION
-                //Store shared data into local variable
-                for (int k = 0; k < 6; k++) {
-                    drone_pos[k] = data.drone_pos[k];
+                    //Store shared data into local variable
+                    
+            
+                    switch (j){
+                    case 0: //window
+                        key=updated_data.key;
+                        data.key=updated_data.key;
+                        my_write(server_keyboard[1],&data,server_keyboard[0],sizeof(data));
+                        
+                        break;
+                    case 1: //keyboard
+                        memcpy(command_force, updated_data.command_force, sizeof(updated_data.command_force));
+                        memcpy(data.command_force, updated_data.command_force, sizeof(updated_data.command_force));
+
+                        my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+                        break;
+                    case 2: //drone
+                        memcpy(drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
+                        memcpy(data.drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
+
+                        my_write(server_target[1],&data,server_target[0],sizeof(data));
+                        my_write(server_obstacle[1],&data,server_obstacle[0],sizeof(data));
+                        my_write(server_window[1],&data,server_window[0],sizeof(data));
+                        break;
+                    case 3: //obstacle
+                    // printf("OBSTCALE %f %f\n", obst_pos[0],obst_pos[1]);
+                        memcpy(obst_pos, updated_data.obst_pos, sizeof(updated_data.obst_pos));
+                        memcpy(data.obst_pos, updated_data.obst_pos, sizeof(updated_data.obst_pos));
+                        printf("OBSTACLE %f %f\n", obst_pos[0],obst_pos[1]);
+
+                        my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+                        my_write(server_window[1],&data,server_window[0],sizeof(data));
+                        break;
+                    case 4: //target
+                        printf("TARGET\n");
+                        memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
+                        memcpy(data.target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
+                        printf("TARGET %f %f\n", target_pos[0],target_pos[1]);
+
+                        my_write(server_obstacle[1],&data,obstacle_server[0],sizeof(data));
+                        my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+                        my_write(server_window[1],&data,server_window[0],sizeof(data));
+                        break;
+                    default:
+                        break;
+                    }
+
+                    // for(int i=0; i<NUM_PROCESSES-2; i++){
+                    //     if(i!=j){ //Dont send it to itself
+                    //         my_write(send_pipes[i][1],&data,rec_pipes[i][0],sizeof(data));
+                    //     }
+                        
+                    // }
                 }
-                for (int k = 0; k < NUM_OBSTACLES; k++) {
-                    obst_pos[k] = data.obst_pos[k];
-                }
-                for (int k = 0; k < NUM_TARGETS; k++) {
-                    obst_pos[k] = data.target_pos[k];
-                }
-                key=data.key;
-                memcpy(command_force, data.command_force, sizeof(data.command_force));
-
-
-
             }
         }
-        if (ret_val>0){
-            for(int i=0; i<NUM_PROCESSES-2; i++){
-                my_write(send_pipes[i][1],&data,send_pipes[i][0],sizeof(data));
-            }
-        }
-
-
     // ALL PROCESSES WILL READ FIRST, UPDATE IF NECESSARY, AND THEN WRITE
     // SERVER SHOULD READ EVERYTHING AND WRITE 
 
     }
 
 
-    // while (1) 
-    // {      
-    //     // copy the position of the drone
-    //     //USE SELECT
-    //     if (first==0){
-    //         my_read(window_server[0],position, server_window[1]);
-    //         my_write(server_drone[1], position, drone_server[0]);
-    //         //ALSO SEND IT TO OBST TARGET
-    //     }
-    //     // RECEIVE OBST TARGET
-    //     // SEND OBST TARGET TO WINDOW
-
-    //     my_read(window_server[0],&key,server_window[1]);
-    //     my_write(server_keyboard[1],&key, keyboard_server[0]);
-
-    //     my_read(keyboard_server[0],force, server_keyboard[1]);
-    //     my_write(server_drone[1],force, drone_server[0]);
-
-    //     my_read(drone_server[0],position,server_drone[1]);
-    //     my_write(server_window[1],position, window_server[0]);
-    //     //ALSO SEND POSITION TO TARGET AND OBSTACLE
-
-
-    // } 
 
     // clean up
     close(server_drone[1]);

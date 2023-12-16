@@ -110,7 +110,7 @@ int main(int argc, char *argv[]){
             }else if(i==6){ //WATCH DOG
                 sprintf(args, "%d %d", server_wd[0], server_wd[1]);
                 argsWatchdog[1]=args;
-                summon(argsWatchdog);
+                // summon(argsWatchdog);
             }   
         }else { //else if parent
             // printf(server_format, window_server[0],   window_server[1],   server_window[0],   server_window[1],

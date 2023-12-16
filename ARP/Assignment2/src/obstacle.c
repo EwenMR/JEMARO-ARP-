@@ -29,18 +29,26 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
 }
 
 
-void makeObs(double obstacle_pos[], double droneX, double droneY) {
+void makeObs(double drone_pos[]) {
     for (int i = 0; i < NUM_OBSTACLES*2; i+=2) {
         // generating obstacle coordinates
         obstacle_pos[i]   = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
         obstacle_pos[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
 
         // check if the x obstacle coordinate isn't too close to drone
-        while (obstacle_pos[i] >= droneX - THRESHOLD && obstacle_pos[i] <= droneX + THRESHOLD && obstacle_pos[i+1] >= droneY - THRESHOLD && obstacle_pos[i+1] <= droneY + THRESHOLD) {
+        while (obstacle_pos[i] >= drone_pos[4] - THRESHOLD && obstacle_pos[i] <= drone_pos[4] + THRESHOLD && obstacle_pos[i+1] >= drone_pos[5] - THRESHOLD && obstacle_pos[i+1] <= drone_pos[5] + THRESHOLD) {
             // Regenerate obstacle-coordinate
             obstacle_pos[i]   = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
             obstacle_pos[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
         }
+        for(int j=0; i<NUM_TARGETS*2; i+=2){
+            while (obstacle_pos[i] >= target_pos[i] - THRESHOLD && obstacle_pos[i] <= target_pos[i] + THRESHOLD && obstacle_pos[i+1] >= target_pos[i+1] - THRESHOLD && obstacle_pos[i+1] <= target_pos[i+1] + THRESHOLD) {
+            // Regenerate obstacle-coordinate
+            obstacle_pos[i]   = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
+            obstacle_pos[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
+        }
+        }
+        
     }
 }
 
@@ -58,19 +66,31 @@ int main(int argc, char* argv[]){
     char args_format[80]="%d %d|%d %d";
     sscanf(argv[1], args_format,  &obstacle_server[0], &obstacle_server[1], &server_obstacle[0], &server_obstacle[1]);
     // close(obstacle_server[0]); //Close unnecessary pipes
-    close(server_obstacle[1]);
+    // close(server_obstacle[1]);
 
     pid_t obstacle_pid;
     obstacle_pid=getpid();
     write(obstacle_server[1], &obstacle_pid, sizeof(obstacle_pid));
-    printf("%d\n",obstacle_pid);
 
 
     struct shared_data data;
-    
+
+
+    printf("OBSTACLE\n");
 
     while(1){
+        my_read(server_obstacle[0],&data,obstacle_server[1],sizeof(data));
+        memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
+        memcpy(target_pos, data.target_pos, sizeof(data.target_pos));
+        // memcpy(obstacle_pos, data.obst_pos, sizeof(data.obst_pos));
 
+        makeObs(drone_pos);
+        memcpy(data.obst_pos,obstacle_pos,sizeof(obstacle_pos));
+        my_write(obstacle_server[1],&data,server_obstacle[0],sizeof(data));
+        printf("obstacle: %f %f %f %f\n",obstacle_pos[0],obstacle_pos[1],obstacle_pos[2],obstacle_pos[3]);
+
+        
+        sleep(1);
     }
 
 }
@@ -78,88 +98,5 @@ int main(int argc, char* argv[]){
 
 
 
-
-//stuff for inspo
-
-
-
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <unistd.h>
-
-//   // threshold distance for the closeness an obstacle canbe to the drone
-// #define NUM_OBS 10      // number of obstacles
-// #define MAX_OBST_ARR_SIZE  20
-
-// // struct for obstacle x and y coordinates
-// typedef struct {
-//     double x;  
-//     double y;  
-// } Obstacle;
-
-
-// // printing the obstacle coordinates for checking values
-// void printObs(Obstacle obs[]) {
-//     for (int i = 0; i < NUM_OBS; i++) {
-//         printf("Obstacle %d: x = %.3f, y = %.3f\n", i + 1, obs[i].x, obs[i].y);
-//     }
-// }
-
-
-// void makeObs(Obstacle obs[], double droneX, double droneY) {
-//     for (int i = 0; i < NUM_OBS; i++) {
-//         // generating obstacle coordinates
-//         obs[i].x = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
-//         obs[i].y = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
-
-//         // check if the x obstacle coordinate isn't too close to drone
-//         while (obs[i].x >= droneX - THRESHOLD && obs[i].x <= droneX + THRESHOLD) {
-//             // Regenerate x-coordinate
-//             obs[i].x = ((double)rand() / RAND_MAX) * BOARD_SIZE;
-//         }
-
-//         // check if the y obstacle coordinate isn't too close to drone
-//         while (obs[i].y >= droneY - THRESHOLD && obs[i].y <= droneY + THRESHOLD) {
-//             // Regenerate y-coordinate
-//             obs[i].y = ((double)rand() / RAND_MAX) * BOARD_SIZE;
-//         }
-//     }
-// }
-
-
-
-
-
-
-// int main() {
-//     // seeds the random number generator
-//     srand(time(NULL));  
-
-//     // example values of the drone position, need to read the drone position from pipe instead
-//     double droneX = 50;
-//     double droneY = 50;
-
-//     // decalres 'obs' array of type Obstacle of size 10
-//     Obstacle obs[NUM_OBS];
-
-//     // generate first obstacle coordinates
-//     generateObstacles(obs, droneX, droneY);
-
-
-//     while (1) {
-//         // need to send Obstacles via pipe;
-
-//         // value checking 
-//         printObstacles(obs);
-
-//         // Sleep for 5 to 10 seconds
-//         sleep(rand() % 6 + 5);  
-
-//         generateObstacles(obs, droneX, droneY);
-        
-//     }
-
-//     return 0;
-// }
 
 
