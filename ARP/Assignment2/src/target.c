@@ -27,6 +27,23 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
     }
 }
 
+// target update to see if drone has gone over it
+void target_update(double *drone_pos, double *target_pos){
+    for (int i = 0; i< NUM_TARGETS*2; i+=2){
+
+        if ((drone_pos[4] == target_pos[2*i] && drone_pos[5] == target_pos[2*i+1]) || 
+        (drone_pos[2] == target_pos[2*i] && drone_pos[3] == target_pos[2*i+1])){
+
+            // change value from coordinates to -1
+            target_pos[2*i] = -1.0;
+            target_pos[2*i+1] = -1.0;
+
+            // maybe have to create a new shared data struct?
+
+            printf("Target position %f, %f has been gotted\n", target_pos[2 * i], target_pos[2 * i + 1]);
+        }
+    }
+}
 
 
 // make the targets coordinates
@@ -79,7 +96,7 @@ int main(int argc, char* argv[]){
         my_read(server_target[0],&data,target_server[1],sizeof(data));
         memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
 
-       
+        target_update(drone_pos, target_pos);
         printf("target: %f %f %f %f\n",target_pos[0],target_pos[1],target_pos[2],target_pos[3]);
 
         // copy target position to shared data and send it
