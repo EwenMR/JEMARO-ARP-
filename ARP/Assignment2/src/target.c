@@ -11,6 +11,7 @@
 #define THRESHOLD 10          // threshold distance for the closeness an obstacle canbe to the drone
 #define NUM_TAR 7               // number of targets
 #define MAX_TAR_ARR_SIZE  20    // max array size for targets
+#define POSITION_THRESHOLD 5.0
 
 
 
@@ -27,35 +28,42 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
     }
 }
 
-// target update to see if drone has gone over it
-void target_update(double *drone_pos, double *target_pos){
-    for (int i = 0; i< NUM_TARGETS*2; i+=2){
 
-        if ((drone_pos[4] == target_pos[2*i] && drone_pos[5] == target_pos[2*i+1]) || 
-        (drone_pos[2] == target_pos[2*i] && drone_pos[3] == target_pos[2*i+1])){
 
-            // change value from coordinates to -1
-            target_pos[2*i] = -1.0;
-            target_pos[2*i+1] = -1.0;
 
-            // maybe have to create a new shared data struct?
-
-            printf("Target position %f, %f has been gotted\n", target_pos[2 * i], target_pos[2 * i + 1]);
-        }
-
-        if ((drone_pos[4] == target_pos[2*i] && drone_pos[5] == target_pos[2*i+1]) || 
-        (drone_pos[2] == target_pos[2*i] && drone_pos[3] == target_pos[2*i+1])){
+void target_update(double *drone_pos, double *target_pos) {
+    for (int i = 0; i < NUM_TARGETS * 2; i += 2) {
+        if ((fabs(drone_pos[4] - target_pos[2 * i]) < POSITION_THRESHOLD &&
+             fabs(drone_pos[5] - target_pos[2 * (i + 1)]) < POSITION_THRESHOLD) ||
+            (fabs(drone_pos[2] - target_pos[2 * i]) < POSITION_THRESHOLD &&
+             fabs(drone_pos[3] - target_pos[2 * (i + 1)]) < POSITION_THRESHOLD)) {
 
             // change value from coordinates to -1
-            target_pos[2*i] = -1.0;
-            target_pos[2*i+1] = -1.0;
-
-            // maybe have to create a new shared data struct?
+            target_pos[2 * i] = -1.0;
+            target_pos[2 * (i + 1)] = -1.0;
 
             printf("Target position %f, %f has been gotted\n", target_pos[2 * i], target_pos[2 * i + 1]);
         }
     }
 }
+
+// target update to see if drone has gone over it
+// void target_update(double *drone_pos, double *target_pos){
+//     for (int i = 0; i< NUM_TARGETS*2; i+=2){
+
+//         if ((drone_pos[4] == target_pos[2*i] && drone_pos[5] == target_pos[2*i+1]) || 
+//         (drone_pos[2] == target_pos[2*i] && drone_pos[3] == target_pos[2*i+1])){
+
+//             // change value from coordinates to -1
+//             target_pos[2*i] = -1.0;
+//             target_pos[2*i+1] = -1.0;
+
+//             // maybe have to create a new shared data struct?
+
+//             printf("Target position %f, %f has been gotted\n", target_pos[2 * i], target_pos[2 * i + 1]);
+//         }
+//     }
+// }
 
 // make the targets coordinates
 void makeTargs(double drone_pos[]){
@@ -90,7 +98,7 @@ int main(int argc, char* argv[]){
     pid_t target_pid;
     target_pid=getpid();
     my_write(target_server[1], &target_pid, target_server[0],sizeof(target_pid));
-    // printf("%d\n",target_pid);
+    printf("%d\n",target_pid);
 
     struct shared_data data;
 
@@ -100,16 +108,16 @@ int main(int argc, char* argv[]){
 
     memcpy(data.target_pos, target_pos,sizeof(target_pos));
     write(target_server[1],&data,sizeof(data));
-    // printf("%d %d\n", target_server[1],target_server[0]);
+    printf("%d %d\n", target_server[1],target_server[0]);
 
     while(1){
         // Get shared data and store it into local variables
         my_read(server_target[0],&data,target_server[1],sizeof(data));
         memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
 
-        target_update(drone_pos, target_pos);
-        // printf("target: %f %f %f %f\n",target_pos[0],target_pos[1],target_pos[2],target_pos[3]);
         // target_update(drone_pos, target_pos);
+        printf("target: %f %f %f %f\n",target_pos[0],target_pos[1],target_pos[2],target_pos[3]);
+        target_update(drone_pos, target_pos);
 
         // copy target position to shared data and send it
         memcpy(data.target_pos, target_pos, sizeof(target_pos));
