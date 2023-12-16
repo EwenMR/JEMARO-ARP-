@@ -66,16 +66,19 @@ int main(int argc, char *argv[]){
             // RIGHT 
             case 'o':
             case 'r':
+            case '9':
                 xy[0]++;
                 xy[1]--;
                 break;
             case 'l':
             case 'f':
+            case '6':
                 xy[0]++;
                 break;
 
             case '.':
             case 'v':
+            case '3':
                 xy[0]++;
                 xy[1]++;
                 break;
@@ -83,15 +86,18 @@ int main(int argc, char *argv[]){
             // LEFT
             case 'u':
             case 'w':
+            case '7':
                 xy[0]--;
                 xy[1]--;
                 break;
             case 'j':
             case 's':
+            case '4':
                 xy[0]--;
                 break;
             case 'm':
             case 'x':
+            case '1':
                 xy[0]--;
                 xy[1]++;
                 break;
@@ -99,12 +105,14 @@ int main(int argc, char *argv[]){
             // UP
             case 'i':
             case 'e':
+            case '8':
                 xy[1]--;
                 break;
 
             // DOWN
             case ',':
             case 'c':
+            case '2':
                 xy[1]++;
                 break;
 
@@ -112,6 +120,7 @@ int main(int argc, char *argv[]){
             // STOP
             case 'k':
             case 'd':
+            case '5':
                 xy[0]=0;
                 xy[1]=0;
             default:
