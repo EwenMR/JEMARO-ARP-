@@ -153,7 +153,6 @@ int main(int argc, char* argv[]) {
             mvwprintw(win, LINES/2, COLS/2, "WELL DONE");
             wrefresh(win);
             sleep(10);
-            exit(EXIT_SUCCESS);
         }
         
         // mvwprintw(win, 23,92, "9");
