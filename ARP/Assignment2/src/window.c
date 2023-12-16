@@ -100,7 +100,10 @@ int main(int argc, char* argv[]) {
     int k=0;
 
 
-
+    start_color();
+    init_pair(1, COLOR_BLUE, COLOR_BLACK);
+    init_pair(2, COLOR_RED, COLOR_BLACK);
+    init_pair(3, COLOR_GREEN, COLOR_BLACK);
     while (1) {
         werase(win);
         box(win, 0, 0);
@@ -128,14 +131,20 @@ int main(int argc, char* argv[]) {
         wattron(win,COLOR_PAIR(1));
         mvwprintw(win, (int)(drone_pos[5]/scaley), (int)(drone_pos[4]/scalex), "+");
         wattroff(win,COLOR_PAIR(1));
+
+        wattron(win,COLOR_PAIR(3));
         for(int i=0; i<(NUM_OBSTACLES*2);i+=2){
             mvwprintw(win, (int)(obstacle_pos[i+1]/scaley), (int)(obstacle_pos[i]/scalex), "O");
-            
         }
+        wattroff(win,COLOR_PAIR(3));
+
+        wattron(win,COLOR_PAIR(2));
         for(int i=2; i<(NUM_TARGETS*2)+2;i+=2){
+            
             mvwprintw(win, (int)(target_pos[i+1]/scaley), (int)(target_pos[i]/scalex), "%d", i/2);
             
         }
+        wattroff(win,COLOR_PAIR(2));
 
         // mvwprintw(score,1,1,"Position of the drone is: %f,%f", drone_pos[4],drone_pos[5]);
         mvwprintw(score,1,1,"Position of the drone is: %f,%f", drone_pos[4],drone_pos[5]);

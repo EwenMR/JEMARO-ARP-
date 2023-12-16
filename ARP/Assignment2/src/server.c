@@ -140,14 +140,22 @@ int main(int argc, char *argv[])
     
 
 
-
+    //Initialize the shared data
     struct shared_data data, updated_data;
     double drone_pos[6];// Array to store the position of drone
-    double obst_pos[20];
-    double target_pos[20];
+    double obst_pos[NUM_OBSTACLES*2];
+    for(int i=0; i<sizeof(obst_pos)/sizeof(obst_pos[0]); i++){
+        obst_pos[i]=-1;
+    }
+    double target_pos[NUM_TARGETS*2];
+    for(int i=0; i<sizeof(target_pos)/sizeof(target_pos[0]); i++){
+        target_pos[i]=-1;
+    }
+
     int key=0;
     int command_force[2]={0,0};
     
+   
     data.key=key;
     memcpy(data.command_force, command_force, sizeof(command_force));
     
@@ -197,7 +205,7 @@ int main(int argc, char *argv[])
                         memcpy(data.drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
 
                         my_write(server_target[1],&data,server_target[0],sizeof(data));
-                        my_write(server_obstacle[1],&data,server_obstacle[0],sizeof(data));
+                        // my_write(server_obstacle[1],&data,server_obstacle[0],sizeof(data));
                         my_write(server_window[1],&data,server_window[0],sizeof(data));
                         break;
                     case 3: //obstacle
@@ -207,17 +215,18 @@ int main(int argc, char *argv[])
                         printf("OBSTACLE %f %f\n", obst_pos[0],obst_pos[1]);
 
                         my_write(server_drone[1],&data,server_drone[0],sizeof(data));
-                        my_write(server_window[1],&data,server_window[0],sizeof(data));
+                        // my_write(server_window[1],&data,server_window[0],sizeof(data));
                         break;
                     case 4: //target
                         printf("TARGET\n");
                         memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
                         memcpy(data.target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
+                        
                         printf("TARGET %f %f\n", target_pos[0],target_pos[1]);
 
                         my_write(server_obstacle[1],&data,obstacle_server[0],sizeof(data));
-                        my_write(server_drone[1],&data,server_drone[0],sizeof(data));
-                        my_write(server_window[1],&data,server_window[0],sizeof(data));
+                        // my_write(server_drone[1],&data, server_drone[0],sizeof(data));
+                        // my_write(server_window[1],&data,server_window[0],sizeof(data));
                         break;
                     default:
                         break;

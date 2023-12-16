@@ -36,17 +36,19 @@ void makeObs(double drone_pos[]) {
         obstacle_pos[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
 
         // check if the x obstacle coordinate isn't too close to drone
-        while (obstacle_pos[i] >= drone_pos[4] - THRESHOLD && obstacle_pos[i] <= drone_pos[4] + THRESHOLD && obstacle_pos[i+1] >= drone_pos[5] - THRESHOLD && obstacle_pos[i+1] <= drone_pos[5] + THRESHOLD) {
+        while (obstacle_pos[i]   >= drone_pos[4] - THRESHOLD && obstacle_pos[i]   <= drone_pos[4] + THRESHOLD && 
+               obstacle_pos[i+1] >= drone_pos[5] - THRESHOLD && obstacle_pos[i+1] <= drone_pos[5] + THRESHOLD) {
             // Regenerate obstacle-coordinate
             obstacle_pos[i]   = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
             obstacle_pos[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
         }
-        for(int j=0; i<NUM_TARGETS*2; i+=2){
-            while (obstacle_pos[i] >= target_pos[i] - THRESHOLD && obstacle_pos[i] <= target_pos[i] + THRESHOLD && obstacle_pos[i+1] >= target_pos[i+1] - THRESHOLD && obstacle_pos[i+1] <= target_pos[i+1] + THRESHOLD) {
-            // Regenerate obstacle-coordinate
-            obstacle_pos[i]   = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
-            obstacle_pos[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
-        }
+        for(int j=0; j<NUM_TARGETS*2; j+=2){
+            while (obstacle_pos[i]   >= target_pos[j] - THRESHOLD   && obstacle_pos[i]   <= target_pos[j] + THRESHOLD && 
+                   obstacle_pos[i+1] >= target_pos[j+1] - THRESHOLD && obstacle_pos[i+1] <= target_pos[j+1] + THRESHOLD) {
+                // Regenerate obstacle-coordinate
+                obstacle_pos[i]   = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
+                obstacle_pos[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
+            }
         }
         
     }
@@ -84,13 +86,16 @@ int main(int argc, char* argv[]){
         memcpy(target_pos, data.target_pos, sizeof(data.target_pos));
         // memcpy(obstacle_pos, data.obst_pos, sizeof(data.obst_pos));
 
-        makeObs(drone_pos);
-        memcpy(data.obst_pos,obstacle_pos,sizeof(obstacle_pos));
-        my_write(obstacle_server[1],&data,server_obstacle[0],sizeof(data));
-        printf("obstacle: %f %f %f %f\n",obstacle_pos[0],obstacle_pos[1],obstacle_pos[2],obstacle_pos[3]);
+        if(target_pos[0]!=-1){
+            makeObs(drone_pos);
+            memcpy(data.obst_pos,obstacle_pos,sizeof(obstacle_pos));
+            my_write(obstacle_server[1],&data,server_obstacle[0],sizeof(data));
+            printf("obstacle: %f %f| %f %f |%f %f |%f %f|%f %f \n",obstacle_pos[0],obstacle_pos[1],obstacle_pos[2],obstacle_pos[3],obstacle_pos[4],obstacle_pos[5],obstacle_pos[6],obstacle_pos[7],obstacle_pos[8],obstacle_pos[9]);
 
+        }
         
-        sleep(1);
+        
+        usleep(500000);
     }
 
 }

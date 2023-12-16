@@ -100,7 +100,6 @@ int main(int argc, char *argv[]) {
 
     while (1) {
         // 3 Receive command force from keyboard_manager
-        // ssize_t bytesRead = read(server_drone[0], xy, sizeof(xy)); 
 
         my_read(server_drone[0], &data, drone_server[1], sizeof(data));
         memcpy(xy, data.command_force, sizeof(data.command_force));
@@ -115,27 +114,7 @@ int main(int argc, char *argv[]) {
             update_pos(drone_pos,xy); 
         }
 
-        // Wait until user's first input
-        // if (first==0){ 
-        //     my_read(server_drone[0],drone_pos,drone_server[1],sizeof(drone_pos)); // 1 Get the initial drone_pos of the drone
-        //     if (bytesRead<0){ 
-        //         if (errno != EAGAIN) {
-        //             perror("reading error");
-        //             exit(EXIT_FAILURE);
-        //         }
-        //     }else if(bytesRead>0){ // User's first input
-        //         update_pos(drone_pos,xy);
-        //         first++;
-        //     }
-        // }else{ // After first second input
-        //     if(xy[0]==0 && xy[1]==0){
-        //         stop(drone_pos);
-        //     }else{
-        //         update_pos(drone_pos,xy); 
-        //     }
-            
-        // }
-    
+
         // 4
         // Send updated drone drone_pos to window via shared memory
         memcpy(data.drone_pos, drone_pos, sizeof(drone_pos));
