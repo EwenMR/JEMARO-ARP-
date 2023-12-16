@@ -25,7 +25,7 @@ void writeToLogFile(const char *logpath, const char *logMessage) {
 
 int main(int argc, char *argv[]) 
 {   
-    char *logpath = "Assignment2/log/server.log"; // Path for the log file
+    char *logpath = "./../log/server.log"; // Path for the log file
     writeToLogFile(logpath,"hello");
     while(1){
 

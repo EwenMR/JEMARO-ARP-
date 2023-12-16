@@ -30,7 +30,6 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
 
 void writeToLogFile(const char *logpath, const char *logMessage) {
     FILE *logFile = fopen(logpath, "a");  // Open file in append mode
-    
 
     if (logFile == NULL) {
         perror("Error opening log file");
@@ -53,7 +52,7 @@ void writeToLogFile(const char *logpath, const char *logMessage) {
 
 int main(int argc, char *argv[]) 
 {   
-    char *logpath = "../log/server.log"; // Path for the log file
+    char *logpath = "./../log/server.log"; // Path for the log file
     writeToLogFile(logpath,"hello");
 
     // SIGNALS FOR THE WATCHDOG
@@ -153,7 +152,6 @@ int main(int argc, char *argv[])
     
 
     while(1){
-        char *logpath = "../log/server.log"; // Path for the log file
         writeToLogFile(logpath,"hello");
         fd_set reading;
         FD_ZERO(&reading);
