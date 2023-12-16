@@ -140,14 +140,26 @@ int main(int argc, char* argv[]) {
 
         wattron(win,COLOR_PAIR(2));
         for(int i=2; i<(NUM_TARGETS*2)+2;i+=2){
+            if(target_pos[i-2]==0 && target_pos[i-1]==0){
+            }else{
+                mvwprintw(win, (int)(target_pos[i-1]/scaley), (int)(target_pos[i-2]/scalex), "%d", i/2);
+            }
             
-            mvwprintw(win, (int)(target_pos[i+1]/scaley), (int)(target_pos[i]/scalex), "%d", i/2);
             
         }
+        if(target_pos[NUM_TARGETS*2-2]==0 && target_pos[NUM_TARGETS*2-1]==0){
+            werase(win);
+            box(win, 0, 0);
+            mvwprintw(win, LINES/2, COLS/2, "WELL DONE");
+            wrefresh(win);
+            sleep(10);
+        }
+        
+        // mvwprintw(win, 23,92, "9");
         wattroff(win,COLOR_PAIR(2));
 
         // mvwprintw(score,1,1,"Position of the drone is: %f,%f", drone_pos[4],drone_pos[5]);
-        mvwprintw(score,1,1,"Position of the drone is: %f,%f", drone_pos[4],drone_pos[5]);
+        mvwprintw(score,1,1,"Position of the target is: %f,%f", target_pos[16]/scalex,target_pos[17]/scaley);
         wrefresh(win);
         wrefresh(score);
         

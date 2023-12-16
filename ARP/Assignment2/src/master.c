@@ -118,15 +118,9 @@ int main(int argc, char *argv[]){
             }else if(i==6){ //WATCH DOG
                 sprintf(args, "%d %d", server_wd[0], server_wd[1]);
                 argsWatchdog[1]=args;
-                summon(argsWatchdog);
+                // summon(argsWatchdog);
             }   
         }else { //else if parent
-            // printf(server_format, window_server[0],   window_server[1],   server_window[0],   server_window[1],
-            //                                 keyboard_server[0], keyboard_server[1], server_keyboard[0], server_keyboard[1],
-            //                                 drone_server[0],    drone_server[1],    server_drone[0],    server_drone[1],
-            //                                 obstacle_server[0], obstacle_server[1], server_obstacle[0], server_obstacle[1],
-            //                                 target_server[0],   target_server[1],   server_target[0],   server_target[1],
-            //                                 wd_server[0], wd_server[1], server_wd[0], server_wd[1]);
             printf("Summoned child with pid %d\n", pid);
         }
     }

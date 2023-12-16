@@ -12,6 +12,7 @@
 #include <sys/select.h>
 #include "../include/utility.c"
 #include "../include/constants.h"
+#include "../include/log.h"
 
 
 // Signal handler for watchdog
@@ -34,7 +35,9 @@ int main(int argc, char *argv[])
     sigaction(SIGINT, &sig_act, NULL);
     sigaction(SIGUSR1, &sig_act, NULL);
 
-    
+    FILE *logfd; // File pointer that contains the file descriptor for the log file
+    char *logpath = "../log/server.log"; // Path for the log file
+    // logopen(logpath);
 
     
     // SENDING THE PID TO WATCHDOG
@@ -73,14 +76,7 @@ int main(int argc, char *argv[])
     */
 
     char server_format[100]= "%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d";
-    
-    // sscanf(argv[1],server_format,   &window_server[0],   &window_server[1],   &server_window[0],   &server_window[1],
-    //                                 &keyboard_server[0], &keyboard_server[1], &server_keyboard[0], &server_keyboard[1],
-    //                                 &drone_server[0],    &drone_server[1],    &server_drone[0],    &server_drone[1],
-    //                                 &obstacle_server[0], &obstacle_server[1], &server_obstacle[0], &server_obstacle[1],
-    //                                 &target_server[0],   &target_server[1],   &server_target[0],   &server_target[1],
-    //                                 &wd_server[0], &wd_server[1], &server_wd[0], &server_wd[1]); // Get the fds of the pipe to watchdog
-    
+
     sscanf(argv[1],server_format,   &rec_pipes[0][0],   &rec_pipes[0][1], &server_window[0],   &server_window[1],
                                     &rec_pipes[1][0],   &rec_pipes[1][1], &server_keyboard[0], &server_keyboard[1],
                                     &rec_pipes[2][0],   &rec_pipes[2][1], &server_drone[0],    &server_drone[1],
@@ -88,24 +84,6 @@ int main(int argc, char *argv[])
                                     &rec_pipes[4][0],   &rec_pipes[4][1], &server_target[0],   &server_target[1],
                                     &rec_pipes[5][0],   &rec_pipes[5][1], &server_wd[0],       &server_wd[1]); // Get the fds of the pipe to watchdog
     
-    // sscanf(argv[1],server_format,   &rec_pipes[0][0],   &rec_pipes[0][1], &send_pipes[0][0],   &send_pipes[0][1],
-    //                                 &rec_pipes[1][0],   &rec_pipes[1][1], &send_pipes[1][0],   &send_pipes[1][1],
-    //                                 &rec_pipes[2][0],   &rec_pipes[2][1], &send_pipes[2][0],   &send_pipes[2][1],
-    //                                 &rec_pipes[3][0],   &rec_pipes[3][1], &send_pipes[3][0],   &send_pipes[3][1],
-    //                                 &rec_pipes[4][0],   &rec_pipes[4][1], &send_pipes[4][0],   &send_pipes[4][1],
-    //                                 &rec_pipes[5][0],   &rec_pipes[5][1], &send_pipes[5][0],   &send_pipes[5][1]); // Get the fds of the pipe to watchdog
-    
-    
-
-    // close(server_drone[0]);
-    // close(server_keyboard[0]);
-    // close(server_window[0]);
-    // close(server_obstacle[0]);
-    // close(server_target[0]);
-    // close(server_wd[0]);
-
-
-
 
     pid_t all_pids[NUM_PROCESSES];
     fd_set reading;
@@ -140,18 +118,12 @@ int main(int argc, char *argv[])
     struct shared_data data, updated_data;
     double drone_pos[6];// Array to store the position of drone
     double obst_pos[NUM_OBSTACLES*2];
-    for(int i=0; i<sizeof(obst_pos)/sizeof(obst_pos[0]); i++){
-        obst_pos[i]=-1;
-    }
     double target_pos[NUM_TARGETS*2];
-    for(int i=0; i<sizeof(target_pos)/sizeof(target_pos[0]); i++){
-        target_pos[i]=-1;
-    }
 
     int key=0;
     int command_force[2]={0,0};
     
-   
+    obst_pos[0]= target_pos[0]=-1;
     data.key=key;
     memcpy(data.command_force, command_force, sizeof(command_force));
     
@@ -182,52 +154,46 @@ int main(int argc, char *argv[])
             
                     switch (j){
                     case 0: //window
+                        // logmessage(logpath, "Read from window");
+                    
                         key=updated_data.key;
                         data.key=updated_data.key;
                         my_write(server_keyboard[1],&data,server_keyboard[0],sizeof(data));
                         
                         break;
                     case 1: //keyboard
+                        // logmessage(logpath, "read from keyboard");
                         memcpy(command_force, updated_data.command_force, sizeof(updated_data.command_force));
                         memcpy(data.command_force, updated_data.command_force, sizeof(updated_data.command_force));
 
                         my_write(server_drone[1],&data,server_drone[0],sizeof(data));
                         break;
                     case 2: //drone
+                        // logmessage(logpath, "read from drone");
                         memcpy(drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
                         memcpy(data.drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
 
                         my_write(server_target[1],&data,server_target[0],sizeof(data));
-                        // my_write(server_obstacle[1],&data,server_obstacle[0],sizeof(data));
                         my_write(server_window[1],&data,server_window[0],sizeof(data));
                         break;
                     case 3: //obstacle
-                    // printf("OBSTCALE %f %f\n", obst_pos[0],obst_pos[1]);
+                        // logmessage(logpath, "read from obstacle");
                         memcpy(obst_pos, updated_data.obst_pos, sizeof(updated_data.obst_pos));
                         memcpy(data.obst_pos, updated_data.obst_pos, sizeof(updated_data.obst_pos));
 
                         my_write(server_drone[1],&data,server_drone[0],sizeof(data));
-                        // my_write(server_window[1],&data,server_window[0],sizeof(data));
                         break;
                     case 4: //target
+                        // logmessage(logpath, "read from target");
                         memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
                         memcpy(data.target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
                         
 
                         my_write(server_obstacle[1],&data,obstacle_server[0],sizeof(data));
-                        // my_write(server_drone[1],&data, server_drone[0],sizeof(data));
-                        // my_write(server_window[1],&data,server_window[0],sizeof(data));
                         break;
                     default:
                         break;
                     }
-
-                    // for(int i=0; i<NUM_PROCESSES-2; i++){
-                    //     if(i!=j){ //Dont send it to itself
-                    //         my_write(send_pipes[i][1],&data,rec_pipes[i][0],sizeof(data));
-                    //     }
-                        
-                    // }
                 }
             }
         }
