@@ -130,7 +130,7 @@ int main(int argc, char* argv[]){
                 new_seconds=get_time();
                 if(update(remainder)==true && seconds != new_seconds){
                     makeObs(drone_pos);
-                    seconds=new_seconds;
+                        seconds=new_seconds;
                     
                 }
                 
@@ -142,8 +142,8 @@ int main(int argc, char* argv[]){
         }
         
         
-       int sleep_time = (rand() % 4 + 7);  // Random value between 7 and 10
-        sleep(sleep_time);
+        usleep(50000);
+        // sleep(1);
     }
 
 }
