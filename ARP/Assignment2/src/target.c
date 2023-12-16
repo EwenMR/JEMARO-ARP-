@@ -39,8 +39,8 @@ void target_update(double *drone_pos, double *target_pos) {
              fabs(drone_pos[3] - target_pos[2 * (i + 1)]) < POSITION_THRESHOLD)) {
 
             // change value from coordinates to -1
-            target_pos[2 * i] = -1.0;
-            target_pos[2 * (i + 1)] = -1.0;
+            target_pos[2 * i] = 0;
+            target_pos[2 * (i + 1)] = 0;
 
             printf("Target position %f, %f has been gotted\n", target_pos[2 * i], target_pos[2 * i + 1]);
         }
