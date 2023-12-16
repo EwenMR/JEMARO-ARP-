@@ -95,8 +95,8 @@ int main(int argc, char* argv[]){
         }
         
         
-        usleep(50000);
-        // sleep(1);
+       int sleep_time = (rand() % 4 + 7);  // Random value between 7 and 10
+        sleep(sleep_time);
     }
 
 }
