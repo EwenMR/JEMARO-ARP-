@@ -26,6 +26,13 @@
 #define SCORE_WINDOW_ROW 0.20
 #define WINDOW_ROW 0.80
 
+#define TARGET_THRESH 10          // threshold distance for the closeness an obstacle canbe to the drone
+#define MAX_TAR_ARR_SIZE  20    // max array size for targets
+#define POSITION_THRESHOLD 5.0
+
+#define OBS_THRESH 5.0 
+#define OBSTACLE_REFRESH_RATE 5
+
 struct shared_data{
     double drone_pos[6]; // Array to store the position of drone
     double obst_pos[NUM_OBSTACLES*2];
@@ -33,5 +40,7 @@ struct shared_data{
     int key;
     int command_force[2];
 };
+
+char *logpath = "./log/server.log"; // Path for the log file
 
 #endif

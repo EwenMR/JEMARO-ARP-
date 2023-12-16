@@ -8,9 +8,8 @@
 #include "../include/constants.h"
 #include <time.h>
 #include <math.h>
-#define THRESHOLD 10          // threshold distance for the closeness an obstacle canbe to the drone
-#define MAX_TAR_ARR_SIZE  20    // max array size for targets
-#define POSITION_THRESHOLD 5.0
+#include "../include/log.c"
+
 
 
 
@@ -61,7 +60,7 @@ void makeTargs(double drone_pos[]){
         target_pos[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;
 
         // check if they aren't within threshold of drone
-        while(fabs(target_pos[i] - drone_pos[4]) < THRESHOLD  && fabs(target_pos[i+1] - drone_pos[5]) < THRESHOLD) {
+        while(fabs(target_pos[i] - drone_pos[4]) < TARGET_THRESH  && fabs(target_pos[i+1] - drone_pos[5]) < TARGET_THRESH) {
             // Regenerate target_pos coordinates
             target_pos[i] = ((double)rand() / RAND_MAX) * BOARD_SIZE;
             target_pos[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;
@@ -87,7 +86,7 @@ int main(int argc, char* argv[]){
     pid_t target_pid;
     target_pid=getpid();
     my_write(target_server[1], &target_pid, target_server[0],sizeof(target_pid));
-    printf("%d\n",target_pid);
+    writeToLogFile(logpath, "TARGET: Pid sent to server");
 
     struct shared_data data;
 
@@ -97,12 +96,16 @@ int main(int argc, char* argv[]){
 
     memcpy(data.target_pos, target_pos,sizeof(target_pos));
     write(target_server[1],&data,sizeof(data));
+    writeToLogFile(logpath, "TARGET: Initial target_pos sent to server");
     printf("%d %d\n", target_server[1],target_server[0]);
+
+    char *logpath = "./log/server.log"; // Path for the log file
 
     while(1){
         // Get shared data and store it into local variables
         my_read(server_target[0],&data,target_server[1],sizeof(data));
         memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
+        writeToLogFile(logpath, "TARGET: drone_pos received from server");
         
 
         // target_update(drone_pos, target_pos);
@@ -112,6 +115,7 @@ int main(int argc, char* argv[]){
         // copy target position to shared data and send it
         memcpy(data.target_pos, target_pos, sizeof(target_pos));
         my_write(target_server[1], &data, server_target[0], sizeof(data));
+        writeToLogFile(logpath, "TARGET: Updated target_pos sent to server");
 
     }
 

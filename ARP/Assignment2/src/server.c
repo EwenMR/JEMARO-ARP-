@@ -14,7 +14,7 @@
 #include <time.h>
 #include "../include/utility.c"
 #include "../include/constants.h"
-#include "../include/log.h"
+#include "../include/log.c"
 
 
 // Signal handler for watchdog
@@ -28,32 +28,11 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
     }
 }
 
-void writeToLogFile(const char *logpath, const char *logMessage) {
-    FILE *logFile = fopen(logpath, "a");  // Open file in append mode
-
-    if (logFile == NULL) {
-        perror("Error opening log file");
-        return;
-    }
-
-    // Get the current time
-    time_t rawTime;
-    struct tm *timeInfo;
-    time(&rawTime);
-    timeInfo = localtime(&rawTime);
-
-    // Write log entry with timestamp
-    fprintf(logFile, "[%04d-%02d-%02d %02d:%02d:%02d] %s\n",
-            timeInfo->tm_year + 1900, timeInfo->tm_mon + 1, timeInfo->tm_mday,
-            timeInfo->tm_hour, timeInfo->tm_min, timeInfo->tm_sec, logMessage);
-
-    fclose(logFile);
-}
 
 int main(int argc, char *argv[]) 
 {   
-    char *logpath = "./../log/server.log"; // Path for the log file
-    writeToLogFile(logpath,"hello");
+    
+    clearLogFile(logpath);
 
     // SIGNALS FOR THE WATCHDOG
     struct sigaction sig_act;
@@ -127,11 +106,13 @@ int main(int argc, char *argv[])
             if(ret_val>0){
                 FD_ISSET(rec_pipes[j][0],&reading);
                 my_read(rec_pipes[j][0],&all_pids[j],rec_pipes[j][1], sizeof(int));
+                writeToLogFile(logpath, "SERVER: Pid recieved");
                 printf("%d\n",all_pids[j]);
             }
         }
     all_pids[NUM_PROCESSES-2] = getpid();
     my_write(server_wd[1],all_pids,sizeof(all_pids),sizeof(all_pids));
+    writeToLogFile(logpath, "SERVER: Pid sent to watchdog");
     // }
 
     
@@ -152,7 +133,6 @@ int main(int argc, char *argv[])
     
 
     while(1){
-        writeToLogFile(logpath,"hello");
         fd_set reading;
         FD_ZERO(&reading);
 
@@ -178,22 +158,22 @@ int main(int argc, char *argv[])
             
                     switch (j){
                     case 0: //window
-                        // logmessage(logpath, "Read from window");
-                    
+                        writeToLogFile(logpath, "SERVER: User input received");
+                
                         key=updated_data.key;
                         data.key=updated_data.key;
                         my_write(server_keyboard[1],&data,server_keyboard[0],sizeof(data));
                         
                         break;
                     case 1: //keyboard
-                        // logmessage(logpath, "read from keyboard");
+                        writeToLogFile(logpath, "SERVER: Command force received from keyboard");
                         memcpy(command_force, updated_data.command_force, sizeof(updated_data.command_force));
                         memcpy(data.command_force, updated_data.command_force, sizeof(updated_data.command_force));
 
                         my_write(server_drone[1],&data,server_drone[0],sizeof(data));
                         break;
                     case 2: //drone
-                        // logmessage(logpath, "read from drone");
+                        writeToLogFile(logpath, "SERVER: New drone_pos received from drone");
                         memcpy(drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
                         memcpy(data.drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
 
@@ -201,14 +181,14 @@ int main(int argc, char *argv[])
                         my_write(server_window[1],&data,server_window[0],sizeof(data));
                         break;
                     case 3: //obstacle
-                        // logmessage(logpath, "read from obstacle");
+                        writeToLogFile(logpath, "SERVER: Obstacle received from obstacle");
                         memcpy(obst_pos, updated_data.obst_pos, sizeof(updated_data.obst_pos));
                         memcpy(data.obst_pos, updated_data.obst_pos, sizeof(updated_data.obst_pos));
 
                         my_write(server_drone[1],&data,server_drone[0],sizeof(data));
                         break;
                     case 4: //target
-                        // logmessage(logpath, "read from target");
+                        writeToLogFile(logpath, "SERVER: Target received from target");
                         memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
                         memcpy(data.target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
                         

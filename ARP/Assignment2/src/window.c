@@ -14,6 +14,7 @@
 #include <sys/stat.h>
 #include <signal.h>
 #include "../include/utility.c"
+#include "../include/log.c"
 
 // Signal handler for watchdog
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
@@ -81,6 +82,7 @@ int main(int argc, char* argv[]) {
     pid_t window_pid;
     window_pid=getpid();
     my_write(window_server[1], &window_pid, server_window[0],sizeof(window_pid));
+    writeToLogFile(logpath, "WINDOW: Pid sent to server");
 
 
 
@@ -98,12 +100,15 @@ int main(int argc, char* argv[]) {
     init_pair(1, COLOR_BLUE, COLOR_BLACK);
     init_pair(2, COLOR_RED, COLOR_BLACK);
     init_pair(3, COLOR_GREEN, COLOR_BLACK);
+
+    
     while (1) {
         werase(win);
         box(win, 0, 0);
         // READ SHARED DATA and store it into local variables.
 
         my_read(server_window[0],&data,server_window[1],sizeof(data));
+        writeToLogFile(logpath, "WINDOW: Drone_pos, Target_pos, Obst_pos received from server");
         memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
         memcpy(target_pos, data.target_pos, sizeof(data.target_pos));
         memcpy(obstacle_pos, data.obst_pos, sizeof(data.obst_pos));
@@ -163,6 +168,7 @@ int main(int argc, char* argv[]) {
         if (key != ERR) { // If a key was pressed properly
             data.key=key;
             my_write(window_server[1],&data,window_server[0],sizeof(data));
+            writeToLogFile(logpath, "WINDOW: User input sent to server");
             if((char)key==' '){ //if space was pressed, close window
                 close(window_server[1]);
                 close(server_window[0]);

@@ -15,6 +15,7 @@
 #include "../include/constants.h"
 #include "../include/utility.c"
 #include <signal.h>
+#include "../include/log.c"
 
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
     if(signo == SIGINT){
@@ -89,24 +90,20 @@ int main(int argc, char *argv[]) {
     pid_t drone_pid;
     drone_pid=getpid();
     my_write(drone_server[1], &drone_pid, server_drone[0],sizeof(drone_pid));
-    // printf("%d\n",drone_pid);
+    writeToLogFile(logpath, "DRONE: Pid sent to server");
 
-    // int flags = fcntl(server_drone[0], F_GETFL); // make the read non blocking so the drone can move without user input 
-    // fcntl(server_drone[0], F_SETFL, flags | O_NONBLOCK);
 
+    // Send initial drone position to other processes
     memcpy(data.drone_pos,drone_pos, sizeof(drone_pos));
     my_write(drone_server[1],&data, server_drone[0],sizeof(data));
+    writeToLogFile(logpath, "DRONE: Initial drone_pos sent to server");
 
 
     while (1) {
-        // 3 Receive command force from keyboard_manager
-
+        // 3 Receive command force
         my_read(server_drone[0], &data, drone_server[1], sizeof(data));
         memcpy(xy, data.command_force, sizeof(data.command_force));
-        memcpy(drone_pos, data.drone_pos, sizeof(drone_pos));
-
-        // printf("%d %d\n", xy[0], xy[1]);
-        // printf("%f %f %f %f %f %f\n",drone_pos[0], drone_pos[1], drone_pos[2], drone_pos[3], drone_pos[4], drone_pos[5]);
+        writeToLogFile(logpath, "DRONE: Command_force received from server");
 
         if(xy[0]==0 && xy[1]==0){
             stop(drone_pos);
@@ -114,11 +111,10 @@ int main(int argc, char *argv[]) {
             update_pos(drone_pos,xy); 
         }
 
-
-        // 4
-        // Send updated drone drone_pos to window via shared memory
+        // Send updated drone drone_pos to window and target
         memcpy(data.drone_pos, drone_pos, sizeof(drone_pos));
         my_write(drone_server[1], &data, server_drone[0],sizeof(data));
+        writeToLogFile(logpath, "DRONE: Drone_pos sent to server");
     }
 
     // Clean up

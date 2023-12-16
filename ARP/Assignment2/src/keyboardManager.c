@@ -13,6 +13,7 @@
 #include <signal.h>
 #include "../include/utility.c"
 
+#include "../include/log.c"
 
 #include "../include/constants.h"
 
@@ -27,6 +28,7 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
 }
 
 int main(int argc, char *argv[]){   
+    //SIGNALS
     struct sigaction signal;
     signal.sa_sigaction = signal_handler;
     signal.sa_flags = SA_SIGINFO;
@@ -37,26 +39,30 @@ int main(int argc, char *argv[]){
     int keyboard_server[2], server_keyboard[2];
     char args_format[80]="%d %d|%d %d";
     sscanf(argv[1], args_format,  &keyboard_server[0], &keyboard_server[1], &server_keyboard[0], &server_keyboard[1]);
+    close(keyboard_server[0]); 
+    close(server_keyboard[1]);
     
 
-
+    // Pids for Watchdog
     pid_t keyboard_pid;
     keyboard_pid=getpid();
     my_write(keyboard_server[1], &keyboard_pid, server_keyboard[0],sizeof(keyboard_pid));
+    writeToLogFile(logpath, "KEYBOARD: Pid sent to server");
 
-    // SGINAL
 
+    // Local variables
     int key;
     int xy[2] = {0,0};
     struct shared_data data;
     
     
     while (1) {
-        // reads the position and user input from window
+        // Receive user input from window
         my_read(server_keyboard[0], &data, server_keyboard[1],sizeof(data));
         key=data.key;
-        // printf("%d\n", key);
+        writeToLogFile(logpath, "KEYBOARD: User input received from server");
 
+        // Get command force
         switch ((char)key) {
             case ' ': // enter space to exit
             close(keyboard_server[1]);
@@ -128,15 +134,16 @@ int main(int argc, char *argv[]){
         }
 
 
-        // 3 Send the command force to drone.c
+        // Send the command force to drone
         memcpy(data.command_force,xy,sizeof(xy));
         my_write(keyboard_server[1], &data, server_keyboard[0],sizeof(data));
+        writeToLogFile(logpath, "KEYBOARD:  Command force sent to server");
 
     }
+    // cleanup
     close(keyboard_server[1]);
     close(server_keyboard[0]);
-    close(keyboard_server[0]); 
-    close(server_keyboard[1]);
+    
 
     return 0;
 }
