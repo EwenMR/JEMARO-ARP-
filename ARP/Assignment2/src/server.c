@@ -10,6 +10,8 @@
 #include <sys/mman.h>
 #include <signal.h>
 #include <sys/select.h>
+#include <sys/time.h>
+#include <time.h>
 #include "../include/utility.c"
 #include "../include/constants.h"
 #include "../include/log.h"
@@ -26,18 +28,40 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
     }
 }
 
+void writeToLogFile(const char *logpath, const char *logMessage) {
+    FILE *logFile = fopen(logpath, "a");  // Open file in append mode
+    
+
+    if (logFile == NULL) {
+        perror("Error opening log file");
+        return;
+    }
+
+    // Get the current time
+    time_t rawTime;
+    struct tm *timeInfo;
+    time(&rawTime);
+    timeInfo = localtime(&rawTime);
+
+    // Write log entry with timestamp
+    fprintf(logFile, "[%04d-%02d-%02d %02d:%02d:%02d] %s\n",
+            timeInfo->tm_year + 1900, timeInfo->tm_mon + 1, timeInfo->tm_mday,
+            timeInfo->tm_hour, timeInfo->tm_min, timeInfo->tm_sec, logMessage);
+
+    fclose(logFile);
+}
+
 int main(int argc, char *argv[]) 
-{
+{   
+    char *logpath = "../log/server.log"; // Path for the log file
+    writeToLogFile(logpath,"hello");
+
     // SIGNALS FOR THE WATCHDOG
     struct sigaction sig_act;
     sig_act.sa_sigaction = signal_handler;
     sig_act.sa_flags = SA_SIGINFO;
     sigaction(SIGINT, &sig_act, NULL);
     sigaction(SIGUSR1, &sig_act, NULL);
-
-    FILE *logfd; // File pointer that contains the file descriptor for the log file
-    char *logpath = "../log/server.log"; // Path for the log file
-    // logopen(logpath);
 
     
     // SENDING THE PID TO WATCHDOG
@@ -129,6 +153,8 @@ int main(int argc, char *argv[])
     
 
     while(1){
+        char *logpath = "../log/server.log"; // Path for the log file
+        writeToLogFile(logpath,"hello");
         fd_set reading;
         FD_ZERO(&reading);
 

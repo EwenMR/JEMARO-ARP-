@@ -92,12 +92,6 @@ int main(int argc, char* argv[]) {
     int key;
     int first=0;
     
-    // memcpy(data.drone_pos, drone_pos, sizeof(drone_pos));
-    // data.key=-1;
-    // my_write(window_server[1],&data, server_window[0], sizeof(data));
-    // mvwprintw(win, 5,1, "+");
-    
-    int k=0;
 
 
     start_color();
@@ -147,19 +141,18 @@ int main(int argc, char* argv[]) {
             
             
         }
-        if(target_pos[NUM_TARGETS*2-2]==0 && target_pos[NUM_TARGETS*2-1]==0){
+        
+        if(target_pos[NUM_TARGETS*2-2]==0 && target_pos[NUM_TARGETS*2-1]==0){ //GAME IS FINISHED
             werase(win);
             box(win, 0, 0);
             mvwprintw(win, LINES/2, COLS/2, "WELL DONE");
             wrefresh(win);
-            sleep(10);
+            sleep(5);
+            exit(EXIT_SUCCESS);
         }
-        
-        // mvwprintw(win, 23,92, "9");
         wattroff(win,COLOR_PAIR(2));
 
-        // mvwprintw(score,1,1,"Position of the drone is: %f,%f", drone_pos[4],drone_pos[5]);
-        mvwprintw(score,1,1,"Position of the target is: %f,%f", target_pos[16]/scalex,target_pos[17]/scaley);
+        mvwprintw(score,1,1,"Position of the drone is: %f,%f", drone_pos[4],drone_pos[5]);
         wrefresh(win);
         wrefresh(score);
         

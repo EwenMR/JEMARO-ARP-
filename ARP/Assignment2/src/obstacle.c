@@ -6,12 +6,16 @@
 #include <unistd.h>
 #include <time.h>
 #include <math.h>
+#include <time.h>
+#include <sys/time.h>
+#include <stdbool.h>
 
 
 #include "../include/constants.h"
 #include "../include/utility.c"
 
 #define THRESHOLD 5.0 
+#define OBSTACLE_REFRESH_RATE 5
 
 // GLOBAL VARIABLES
 double drone_pos[6], obstacle_pos[NUM_OBSTACLES*2], target_pos[NUM_TARGETS*2];
@@ -54,6 +58,31 @@ void makeObs(double drone_pos[]) {
     }
 }
 
+int get_time(){
+    int seconds,milliseconds;
+    
+    time_t t_now;
+    time(&t_now);
+    struct tm *local = localtime(&t_now);
+    struct timeval time_now;
+    gettimeofday(&time_now, NULL);
+    local = localtime(&time_now.tv_sec);
+    seconds = local -> tm_sec;
+
+    return seconds;
+
+}
+
+bool update(int remainder){
+    int seconds;
+    seconds=get_time();
+    
+    if(seconds%OBSTACLE_REFRESH_RATE == remainder){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 int main(int argc, char* argv[]){
     // SIGNALS
@@ -77,9 +106,14 @@ int main(int argc, char* argv[]){
 
     struct shared_data data;
 
+    int seconds,new_seconds,remainder;
+    
 
     // printf("OBSTACLE\n");
-
+    
+    bool first=true;
+    bool once =true;
+    
     while(1){
         my_read(server_obstacle[0],&data,obstacle_server[1],sizeof(data));
         memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
@@ -87,11 +121,24 @@ int main(int argc, char* argv[]){
         // memcpy(obstacle_pos, data.obst_pos, sizeof(data.obst_pos));
 
         if(target_pos[0]!=-1){
-            makeObs(drone_pos);
+            if(first){
+                makeObs(drone_pos);
+                seconds = get_time();
+                remainder = seconds % OBSTACLE_REFRESH_RATE;
+                first=false;
+            }else{
+                new_seconds=get_time();
+                if(update(remainder)==true && seconds != new_seconds){
+                    makeObs(drone_pos);
+                    seconds=new_seconds;
+                    
+                }
+                
+            }
             memcpy(data.obst_pos,obstacle_pos,sizeof(obstacle_pos));
             my_write(obstacle_server[1],&data,server_obstacle[0],sizeof(data));
+            
             // printf("obstacle: %f %f| %f %f |%f %f |%f %f|%f %f \n",obstacle_pos[0],obstacle_pos[1],obstacle_pos[2],obstacle_pos[3],obstacle_pos[4],obstacle_pos[5],obstacle_pos[6],obstacle_pos[7],obstacle_pos[8],obstacle_pos[9]);
-
         }
         
         
@@ -100,6 +147,10 @@ int main(int argc, char* argv[]){
     }
 
 }
+
+
+    
+
 
 
 
