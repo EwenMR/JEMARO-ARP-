@@ -16,6 +16,10 @@
 #include "../include/utility.c"
 #include <signal.h>
 #include "../include/log.c"
+#include <math.h>
+
+#define p 5
+#define n 0.01
 
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
     if(signo == SIGINT){
@@ -27,25 +31,85 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
     }
 }
 
+double calculateDistance(double x1, double y1, double x2, double y2) {
+    return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+}
+
+double calculateAngle(double x1, double y1, double x2, double y2) {
+    double angleRadians = atan2(y2 - y1, x2 - x1);
+    
+    // Convert radians to degrees
+    double angleDegrees = angleRadians * (180.0 / M_PI);
+    
+    return angleDegrees;
+}
+
+double calc_repulsive_force(double drone_x, double drone_y, double obst_pos[]){
+    double dist, angle, sumx, sumy;
+    sumx = sumy= 0;
+    for (int i=0; i<NUM_OBSTACLES*2; i+=2){
+        dist= calculateDistance(drone_x, drone_y, obst_pos[i], obst_pos[i+1]);
+        if (dist > p){
+            return 0;
+        }else{
+            angle = calculateAngle(drone_x,drone_y,obst_pos[i],obst_pos[i+1]);
+            sumx += (pow((1/dist)-(1/p),2) * cos(angle));
+            sumy += (pow((1/dist)-(1/p),2) * sin(angle));
+        }
+    }
+    return -(1/2)*n*sumx, -(1/2)*n*sumy;
+}
+
 double calc_drone_pos(double force,double x1,double x2){
     double x;
     x= (force*T*T-M*x2+2*M*x1+K*T*x1)/(M+K*T); //Eulers method
 
     // Dont let it go outside of the window
-    if(x<0){
-        return 0;
-    }else if(x>BOARD_SIZE){
-        return BOARD_SIZE;
-    }
+    // if(x<0){
+    //     return 0;
+    // }else if(x>BOARD_SIZE){
+    //     return BOARD_SIZE;
+    // }
 
     return x;
 }
 
+double calc_drone_pos_withRep(int force[], double drone_x1, double drone_x2, double drone_y1, double drone_y2, double obst_pos[]){
+    
+    double repx, repy = calc_repulsive_force(drone_x1, drone_y1,obst_pos);
+    // double x = calc_drone_pos(force[0]-repx, drone_x1, drone_x2);
+    // double y = calc_drone_pos(force[1]-repy, drone_y1, drone_y2);
+    double x,y;
+    if(force[0] > 0){
+        x = calc_drone_pos(force[0] - repx, drone_x1, drone_x2);
+    } else if(force[0] < 0){
+        x = calc_drone_pos(force[0] + repx, drone_x1, drone_x2);
+    } else {
+        x = calc_drone_pos(force[0], drone_x1, drone_x2);
+    }
+
+    if(force[1] > 0){
+        y = calc_drone_pos(force[0] - repx, drone_y1, drone_y2);
+    } else if(force[1] < 0){
+        y = calc_drone_pos(force[0] + repx, drone_y1, drone_y2);
+    } else {
+        x = calc_drone_pos(force[0], drone_y1, drone_y2);
+    }
+    return x, y;
+}
+
+
+
+
+
+
 // Get the new drone_pos using calc_function and store the previous drone_poss
-double update_pos(double* drone_pos, int* xy){
+double update_pos(double* drone_pos, int* xy, double obst_pos[]){
     double new_posx,new_posy;
-    new_posx=calc_drone_pos(xy[0],drone_pos[4],drone_pos[2]);
-    new_posy=calc_drone_pos(xy[1],drone_pos[5],drone_pos[3]);
+    // new_posx=calc_drone_pos(xy[0],drone_pos[4],drone_pos[2]);
+    // new_posy=calc_drone_pos(xy[1],drone_pos[5],drone_pos[3]);
+
+    new_posx, new_posy = calc_drone_pos_withRep(xy,drone_pos[4],drone_pos[2], drone_pos[5],drone_pos[3], obst_pos);
 
     // update drone_pos
     for(int i=0; i<4; i++){
@@ -77,6 +141,9 @@ int main(int argc, char *argv[]) {
     struct shared_data data;
     int xy[2]; // xy = force direction of x,y as such -> [0,1]
     double drone_pos[6]={BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2};
+    double obst_pos[NUM_OBSTACLES*2], target_pos[NUM_TARGETS*2];
+    
+
     
 
     // PIPES
@@ -103,12 +170,13 @@ int main(int argc, char *argv[]) {
         // 3 Receive command force
         my_read(server_drone[0], &data, drone_server[1], sizeof(data));
         memcpy(xy, data.command_force, sizeof(data.command_force));
+        memcpy(obst_pos, data.obst_pos, sizeof(data.obst_pos));
         writeToLogFile(logpath, "DRONE: Command_force received from server");
 
         if(xy[0]==0 && xy[1]==0){
             stop(drone_pos);
         }else{
-            update_pos(drone_pos,xy); 
+            update_pos(drone_pos,xy,obst_pos); 
         }
 
         // Send updated drone drone_pos to window and target

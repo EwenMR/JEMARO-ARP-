@@ -12,7 +12,7 @@ server:
 	gcc src/server.c -o build/server
 
 drone: 
-	gcc src/drone.c -o build/drone 
+	gcc src/drone.c -lm -o build/drone 
 
 keyboard: 
 	gcc src/keyboardManager.c -o build/keyboard 
