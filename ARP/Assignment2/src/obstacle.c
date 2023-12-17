@@ -75,7 +75,7 @@ bool update(int remainder){
     int seconds;
     seconds=get_time();
     
-    if(seconds%OBSTACLE_REFRESH_RATE == remainder){
+    if(seconds%OBSTACLE_REFRESH_RATE == remainder){ // 
         return true;
     }else{
         return false;
@@ -92,59 +92,57 @@ int main(int argc, char* argv[]){
 
     // PIPES
     int obstacle_server[2], server_obstacle[2];
-    char args_format[80]="%d %d|%d %d";
     sscanf(argv[1], args_format,  &obstacle_server[0], &obstacle_server[1], &server_obstacle[0], &server_obstacle[1]);
     close(obstacle_server[0]); //Close unnecessary pipes
     close(server_obstacle[1]);
 
+    // Pids for Watchdog
     pid_t obstacle_pid;
     obstacle_pid=getpid();
     write(obstacle_server[1], &obstacle_pid, sizeof(obstacle_pid));
     writeToLogFile(logpath, "OBSTACLE: Pid sent to server");
 
-
+    // Local variables
     struct shared_data data;
-
     int seconds,new_seconds,remainder;
-    
-
-    // printf("OBSTACLE\n");
-    
     bool first=true;
     bool once =true;
     
     while(1){
+        // Receive drone_pos and target_pos from target
         my_read(server_obstacle[0],&data,obstacle_server[1],sizeof(data));
-        writeToLogFile(logpath, "OBSTACLE: Drone_pos and Target_pos received from server");
         memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
         memcpy(target_pos, data.target_pos, sizeof(data.target_pos));
-        // memcpy(obstacle_pos, data.obst_pos, sizeof(data.obst_pos));
+        writeToLogFile(logpath, "OBSTACLE: Drone_pos and Target_pos received from server");
 
-        if(target_pos[0]!=-1){
-            if(first){
-                makeObs(drone_pos);
-                seconds = get_time();
-                remainder = seconds % OBSTACLE_REFRESH_RATE;
-                first=false;
-            }else{
-                new_seconds=get_time();
-                if(update(remainder)==true && seconds != new_seconds){
-                    makeObs(drone_pos);
-                        seconds=new_seconds;
-                    
-                }
-                
-            }
-            memcpy(data.obst_pos,obstacle_pos,sizeof(obstacle_pos));
-            my_write(obstacle_server[1],&data,server_obstacle[0],sizeof(data));
-            writeToLogFile(logpath, "OBSTACLE: Obstacle_pos sent to server");
+
+        if(first){
+            makeObs(drone_pos); 
+            first=false;
+            seconds = get_time();
+            remainder = seconds % OBSTACLE_REFRESH_RATE; 
+            /*
+            ex) first obstacle generated at 7(seconds),
+                remainder = 7 % 5 = 2;
+                -> Regenerate obstacles when remainder is 2
+                -> 7, 12, 17, 22 ....  (5 seconds interval)
+            */
             
-            // printf("obstacle: %f %f| %f %f |%f %f |%f %f|%f %f \n",obstacle_pos[0],obstacle_pos[1],obstacle_pos[2],obstacle_pos[3],obstacle_pos[4],obstacle_pos[5],obstacle_pos[6],obstacle_pos[7],obstacle_pos[8],obstacle_pos[9]);
+        }else{
+            new_seconds=get_time();
+            if(update(remainder)==true && seconds != new_seconds){ // After the && is to prevent obstacles from being generated multiple times within a second
+                makeObs(drone_pos);
+                seconds=new_seconds;
+            }
+            
         }
+        // Whether newly generated or not, send obstacle_pos to drone
+        memcpy(data.obst_pos,obstacle_pos,sizeof(obstacle_pos));
+        my_write(obstacle_server[1],&data,server_obstacle[0],sizeof(data));
+        writeToLogFile(logpath, "OBSTACLE: Obstacle_pos sent to server");
         
         
         usleep(50000);
-        // sleep(1);
     }
 
 }

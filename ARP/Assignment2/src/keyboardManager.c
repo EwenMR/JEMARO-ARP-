@@ -37,7 +37,6 @@ int main(int argc, char *argv[]){
 
     // PIPES
     int keyboard_server[2], server_keyboard[2];
-    char args_format[80]="%d %d|%d %d";
     sscanf(argv[1], args_format,  &keyboard_server[0], &keyboard_server[1], &server_keyboard[0], &server_keyboard[1]);
     close(keyboard_server[0]); 
     close(server_keyboard[1]);

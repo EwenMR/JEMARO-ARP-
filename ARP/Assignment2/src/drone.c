@@ -77,13 +77,13 @@ int main(int argc, char *argv[]) {
     struct shared_data data;
     int xy[2]; // xy = force direction of x,y as such -> [0,1]
     double drone_pos[6]={BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2};
-    // int first=0;
     
 
     // PIPES
     int drone_server[2], server_drone[2];
-    char args_format[80]="%d %d|%d %d";
     sscanf(argv[1], args_format,  &drone_server[0], &drone_server[1], &server_drone[0], &server_drone[1]);
+    close(drone_server[0]); //Close unnecessary pipes
+    close(server_drone[1]);
 
 
     // PIDS FOR WATCHDOG
@@ -120,8 +120,7 @@ int main(int argc, char *argv[]) {
     // Clean up
     close(server_drone[0]);
     close(drone_server[1]);
-    close(drone_server[0]); //Close unnecessary pipes
-    close(server_drone[1]);
+    
 
     return 0;
 }

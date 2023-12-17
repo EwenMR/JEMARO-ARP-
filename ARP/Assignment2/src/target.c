@@ -12,8 +12,9 @@
 
 
 
-
+// Global variables
 double target_pos[NUM_TARGETS*2],obstacle_pos[NUM_OBSTACLES*2],drone_pos[6];
+struct shared_data data;
 
 // Signal handler for watchdog
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
@@ -28,25 +29,26 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
 
 
 
-
+// Checks if target is reached
 void target_update(double *drone_pos, double *target_pos) {
     int j=0;
     for (int i = 0; i < NUM_TARGETS * 2; i += 2) {
-        if(target_pos[i]==0 &&target_pos[i+1]==0){
+        if(target_pos[i]==0 &&target_pos[i+1]==0){ // Only check the targets that are not 0,0
         }else{
             j=i;
             break;
         }
     }
     
+    // Check if the first target (out of the unreached targets) is reached
     if ((fabs(drone_pos[4] - target_pos[j]) < POSITION_THRESHOLD &&
         fabs(drone_pos[5] - target_pos[j + 1]) < POSITION_THRESHOLD) ||
         (fabs(drone_pos[2] - target_pos[j]) < POSITION_THRESHOLD &&
         fabs(drone_pos[3] - target_pos[j + 1]) < POSITION_THRESHOLD)) {
 
-        // change value from coordinates to 0
+        // Reached targets will be 0,0
         target_pos[j] = 0;
-        target_pos[(j + 1)] = 0;
+        target_pos[j+1] = 0;
 
         
     }
@@ -78,46 +80,42 @@ int main(int argc, char* argv[]){
 
     // PIPES
     int target_server[2], server_target[2];
-    char args_format[80]="%d %d|%d %d";
     sscanf(argv[1], args_format,  &target_server[0], &target_server[1], &server_target[0], &server_target[1]);
-    // close(target_server[0]); //Close unnecessary pipes
-    // close(server_target[1]);
+    close(target_server[0]); //Close unnecessary pipes
+    close(server_target[1]);
 
+    // Pids for Watchdog
     pid_t target_pid;
     target_pid=getpid();
     my_write(target_server[1], &target_pid, target_server[0],sizeof(target_pid));
     writeToLogFile(logpath, "TARGET: Pid sent to server");
 
-    struct shared_data data;
-
+    // Get the initial drone position from drone
     my_read(server_target[0],&data,target_server[1],sizeof(data));
     memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));  
-    makeTargs(drone_pos);
 
+    // Generate targets (only once) and send it to obstacle
+    makeTargs(drone_pos); 
     memcpy(data.target_pos, target_pos,sizeof(target_pos));
     write(target_server[1],&data,sizeof(data));
     writeToLogFile(logpath, "TARGET: Initial target_pos sent to server");
-    printf("%d %d\n", target_server[1],target_server[0]);
-
-    char *logpath = "./log/server.log"; // Path for the log file
 
     while(1){
-        // Get shared data and store it into local variables
+        // Receive drone position from drone
         my_read(server_target[0],&data,target_server[1],sizeof(data));
         memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
         writeToLogFile(logpath, "TARGET: drone_pos received from server");
         
+        target_update(drone_pos, target_pos); // Check if drone reached the target
 
-        // target_update(drone_pos, target_pos);
-        // printf("target: %f %f %f %f\n",target_pos[0],target_pos[1],target_pos[2],target_pos[3]);
-        target_update(drone_pos, target_pos);
-
-        // copy target position to shared data and send it
+        // copy updated target position to shared data and send it
         memcpy(data.target_pos, target_pos, sizeof(target_pos));
         my_write(target_server[1], &data, server_target[0], sizeof(data));
         writeToLogFile(logpath, "TARGET: Updated target_pos sent to server");
 
     }
-
+    // Clean up
+    close(target_server[0]);
+    close(server_target[1]);
 }
 

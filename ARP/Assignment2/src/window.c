@@ -75,10 +75,11 @@ int main(int argc, char* argv[]) {
 
     // PIPES
     int window_server[2], server_window[2];
-    char args_format[80]="%d %d|%d %d";
     sscanf(argv[1], "%d %d|%d %d",  &window_server[0], &window_server[1], &server_window[0], &server_window[1]);
+    close(server_window[1]); // Close unnecessary pipes
+    close(window_server[0]);
 
-
+    // Pids for Watchdog
     pid_t window_pid;
     window_pid=getpid();
     my_write(window_server[1], &window_pid, server_window[0],sizeof(window_pid));
@@ -86,7 +87,7 @@ int main(int argc, char* argv[]) {
 
 
 
-    // SHARED MEMORY
+    // Local variables
     struct shared_data data;
     double drone_pos[6]; //position of the drone (t-2,t-1,t)
     double target_pos[NUM_TARGETS*2];
@@ -95,7 +96,7 @@ int main(int argc, char* argv[]) {
     int first=0;
     
 
-
+    // Color of the drone, targets, obstacles
     start_color();
     init_pair(1, COLOR_BLUE, COLOR_BLACK);
     init_pair(2, COLOR_RED, COLOR_BLACK);
@@ -105,38 +106,35 @@ int main(int argc, char* argv[]) {
     while (1) {
         werase(win);
         box(win, 0, 0);
-        // READ SHARED DATA and store it into local variables.
 
+        // READ SHARED DATA and store it into local variables.
         my_read(server_window[0],&data,server_window[1],sizeof(data));
-        writeToLogFile(logpath, "WINDOW: Drone_pos, Target_pos, Obst_pos received from server");
         memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
         memcpy(target_pos, data.target_pos, sizeof(data.target_pos));
         memcpy(obstacle_pos, data.obst_pos, sizeof(data.obst_pos));
-
+        writeToLogFile(logpath, "WINDOW: Drone_pos, Target_pos, Obst_pos received from server");
 
         
    
-
         double scalex,scaley; // get the scale, to scale up the window to the real world scale
         scalex=(double)BOARD_SIZE /((double)COLS*(WINDOW_COL-0.01));
         scaley=(double)BOARD_SIZE/((double)LINES*(WINDOW_ROW-0.01));
 
-        // Only for the first time, send the drone position from the window. 
-        // From the second time, drone.c will be in charge of drone positions
 
         
-        
-        // print drone and score onto the window
+        // Print drone and score onto the window
         wattron(win,COLOR_PAIR(1));
         mvwprintw(win, (int)(drone_pos[5]/scaley), (int)(drone_pos[4]/scalex), "+");
         wattroff(win,COLOR_PAIR(1));
 
+        // Print obstacles on window
         wattron(win,COLOR_PAIR(3));
         for(int i=0; i<(NUM_OBSTACLES*2);i+=2){
             mvwprintw(win, (int)(obstacle_pos[i+1]/scaley), (int)(obstacle_pos[i]/scalex), "O");
         }
         wattroff(win,COLOR_PAIR(3));
 
+        // Print targets on window
         wattron(win,COLOR_PAIR(2));
         for(int i=2; i<(NUM_TARGETS*2)+2;i+=2){
             if(target_pos[i-2]==0 && target_pos[i-1]==0){
@@ -146,16 +144,18 @@ int main(int argc, char* argv[]) {
             
             
         }
-        
-        if(target_pos[NUM_TARGETS*2-2]==0 && target_pos[NUM_TARGETS*2-1]==0){ //GAME IS FINISHED
+
+        // If all targets are reached, Game finished
+        if(target_pos[NUM_TARGETS*2-2]== 0 && target_pos[NUM_TARGETS*2-1]==0){ 
             werase(win);
             box(win, 0, 0);
             mvwprintw(win, LINES/2, COLS/2, "WELL DONE");
             wrefresh(win);
-            sleep(5);
+            sleep(2);
             exit(EXIT_SUCCESS);
         }
         wattroff(win,COLOR_PAIR(2));
+
 
         mvwprintw(score,1,1,"Position of the drone is: %f,%f", drone_pos[4],drone_pos[5]);
         wrefresh(win);
@@ -182,9 +182,6 @@ int main(int argc, char* argv[]) {
     // Clean up
     close(window_server[1]);
     close(window_server[0]); 
-    close(server_window[1]);
-    close(server_window[0]);
-
 
     endwin();
 

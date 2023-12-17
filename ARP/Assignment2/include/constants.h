@@ -42,5 +42,7 @@ struct shared_data{
 };
 
 char *logpath = "./log/server.log"; // Path for the log file
+char server_format[100]= "%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d";
+char args_format[80]="%d %d|%d %d";
 
 #endif

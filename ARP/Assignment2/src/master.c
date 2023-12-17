@@ -54,8 +54,6 @@ int main(int argc, char *argv[]){
     int wd_server[2];
     int server_wd[2];
 
-    char server_format[100]= "%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d";
-    char args_format[80]="%d %d|%d %d";
 
     if (pipe(window_server)   == -1 ||  pipe(server_window)   == -1 ||
         pipe(keyboard_server) == -1 ||  pipe(server_keyboard) == -1 ||
