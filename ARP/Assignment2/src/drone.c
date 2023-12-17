@@ -192,3 +192,51 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
+
+
+
+// double calc_potential(double* obstacle_pos, double* drone_pos){
+//     double U_rep;
+//     for(int i = 0; i < NUM_OBSTACLES; i++){
+//         double p_q = sqrt(pow(obstacle_pos[2*i] - drone_pos[4], 2) + pow(obstacle_pos[2*i+1] - drone_pos[5],2));
+//         if(p_q < p0){
+//             U_rep = (1/2) * REP_GAIN * pow((1/p_q)-(1/p0), 2);
+//         }
+//         else{
+//             U_rep = 0;
+//         }
+//     }
+//     return U_rep;
+// }
+
+
+// // Get the new drone_pos using calc_function and store the previous drone_poss
+// double update_pos(double* drone_pos,double* obstacle_pos, int* xy){
+//     double new_posx,new_posy;
+//     double rep_force = calc_potential(obstacle_pos, drone_pos);
+
+//     if(xy[0] > 0){
+//         new_posx = calc_drone_pos(xy[0] - rep_force, drone_pos[4], drone_pos[2]);
+//     } else if(xy[0] < 0){
+//         new_posx = calc_drone_pos(xy[0] + rep_force, drone_pos[4], drone_pos[2]);
+//     } else {
+//         new_posx = calc_drone_pos(xy[0], drone_pos[4], drone_pos[2]);
+//     }
+
+//     if(xy[1] > 0){
+//         new_posy = calc_drone_pos(xy[1] - rep_force, drone_pos[5], drone_pos[3]);
+//     } else if(xy[1] < 0){
+//         new_posy = calc_drone_pos(xy[1] + rep_force, drone_pos[5], drone_pos[3]);
+//     } else {
+//         new_posy = calc_drone_pos(xy[1], drone_pos[5], drone_pos[3]);
+//     } 
+
+//     // update drone_pos
+//     for(int i=0; i<4; i++){
+//         drone_pos[i]=drone_pos[i+2];
+//     }
+//     drone_pos[4]=new_posx;
+//     drone_pos[5]=new_posy;
+//     return *drone_pos;
+// }
