@@ -31,7 +31,7 @@
 #define POSITION_THRESHOLD 5.0
 
 #define OBS_THRESH 5.0 
-#define OBSTACLE_REFRESH_RATE 5
+#define OBSTACLE_REFRESH_RATE 10
 
 struct shared_data{
     double drone_pos[6]; // Array to store the position of drone
