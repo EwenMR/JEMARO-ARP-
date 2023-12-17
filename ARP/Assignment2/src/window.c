@@ -13,6 +13,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <signal.h>
+#include <time.h>
 #include "../include/utility.c"
 #include "../include/log.c"
 
@@ -53,12 +54,36 @@ void ncursesSetup(WINDOW **display, WINDOW **score)
     
 }
 
+struct timeval current_time() {
+    /*
+    Returns the current time using gettimeofday.
+    */
+    struct timeval time_now;
+    gettimeofday(&time_now, NULL);
+    return time_now;
+}
+
+int calc_score(struct timeval start, struct timeval finish) {
+    // Calculate the difference in seconds between two timeval structs
+    int time_passed = (int)(finish.tv_sec - start.tv_sec);
+    if(time_passed<20){
+        return 100;
+    }else{
+        return 120 - time_passed;
+    }
+    
+}
+
+
 
 int main(int argc, char* argv[]) {
     // INITIALIZATION
     initscr();
     noecho();
     cbreak();
+    struct timeval start_time, finish_time;
+    start_time = current_time();
+
     
     WINDOW *win, *score;
     ncursesSetup(&win, &score);
@@ -147,9 +172,12 @@ int main(int argc, char* argv[]) {
 
         // If all targets are reached, Game finished
         if(target_pos[NUM_TARGETS*2-2]== 0 && target_pos[NUM_TARGETS*2-1]==0){ 
+            finish_time = current_time();
+            int your_score = calc_score(start_time, finish_time);
+
             werase(win);
             box(win, 0, 0);
-            mvwprintw(win, LINES/2, COLS/2, "WELL DONE");
+            mvwprintw(win, LINES/2, COLS/2, "SCORE IS %d", your_score);
             wrefresh(win);
             sleep(2);
             exit(EXIT_SUCCESS);

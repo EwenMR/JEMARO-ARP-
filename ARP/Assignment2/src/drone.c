@@ -18,7 +18,7 @@
 #include "../include/log.c"
 #include <math.h>
 
-#define p 10
+#define p 20
 #define n 0.1
 
     // VARIABLES
@@ -143,21 +143,21 @@ double *calc_potential(double* obstacle_pos, double* drone_pos, int* xy){
     for(int i = 0; i < NUM_OBSTACLES; i++){
         double p_q = sqrt(pow(obstacle_pos[2*i] - drone_pos[4], 2) + pow(obstacle_pos[2*i+1] - drone_pos[5],2));
         double p_wall[] = {drone_pos[4], drone_pos[5], BOARD_SIZE-drone_pos[4], BOARD_SIZE-drone_pos[5]};
-        // if(p_q <= p){
-        //     double angle= calculateAngle(drone_pos[4],drone_pos[5],obstacle_pos[i*2],obstacle_pos[i*2+1]);
-        //     sumx += pow((1/p_q)-(1/p), 2)*cos(angle);
-        //     sumy += pow((1/p_q)-(1/p), 2)*sin(angle);
-        // }
-        
-        if(p_wall[0]<=p && xy[0]<0){
-            sumx += pow((1/p_wall[0])-(1/p), 2);
-        }else if(p_wall[1] <= p && xy[1]<0){
-            sumy += pow((1/p_wall[1])-(1/p), 2);
-        }else if(p_wall[2] <= p && xy[0] > 0){
-            sumx += pow((1/p_wall[2])-(1/p), 2);
-        }else if(p_wall[3] <= p && xy[1] >0){
-            sumy += pow((1/p_wall[3])-(1/p), 2);
+        if(p_q <= p){
+            double angle= calculateAngle(drone_pos[4],drone_pos[5],obstacle_pos[i*2],obstacle_pos[i*2+1]);
+            sumx += pow((1/p_q)-(1/p), 2)*cos(angle);
+            sumy += pow((1/p_q)-(1/p), 2)*sin(angle);
         }
+        
+        // if(p_wall[0]<=p && xy[0]<0){
+        //     sumx += pow((1/p_wall[0])-(1/p), 2);
+        // }else if(p_wall[1] <= p && xy[1]<0){
+        //     sumy += pow((1/p_wall[1])-(1/p), 2);
+        // }else if(p_wall[2] <= p && xy[0] > 0){
+        //     sumx += pow((1/p_wall[2])-(1/p), 2);
+        // }else if(p_wall[3] <= p && xy[1] >0){
+        //     sumy += pow((1/p_wall[3])-(1/p), 2);
+        // }
 
         // for(int j=0; j<2; j++){
         //     if(p_wall[j]<=p){
