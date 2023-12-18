@@ -1,21 +1,20 @@
 
 // window.c
+#include <signal.h>
 #include <curses.h>
 #include <sys/ipc.h>
-#include <sys/shm.h>
 #include <unistd.h>
 #include <string.h>
-#include "../include/constants.h"
 #include <fcntl.h>
 #include <stdlib.h>
-#include <semaphore.h>
 #include <sys/mman.h>
 #include <unistd.h>
 #include <sys/stat.h>
-#include <signal.h>
 #include <time.h>
+#include <sys/time.h>
 #include "../include/utility.c"
 #include "../include/log.c"
+#include "../include/constants.h"
 
 // Signal handler for watchdog
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
@@ -89,6 +88,9 @@ int main(int argc, char* argv[]) {
     ncursesSetup(&win, &score);
     curs_set(0); // don't show cursor
     nodelay(win, TRUE);
+
+    int ymax, xmax;
+    getmaxyx(stdscr, ymax, xmax);
     
 
     // SIGNALS
@@ -130,7 +132,35 @@ int main(int argc, char* argv[]) {
     
     while (1) {
         werase(win);
+        werase(score);
         box(win, 0, 0);
+        box(score, 0, 0);
+        
+
+        int ymax_new, xmax_new;
+        getmaxyx(stdscr, ymax_new, xmax_new);
+
+        if(ymax != ymax_new || xmax != xmax_new){
+            wresize(win, ymax_new*WINDOW_ROW, xmax_new*WINDOW_COL);
+            wresize(score, ymax_new *SCORE_WINDOW_ROW, xmax_new *WINDOW_COL);
+            mvwin(score, (ymax_new / 200) + ymax_new * WINDOW_ROW, xmax_new / 200);
+
+            wclear(win);
+            wclear(score);
+            // Redraw boxes
+            box(win, 0, 0);
+            box(score, 0, 0);
+
+            refresh();
+            wrefresh(win);
+            wrefresh(score);
+
+            ymax = ymax_new;
+            xmax = xmax_new;
+        }
+
+
+        
 
         // READ SHARED DATA and store it into local variables.
         my_read(server_window[0],&data,server_window[1],sizeof(data));
@@ -140,12 +170,13 @@ int main(int argc, char* argv[]) {
         writeToLogFile(logpath, "WINDOW: Drone_pos, Target_pos, Obst_pos received from server");
 
         
-   
+        
         double scalex,scaley; // get the scale, to scale up the window to the real world scale
-        scalex=(double)BOARD_SIZE /((double)COLS*(WINDOW_COL-0.01));
-        scaley=(double)BOARD_SIZE/((double)LINES*(WINDOW_ROW-0.01));
+        scalex=(double)BOARD_SIZE /((double)xmax*(WINDOW_COL-0.01));
+        scaley=(double)BOARD_SIZE/((double)ymax*(WINDOW_ROW-0.01));
 
 
+        
         
         // Print drone and score onto the window
         wattron(win,COLOR_PAIR(1));
@@ -166,10 +197,13 @@ int main(int argc, char* argv[]) {
             }else{
                 mvwprintw(win, (int)(target_pos[i-1]/scaley), (int)(target_pos[i-2]/scalex), "%d", i/2);
             }
-            
-            
         }
+        wattroff(win,COLOR_PAIR(2));
 
+        mvwprintw(score,1,1,"Position of the drone is: %f,%f", drone_pos[4],drone_pos[5]);
+        wrefresh(win);
+        wrefresh(score);
+        
         // If all targets are reached, Game finished
         if(target_pos[NUM_TARGETS*2-2]== 0 && target_pos[NUM_TARGETS*2-1]==0){ 
             finish_time = current_time();
@@ -182,14 +216,7 @@ int main(int argc, char* argv[]) {
             sleep(2);
             exit(EXIT_SUCCESS);
         }
-        wattroff(win,COLOR_PAIR(2));
-
-
-        mvwprintw(score,1,1,"Position of the drone is: %f,%f", drone_pos[4],drone_pos[5]);
-        wrefresh(win);
-        wrefresh(score);
         
-       
         
         // 2 Send user input to keyboard manager
         key=wgetch(win); // wait for user input
@@ -203,8 +230,10 @@ int main(int argc, char* argv[]) {
                 exit(EXIT_SUCCESS);
             }
         }
-
-        clear();
+        
+        // clear();
+    //     wrefresh(win);
+    // wrefresh(score);
     }
 
     // Clean up

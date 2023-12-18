@@ -28,7 +28,7 @@
     double obst_pos[NUM_OBSTACLES*2], target_pos[NUM_TARGETS*2];
     
 
-    
+    char *drone_logpath = "./log/drone.log"; // Path for the log file
 
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
     if(signo == SIGINT){
@@ -74,11 +74,11 @@ double calc_drone_pos(double force,double x1,double x2){
     x= (force*T*T-M*x2+2*M*x1+K*T*x1)/(M+K*T); //Eulers method
 
     // Dont let it go outside of the window
-    // if(x<0){
-    //     return 0;
-    // }else if(x>BOARD_SIZE){
-    //     return BOARD_SIZE;
-    // }
+    if(x<0){
+        return 0;
+    }else if(x>BOARD_SIZE){
+        return BOARD_SIZE;
+    }
 
     return x;
 }
@@ -148,6 +148,7 @@ double *calc_potential(double* obstacle_pos, double* drone_pos, int* xy){
             sumx += pow((1/p_q)-(1/p), 2)*cos(angle);
             sumy += pow((1/p_q)-(1/p), 2)*sin(angle);
         }
+
         
         // if(p_wall[0]<=p && xy[0]<0){
         //     sumx += pow((1/p_wall[0])-(1/p), 2);
@@ -171,16 +172,16 @@ double *calc_potential(double* obstacle_pos, double* drone_pos, int* xy){
             
         // }
     }
-    double* result = (double*)malloc(2 * sizeof(double));
-    if (result == NULL) {
+    double* rep = (double*)malloc(2 * sizeof(double));
+    if (rep == NULL) {
         // Handle memory allocation failure
         exit(EXIT_FAILURE); // Or handle it in a way that suits your program
     }
 
     // double result[2];
-    result[0] = 0.5 * n * sumx;
-    result[1] = 0.5 * n * sumy;
-    return result;
+    rep[0] = 0.5 * n * sumx;
+    rep[1] = 0.5 * n * sumy;
+    return rep;
 }
 
 
