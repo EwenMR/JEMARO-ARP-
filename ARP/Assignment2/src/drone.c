@@ -19,7 +19,7 @@
 #include <math.h>
 
 #define p 5
-#define n 70
+#define n 10
 
 // VARIABLES
 struct shared_data data;
@@ -57,11 +57,11 @@ double calc_drone_pos(double force,double x1,double x2){
     x= (force*T*T-M*x2+2*M*x1+K*T*x1)/(M+K*T); //Eulers method
 
     // Dont let it go outside of the window
-    if(x<0){
-        return 0;
-    }else if(x>BOARD_SIZE){
-        return BOARD_SIZE;
-    }
+    // if(x<0){
+    //     return 0;
+    // }else if(x>BOARD_SIZE){
+    //     return BOARD_SIZE;
+    // }
 
     return x;
 }
@@ -93,34 +93,28 @@ double *calc_potential(double* obstacle_pos, double* drone_pos, int* xy){
             writeToLogFile(drone_logpath, logMessage);
 
             double angle= calculateAngle(drone_pos[4],drone_pos[5],obstacle_pos[i*2],obstacle_pos[i*2+1]);
-            sumx += pow((1/p_q)-(1/p), 2)*cos(angle);
-            sumy += pow((1/p_q)-(1/p), 2)*sin(angle);
+            if(obstacle_pos[2*i]>drone_pos[4] && xy[0]>0){
+                sumx -= pow((1/p_q)-(1/p), 2)*cos(angle);
+            }else if(obstacle_pos[2*i]<drone_pos[4] && xy[0]<0){
+                sumx += pow((1/p_q)-(1/p), 2)*cos(angle);
+            }else if(obstacle_pos[2*i+1]>drone_pos[5] && xy[1]>0){
+                sumy -= pow((1/p_q)-(1/p), 2)*sin(angle);
+            }else if(obstacle_pos[2*i+1]<drone_pos[5] && xy[1]<0){
+                sumy += pow((1/p_q)-(1/p), 2)*sin(angle);
+            }
         }
 
         
+        if(p_wall[0]<=p && xy[0]<0){
+            sumx -= pow((1/p_wall[0])-(1/p), 2);
+        }else if(p_wall[1] <= p && xy[1]<0){
+            sumy -= pow((1/p_wall[1])-(1/p), 2);
+        }else if(p_wall[2] <= p && xy[0] > 0){
+            sumx -= pow((1/p_wall[2])-(1/p), 2);
+        }else if(p_wall[3] <= p && xy[1] >0){
+            sumy -= pow((1/p_wall[3])-(1/p), 2);
+        }
 
-        
-        // if(p_wall[0]<=p && xy[0]<0){
-        //     sumx += pow((1/p_wall[0])-(1/p), 2);
-        // }else if(p_wall[1] <= p && xy[1]<0){
-        //     sumy += pow((1/p_wall[1])-(1/p), 2);
-        // }else if(p_wall[2] <= p && xy[0] > 0){
-        //     sumx += pow((1/p_wall[2])-(1/p), 2);
-        // }else if(p_wall[3] <= p && xy[1] >0){
-        //     sumy += pow((1/p_wall[3])-(1/p), 2);
-        // }
-
-        // for(int j=0; j<2; j++){
-        //     if(p_wall[j]<=p){
-        //         sumx += pow((1/p_wall[j])-(1/p), 2);
-        //     }
-        // for(int j=2; j<4; j++){
-        //     if(p_wall[j]<=p){
-        //         sumy += pow((1/p_wall[j])-(1/p), 2);
-        //     }
-        // }
-            
-        // }
     }
     double* rep = (double*)malloc(2 * sizeof(double));
     if (rep == NULL) {
@@ -243,65 +237,3 @@ int main(int argc, char *argv[]) {
 
 
 
-
-
-// // Get the new drone_pos using calc_function and store the previous drone_poss
-// double update_pos(double* drone_pos, int* xy, double obst_pos[]){
-//     double new_posx,new_posy;
-//     // new_posx=calc_drone_pos(xy[0],drone_pos[4],drone_pos[2]);
-//     // new_posy=calc_drone_pos(xy[1],drone_pos[5],drone_pos[3]);
-
-//     new_posx, new_posy = calc_drone_pos_withRep(xy,drone_pos[4],drone_pos[2], drone_pos[5],drone_pos[3], obst_pos);
-
-//     // update drone_pos
-//     for(int i=0; i<4; i++){
-//         drone_pos[i]=drone_pos[i+2];
-//     }
-//     drone_pos[4]=new_posx;
-//     drone_pos[5]=new_posy;
-//     return *drone_pos;
-// }
-
-
-
-// double calc_repulsive_force(double drone_x, double drone_y, double obst_pos[]){
-//     double dist, angle, sumx, sumy;
-//     sumx = sumy= 0;
-//     for (int i=0; i<NUM_OBSTACLES*2; i+=2){
-//         dist= calculateDistance(drone_x, drone_y, obst_pos[i], obst_pos[i+1]);
-//         if (dist > p){
-//             return 0;
-//         }else{
-//             angle = calculateAngle(drone_x,drone_y,obst_pos[i],obst_pos[i+1]);
-//             sumx += (pow((1/dist)-(1/p),2) * cos(angle));
-//             sumy += (pow((1/dist)-(1/p),2) * sin(angle));
-//         }
-//     }
-//     return -(1/2)*n*sumx, -(1/2)*n*sumy;
-// }
-
-
-
-// double calc_drone_pos_withRep(int force[], double drone_x1, double drone_x2, double drone_y1, double drone_y2, double obst_pos[]){
-    
-//     double repx, repy = calc_repulsive_force(drone_x1, drone_y1,obst_pos);
-//     // double x = calc_drone_pos(force[0]-repx, drone_x1, drone_x2);
-//     // double y = calc_drone_pos(force[1]-repy, drone_y1, drone_y2);
-//     double x,y;
-//     if(force[0] > 0){
-//         x = calc_drone_pos(force[0] - repx, drone_x1, drone_x2);
-//     } else if(force[0] < 0){
-//         x = calc_drone_pos(force[0] + repx, drone_x1, drone_x2);
-//     } else {
-//         x = calc_drone_pos(force[0], drone_x1, drone_x2);
-//     }
-
-//     if(force[1] > 0){
-//         y = calc_drone_pos(force[0] - repx, drone_y1, drone_y2);
-//     } else if(force[1] < 0){
-//         y = calc_drone_pos(force[0] + repx, drone_y1, drone_y2);
-//     } else {
-//         x = calc_drone_pos(force[0], drone_y1, drone_y2);
-//     }
-//     return x, y;
-// }
