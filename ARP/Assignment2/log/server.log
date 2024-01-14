@@ -1,631 +1,1107 @@
-[2024-01-14 23:16:28] SERVER: Pid recieved
-[2024-01-14 23:16:28] SERVER: Pid recieved
-[2024-01-14 23:16:28] SERVER: Pid recieved
-[2024-01-14 23:16:28] SERVER: Pid recieved
-[2024-01-14 23:16:28] SERVER: Pid recieved
-[2024-01-14 23:16:28] SERVER: Pid sent to watchdog
-[2024-01-14 23:16:28] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:28] SERVER: Target received from target
-[2024-01-14 23:16:28] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:28] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:28] SERVER: Target received from target
-[2024-01-14 23:16:28] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:28] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:28] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:29] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:29] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:29] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: User input received
-[2024-01-14 23:16:30] SERVER: Command force received from keyboard
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:30] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:30] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:30] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: User input received
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Command force received from keyboard
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: User input received
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:31] SERVER: Command force received from keyboard
-[2024-01-14 23:16:31] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:31] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: User input received
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Command force received from keyboard
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:32] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:32] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:32] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: User input received
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Command force received from keyboard
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:33] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:33] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:33] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: User input received
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Command force received from keyboard
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:34] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:34] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:34] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: User input received
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Command force received from keyboard
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: User input received
-[2024-01-14 23:16:35] SERVER: Command force received from keyboard
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:35] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:35] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:35] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: User input received
-[2024-01-14 23:16:36] SERVER: Command force received from keyboard
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: User input received
-[2024-01-14 23:16:36] SERVER: Command force received from keyboard
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: User input received
-[2024-01-14 23:16:36] SERVER: Command force received from keyboard
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:36] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:36] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:36] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: User input received
-[2024-01-14 23:16:37] SERVER: Command force received from keyboard
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:37] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:37] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:37] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: User input received
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] SERVER: Obstacle received from obstacle
-[2024-01-14 23:16:38] SERVER: New drone_pos received from drone
-[2024-01-14 23:16:38] SERVER: Target received from target
-[2024-01-14 23:16:38] killed
+[2024-01-15 00:30:49] SERVER: Pid recieved
+[2024-01-15 00:30:49] SERVER: Pid recieved
+[2024-01-15 00:30:49] SERVER: Pid recieved
+[2024-01-15 00:30:49] SERVER: Pid recieved
+[2024-01-15 00:30:49] SERVER: Pid recieved
+[2024-01-15 00:30:49] PID = 12863
+
+[2024-01-15 00:30:49] SERVER: Pid sent to watchdog
+[2024-01-15 00:30:49] SERVER: New drone_pos received from drone
+[2024-01-15 00:30:49] SERVER: Target received from target
+[2024-01-15 00:30:49] SERVER: Obstacle received from obstacle
+[2024-01-15 00:30:49] SERVER: New drone_pos received from drone
+[2024-01-15 00:30:49] SERVER: Target received from target
+[2024-01-15 00:30:49] SERVER: Obstacle received from obstacle
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:49] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:50] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:51] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:52] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] signal received
+[2024-01-15 00:30:53] killed

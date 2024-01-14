@@ -26,7 +26,7 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
     }
     if(signo == SIGUSR1){
         pid_t wd_pid = siginfo->si_pid;
-        kill(wd_pid, SIGUSR2);
+        // kill(wd_pid, SIGUSR2);
         writeToLogFile(serverlogpath,"signal received");
     }
 }
@@ -109,6 +109,9 @@ int main(int argc, char *argv[])
         }
     }
     all_pids[NUM_PROCESSES-2] = getpid();
+    char logMessage[80];
+    sprintf(logMessage, "PID = %d\n",server_pid);
+    writeToLogFile(serverlogpath, logMessage);
     my_write(server_wd[1],all_pids,sizeof(all_pids),sizeof(all_pids));
     writeToLogFile(serverlogpath, "SERVER: Pid sent to watchdog");
     

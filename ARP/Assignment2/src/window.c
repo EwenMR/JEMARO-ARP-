@@ -25,7 +25,7 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
     }
     if(signo == SIGUSR1){
         pid_t wd_pid = siginfo->si_pid;
-        kill(wd_pid, SIGUSR2);
+        // kill(wd_pid, SIGUSR2);
         writeToLogFile(windowlogpath,"signal received");
     }
 }
@@ -114,7 +114,9 @@ int main(int argc, char* argv[]) {
     pid_t window_pid;
     window_pid=getpid();
     my_write(window_server[1], &window_pid, server_window[0],sizeof(window_pid));
-    writeToLogFile(windowlogpath, "WINDOW: Pid sent to server");
+    char logMessage[80];
+    sprintf(logMessage, "PID = %d\n",window_pid);
+    writeToLogFile(windowlogpath, logMessage);
 
 
 

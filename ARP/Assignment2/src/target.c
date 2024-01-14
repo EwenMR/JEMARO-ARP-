@@ -25,7 +25,7 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
     }
     if(signo == SIGUSR1){
         pid_t wd_pid = siginfo->si_pid;
-        kill(wd_pid, SIGUSR2);
+        // kill(wd_pid, SIGUSR2);
         writeToLogFile(targetlogpath,"signal received");
     }
 }
@@ -93,7 +93,10 @@ int main(int argc, char* argv[]){
     target_pid=getpid();
     // printf("target PID: %d\n", target_pid);
     my_write(target_server[1], &target_pid, target_server[0],sizeof(target_pid));
-    writeToLogFile(targetlogpath, "TARGET: Pid sent to server");
+    char logMessage[80];
+    sprintf(logMessage, "PID = %d\n",target_pid);
+    writeToLogFile(targetlogpath, logMessage);
+
 
     // Get the initial drone position from drone
     my_read(server_target[0],&data,target_server[1],sizeof(data));

@@ -36,7 +36,7 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
     }
     if(signo == SIGUSR1){
         pid_t wd_pid = siginfo->si_pid;
-        kill(wd_pid, SIGUSR2);
+        // kill(wd_pid, SIGUSR2);
         writeToLogFile(dronelogpath,"signal received");
     }
 }
@@ -194,7 +194,10 @@ int main(int argc, char *argv[]) {
     pid_t drone_pid;
     drone_pid=getpid();
     my_write(drone_server[1], &drone_pid, server_drone[0],sizeof(drone_pid));
-    writeToLogFile(dronelogpath, "DRONE: Pid sent to server");
+    char logMessage[80];
+    sprintf(logMessage, "PID = %d\n",drone_pid);
+    writeToLogFile(dronelogpath, logMessage);
+
     usleep(500);
 
 

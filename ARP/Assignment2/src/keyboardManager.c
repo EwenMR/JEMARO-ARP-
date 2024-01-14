@@ -24,7 +24,7 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
     }
     if(signo == SIGUSR1){
         pid_t wd_pid = siginfo->si_pid;
-        kill(wd_pid, SIGUSR2);
+        // kill(wd_pid, SIGUSR2);
         writeToLogFile(keyboardlogpath,"signal received");
     }
 }
@@ -50,7 +50,9 @@ int main(int argc, char *argv[]){
     keyboard_pid=getpid();
     printf("Keyboard PID: %d\n", keyboard_pid);
     my_write(keyboard_server[1], &keyboard_pid, server_keyboard[0],sizeof(keyboard_pid));
-    writeToLogFile(keyboardlogpath, "KEYBOARD: Pid sent to server");
+    char logMessage[80];
+    sprintf(logMessage, "PID = %d\n",keyboard_pid);
+    writeToLogFile(keyboardlogpath, logMessage);
 
 
     // Local variables

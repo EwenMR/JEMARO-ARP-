@@ -28,7 +28,7 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
     }
     if(signo == SIGUSR1){
         pid_t wd_pid = siginfo->si_pid;
-        kill(wd_pid, SIGUSR2);
+        // kill(wd_pid, SIGUSR2);
         writeToLogFile(obstaclelogpath,"signal received");
     }
 }
@@ -104,7 +104,10 @@ int main(int argc, char* argv[]){
     pid_t obstacle_pid;
     obstacle_pid=getpid();
     write(obstacle_server[1], &obstacle_pid, sizeof(obstacle_pid));
-    writeToLogFile(obstaclelogpath, "OBSTACLE: Pid sent to server");
+    char logMessage[80];
+    sprintf(logMessage, "PID = %d\n",obstacle_pid);
+    writeToLogFile(obstaclelogpath, logMessage);
+
 
     // Local variables
     struct shared_data data;
