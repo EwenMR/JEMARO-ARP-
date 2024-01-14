@@ -19,11 +19,13 @@
 
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
     if(signo == SIGINT){
+        writeToLogFile(keyboardlogpath,"killed");
         exit(1);
     }
     if(signo == SIGUSR1){
         pid_t wd_pid = siginfo->si_pid;
         kill(wd_pid, SIGUSR2);
+        writeToLogFile(keyboardlogpath,"signal received");
     }
 }
 
@@ -34,6 +36,7 @@ int main(int argc, char *argv[]){
     signal.sa_flags = SA_SIGINFO;
     sigaction(SIGINT, &signal, NULL);
     sigaction(SIGUSR1, &signal, NULL);
+    clearLogFile(keyboardlogpath);
 
     // PIPES
     int keyboard_server[2], server_keyboard[2];
@@ -45,8 +48,9 @@ int main(int argc, char *argv[]){
     // Pids for Watchdog
     pid_t keyboard_pid;
     keyboard_pid=getpid();
+    printf("Keyboard PID: %d\n", keyboard_pid);
     my_write(keyboard_server[1], &keyboard_pid, server_keyboard[0],sizeof(keyboard_pid));
-    writeToLogFile(logpath, "KEYBOARD: Pid sent to server");
+    writeToLogFile(keyboardlogpath, "KEYBOARD: Pid sent to server");
 
 
     // Local variables
@@ -59,7 +63,7 @@ int main(int argc, char *argv[]){
         // Receive user input from window
         my_read(server_keyboard[0], &data, server_keyboard[1],sizeof(data));
         key=data.key;
-        writeToLogFile(logpath, "KEYBOARD: User input received from server");
+        writeToLogFile(keyboardlogpath, "KEYBOARD: User input received from server");
 
         // Get command force
         switch ((char)key) {
@@ -136,7 +140,7 @@ int main(int argc, char *argv[]){
         // Send the command force to drone
         memcpy(data.command_force,xy,sizeof(xy));
         my_write(keyboard_server[1], &data, server_keyboard[0],sizeof(data));
-        writeToLogFile(logpath, "KEYBOARD:  Command force sent to server");
+        writeToLogFile(keyboardlogpath, "KEYBOARD:  Command force sent to server");
 
     }
     // cleanup

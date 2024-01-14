@@ -19,11 +19,14 @@ struct shared_data data;
 // Signal handler for watchdog
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
     if(signo == SIGINT){
+        writeToLogFile(targetlogpath,"killed");
         exit(1);
+        
     }
     if(signo == SIGUSR1){
         pid_t wd_pid = siginfo->si_pid;
         kill(wd_pid, SIGUSR2);
+        writeToLogFile(targetlogpath,"signal received");
     }
 }
 
@@ -77,6 +80,7 @@ int main(int argc, char* argv[]){
     signal.sa_flags = SA_SIGINFO;
     sigaction(SIGINT, &signal, NULL);
     sigaction(SIGUSR1, &signal, NULL);
+    clearLogFile(targetlogpath);
 
     // PIPES
     int target_server[2], server_target[2];
@@ -87,8 +91,9 @@ int main(int argc, char* argv[]){
     // Pids for Watchdog
     pid_t target_pid;
     target_pid=getpid();
+    // printf("target PID: %d\n", target_pid);
     my_write(target_server[1], &target_pid, target_server[0],sizeof(target_pid));
-    writeToLogFile(logpath, "TARGET: Pid sent to server");
+    writeToLogFile(targetlogpath, "TARGET: Pid sent to server");
 
     // Get the initial drone position from drone
     my_read(server_target[0],&data,target_server[1],sizeof(data));
@@ -98,20 +103,20 @@ int main(int argc, char* argv[]){
     makeTargs(drone_pos); 
     memcpy(data.target_pos, target_pos,sizeof(target_pos));
     write(target_server[1],&data,sizeof(data));
-    writeToLogFile(logpath, "TARGET: Initial target_pos sent to server");
+    writeToLogFile(targetlogpath, "TARGET: Initial target_pos sent to server");
 
     while(1){
         // Receive drone position from drone
         my_read(server_target[0],&data,target_server[1],sizeof(data));
         memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
-        writeToLogFile(logpath, "TARGET: drone_pos received from server");
+        writeToLogFile(targetlogpath, "TARGET: drone_pos received from server");
         
         target_update(drone_pos, target_pos); // Check if drone reached the target
 
         // copy updated target position to shared data and send it
         memcpy(data.target_pos, target_pos, sizeof(target_pos));
         my_write(target_server[1], &data, server_target[0], sizeof(data));
-        writeToLogFile(logpath, "TARGET: Updated target_pos sent to server");
+        writeToLogFile(targetlogpath, "TARGET: Updated target_pos sent to server");
 
     }
     // Clean up

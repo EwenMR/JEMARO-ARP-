@@ -8,8 +8,6 @@
 #define MAX_MSG_LEN 300
 #define MAX_LOGGER_LEN 100
 
-#define SEM_PATH "/my_sem_path"     // Customize the path
-#define SHM_PATH "/my_shm_path"
 
 #define SHM_SIZE sizeof(struct Position)
 
@@ -38,6 +36,8 @@
 #define OBS_THRESH 5.0 
 #define OBSTACLE_REFRESH_RATE 10
 
+#define WD_TIMER_THRESH 3
+
 struct shared_data{
     double drone_pos[6]; // Array to store the position of drone
     double obst_pos[NUM_OBSTACLES*2];
@@ -46,7 +46,13 @@ struct shared_data{
     int command_force[2];
 };
 
-char *logpath = "./log/server.log"; // Path for the log file
+char *serverlogpath = "./log/server.log"; // Path for the log file
+char *windowlogpath = "./log/window.log"; // Path for the log file
+char *dronelogpath = "./log/drone.log"; // Path for the log file
+char *obstaclelogpath = "./log/obstacle.log"; // Path for the log file
+char *targetlogpath = "./log/target.log"; // Path for the log file
+char *wdlogpath = "./log/watchdog.log"; // Path for the log file
+char *keyboardlogpath = "./log/keyboard.log"; // Path for the log file
 char server_format[100]= "%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d";
 char args_format[80]="%d %d|%d %d";
 

@@ -8,10 +8,10 @@
 
 #include <unistd.h>
 #include <sys/types.h>
-
+#include "../include/log.c"
 #include "../include/constants.h"
 #include "../include/utility.c"
-#define TIMER_THRESH 3
+
 
 // Global variables
 int all_timer[NUM_PROCESSES-1];
@@ -21,56 +21,33 @@ void kill_all(){
     for(int i=0; i<(NUM_PROCESSES-1); i++){
             kill(all_pids[i],SIGINT);
         }
-    printf("sent signals to all processes\n");
+    writeToLogFile(wdlogpath,"kill all");
     exit(1);
 }
 
-void signal_handler(int signo, siginfo_t *siginfo, void *context){
-    printf("Received signal\n");
+void send_signals(){
+    for(int i=0; i<(NUM_PROCESSES-1); i++){
+        if(kill(all_pids[i],SIGUSR1)==0){
 
-    if(signo == SIGINT){
-        kill_all();
+        }else{
+            kill_all();
+            exit(1);
+        }
+        usleep(50000);
+        usleep(50000);
+        // kill(all_pids[i],SIGUSR1);
     }
-    if(signo == SIGUSR2){
-
-        if(siginfo->si_pid == all_pids[0]){
-            printf("Signal sent from WINDOW\n");
-            all_timer[1]=0;
-        }
-        if(siginfo->si_pid == all_pids[1]){
-            printf("Signal sent from KEYBOARD\n");
-            all_timer[2]=0;
-        }
-        if(siginfo->si_pid == all_pids[2]){
-            printf("Signal sent from DRONE\n");
-            all_timer[3]=0;
-        }if(siginfo->si_pid == all_pids[3]){
-            printf("Signal sent from OBSTACLE\n");
-            all_timer[4]=0;
-        }
-        if(siginfo->si_pid == all_pids[4]){
-            printf("Signal sent from TARGET\n");
-            all_timer[5]=0;
-        }if(siginfo->si_pid == all_pids[5]){
-            printf("Signal sent from pid %d\n", all_pids[0]);
-            all_timer[0]=0;
-        }
-    }
+    writeToLogFile(wdlogpath,"sent signals to all processes");
 }
 
 int main(int argc, char* argv[]){
     // SIGNALS
-    struct sigaction sig_act;
-    sig_act.sa_sigaction = signal_handler;
-    sig_act.sa_flags = SA_SIGINFO;
-    sigaction(SIGINT,&sig_act, NULL);
-    sigaction(SIGUSR2, &sig_act, NULL);
+    clearLogFile(wdlogpath);
 
 
     // INITIALIZATION
     int first=0;
     printf("%d\n",NUM_PROCESSES-1);
-    // server_timer = window_timer = drone_timer = keyboard_timer = 0;
     for (int i=0; i<NUM_PROCESSES-1;i++){
         all_timer[i]=0;
     }
@@ -87,27 +64,34 @@ int main(int argc, char* argv[]){
 
     for(int i=0; i<NUM_PROCESSES; i++){
         // printf("%d\n", all_pids[i]);
+        // char message[80]= "PID %d = %d",i,all_pids[i];
+        // writeToLogFile(wdlogpath,message);
+        printf("PID %d = %d\n",i,all_pids[i]);
+        // writeToLogFile(wdlogpath,"PID %d = %d",all_pids[i]);
+
     }
 
 
 
     while(1){
+        send_signals();
+        printf("Signal sent\n");
         for(int i=0; i<NUM_PROCESSES-1; i++){
             all_timer[i]++;
         }
 
         // Send signals to all processes
-        for(int i=0; i<(NUM_PROCESSES-1); i++){
-            kill(all_pids[i],SIGUSR1);
-            // THIS TIME INTERVAL IS HARD CODED BUT ITS NECESSARY
-            usleep(50000);
-            usleep(50000);
-        }
+        // for(int i=0; i<(NUM_PROCESSES-1); i++){
+        //     kill(all_pids[i],SIGUSR1);
+        //     // usleep(100000);
+        //     // usleep(50000);
+        // }
         
-        //MAKE THIS CODE CLEANER
+        
         int kill = 0;  // Initialize as false
         for (int i = 0; i < (NUM_PROCESSES-1); i++) {
-            if (all_timer[i] > TIMER_THRESH) {
+            if (all_timer[i] > WD_TIMER_THRESH) {
+                writeToLogFile(wdlogpath, "Exeeded threshold");
                 kill = 1;  // Set to true
                 break;  // No need to check further, we found one
             }
@@ -117,6 +101,8 @@ int main(int argc, char* argv[]){
         if (kill) {
             printf("kill\n");
             kill_all();
+            // writeToLogFile(wdlogpath, "Assassin mode ON");
+            exit(1);
         }
     }
 

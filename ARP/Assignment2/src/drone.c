@@ -28,15 +28,16 @@ double obst_pos[NUM_OBSTACLES*2], target_pos[NUM_TARGETS*2];
 char logMessage[100]; 
 
 
-char *drone_logpath = "./log/drone.log"; // Path for the log file
 
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
     if(signo == SIGINT){
+        writeToLogFile(dronelogpath,"killed");
         exit(1);
     }
     if(signo == SIGUSR1){
         pid_t wd_pid = siginfo->si_pid;
         kill(wd_pid, SIGUSR2);
+        writeToLogFile(dronelogpath,"signal received");
     }
 }
 // KOHEI'S ATTEMPT FAILED
@@ -89,7 +90,7 @@ double *calc_repulsive(double* obstacle_pos, double* drone_pos, int* xy){
         double p_wall[] = {drone_pos[4], drone_pos[5], BOARD_SIZE-drone_pos[4], BOARD_SIZE-drone_pos[5]};
         if(p_q <= p){
             sprintf(logMessage, "OBSTACLE x: %f, OBSTACLE y: %f, DRONE x: %f, DRONE y: %f,", obst_pos[i*2], obst_pos[i*2+1], drone_pos[4],drone_pos[5]);
-            writeToLogFile(drone_logpath, logMessage);
+            writeToLogFile(dronelogpath, logMessage);
 
             double angle= calculateAngle(drone_pos[4],drone_pos[5],obstacle_pos[i*2],obstacle_pos[i*2+1]);
             if(obstacle_pos[2*i]>drone_pos[4] && xy[0]>0){
@@ -125,63 +126,10 @@ double *calc_repulsive(double* obstacle_pos, double* drone_pos, int* xy){
     rep[0] = -0.5 * n * sumx;
     rep[1] = -0.5 * n * sumy;
     sprintf(logMessage, "REP x: %f, REP y: %f, Sumx: %f, Sumy: %f", rep[0], rep[1], sumx, sumy);
-    writeToLogFile(drone_logpath, logMessage);
+    writeToLogFile(dronelogpath, logMessage);
     return rep;
 }
 
-
-// double *calc_attractive(double* target_pos, double* drone_pos, int* xy){
-//     double sumx=0,sumy=0;
-    
-//     for(int i = 0; i < NUM_OBSTACLES; i++){
-//         double p_q = sqrt(pow(target_pos[2*i] - drone_pos[4], 2) + pow(target_pos[2*i+1] - drone_pos[5],2));
-//         if(p_q <= p_att){
-//             double angle= calculateAngle(drone_pos[4],drone_pos[5],target_pos[i*2],target_pos[i*2+1]);
-//             if(target_pos[2*i]>drone_pos[4] && xy[0]>0){
-//                 sumx += pow((1/p_q)-(1/p_att), 2)*cos(angle);
-//                 if(target_pos[2*i+1] > drone_pos[5]){
-//                     sumy += pow((1/p_q)-(1/p_att), 2)*sin(angle);
-//                 }else{
-//                     sumy -= pow((1/p_q)-(1/p_att), 2)*sin(angle);
-//                 }
-//             }else if(target_pos[2*i]<drone_pos[4] && xy[0]<0){
-//                 sumx -= pow((1/p_q)-(1/p_att), 2)*cos(angle);
-//                 if(target_pos[2*i+1] > drone_pos[5]){
-//                     sumy += pow((1/p_q)-(1/p_att), 2)*sin(angle);
-//                 }else{
-//                     sumy -= pow((1/p_q)-(1/p_att), 2)*sin(angle);
-//                 }
-//             }else if(target_pos[2*i+1]>drone_pos[5] && xy[1]>0){
-//                 sumy += pow((1/p_q)-(1/p_att), 2)*sin(angle);
-//                 if(target_pos[2*i] > drone_pos[4]){
-//                     sumx += pow((1/p_q)-(1/p_att), 2)*cos(angle);
-//                 }else{
-//                     sumx -= pow((1/p_q)-(1/p_att), 2)*cos(angle);
-//                 }
-//             }else if(target_pos[2*i+1]<drone_pos[5] && xy[1]<0){
-//                 sumy -= pow((1/p_q)-(1/p_att), 2)*sin(angle);
-//                 if(target_pos[2*i] > drone_pos[4]){
-//                     sumx += pow((1/p_q)-(1/p_att), 2)*cos(angle);
-//                 }else{
-//                     sumx -= pow((1/p_q)-(1/p_att), 2)*cos(angle);
-//                 }
-//             }//maybe once passed, decrease
-//         }
-//     }
-
-//     double* att = (double*)malloc(2 * sizeof(double));
-//     if (att == NULL) {
-//         // Handle memory allocation failure
-//         exit(EXIT_FAILURE); // Or handle it in a way that suits your program
-//     }
-
-//     // double result[2];
-//     att[0] = -0.5 * n * sumx;
-//     att[1] = -0.5 * n * sumy;
-//     sprintf(logMessage, "REP x: %f, REP y: %f, Sumx: %f, Sumy: %f", att[0], att[1], sumx, sumy);
-//     writeToLogFile(drone_logpath, logMessage);
-//     return att;
-// }
 
 // Get the new drone_pos using calc_function and store the previous drone_poss
 void update_pos(double* drone_pos,double* obstacle_pos, int* xy){
@@ -194,7 +142,7 @@ void update_pos(double* drone_pos,double* obstacle_pos, int* xy){
     
 
     sprintf(logMessage, "DRONE x: %f, DRONE y: %f, COMMAND x: %d, COMMAND y: %d, REP x: %f, REP y: %f", drone_pos[4],drone_pos[5],xy[0],xy[1],repx,repy);
-    writeToLogFile(drone_logpath, logMessage);
+    writeToLogFile(dronelogpath, logMessage);
 
     if(xy[0] > 0){
         new_posx = calc_drone_pos(xy[0] - repx, drone_pos[4], drone_pos[2]);
@@ -218,14 +166,13 @@ void update_pos(double* drone_pos,double* obstacle_pos, int* xy){
     }
     drone_pos[4]=new_posx;
     drone_pos[5]=new_posy;
-    // return *drone_pos;
 }
 
 
 
 
 int main(int argc, char *argv[]) {
-    clearLogFile(drone_logpath);
+    clearLogFile(dronelogpath);
 
     // SIGNALS
     struct sigaction signal;
@@ -247,13 +194,14 @@ int main(int argc, char *argv[]) {
     pid_t drone_pid;
     drone_pid=getpid();
     my_write(drone_server[1], &drone_pid, server_drone[0],sizeof(drone_pid));
-    writeToLogFile(logpath, "DRONE: Pid sent to server");
+    writeToLogFile(dronelogpath, "DRONE: Pid sent to server");
+    usleep(500);
 
 
     // Send initial drone position to other processes
     memcpy(data.drone_pos,drone_pos, sizeof(drone_pos));
     my_write(drone_server[1],&data, server_drone[0],sizeof(data));
-    writeToLogFile(logpath, "DRONE: Initial drone_pos sent to server");
+    writeToLogFile(dronelogpath, "DRONE: Initial drone_pos sent to server");
 
 
     while (1) {
@@ -261,19 +209,18 @@ int main(int argc, char *argv[]) {
         my_read(server_drone[0], &data, drone_server[1], sizeof(data));
         memcpy(xy, data.command_force, sizeof(data.command_force));
         memcpy(obst_pos, data.obst_pos, sizeof(data.obst_pos));
-        writeToLogFile(logpath, "DRONE: Command_force received from server");
+        writeToLogFile(dronelogpath, "DRONE: Command_force received from server");
 
         if(xy[0]==0 && xy[1]==0){
             stop(drone_pos);
         }else{
-            // update_pos(drone_pos,xy,obst_pos); 
             update_pos(drone_pos, obst_pos, xy);
         }
 
         // Send updated drone_pos to window and target
         memcpy(data.drone_pos, drone_pos, sizeof(drone_pos));
         my_write(drone_server[1], &data, server_drone[0],sizeof(data));
-        writeToLogFile(logpath, "DRONE: Drone_pos sent to server");
+        writeToLogFile(dronelogpath, "DRONE: Drone_pos sent to server");
     }
 
     // Clean up

@@ -22,11 +22,14 @@ double drone_pos[6], obstacle_pos[NUM_OBSTACLES*2], target_pos[NUM_TARGETS*2];
 // Signal handler for watchdog
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
     if(signo == SIGINT){
+        writeToLogFile(obstaclelogpath,"killed");
         exit(1);
+        
     }
     if(signo == SIGUSR1){
         pid_t wd_pid = siginfo->si_pid;
         kill(wd_pid, SIGUSR2);
+        writeToLogFile(obstaclelogpath,"signal received");
     }
 }
 
@@ -89,6 +92,7 @@ int main(int argc, char* argv[]){
     signal.sa_flags = SA_SIGINFO;
     sigaction(SIGINT, &signal, NULL);
     sigaction(SIGUSR1, &signal, NULL);
+    clearLogFile(obstaclelogpath);
 
     // PIPES
     int obstacle_server[2], server_obstacle[2];
@@ -100,7 +104,7 @@ int main(int argc, char* argv[]){
     pid_t obstacle_pid;
     obstacle_pid=getpid();
     write(obstacle_server[1], &obstacle_pid, sizeof(obstacle_pid));
-    writeToLogFile(logpath, "OBSTACLE: Pid sent to server");
+    writeToLogFile(obstaclelogpath, "OBSTACLE: Pid sent to server");
 
     // Local variables
     struct shared_data data;
@@ -113,7 +117,7 @@ int main(int argc, char* argv[]){
         my_read(server_obstacle[0],&data,obstacle_server[1],sizeof(data));
         memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
         memcpy(target_pos, data.target_pos, sizeof(data.target_pos));
-        writeToLogFile(logpath, "OBSTACLE: Drone_pos and Target_pos received from server");
+        writeToLogFile(obstaclelogpath, "OBSTACLE: Drone_pos and Target_pos received from server");
 
 
         if(first){
@@ -139,7 +143,7 @@ int main(int argc, char* argv[]){
         // Whether newly generated or not, send obstacle_pos to drone
         memcpy(data.obst_pos,obstacle_pos,sizeof(obstacle_pos));
         my_write(obstacle_server[1],&data,server_obstacle[0],sizeof(data));
-        writeToLogFile(logpath, "OBSTACLE: Obstacle_pos sent to server");
+        writeToLogFile(obstaclelogpath, "OBSTACLE: Obstacle_pos sent to server");
         
         
         usleep(50000);

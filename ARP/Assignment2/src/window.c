@@ -19,11 +19,14 @@
 // Signal handler for watchdog
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
     if(signo == SIGINT){
+        writeToLogFile(windowlogpath,"killed");
         exit(1);
+        
     }
     if(signo == SIGUSR1){
         pid_t wd_pid = siginfo->si_pid;
         kill(wd_pid, SIGUSR2);
+        writeToLogFile(windowlogpath,"signal received");
     }
 }
 
@@ -82,6 +85,7 @@ int main(int argc, char* argv[]) {
     cbreak();
     struct timeval start_time, finish_time;
     start_time = current_time();
+    clearLogFile(windowlogpath);
 
     
     WINDOW *win, *score;
@@ -110,7 +114,7 @@ int main(int argc, char* argv[]) {
     pid_t window_pid;
     window_pid=getpid();
     my_write(window_server[1], &window_pid, server_window[0],sizeof(window_pid));
-    writeToLogFile(logpath, "WINDOW: Pid sent to server");
+    writeToLogFile(windowlogpath, "WINDOW: Pid sent to server");
 
 
 
@@ -167,7 +171,7 @@ int main(int argc, char* argv[]) {
         memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
         memcpy(target_pos, data.target_pos, sizeof(data.target_pos));
         memcpy(obstacle_pos, data.obst_pos, sizeof(data.obst_pos));
-        writeToLogFile(logpath, "WINDOW: Drone_pos, Target_pos, Obst_pos received from server");
+        writeToLogFile(windowlogpath, "WINDOW: Drone_pos, Target_pos, Obst_pos received from server");
 
         
         
@@ -223,7 +227,7 @@ int main(int argc, char* argv[]) {
         if (key != ERR) { // If a key was pressed properly
             data.key=key;
             my_write(window_server[1],&data,window_server[0],sizeof(data));
-            writeToLogFile(logpath, "WINDOW: User input sent to server");
+            writeToLogFile(windowlogpath, "WINDOW: User input sent to server");
             if((char)key==' '){ //if space was pressed, close window
                 close(window_server[1]);
                 close(server_window[0]);

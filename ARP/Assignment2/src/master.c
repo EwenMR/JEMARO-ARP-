@@ -116,7 +116,7 @@ int main(int argc, char *argv[]){
             }else if(i==6){ //WATCH DOG
                 sprintf(args, "%d %d", server_wd[0], server_wd[1]);
                 argsWatchdog[1]=args;
-                // summon(argsWatchdog);
+                summon(argsWatchdog);
             }   
         }else { //else if parent
             printf("Summoned child with pid %d\n", pid);

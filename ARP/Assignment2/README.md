@@ -54,7 +54,8 @@ The `drone.c` files as briefly alluded to in the previous part is made to contro
 
 The `window.c` creates the graphical user interface of the game. Using the ncurses library, a main window where the drone can be controlled and a smaller window with the position of the drone are made. The file communicates with the `keyboardManager` using pipes and uses shared memory to read the updates position of the drone. Once again signal handling is taken care of as to send a signal to the watchdog.
 
-
+# target.c
+The `target.c` randomly creates 10 targets.
 
 ## Instruction for installing and running
 These instructions will help you get a copy of the project up and running on your local machine.
