@@ -5,7 +5,7 @@ Team Members: Ewen Gay-Semenkoff, Kohei Tateyama
 
 ## Architecture Sketch
 
-![Architecture sketch](https://github.com/kohei-tateyama/JEMARO/blob/master/ARP/Assignment1/resources/architecture2.jpg)
+![Architecture sketch](https://github.com/kohei-tateyama/JEMARO/blob/master/ARP/Assignment2/resources/ARP2_flowchart2.png)
 
 
 # Short definition of all Active Components
