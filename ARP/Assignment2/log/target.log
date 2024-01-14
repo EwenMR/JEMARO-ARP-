@@ -1,1369 +1,409 @@
-[2024-01-14 23:14:15] TARGET: Pid sent to server
-[2024-01-14 23:14:15] TARGET: Initial target_pos sent to server
-[2024-01-14 23:14:15] TARGET: drone_pos received from server
-[2024-01-14 23:14:15] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:15] TARGET: drone_pos received from server
-[2024-01-14 23:14:15] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:15] TARGET: drone_pos received from server
-[2024-01-14 23:14:15] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:15] TARGET: drone_pos received from server
-[2024-01-14 23:14:15] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:16] TARGET: drone_pos received from server
-[2024-01-14 23:14:16] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:17] TARGET: drone_pos received from server
-[2024-01-14 23:14:17] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:18] TARGET: drone_pos received from server
-[2024-01-14 23:14:18] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:19] TARGET: drone_pos received from server
-[2024-01-14 23:14:19] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:20] TARGET: drone_pos received from server
-[2024-01-14 23:14:20] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:21] TARGET: drone_pos received from server
-[2024-01-14 23:14:21] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:22] TARGET: drone_pos received from server
-[2024-01-14 23:14:22] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:23] TARGET: drone_pos received from server
-[2024-01-14 23:14:23] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:24] TARGET: drone_pos received from server
-[2024-01-14 23:14:24] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:25] TARGET: drone_pos received from server
-[2024-01-14 23:14:25] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:26] TARGET: drone_pos received from server
-[2024-01-14 23:14:26] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:27] TARGET: drone_pos received from server
-[2024-01-14 23:14:27] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:28] TARGET: drone_pos received from server
-[2024-01-14 23:14:28] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:29] TARGET: drone_pos received from server
-[2024-01-14 23:14:29] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:30] TARGET: drone_pos received from server
-[2024-01-14 23:14:30] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:31] TARGET: drone_pos received from server
-[2024-01-14 23:14:31] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:32] TARGET: drone_pos received from server
-[2024-01-14 23:14:32] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:33] TARGET: drone_pos received from server
-[2024-01-14 23:14:33] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:34] TARGET: drone_pos received from server
-[2024-01-14 23:14:34] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:35] TARGET: drone_pos received from server
-[2024-01-14 23:14:35] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:36] TARGET: drone_pos received from server
-[2024-01-14 23:14:36] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:37] TARGET: drone_pos received from server
-[2024-01-14 23:14:37] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:38] TARGET: drone_pos received from server
-[2024-01-14 23:14:38] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:39] TARGET: drone_pos received from server
-[2024-01-14 23:14:39] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:40] TARGET: drone_pos received from server
-[2024-01-14 23:14:40] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:41] TARGET: drone_pos received from server
-[2024-01-14 23:14:41] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:42] TARGET: drone_pos received from server
-[2024-01-14 23:14:42] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:43] TARGET: drone_pos received from server
-[2024-01-14 23:14:43] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:44] TARGET: drone_pos received from server
-[2024-01-14 23:14:44] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:45] TARGET: drone_pos received from server
-[2024-01-14 23:14:45] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:46] TARGET: drone_pos received from server
-[2024-01-14 23:14:46] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:47] TARGET: drone_pos received from server
-[2024-01-14 23:14:47] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] TARGET: drone_pos received from server
-[2024-01-14 23:14:48] TARGET: Updated target_pos sent to server
-[2024-01-14 23:14:48] killed
+[2024-01-14 23:16:28] TARGET: Pid sent to server
+[2024-01-14 23:16:28] TARGET: Initial target_pos sent to server
+[2024-01-14 23:16:28] TARGET: drone_pos received from server
+[2024-01-14 23:16:28] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:28] TARGET: drone_pos received from server
+[2024-01-14 23:16:28] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:29] TARGET: drone_pos received from server
+[2024-01-14 23:16:29] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:30] TARGET: drone_pos received from server
+[2024-01-14 23:16:30] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:31] TARGET: drone_pos received from server
+[2024-01-14 23:16:31] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:32] TARGET: drone_pos received from server
+[2024-01-14 23:16:32] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:33] TARGET: drone_pos received from server
+[2024-01-14 23:16:33] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:34] TARGET: drone_pos received from server
+[2024-01-14 23:16:34] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:35] TARGET: drone_pos received from server
+[2024-01-14 23:16:35] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:36] TARGET: drone_pos received from server
+[2024-01-14 23:16:36] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:37] TARGET: drone_pos received from server
+[2024-01-14 23:16:37] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] TARGET: drone_pos received from server
+[2024-01-14 23:16:38] TARGET: Updated target_pos sent to server
+[2024-01-14 23:16:38] killed
