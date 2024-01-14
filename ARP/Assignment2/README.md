@@ -37,7 +37,8 @@ The `watchdog.c` file is resposnible for the monitoring (the 'health') and manag
 
 ## server.c
 
-The main role `server.c` file is to create and update the shared memory made for the drone's position, as well as the creation of a semaphore that will allow to have synchronized access to this shared memory. Additionally, the file sets up signal handling and sends the server's process ID to the watchdog through pipes.
+The main role `server.c` file is to serve as the central coordinator in a multi-process communication system. Pipes are used to receive and store data (like drone position, obstacle positions, and target positions) in local variables as well as send the data to the necessary processes. Additionally, the file sets up signal handling and sends the server's process ID to the watchdog through pipes. 
+
 
 
 ## keyboardManager.c
@@ -52,8 +53,12 @@ The `drone.c` files as briefly alluded to in the previous part is made to contro
 
 ## window.c
 
-The `window.c` creates the graphical user interface of the game. Using the ncurses library, a main window where the drone can be controlled and a smaller window with the position of the drone are made. The file communicates with the `keyboardManager` using pipes and uses shared memory to read the updates position of the drone. Once again signal handling is taken care of as to send a signal to the watchdog.
+The `window.c` creates the graphical user interface of the game. Using the ncurses library, a main game window with the drone, the obstacles and the targets was made above a smaller window with the position of the drone.
+The file receives and sends the appropriate data throigh pipes. Once again signal handling is taken care of as to send a signal to the watchdog.
 
+
+## obstacle.c
+The role of the `obstacle.c` file is to create and manage the random spawning of the obstacle positions. The file reads the drone position as to not create an obstacle too close to the drone to avoid any unwanted behaviour. The obstacles' positions are sent via pipes. The signal handling is done as to send a signal to the watchdog as the previous processes.
 
 
 ## Instruction for installing and running
