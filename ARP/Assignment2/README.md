@@ -1,4 +1,4 @@
-# Assignment 1
+# Assignment 2
 Team Name: WhereIsTheMarket?
 
 Team Members: Ewen Michel Claude Gay, Kohei Tateyama
@@ -10,7 +10,7 @@ Team Members: Ewen Michel Claude Gay, Kohei Tateyama
 
 # Short definition of all Active Components
 
-There are 3 folders `build`, `include` and `src` as well as a makefile. The build folder holds all the compiled and executbale files that ar made by running the makefile. The `include` directory contains a header file `constants.h`. The `src` directory contains `drone.c`, `keyboardManager.c`, `master.c`, `server.c`, `watchdog.c` and `window.c`. 
+There are 5 folders `build`, `include`, `src`, `log` and `resources`  as well as a makefile. The build folder holds all the compiled and executbale files that are made by running the makefile. The `include` directory contains header files `constants.h`, `log.c`, `utility.c` . The `src` directory contains `drone.c`, `keyboardManager.c`, `master.c`, `server.c`, `watchdog.c` and `window.c`. The `log` directory contains the log files for debugging and observability.
 
 
 ## constants.h
@@ -65,7 +65,7 @@ To clone this project to the local file, enter:
 
 ```bash
 $ git clone https://github.com/kohei-tateyama/JEMARO.git
-$ cd JEMARO/ARP/Assignment1 
+$ cd JEMARO/ARP/Assignment2
 ```
 or unzip the file that is submitted to the aulaweb page.
 
@@ -80,7 +80,7 @@ to compile all the necessary files. And to run the project, enter:
 ```bash
 $ make run
 ```
-This command will open 5 konsole windows `drone`, `keyboard`, `server`, `window`, and `watchdog`.
+This command will open a konsole window. And  `drone`, `keyboard`, `server`, `window`, and `watchdog`.
 
 ## Operational instructions
 In the 'window' konsole, there should be a drone displayed as 'X'. Use the keys 

@@ -20,6 +20,8 @@
 
 #define p 5
 #define n 10
+#define p_att 20
+
 
 // VARIABLES
 struct shared_data data;
@@ -82,7 +84,7 @@ double stop(double *drone_pos){
 
 
 
-double *calc_potential(double* obstacle_pos, double* drone_pos, int* xy){
+double *calc_repulsive(double* obstacle_pos, double* drone_pos, int* xy){
     double sumx=0,sumy=0;
     
     for(int i = 0; i < NUM_OBSTACLES; i++){
@@ -131,16 +133,67 @@ double *calc_potential(double* obstacle_pos, double* drone_pos, int* xy){
 }
 
 
+// double *calc_attractive(double* target_pos, double* drone_pos, int* xy){
+//     double sumx=0,sumy=0;
+    
+//     for(int i = 0; i < NUM_OBSTACLES; i++){
+//         double p_q = sqrt(pow(target_pos[2*i] - drone_pos[4], 2) + pow(target_pos[2*i+1] - drone_pos[5],2));
+//         if(p_q <= p_att){
+//             double angle= calculateAngle(drone_pos[4],drone_pos[5],target_pos[i*2],target_pos[i*2+1]);
+//             if(target_pos[2*i]>drone_pos[4] && xy[0]>0){
+//                 sumx += pow((1/p_q)-(1/p_att), 2)*cos(angle);
+//                 if(target_pos[2*i+1] > drone_pos[5]){
+//                     sumy += pow((1/p_q)-(1/p_att), 2)*sin(angle);
+//                 }else{
+//                     sumy -= pow((1/p_q)-(1/p_att), 2)*sin(angle);
+//                 }
+//             }else if(target_pos[2*i]<drone_pos[4] && xy[0]<0){
+//                 sumx -= pow((1/p_q)-(1/p_att), 2)*cos(angle);
+//                 if(target_pos[2*i+1] > drone_pos[5]){
+//                     sumy += pow((1/p_q)-(1/p_att), 2)*sin(angle);
+//                 }else{
+//                     sumy -= pow((1/p_q)-(1/p_att), 2)*sin(angle);
+//                 }
+//             }else if(target_pos[2*i+1]>drone_pos[5] && xy[1]>0){
+//                 sumy += pow((1/p_q)-(1/p_att), 2)*sin(angle);
+//                 if(target_pos[2*i] > drone_pos[4]){
+//                     sumx += pow((1/p_q)-(1/p_att), 2)*cos(angle);
+//                 }else{
+//                     sumx -= pow((1/p_q)-(1/p_att), 2)*cos(angle);
+//                 }
+//             }else if(target_pos[2*i+1]<drone_pos[5] && xy[1]<0){
+//                 sumy -= pow((1/p_q)-(1/p_att), 2)*sin(angle);
+//                 if(target_pos[2*i] > drone_pos[4]){
+//                     sumx += pow((1/p_q)-(1/p_att), 2)*cos(angle);
+//                 }else{
+//                     sumx -= pow((1/p_q)-(1/p_att), 2)*cos(angle);
+//                 }
+//             }//maybe once passed, decrease
+//         }
+//     }
+
+//     double* att = (double*)malloc(2 * sizeof(double));
+//     if (att == NULL) {
+//         // Handle memory allocation failure
+//         exit(EXIT_FAILURE); // Or handle it in a way that suits your program
+//     }
+
+//     // double result[2];
+//     att[0] = -0.5 * n * sumx;
+//     att[1] = -0.5 * n * sumy;
+//     sprintf(logMessage, "REP x: %f, REP y: %f, Sumx: %f, Sumy: %f", att[0], att[1], sumx, sumy);
+//     writeToLogFile(drone_logpath, logMessage);
+//     return att;
+// }
+
 // Get the new drone_pos using calc_function and store the previous drone_poss
 void update_pos(double* drone_pos,double* obstacle_pos, int* xy){
     double new_posx,new_posy;
-    double repx,repy;
-    repx = calc_potential(obstacle_pos, drone_pos,xy)[0];
-    repy = calc_potential(obstacle_pos, drone_pos,xy)[1];
-    // for(int i=0; i<NUM_OBSTACLES; i++){
-    //     sprintf(logMessage, "OBSTACLE x: %f, OBSTACLE y: %f,", obst_pos[i*2], obst_pos[i*2+1]);
-    //     writeToLogFile(drone_logpath, logMessage);
-    // }
+    double repx,repy,attx,atty;
+    repx = calc_repulsive(obstacle_pos, drone_pos,xy)[0];
+    repy = calc_repulsive(obstacle_pos, drone_pos,xy)[1];
+    // attx = calc_attractive(target_pos, drone_pos,xy)[0];
+    // atty = calc_attractive(target_pos, drone_pos,xy)[1];
     
 
     sprintf(logMessage, "DRONE x: %f, DRONE y: %f, COMMAND x: %d, COMMAND y: %d, REP x: %f, REP y: %f", drone_pos[4],drone_pos[5],xy[0],xy[1],repx,repy);
