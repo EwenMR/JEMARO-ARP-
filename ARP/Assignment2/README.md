@@ -62,7 +62,7 @@ The role of the `obstacle.c` file is to create and manage the random spawning of
 
 
 ## target.c
-The `target.c` file creates the random 
+The `target.c` file creates the random target positions as long as they are not within a certain threshold of the drone's position. It also checks whether the target has been reached by the drone. Along the other processes the signal handling is done such that the signal is sent to the watchdog.
 
 
 ## Instruction for installing and running
