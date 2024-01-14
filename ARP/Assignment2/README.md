@@ -5,7 +5,7 @@ Team Members: Ewen Gay-Semenkoff, Kohei Tateyama
 
 ## Architecture Sketch
 
-![Architecture sketch](https://github.com/kohei-tateyama/JEMARO/blob/master/ARP/Assignment2/resources/ARP2_flowchart2.png)
+![Architecture sketch](https://github.com/kohei-tateyama/JEMARO/blob/master/ARP/Assignment2/resources/ARP2_flowchart2.jpg)
 
 
 # Short definition of all Active Components
@@ -59,6 +59,10 @@ The file receives and sends the appropriate data throigh pipes. Once again signa
 
 ## obstacle.c
 The role of the `obstacle.c` file is to create and manage the random spawning of the obstacle positions. The file reads the drone position as to not create an obstacle too close to the drone to avoid any unwanted behaviour. The obstacles' positions are sent via pipes. The signal handling is done as to send a signal to the watchdog as the previous processes.
+
+
+## target.c
+The `target.c` file creates the random 
 
 
 ## Instruction for installing and running
