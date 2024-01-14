@@ -65,10 +65,10 @@ struct timeval current_time() {
 int calc_score(struct timeval start, struct timeval finish) {
     // Calculate the difference in seconds between two timeval structs
     int time_passed = (int)(finish.tv_sec - start.tv_sec);
-    if(time_passed<20){
+    if(time_passed<10){
         return 100;
     }else{
-        return 120 - time_passed;
+        return 110 - time_passed;
     }
     
 }

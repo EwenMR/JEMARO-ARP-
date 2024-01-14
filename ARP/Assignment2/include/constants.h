@@ -17,6 +17,11 @@
 #define K 1.0
 #define T 1
 
+#define p 5
+#define n 25
+#define p_att 20
+
+
 #define BOARD_SIZE 100
 #define NUM_PROCESSES 7
 #define NUM_OBSTACLES 10

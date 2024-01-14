@@ -18,9 +18,6 @@
 #include "../include/log.c"
 #include <math.h>
 
-#define p 5
-#define n 10
-#define p_att 20
 
 
 // VARIABLES
@@ -59,11 +56,11 @@ double calc_drone_pos(double force,double x1,double x2){
     x= (force*T*T-M*x2+2*M*x1+K*T*x1)/(M+K*T); //Eulers method
 
     // Dont let it go outside of the window
-    // if(x<0){
-    //     return 0;
-    // }else if(x>BOARD_SIZE){
-    //     return BOARD_SIZE;
-    // }
+    if(x<-20){
+        return 5;
+    }else if(x>BOARD_SIZE+20){
+        return BOARD_SIZE-5;
+    }
 
     return x;
 }
