@@ -1,7 +1,7 @@
 # Assignment 2
 Team Name: WhereIsTheMarket?
 
-Team Members: Ewen Michel Claude Gay, Kohei Tateyama
+Team Members: Ewen Gay-Semenkoff, Kohei Tateyama
 
 ## Architecture Sketch
 
@@ -48,7 +48,7 @@ The `keyboardManager.c` file is made to manage the user input from the keyboard 
 
 ## drone.c
 
-The `drone.c` files as briefly alluded to in the previous part is made to control the movement and updating the position of the drone based off of the control commands received from the keyboarManager though pipes. It calculates the position using Euler's method of a given equation of motion. The file uses shared memory and semaphores to send the updated position to the window file. This file contains signal handling to be able to send a signal to the watchdog.
+The `drone.c` files as briefly alluded to in the previous part is made to control the movement and updating the position of the drone based off of the control commands received from the keyboarManager though pipes. It calculates the position using Euler's method of a given equation of motion. Additionally, it calculates the repulsive forces associated with the obstacles and the walls of the game. The file uses pipes to send the updated position to the window file. This file contains signal handling to be able to send a signal to the watchdog.
 
 
 ## window.c
