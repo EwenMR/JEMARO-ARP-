@@ -16,7 +16,7 @@ There are 5 folders `build`, `include`, `src`, `log` and `resources`  as well as
 ## constants.h
 
 The `constants.h` file defines various constants and parameters that are used through the program. 
-This includes, shared memory key, size and path, semaphore path, constants about the rows and columns of the window, values for the mass of the drone, the viscosity constant, the integration interval and the length of messages. 
+This includes constants about the rows and columns of the window, number of obstacles and targets, values for the mass of the drone, the viscosity constant, the integration interval, the length of messages and more. 
 
 This header file is included in every .c file as to ensure that changes to these values can be easily managed and changed from a centralized location.
 
