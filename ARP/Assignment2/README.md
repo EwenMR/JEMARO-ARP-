@@ -54,12 +54,8 @@ The `drone.c` files as briefly alluded to in the previous part is made to contro
 ## window.c
 
 The `window.c` creates the graphical user interface of the game. Using the ncurses library, a main game window with the drone, the obstacles and the targets was made above a smaller window with the position of the drone.
-The file receives and sends the appropriate data throigh pipes. Once again signal handling is taken care of as to send a signal to the watchdog.
+The file receives and sends the appropriate data through pipes. Once again signal handling is taken care of as to send a signal to the watchdog.
 
-<<<<<<< HEAD
-# target.c
-The `target.c` randomly creates 10 targets.
-=======
 
 ## obstacle.c
 The role of the `obstacle.c` file is to create and manage the random spawning of the obstacle positions. The file reads the drone position as to not create an obstacle too close to the drone to avoid any unwanted behaviour. The obstacles' positions are sent via pipes. The signal handling is done as to send a signal to the watchdog as the previous processes.
@@ -68,7 +64,7 @@ The role of the `obstacle.c` file is to create and manage the random spawning of
 ## target.c
 The `target.c` file creates the random target positions as long as they are not within a certain threshold of the drone's position. It also checks whether the target has been reached by the drone. Along the other processes the signal handling is done such that the signal is sent to the watchdog.
 
->>>>>>> bc3c09b0f697e6e393a467d5fe27f1e24463198f
+
 
 ## Instruction for installing and running
 These instructions will help you get a copy of the project up and running on your local machine.
