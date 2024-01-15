@@ -12,10 +12,11 @@
 #include "../include/constants.h"
 #include "../include/utility.c"
 
-
 // Global variables
 int all_timer[NUM_PROCESSES-1];
 pid_t all_pids[NUM_PROCESSES];
+char logMessage[80];
+
 
 void kill_all(){
     for(int i=0; i<(NUM_PROCESSES-1); i++){
@@ -25,38 +26,71 @@ void kill_all(){
     // exit(0);
 }
 
-void send_signals(){
-    for(int i=0; i<(NUM_PROCESSES-1); i++){
-        if(kill(all_pids[i],SIGUSR1)==0){
+void signal_handler(int signo, siginfo_t *siginfo, void *context){
+    printf("Received signal\n");
 
-        }else{
-            kill_all();
-            // exit(2);
-        }
-        usleep(50000);
-        // usleep(50000);
-        // kill(all_pids[i],SIGUSR1);
+    if(signo == SIGINT){
+        kill_all();
+        exit(1);
     }
-    writeToLogFile(wdlogpath,"sent signals to all processes");
+    if(signo == SIGUSR2){
+
+        if(siginfo->si_pid == all_pids[0]){
+            sprintf(logMessage, "Signal sent from Window");
+            writeToLogFile(wdlogpath, logMessage);
+
+            all_timer[1]=0;
+        }
+        if(siginfo->si_pid == all_pids[1]){
+            sprintf(logMessage, "Signal sent from Keyboard");
+            writeToLogFile(wdlogpath, logMessage);
+
+            all_timer[2]=0;
+        }
+        if(siginfo->si_pid == all_pids[2]){
+            sprintf(logMessage, "Signal sent from Drone");
+            writeToLogFile(wdlogpath, logMessage);
+
+            all_timer[3]=0;
+        }if(siginfo->si_pid == all_pids[3]){
+            sprintf(logMessage, "Signal sent from Obstacle");
+            writeToLogFile(wdlogpath, logMessage);
+
+            all_timer[4]=0;
+        }
+        if(siginfo->si_pid == all_pids[4]){
+            sprintf(logMessage, "Signal sent from Target");
+            writeToLogFile(wdlogpath, logMessage);
+
+            all_timer[5]=0;
+        }if(siginfo->si_pid == all_pids[5]){
+            sprintf(logMessage, "Signal sent from Server");
+            writeToLogFile(wdlogpath, logMessage);
+
+            all_timer[0]=0;
+        }
+    }
 }
 
+
+
+
+
+
 int main(int argc, char* argv[]){
+    struct sigaction sig_act;
+    sig_act.sa_sigaction = signal_handler;
+    sig_act.sa_flags = SA_SIGINFO;
+    sigaction(SIGINT,&sig_act, NULL);
+    sigaction(SIGUSR2, &sig_act, NULL);
+
     clearLogFile(wdlogpath);
 
 
-    // INITIALIZATION
-    int first=0;
-    printf("%d\n",NUM_PROCESSES-1);
-    for (int i=0; i<NUM_PROCESSES-1;i++){
-        all_timer[i]=0;
-    }
 
      // PIPES
     int server_wd[2];
     sscanf(argv[1], "%d %d", &server_wd[0], &server_wd[1]);
-
-    // close(server_wd[1]);
-
     
     my_read(server_wd[0], all_pids, server_wd[1], sizeof(all_pids));
     all_pids[NUM_PROCESSES-1]=getpid();
@@ -74,33 +108,50 @@ int main(int argc, char* argv[]){
         writeToLogFile(wdlogpath, logMessage);
 
     }
-
-
+    // INITIALIZATION
+    printf("%d\n",NUM_PROCESSES-1);
+    for (int i=0; i<NUM_PROCESSES-1;i++){
+        all_timer[i]=0;
+    }
 
     while(1){
 
         // Send signals to all processes
         for(int i=0; i<(NUM_PROCESSES-1); i++){
+            // kill(all_pids[i],SIGUSR1);
+            
+            if(kill(all_pids[i],0)==0){
+                all_timer[i]=0;
+                sprintf(logMessage, "Signal sent to %d\n",all_pids[i]);
+                writeToLogFile(wdlogpath, logMessage);
 
-            // int signum=12;
-            kill(all_pids[i],SIGUSR1);
-            char logMessage[80];
-            sprintf(logMessage, "Sent signal to PID %d\n", all_pids[i]);
-            writeToLogFile(wdlogpath,logMessage);
+            }else{
+                all_timer[i]++;
+                sprintf(logMessage, "Signal not sent to %d\n",all_pids[i]);
+                writeToLogFile(wdlogpath, logMessage);
 
-
-            // if(kill(all_pids[i],signum)==0){
-            //     all_timer[i]=0;
-            // }
-            // else{
-            //     printf("ERROR with signal\n");
-            //     // kill_all();
-            //     // exit(2);
-            // }
-            usleep(500);
+            }
+           
+            usleep(100000);
         }
         
         
+        int kill = 0;  // Initialize as false
+        for (int i = 0; i < (NUM_PROCESSES-1); i++) {
+            if (all_timer[i] > WD_TIMER_THRESH) {
+                writeToLogFile(wdlogpath, "Exeeded threshold");
+                kill = 1;  // Set to true
+                break;  // No need to check further, we found one
+            }
+        }
+
+        // Use the result in your conditional statement
+        if (kill==1) {
+            printf("kill\n");
+            kill_all();
+            // writeToLogFile(wdlogpath, "Assassin mode ON");
+            exit(1);
+        }
 
         for(int i=0; i<NUM_PROCESSES-1; i++){
             all_timer[i]++;
@@ -119,19 +170,24 @@ int main(int argc, char* argv[]){
 
 
 
-        // int kill = 0;  // Initialize as false
-        // for (int i = 0; i < (NUM_PROCESSES-1); i++) {
-        //     if (all_timer[i] > WD_TIMER_THRESH) {
-        //         writeToLogFile(wdlogpath, "Exeeded threshold");
-        //         kill = 1;  // Set to true
-        //         break;  // No need to check further, we found one
-        //     }
-        // }
+ // int signum=12;
+            // if(kill(all_pids[i],SIGUSR1)==0){
+            //     all_timer[i]=0;
+            //     sprintf(logMessage, "Sent signal to PID %d\n", all_pids[i]);
+            //     writeToLogFile(wdlogpath,logMessage);
+            // }else{
+            //     writeToLogFile(wdlogpath,"ERROR with signals");
+            // }
+            // char logMessage[80];
+            
+            
 
-        // Use the result in your conditional statement
-        // if (kill) {
-        //     printf("kill\n");
-        //     kill_all();
-        //     // writeToLogFile(wdlogpath, "Assassin mode ON");
-        //     // exit(3);
-        // }
+
+            // if(kill(all_pids[i],signum)==0){
+            //     all_timer[i]=0;
+            // }
+            // else{
+            //     printf("ERROR with signal\n");
+            //     // kill_all();
+            //     // exit(2);
+            // }

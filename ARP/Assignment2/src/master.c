@@ -128,7 +128,7 @@ int main(int argc, char *argv[]){
         pid_t pid = wait(&stat);
         printf("Child %d terminated with status %d\n", pid, stat);
     }
-    return EXIT_SUCCESS;
+    return 0;
 }
     
     

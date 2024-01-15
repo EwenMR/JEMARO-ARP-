@@ -26,7 +26,7 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
     }
     if(signo == SIGUSR1){
         pid_t wd_pid = siginfo->si_pid;
-        // kill(wd_pid, SIGUSR2);
+        kill(wd_pid, SIGUSR2);
         writeToLogFile(serverlogpath,"signal received");
     }
 }
