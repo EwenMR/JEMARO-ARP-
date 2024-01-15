@@ -1,90 +1,307 @@
-[2024-01-15 13:44:16] WD PID 3284
+[2024-01-15 13:56:26] WD PID 4785
 
-[2024-01-15 13:44:16] PID 0 = 3298
+[2024-01-15 13:56:26] PID 0 = 4797
 
-[2024-01-15 13:44:16] PID 1 = 3280
+[2024-01-15 13:56:26] PID 1 = 4781
 
-[2024-01-15 13:44:16] PID 2 = 3281
+[2024-01-15 13:56:26] PID 2 = 4782
 
-[2024-01-15 13:44:16] PID 3 = 3282
+[2024-01-15 13:56:26] PID 3 = 4783
 
-[2024-01-15 13:44:16] PID 4 = 3283
+[2024-01-15 13:56:26] PID 4 = 4784
 
-[2024-01-15 13:44:16] PID 5 = 3278
+[2024-01-15 13:56:26] PID 5 = 4779
 
-[2024-01-15 13:44:16] PID 6 = 3284
+[2024-01-15 13:56:26] PID 6 = 4785
 
-[2024-01-15 13:44:16] Signal sent to 3298
+[2024-01-15 13:56:26] Signal sent to 4797
 
-[2024-01-15 13:44:16] Signal sent to 3280
+[2024-01-15 13:56:26] Signal sent to 4781
 
-[2024-01-15 13:44:16] Signal sent to 3281
+[2024-01-15 13:56:26] Signal sent to 4782
 
-[2024-01-15 13:44:16] Signal sent to 3282
+[2024-01-15 13:56:26] Signal sent to 4783
 
-[2024-01-15 13:44:16] Signal sent to 3283
+[2024-01-15 13:56:26] Signal sent to 4784
 
-[2024-01-15 13:44:16] Signal sent to 3278
+[2024-01-15 13:56:26] Signal sent to 4779
 
-[2024-01-15 13:44:16] Signal sent to 3298
+[2024-01-15 13:56:26] Signal sent to 4797
 
-[2024-01-15 13:44:16] Signal sent to 3280
+[2024-01-15 13:56:26] Signal sent to 4781
 
-[2024-01-15 13:44:16] Signal sent to 3281
+[2024-01-15 13:56:26] Signal sent to 4782
 
-[2024-01-15 13:44:16] Signal sent to 3282
+[2024-01-15 13:56:26] Signal sent to 4783
 
-[2024-01-15 13:44:17] Signal sent to 3283
+[2024-01-15 13:56:27] Signal sent to 4784
 
-[2024-01-15 13:44:17] Signal sent to 3278
+[2024-01-15 13:56:27] Signal sent to 4779
 
-[2024-01-15 13:44:17] Signal sent to 3298
+[2024-01-15 13:56:27] Signal sent to 4797
 
-[2024-01-15 13:44:17] Signal sent to 3280
+[2024-01-15 13:56:27] Signal sent to 4781
 
-[2024-01-15 13:44:17] Signal sent to 3281
+[2024-01-15 13:56:27] Signal sent to 4782
 
-[2024-01-15 13:44:17] Signal sent to 3282
+[2024-01-15 13:56:27] Signal sent to 4783
 
-[2024-01-15 13:44:17] Signal sent to 3283
+[2024-01-15 13:56:27] Signal sent to 4784
 
-[2024-01-15 13:44:17] Signal sent to 3278
+[2024-01-15 13:56:27] Signal sent to 4779
 
-[2024-01-15 13:44:17] Signal sent to 3298
+[2024-01-15 13:56:27] Signal sent to 4797
 
-[2024-01-15 13:44:17] Signal sent to 3280
+[2024-01-15 13:56:27] Signal sent to 4781
 
-[2024-01-15 13:44:18] Signal sent to 3281
+[2024-01-15 13:56:28] Signal sent to 4782
 
-[2024-01-15 13:44:18] Signal sent to 3282
+[2024-01-15 13:56:28] Signal sent to 4783
 
-[2024-01-15 13:44:18] Signal sent to 3283
+[2024-01-15 13:56:28] Signal sent to 4784
 
-[2024-01-15 13:44:18] Signal sent to 3278
+[2024-01-15 13:56:28] Signal sent to 4779
 
-[2024-01-15 13:44:18] Signal not sent to 3298
+[2024-01-15 13:56:28] Signal sent to 4797
 
-[2024-01-15 13:44:18] Signal not sent to 3280
+[2024-01-15 13:56:28] Signal sent to 4781
 
-[2024-01-15 13:44:18] Signal sent to 3281
+[2024-01-15 13:56:28] Signal sent to 4782
 
-[2024-01-15 13:44:18] Signal sent to 3282
+[2024-01-15 13:56:28] Signal sent to 4783
 
-[2024-01-15 13:44:18] Signal sent to 3283
+[2024-01-15 13:56:28] Signal sent to 4784
 
-[2024-01-15 13:44:18] Signal sent to 3278
+[2024-01-15 13:56:28] Signal sent to 4779
 
-[2024-01-15 13:44:19] Signal not sent to 3298
+[2024-01-15 13:56:29] Signal sent to 4797
 
-[2024-01-15 13:44:19] Signal not sent to 3280
+[2024-01-15 13:56:29] Signal sent to 4781
 
-[2024-01-15 13:44:19] Signal sent to 3281
+[2024-01-15 13:56:29] Signal sent to 4782
 
-[2024-01-15 13:44:19] Signal sent to 3282
+[2024-01-15 13:56:29] Signal sent to 4783
 
-[2024-01-15 13:44:19] Signal sent to 3283
+[2024-01-15 13:56:29] Signal sent to 4784
 
-[2024-01-15 13:44:19] Signal sent to 3278
+[2024-01-15 13:56:29] Signal sent to 4779
 
-[2024-01-15 13:44:19] Exeeded threshold
-[2024-01-15 13:44:19] kill all
+[2024-01-15 13:56:29] Signal sent to 4797
+
+[2024-01-15 13:56:29] Signal sent to 4781
+
+[2024-01-15 13:56:29] Signal sent to 4782
+
+[2024-01-15 13:56:30] Signal sent to 4783
+
+[2024-01-15 13:56:30] Signal sent to 4784
+
+[2024-01-15 13:56:30] Signal sent to 4779
+
+[2024-01-15 13:56:30] Signal sent to 4797
+
+[2024-01-15 13:56:30] Signal sent to 4781
+
+[2024-01-15 13:56:30] Signal sent to 4782
+
+[2024-01-15 13:56:30] Signal sent to 4783
+
+[2024-01-15 13:56:30] Signal sent to 4784
+
+[2024-01-15 13:56:30] Signal sent to 4779
+
+[2024-01-15 13:56:30] Signal sent to 4797
+
+[2024-01-15 13:56:31] Signal sent to 4781
+
+[2024-01-15 13:56:31] Signal sent to 4782
+
+[2024-01-15 13:56:31] Signal sent to 4783
+
+[2024-01-15 13:56:31] Signal sent to 4784
+
+[2024-01-15 13:56:31] Signal sent to 4779
+
+[2024-01-15 13:56:31] Signal sent to 4797
+
+[2024-01-15 13:56:31] Signal sent to 4781
+
+[2024-01-15 13:56:31] Signal sent to 4782
+
+[2024-01-15 13:56:31] Signal sent to 4783
+
+[2024-01-15 13:56:31] Signal sent to 4784
+
+[2024-01-15 13:56:32] Signal sent to 4779
+
+[2024-01-15 13:56:32] Signal sent to 4797
+
+[2024-01-15 13:56:32] Signal sent to 4781
+
+[2024-01-15 13:56:32] Signal sent to 4782
+
+[2024-01-15 13:56:32] Signal sent to 4783
+
+[2024-01-15 13:56:32] Signal sent to 4784
+
+[2024-01-15 13:56:32] Signal sent to 4779
+
+[2024-01-15 13:56:32] Signal sent to 4797
+
+[2024-01-15 13:56:32] Signal sent to 4781
+
+[2024-01-15 13:56:32] Signal sent to 4782
+
+[2024-01-15 13:56:33] Signal sent to 4783
+
+[2024-01-15 13:56:33] Signal sent to 4784
+
+[2024-01-15 13:56:33] Signal sent to 4779
+
+[2024-01-15 13:56:33] Signal sent to 4797
+
+[2024-01-15 13:56:33] Signal sent to 4781
+
+[2024-01-15 13:56:33] Signal sent to 4782
+
+[2024-01-15 13:56:33] Signal sent to 4783
+
+[2024-01-15 13:56:33] Signal sent to 4784
+
+[2024-01-15 13:56:33] Signal sent to 4779
+
+[2024-01-15 13:56:33] Signal sent to 4797
+
+[2024-01-15 13:56:34] Signal sent to 4781
+
+[2024-01-15 13:56:34] Signal sent to 4782
+
+[2024-01-15 13:56:34] Signal sent to 4783
+
+[2024-01-15 13:56:34] Signal sent to 4784
+
+[2024-01-15 13:56:34] Signal sent to 4779
+
+[2024-01-15 13:56:34] Signal sent to 4797
+
+[2024-01-15 13:56:34] Signal sent to 4781
+
+[2024-01-15 13:56:34] Signal sent to 4782
+
+[2024-01-15 13:56:34] Signal sent to 4783
+
+[2024-01-15 13:56:34] Signal sent to 4784
+
+[2024-01-15 13:56:35] Signal sent to 4779
+
+[2024-01-15 13:56:35] Signal sent to 4797
+
+[2024-01-15 13:56:35] Signal sent to 4781
+
+[2024-01-15 13:56:35] Signal sent to 4782
+
+[2024-01-15 13:56:35] Signal sent to 4783
+
+[2024-01-15 13:56:35] Signal sent to 4784
+
+[2024-01-15 13:56:35] Signal sent to 4779
+
+[2024-01-15 13:56:35] Signal sent to 4797
+
+[2024-01-15 13:56:35] Signal sent to 4781
+
+[2024-01-15 13:56:35] Signal sent to 4782
+
+[2024-01-15 13:56:36] Signal sent to 4783
+
+[2024-01-15 13:56:36] Signal sent to 4784
+
+[2024-01-15 13:56:36] Signal sent to 4779
+
+[2024-01-15 13:56:36] Signal sent to 4797
+
+[2024-01-15 13:56:36] Signal sent to 4781
+
+[2024-01-15 13:56:36] Signal sent to 4782
+
+[2024-01-15 13:56:36] Signal sent to 4783
+
+[2024-01-15 13:56:36] Signal sent to 4784
+
+[2024-01-15 13:56:36] Signal sent to 4779
+
+[2024-01-15 13:56:36] Signal sent to 4797
+
+[2024-01-15 13:56:37] Signal sent to 4781
+
+[2024-01-15 13:56:37] Signal sent to 4782
+
+[2024-01-15 13:56:37] Signal sent to 4783
+
+[2024-01-15 13:56:37] Signal sent to 4784
+
+[2024-01-15 13:56:37] Signal sent to 4779
+
+[2024-01-15 13:56:37] Signal sent to 4797
+
+[2024-01-15 13:56:37] Signal sent to 4781
+
+[2024-01-15 13:56:37] Signal sent to 4782
+
+[2024-01-15 13:56:37] Signal sent to 4783
+
+[2024-01-15 13:56:37] Signal sent to 4784
+
+[2024-01-15 13:56:38] Signal sent to 4779
+
+[2024-01-15 13:56:38] Signal not sent to 4797
+
+[2024-01-15 13:56:38] Signal not sent to 4781
+
+[2024-01-15 13:56:38] Signal sent to 4782
+
+[2024-01-15 13:56:38] Signal sent to 4783
+
+[2024-01-15 13:56:38] Signal sent to 4784
+
+[2024-01-15 13:56:38] Signal sent to 4779
+
+[2024-01-15 13:56:38] Signal not sent to 4797
+
+[2024-01-15 13:56:38] Signal not sent to 4781
+
+[2024-01-15 13:56:39] Signal sent to 4782
+
+[2024-01-15 13:56:39] Signal sent to 4783
+
+[2024-01-15 13:56:39] Signal sent to 4784
+
+[2024-01-15 13:56:39] Signal sent to 4779
+
+[2024-01-15 13:56:39] Signal not sent to 4797
+
+[2024-01-15 13:56:39] Signal not sent to 4781
+
+[2024-01-15 13:56:39] Signal sent to 4782
+
+[2024-01-15 13:56:39] Signal sent to 4783
+
+[2024-01-15 13:56:39] Signal sent to 4784
+
+[2024-01-15 13:56:39] Signal sent to 4779
+
+[2024-01-15 13:56:40] Signal not sent to 4797
+
+[2024-01-15 13:56:40] Signal not sent to 4781
+
+[2024-01-15 13:56:40] Signal sent to 4782
+
+[2024-01-15 13:56:40] Signal sent to 4783
+
+[2024-01-15 13:56:40] Signal sent to 4784
+
+[2024-01-15 13:56:40] Signal sent to 4779
+
+[2024-01-15 13:56:40] Exeeded threshold
+[2024-01-15 13:56:40] kill all
+[2024-01-15 13:56:40] Killed all processes

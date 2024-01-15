@@ -91,7 +91,6 @@ int main(int argc, char* argv[]){
     // Pids for Watchdog
     pid_t target_pid;
     target_pid=getpid();
-    // printf("target PID: %d\n", target_pid);
     my_write(target_server[1], &target_pid, target_server[0],sizeof(target_pid));
     char logMessage[80];
     sprintf(logMessage, "PID = %d\n",target_pid);

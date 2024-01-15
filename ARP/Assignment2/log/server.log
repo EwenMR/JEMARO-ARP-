@@ -1,233 +1,951 @@
-[2024-01-15 13:44:16] SERVER: Pid recieved
-[2024-01-15 13:44:16] SERVER: Pid recieved
-[2024-01-15 13:44:16] SERVER: Pid recieved
-[2024-01-15 13:44:16] SERVER: Pid recieved
-[2024-01-15 13:44:16] SERVER: Pid recieved
-[2024-01-15 13:44:16] PID = 3278
+[2024-01-15 13:56:26] SERVER: Pid recieved
+[2024-01-15 13:56:26] SERVER: Pid recieved
+[2024-01-15 13:56:26] SERVER: Pid recieved
+[2024-01-15 13:56:26] SERVER: Pid recieved
+[2024-01-15 13:56:26] SERVER: Pid recieved
+[2024-01-15 13:56:26] PID = 4779
 
-[2024-01-15 13:44:16] SERVER: Pid sent to watchdog
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:16] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:16] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:16] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: User input received
-[2024-01-15 13:44:17] SERVER: Command force received from keyboard
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: User input received
-[2024-01-15 13:44:17] SERVER: Command force received from keyboard
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:17] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:17] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:17] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: User input received
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:18] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:18] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:18] SERVER: Target received from target
-[2024-01-15 13:44:19] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:19] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:19] SERVER: Target received from target
-[2024-01-15 13:44:19] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:19] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:19] SERVER: Target received from target
-[2024-01-15 13:44:19] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:19] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:19] SERVER: Target received from target
-[2024-01-15 13:44:19] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:19] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:19] SERVER: Target received from target
-[2024-01-15 13:44:19] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:19] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:19] SERVER: Target received from target
-[2024-01-15 13:44:19] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:19] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:19] SERVER: Target received from target
-[2024-01-15 13:44:19] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:19] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:19] SERVER: Target received from target
-[2024-01-15 13:44:19] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:19] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:19] SERVER: Target received from target
-[2024-01-15 13:44:19] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:19] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:19] SERVER: Target received from target
-[2024-01-15 13:44:19] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:19] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:19] SERVER: Target received from target
-[2024-01-15 13:44:19] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:19] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:19] SERVER: Target received from target
-[2024-01-15 13:44:19] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:19] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:19] SERVER: Target received from target
-[2024-01-15 13:44:19] SERVER: Obstacle received from obstacle
-[2024-01-15 13:44:19] SERVER: New drone_pos received from drone
-[2024-01-15 13:44:19] SERVER: Target received from target
-[2024-01-15 13:44:19] killed
+[2024-01-15 13:56:26] SERVER: Pid sent to watchdog
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:26] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:26] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:26] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: User input received
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Command force received from keyboard
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: User input received
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Command force received from keyboard
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:27] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:27] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:27] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: User input received
+[2024-01-15 13:56:28] SERVER: Command force received from keyboard
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:28] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:28] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:28] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: User input received
+[2024-01-15 13:56:29] SERVER: Command force received from keyboard
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: User input received
+[2024-01-15 13:56:29] SERVER: Command force received from keyboard
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:29] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:29] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:29] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: User input received
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Command force received from keyboard
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: User input received
+[2024-01-15 13:56:30] SERVER: Command force received from keyboard
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:30] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:30] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:30] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: User input received
+[2024-01-15 13:56:31] SERVER: Command force received from keyboard
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:31] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:31] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:31] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: User input received
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Command force received from keyboard
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: User input received
+[2024-01-15 13:56:32] SERVER: Command force received from keyboard
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: User input received
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Command force received from keyboard
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:32] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:32] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:32] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: User input received
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Command force received from keyboard
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: User input received
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Command force received from keyboard
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:33] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:33] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:33] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: User input received
+[2024-01-15 13:56:34] SERVER: Command force received from keyboard
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: User input received
+[2024-01-15 13:56:34] SERVER: Command force received from keyboard
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: User input received
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:34] SERVER: Command force received from keyboard
+[2024-01-15 13:56:34] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:34] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: User input received
+[2024-01-15 13:56:35] SERVER: Command force received from keyboard
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: User input received
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Command force received from keyboard
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:35] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:35] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:35] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: User input received
+[2024-01-15 13:56:36] SERVER: Command force received from keyboard
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: User input received
+[2024-01-15 13:56:36] SERVER: Command force received from keyboard
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: User input received
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Command force received from keyboard
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:36] SERVER: User input received
+[2024-01-15 13:56:36] SERVER: Command force received from keyboard
+[2024-01-15 13:56:36] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:36] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: User input received
+[2024-01-15 13:56:37] SERVER: Command force received from keyboard
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: User input received
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Command force received from keyboard
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:37] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:37] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:37] SERVER: User input received
+[2024-01-15 13:56:37] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:38] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:38] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:38] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:39] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:39] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:39] SERVER: Target received from target
+[2024-01-15 13:56:40] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:40] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:40] SERVER: Target received from target
+[2024-01-15 13:56:40] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:40] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:40] SERVER: Target received from target
+[2024-01-15 13:56:40] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:40] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:40] SERVER: Target received from target
+[2024-01-15 13:56:40] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:40] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:40] SERVER: Target received from target
+[2024-01-15 13:56:40] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:40] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:40] SERVER: Target received from target
+[2024-01-15 13:56:40] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:40] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:40] SERVER: Target received from target
+[2024-01-15 13:56:40] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:40] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:40] SERVER: Target received from target
+[2024-01-15 13:56:40] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:40] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:40] SERVER: Target received from target
+[2024-01-15 13:56:40] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:40] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:40] SERVER: Target received from target
+[2024-01-15 13:56:40] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:40] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:40] SERVER: Target received from target
+[2024-01-15 13:56:40] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:40] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:40] SERVER: Target received from target
+[2024-01-15 13:56:40] SERVER: Obstacle received from obstacle
+[2024-01-15 13:56:40] SERVER: New drone_pos received from drone
+[2024-01-15 13:56:40] SERVER: Target received from target
+[2024-01-15 13:56:40] killed

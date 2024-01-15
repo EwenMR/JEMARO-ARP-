@@ -85,7 +85,7 @@ int main(int argc, char *argv[])
     }
     
 
-    //PIDS FOR WATCHDOG USING SELECT
+    //Read all pids of children processes using select
     pid_t all_pids[NUM_PROCESSES];
     fd_set reading;
    
@@ -108,14 +108,17 @@ int main(int argc, char *argv[])
             printf("%d\n",all_pids[j]);
         }
     }
+
+    // Get pid of itself and log it
     all_pids[NUM_PROCESSES-2] = getpid();
     char logMessage[80];
     sprintf(logMessage, "PID = %d\n",server_pid);
     writeToLogFile(serverlogpath, logMessage);
+
+    // Send all pids to watchdog
     my_write(server_wd[1],all_pids,sizeof(all_pids),sizeof(all_pids));
     writeToLogFile(serverlogpath, "SERVER: Pid sent to watchdog");
     
-
 
     // Local variables
     struct shared_data data, updated_data;
@@ -130,7 +133,6 @@ int main(int argc, char *argv[])
     
 
     while(1){
-        // SELECT
         fd_set reading;
         FD_ZERO(&reading);
 
@@ -152,43 +154,41 @@ int main(int argc, char *argv[])
 
                     switch (j){
                     case 0: //window
-                        writeToLogFile(serverlogpath, "SERVER: User input received");
-                
+                        writeToLogFile(serverlogpath, "Window: User input received");
                         key=updated_data.key; // Only copy the updated variables to local 
                         data.key=updated_data.key; // Update shared data with the updated variables
                         my_write(server_keyboard[1],&data,server_keyboard[0],sizeof(data));
                         
                         break;
                     case 1: //keyboard
-                        writeToLogFile(serverlogpath, "SERVER: Command force received from keyboard");
-                        memcpy(command_force, updated_data.command_force, sizeof(updated_data.command_force));
-                        memcpy(data.command_force, updated_data.command_force, sizeof(updated_data.command_force));
-
-                        my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+                        writeToLogFile(serverlogpath, "Keyboard: Command force received from keyboard");
+                        memcpy(command_force, updated_data.command_force, sizeof(updated_data.command_force)); // Store it as local variable
+                        memcpy(data.command_force, updated_data.command_force, sizeof(updated_data.command_force)); //Copy it to the shared data
+                        my_write(server_drone[1],&data,server_drone[0],sizeof(data)); // Send the shared data to drone
                         break;
+
                     case 2: //drone
-                        writeToLogFile(serverlogpath, "SERVER: New drone_pos received from drone");
+                        writeToLogFile(serverlogpath, "Drone: New drone_pos received from drone");
                         memcpy(drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
                         memcpy(data.drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
-
                         my_write(server_target[1],&data,server_target[0],sizeof(data));
-                        my_write(server_window[1],&data,server_window[0],sizeof(data));
+                        my_write(server_window[1],&data,server_window[0],sizeof(data)); 
                         break;
+
                     case 3: //obstacle
-                        writeToLogFile(serverlogpath, "SERVER: Obstacle received from obstacle");
+                        writeToLogFile(serverlogpath, "Obstacle: obstacle_pos received from obstacle");
                         memcpy(obst_pos, updated_data.obst_pos, sizeof(updated_data.obst_pos));
                         memcpy(data.obst_pos, updated_data.obst_pos, sizeof(updated_data.obst_pos));
-
                         my_write(server_drone[1],&data,server_drone[0],sizeof(data));
                         break;
+
                     case 4: //target
-                        writeToLogFile(serverlogpath, "SERVER: Target received from target");
+                        writeToLogFile(serverlogpath, "Target: Target_pos received from target");
                         memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
                         memcpy(data.target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
-                        
-
                         my_write(server_obstacle[1],&data,rec_pipes[3][0],sizeof(data));
                         break;
+
                     default:
                         break;
                     }
@@ -197,7 +197,6 @@ int main(int argc, char *argv[])
         }
 
     }
-
 
 
     // clean up

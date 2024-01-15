@@ -87,7 +87,7 @@ int main(int argc, char* argv[]) {
     start_time = current_time();
     clearLogFile(windowlogpath);
 
-    
+    // WINDOW INITIALIZATION
     WINDOW *win, *score;
     ncursesSetup(&win, &score);
     curs_set(0); // don't show cursor
@@ -118,8 +118,6 @@ int main(int argc, char* argv[]) {
     sprintf(logMessage, "PID = %d\n",window_pid);
     writeToLogFile(windowlogpath, logMessage);
 
-
-
     // Local variables
     struct shared_data data;
     double drone_pos[6]; //position of the drone (t-2,t-1,t)
@@ -128,7 +126,6 @@ int main(int argc, char* argv[]) {
     int key;
     int first=0;
     
-
     // Color of the drone, targets, obstacles
     start_color();
     init_pair(1, COLOR_BLUE, COLOR_BLACK);
@@ -146,6 +143,7 @@ int main(int argc, char* argv[]) {
         int ymax_new, xmax_new;
         getmaxyx(stdscr, ymax_new, xmax_new);
 
+        // Change the scale if the window size changes
         if(ymax != ymax_new || xmax != xmax_new){
             wresize(win, ymax_new*WINDOW_ROW, xmax_new*WINDOW_COL);
             wresize(score, ymax_new *SCORE_WINDOW_ROW, xmax_new *WINDOW_COL);
@@ -176,14 +174,13 @@ int main(int argc, char* argv[]) {
         writeToLogFile(windowlogpath, "WINDOW: Drone_pos, Target_pos, Obst_pos received from server");
 
         
-        
+
         double scalex,scaley; // get the scale, to scale up the window to the real world scale
         scalex=(double)BOARD_SIZE /((double)xmax*(WINDOW_COL-0.01));
         scaley=(double)BOARD_SIZE/((double)ymax*(WINDOW_ROW-0.01));
 
 
-        
-        
+
         // Print drone and score onto the window
         wattron(win,COLOR_PAIR(1));
         mvwprintw(win, (int)(drone_pos[5]/scaley), (int)(drone_pos[4]/scalex), "+");
@@ -206,6 +203,7 @@ int main(int argc, char* argv[]) {
         }
         wattroff(win,COLOR_PAIR(2));
 
+        // Display drone on window
         mvwprintw(score,1,1,"Position of the drone is: %f,%f", drone_pos[4],drone_pos[5]);
         wrefresh(win);
         wrefresh(score);
@@ -223,8 +221,7 @@ int main(int argc, char* argv[]) {
             exit(EXIT_SUCCESS);
         }
         
-        
-        // 2 Send user input to keyboard manager
+        // Send user input to keyboard manager
         key=wgetch(win); // wait for user input
         if (key != ERR) { // If a key was pressed properly
             data.key=key;
@@ -236,10 +233,6 @@ int main(int argc, char* argv[]) {
                 exit(EXIT_SUCCESS);
             }
         }
-        
-        // clear();
-    //     wrefresh(win);
-    // wrefresh(score);
     }
 
     // Clean up
