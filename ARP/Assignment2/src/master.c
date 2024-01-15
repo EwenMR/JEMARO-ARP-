@@ -27,6 +27,7 @@ int main(int argc, char *argv[]){
     char *argsTarget[] =  {"./build/target", "placeholder", NULL};
     char *argsWatchdog[] = {"./build/watchdog", "placeholder",NULL};
 
+    // Alternative way to summon child with konsoles for all
     // char *argsServer[] = {"konsole", "-e","./build/server", "placeholder",NULL};
     // char *argsWindow[] = {"konsole", "-e", "./build/window", "placeholder",NULL};
     // char *argsDrone[] = {"konsole", "-e","./build/drone", "placeholder",NULL};
@@ -54,7 +55,7 @@ int main(int argc, char *argv[]){
     int wd_server[2];
     int server_wd[2];
 
-
+    // Error handling for the correct creation of the pipes
     if (pipe(window_server)   == -1 ||  pipe(server_window)   == -1 ||
         pipe(keyboard_server) == -1 ||  pipe(server_keyboard) == -1 ||
         pipe(drone_server)    == -1 ||  pipe(server_drone)    == -1 ||
@@ -65,11 +66,11 @@ int main(int argc, char *argv[]){
         exit(EXIT_FAILURE);
     }
     
-    //pids of all konsoles
+    // Pids of all konsoles
     pid_t all_pid[NUM_PROCESSES];
 
     for (int i=0; i<NUM_PROCESSES; i++){
-        // fork children
+        // Fork children
         pid_t pid = fork(); 
         all_pid[i]=pid;
         char args[MAX_MSG_LEN];
@@ -122,7 +123,7 @@ int main(int argc, char *argv[]){
             printf("Summoned child with pid %d\n", pid);
         }
     }
-    // terminate if any of the children are terminated
+    // Terminate if any of the children are terminated
     int stat;
     for (int i = 0; i < NUM_PROCESSES; i++) {
         pid_t pid = wait(&stat);

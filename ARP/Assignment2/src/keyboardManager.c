@@ -17,6 +17,7 @@
 
 #include "../include/constants.h"
 
+// Signal handler for the watchdog
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
     if(signo == SIGINT){
         writeToLogFile(keyboardlogpath,"killed");

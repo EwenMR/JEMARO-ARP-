@@ -1,4 +1,3 @@
-
 // window.c
 #include <sys/ipc.h>
 #include <sys/shm.h>
@@ -28,7 +27,7 @@ double obst_pos[NUM_OBSTACLES*2], target_pos[NUM_TARGETS*2];
 char logMessage[100]; 
 
 
-
+// Signal handler for the watchdog
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
     if(signo == SIGINT){
         writeToLogFile(dronelogpath,"killed");
@@ -40,18 +39,15 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
         writeToLogFile(dronelogpath,"signal received");
     }
 }
-// KOHEI'S ATTEMPT FAILED
-double calculateDistance(double x1, double y1, double x2, double y2) {
-    return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
-}
 
+// Calculate the angle at which the drone is coming at the obstacle
 double calculateAngle(double x1, double y1, double x2, double y2) {
     double angleRadians = atan2(y2 - y1, x2 - x1);
     return angleRadians;
 }
 
 
-
+// Calculate the drone position using the force
 double calc_drone_pos(double force,double x1,double x2){
     double x;
     x= (force*T*T-M*x2+2*M*x1+K*T*x1)/(M+K*T); //Eulers method
@@ -66,7 +62,7 @@ double calc_drone_pos(double force,double x1,double x2){
     return x;
 }
 
-
+// This is to stop the drone, will be used to stop the drone position from being updated if stationary
 double stop(double *drone_pos){
     for(int i=0; i<4; i++){
         drone_pos[i]=drone_pos[i+2];}
@@ -74,10 +70,11 @@ double stop(double *drone_pos){
 }
 
 
-
+// Calculate repulsive force associated with the obstacles and the walls
 double *calc_repulsive(double* obstacle_pos, double* drone_pos, int* xy){
     double sumx=0,sumy=0;
     
+    // Repulsive force for the obstacles
     for(int i = 0; i < NUM_OBSTACLES; i++){
         double p_q = sqrt(pow(obstacle_pos[2*i] - drone_pos[4], 2) + pow(obstacle_pos[2*i+1] - drone_pos[5],2));
         double p_wall[] = {drone_pos[4], drone_pos[5], BOARD_SIZE-drone_pos[4], BOARD_SIZE-drone_pos[5]};
@@ -97,7 +94,7 @@ double *calc_repulsive(double* obstacle_pos, double* drone_pos, int* xy){
             }
         }
 
-        
+        // Repulsive force for the walls
         if(p_wall[0]<=p && xy[0]<0){
             sumx -= pow((1/p_wall[0])-(1/p), 2);
         }else if(p_wall[1] <= p && xy[1]<0){
@@ -153,7 +150,7 @@ void update_pos(double* drone_pos,double* obstacle_pos, int* xy){
         new_posy = calc_drone_pos(xy[1], drone_pos[5], drone_pos[3]);
     } 
 
-    // update drone_pos
+    // Update drone_pos
     for(int i=0; i<4; i++){
         drone_pos[i]=drone_pos[i+2];
     }
