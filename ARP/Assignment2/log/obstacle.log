@@ -1,427 +1,145 @@
-[2024-01-15 12:03:25] PID = 4452
+[2024-01-15 13:44:15] PID = 3282
 
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:26] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:26] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:27] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:27] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:28] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:28] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:29] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:29] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:30] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:30] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:31] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:31] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:32] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:32] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:33] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:33] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:34] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:34] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:35] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:35] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:36] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:36] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:37] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:37] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:37] OBSTACLE: Drone_pos and Target_pos received from server
-[2024-01-15 12:03:37] OBSTACLE: Obstacle_pos sent to server
-[2024-01-15 12:03:37] killed
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:16] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:16] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:17] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:17] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:18] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:18] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:19] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:19] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:19] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:19] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:19] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:19] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:19] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:19] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:19] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:19] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:19] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:19] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:19] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:19] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:19] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:19] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:19] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:19] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:19] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:19] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:19] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:19] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:19] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:19] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:19] OBSTACLE: Drone_pos and Target_pos received from server
+[2024-01-15 13:44:19] OBSTACLE: Obstacle_pos sent to server
+[2024-01-15 13:44:19] killed
