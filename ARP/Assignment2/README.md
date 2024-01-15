@@ -75,12 +75,13 @@ To clone this project to the local file, enter:
 
 ```bash
 $ git clone https://github.com/kohei-tateyama/JEMARO.git
+$ git checkout master
 $ cd JEMARO/ARP/Assignment2
 ```
 or unzip the file that is submitted to the aulaweb page.
 
 ### Build and Execute the Project
-In the 'Assignment1' directory, hit:
+In the 'Assignment2' directory, hit:
 
 ```bash
 $ make
