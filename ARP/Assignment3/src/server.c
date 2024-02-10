@@ -161,6 +161,8 @@ int main(int argc, char *argv[])
     
 
     while(1){
+
+        // COMMUNICATION WITH CLIENT ---------------------------------------
         newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
         if (newsockfd < 0) 
             perror("ERROR on accept");
@@ -185,6 +187,7 @@ int main(int argc, char *argv[])
             // Receive target 
             // Receive Obstacle
             exit(0);
+            //---------------------------------------------------------------------
         }else{
             fd_set reading;
             FD_ZERO(&reading);
