@@ -27,4 +27,8 @@ void my_read(int fd,void *data,int fd2, int size){
 }
 
 
+
+void error(char *msg);
+void setupSocketConnection(char *hostname, int portno);
+
 // #endif
