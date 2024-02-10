@@ -1,1169 +1,237 @@
-[2024-01-15 13:56:24] PID = 4782
+[2024-02-10 17:23:52] PID = 22728
 
-[2024-01-15 13:56:24] DRONE: Initial drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:26] DRONE: Command_force received from server
-[2024-01-15 13:56:26] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:27] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:27] DRONE x: 50.000000, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:27] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:27] DRONE x: 50.500000, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:27] DRONE: Command_force received from server
-[2024-01-15 13:56:27] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:27] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:27] DRONE x: 51.250000, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:27] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 52.125000, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 53.062500, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 54.031250, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 55.015625, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 56.007812, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 57.003906, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 58.001953, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 59.000977, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 60.000488, DRONE y: 50.000000,
-[2024-01-15 13:56:28] REP x: 0.524869, REP y: -0.000000, Sumx: -0.041990, Sumy: 0.000000
-[2024-01-15 13:56:28] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 60.000488, DRONE y: 50.000000,
-[2024-01-15 13:56:28] REP x: 0.524869, REP y: -0.000000, Sumx: -0.041990, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 60.000488, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: 0.524869, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 60.737810, DRONE y: 50.000000,
-[2024-01-15 13:56:28] REP x: 0.649019, REP y: -0.000000, Sumx: -0.051922, Sumy: 0.000000
-[2024-01-15 13:56:28] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 60.737810, DRONE y: 50.000000,
-[2024-01-15 13:56:28] REP x: 0.649019, REP y: -0.000000, Sumx: -0.051922, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 60.737810, DRONE y: 50.000000, COMMAND x: 2, COMMAND y: -1, REP x: 0.649019, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 61.781961, DRONE y: 49.500000,
-[2024-01-15 13:56:28] REP x: 0.560060, REP y: -0.000000, Sumx: -0.044805, Sumy: 0.000000
-[2024-01-15 13:56:28] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 61.781961, DRONE y: 49.500000,
-[2024-01-15 13:56:28] REP x: 0.560060, REP y: -0.000000, Sumx: -0.044805, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 61.781961, DRONE y: 49.500000, COMMAND x: 2, COMMAND y: -1, REP x: 0.560060, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 63.024006, DRONE y: 48.750000,
-[2024-01-15 13:56:28] REP x: 0.173231, REP y: -0.000000, Sumx: -0.013858, Sumy: 0.000000
-[2024-01-15 13:56:28] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 63.024006, DRONE y: 48.750000,
-[2024-01-15 13:56:28] REP x: 0.173231, REP y: -0.000000, Sumx: -0.013858, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 63.024006, DRONE y: 48.750000, COMMAND x: 2, COMMAND y: -1, REP x: 0.173231, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 64.558414, DRONE y: 47.875000,
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 64.558414, DRONE y: 47.875000,
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 64.558414, DRONE y: 47.875000, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 66.325617, DRONE y: 46.937500, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 68.209219, DRONE y: 45.968750, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 70.151020, DRONE y: 44.984375, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 72.121921, DRONE y: 43.992188, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 74.107371, DRONE y: 42.996094, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 76.100096, DRONE y: 41.998047, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:28] DRONE: Command_force received from server
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:28] DRONE x: 78.096458, DRONE y: 40.999023, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:28] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] DRONE x: 80.094640, DRONE y: 39.999512, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] DRONE x: 82.093730, DRONE y: 38.999756, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] DRONE x: 84.093276, DRONE y: 37.999878, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] DRONE x: 86.093048, DRONE y: 36.999939, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] DRONE x: 88.092935, DRONE y: 35.999969, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] DRONE x: 90.092878, DRONE y: 34.999985, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] DRONE x: 92.092849, DRONE y: 33.999992, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] DRONE x: 94.092835, DRONE y: 32.999996, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] REP x: 8.188135, REP y: -0.000000, Sumx: -0.655051, Sumy: 0.000000
-[2024-01-15 13:56:29] REP x: 8.188135, REP y: -0.000000, Sumx: -0.655051, Sumy: 0.000000
-[2024-01-15 13:56:29] DRONE x: 96.092828, DRONE y: 31.999998, COMMAND x: 2, COMMAND y: -1, REP x: 8.188135, REP y: -0.000000
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] DRONE x: 93.998757, DRONE y: 30.999999, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] DRONE x: 93.951722, DRONE y: 30.000000, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] DRONE x: 94.928204, DRONE y: 29.000000, COMMAND x: -1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:29] DRONE: Command_force received from server
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:29] DRONE x: 94.428204, DRONE y: 29.000000, COMMAND x: -1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:29] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 93.678204, DRONE y: 29.000000, COMMAND x: -1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 92.803204, DRONE y: 29.000000, COMMAND x: -1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 91.865704, DRONE y: 29.000000, COMMAND x: -1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 90.896954, DRONE y: 29.000000, COMMAND x: -1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 89.912579, DRONE y: 29.000000, COMMAND x: -1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 88.920392, DRONE y: 29.000000, COMMAND x: -1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 87.924298, DRONE y: 29.000000, COMMAND x: -1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 86.926251, DRONE y: 29.000000, COMMAND x: -1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 85.927227, DRONE y: 29.000000, COMMAND x: -1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 84.927716, DRONE y: 29.000000, COMMAND x: -1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 83.927960, DRONE y: 29.000000, COMMAND x: -2, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 82.428082, DRONE y: 29.500000, COMMAND x: -2, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 80.678143, DRONE y: 30.250000, COMMAND x: -2, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 78.803174, DRONE y: 31.125000, COMMAND x: -2, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 76.865689, DRONE y: 32.062500, COMMAND x: -2, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 74.896946, DRONE y: 33.031250, COMMAND x: -2, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 72.912575, DRONE y: 34.015625, COMMAND x: -2, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 70.920390, DRONE y: 35.007812, COMMAND x: -2, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 68.924297, DRONE y: 36.003906, COMMAND x: -2, COMMAND y: 2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 66.926250, DRONE y: 37.501953, COMMAND x: -2, COMMAND y: 2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:30] DRONE: Command_force received from server
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:30] DRONE x: 64.927227, DRONE y: 39.250976, COMMAND x: -2, COMMAND y: 2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:30] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 62.927716, DRONE y: 41.125488, COMMAND x: -2, COMMAND y: 2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 60.927960, DRONE y: 43.062744, COMMAND x: -2, COMMAND y: 2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 58.928082, DRONE y: 45.031372, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 57.428143, DRONE y: 47.515686, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 56.178174, DRONE y: 50.257843, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 55.053189, DRONE y: 53.128921, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 53.990696, DRONE y: 56.064461, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 52.959450, DRONE y: 59.032230, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 51.943827, DRONE y: 62.016115, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 50.936016, DRONE y: 65.008057, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 49.932110, DRONE y: 68.004029, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 48.930157, DRONE y: 71.002014, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 47.929181, DRONE y: 74.001007, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 46.928692, DRONE y: 77.000503, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 45.928448, DRONE y: 80.000252, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 44.928326, DRONE y: 83.000126, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 43.928265, DRONE y: 86.000063, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 42.928235, DRONE y: 89.000031, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:31] DRONE x: 41.928219, DRONE y: 92.000015, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:31] DRONE: Command_force received from server
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: 5.000015, Sumx: 0.000000, Sumy: -0.400001
-[2024-01-15 13:56:31] REP x: -0.000000, REP y: 5.000015, Sumx: 0.000000, Sumy: -0.400001
-[2024-01-15 13:56:31] DRONE x: 40.928212, DRONE y: 95.000008, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: 5.000015
-[2024-01-15 13:56:31] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 6.172829, Sumx: 0.000000, Sumy: -0.493826
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 6.172829, Sumx: 0.000000, Sumy: -0.493826
-[2024-01-15 13:56:32] DRONE x: 39.928208, DRONE y: 95.499996, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: 6.172829
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:32] DRONE x: 38.928206, DRONE y: 94.163576, COMMAND x: 0, COMMAND y: 4, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 6.160145, Sumx: 0.000000, Sumy: -0.492812
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 6.160145, Sumx: 0.000000, Sumy: -0.492812
-[2024-01-15 13:56:32] DRONE x: 38.428205, DRONE y: 95.495366, COMMAND x: 0, COMMAND y: 4, REP x: -0.000000, REP y: 6.160145
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 5.166419, Sumx: 0.000000, Sumy: -0.413313
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 5.166419, Sumx: 0.000000, Sumy: -0.413313
-[2024-01-15 13:56:32] DRONE x: 38.178205, DRONE y: 95.081188, COMMAND x: 0, COMMAND y: 4, REP x: -0.000000, REP y: 5.166419
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:32] DRONE x: 38.053204, DRONE y: 94.290890, COMMAND x: 0, COMMAND y: 4, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 7.420625, Sumx: 0.000000, Sumy: -0.593650
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 7.420625, Sumx: 0.000000, Sumy: -0.593650
-[2024-01-15 13:56:32] DRONE x: 37.990704, DRONE y: 95.895741, COMMAND x: 0, COMMAND y: 4, REP x: -0.000000, REP y: 7.420625
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:32] DRONE x: 37.959454, DRONE y: 94.987854, COMMAND x: 0, COMMAND y: 4, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 10.404722, Sumx: 0.000000, Sumy: -0.832378
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 10.404722, Sumx: 0.000000, Sumy: -0.832378
-[2024-01-15 13:56:32] DRONE x: 37.943829, DRONE y: 96.533910, COMMAND x: 0, COMMAND y: 4, REP x: -0.000000, REP y: 10.404722
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:32] DRONE x: 37.936017, DRONE y: 94.104578, COMMAND x: 1, COMMAND y: 5, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 5.881546, Sumx: 0.000000, Sumy: -0.470524
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 5.881546, Sumx: 0.000000, Sumy: -0.470524
-[2024-01-15 13:56:32] DRONE x: 38.432110, DRONE y: 95.389912, COMMAND x: 1, COMMAND y: 5, REP x: -0.000000, REP y: 5.881546
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 6.432629, Sumx: 0.000000, Sumy: -0.514610
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 6.432629, Sumx: 0.000000, Sumy: -0.514610
-[2024-01-15 13:56:32] DRONE x: 39.180157, DRONE y: 95.591805, COMMAND x: 1, COMMAND y: 5, REP x: -0.000000, REP y: 6.432629
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:32] DRONE x: 40.054181, DRONE y: 94.976438, COMMAND x: 1, COMMAND y: 5, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 15.593902, Sumx: 0.000000, Sumy: -1.247512
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 15.593902, Sumx: 0.000000, Sumy: -1.247512
-[2024-01-15 13:56:32] DRONE x: 40.991192, DRONE y: 97.168754, COMMAND x: 1, COMMAND y: 5, REP x: -0.000000, REP y: 15.593902
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:32] DRONE x: 41.959698, DRONE y: 92.967961, COMMAND x: 1, COMMAND y: 5, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:32] DRONE x: 42.943951, DRONE y: 93.367564, COMMAND x: 1, COMMAND y: 5, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 8.082449, Sumx: 0.000000, Sumy: -0.646596
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 8.082449, Sumx: 0.000000, Sumy: -0.646596
-[2024-01-15 13:56:32] DRONE x: 43.936078, DRONE y: 96.067366, COMMAND x: 1, COMMAND y: 5, REP x: -0.000000, REP y: 8.082449
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] OBSTACLE x: 49.358299, OBSTACLE y: 97.277502, DRONE x: 44.932141, DRONE y: 95.876042,
-[2024-01-15 13:56:32] REP x: 0.552861, REP y: 7.349903, Sumx: -0.044229, Sumy: -0.587992
-[2024-01-15 13:56:32] OBSTACLE x: 49.358299, OBSTACLE y: 97.277502, DRONE x: 44.932141, DRONE y: 95.876042,
-[2024-01-15 13:56:32] REP x: 0.552861, REP y: 7.349903, Sumx: -0.044229, Sumy: -0.587992
-[2024-01-15 13:56:32] DRONE x: 44.932141, DRONE y: 95.876042, COMMAND x: 2, COMMAND y: 6, REP x: 0.552861, REP y: 7.349903
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] OBSTACLE x: 49.358299, OBSTACLE y: 97.277502, DRONE x: 46.153742, DRONE y: 95.105429,
-[2024-01-15 13:56:32] REP x: 0.690402, REP y: 5.217719, Sumx: -0.055232, Sumy: -0.417418
-[2024-01-15 13:56:32] OBSTACLE x: 49.358299, OBSTACLE y: 97.277502, DRONE x: 46.153742, DRONE y: 95.105429,
-[2024-01-15 13:56:32] REP x: 0.690402, REP y: 5.217719, Sumx: -0.055232, Sumy: -0.417418
-[2024-01-15 13:56:32] DRONE x: 46.153742, DRONE y: 95.105429, COMMAND x: 2, COMMAND y: 6, REP x: 0.690402, REP y: 5.217719
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] OBSTACLE x: 49.358299, OBSTACLE y: 97.277502, DRONE x: 47.419341, DRONE y: 95.111262,
-[2024-01-15 13:56:32] REP x: 0.986342, REP y: 5.230179, Sumx: -0.078907, Sumy: -0.418414
-[2024-01-15 13:56:32] OBSTACLE x: 49.358299, OBSTACLE y: 97.277502, DRONE x: 47.419341, DRONE y: 95.111262,
-[2024-01-15 13:56:32] REP x: 0.986342, REP y: 5.230179, Sumx: -0.078907, Sumy: -0.418414
-[2024-01-15 13:56:32] DRONE x: 47.419341, DRONE y: 95.111262, COMMAND x: 2, COMMAND y: 6, REP x: 0.986342, REP y: 5.230179
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] OBSTACLE x: 49.358299, OBSTACLE y: 97.277502, DRONE x: 48.558970, DRONE y: 95.499090,
-[2024-01-15 13:56:32] REP x: 1.347945, REP y: 6.170343, Sumx: -0.107836, Sumy: -0.493627
-[2024-01-15 13:56:32] OBSTACLE x: 49.358299, OBSTACLE y: 97.277502, DRONE x: 48.558970, DRONE y: 95.499090,
-[2024-01-15 13:56:32] REP x: 1.347945, REP y: 6.170343, Sumx: -0.107836, Sumy: -0.493627
-[2024-01-15 13:56:32] DRONE x: 48.558970, DRONE y: 95.499090, COMMAND x: 2, COMMAND y: 6, REP x: 1.347945, REP y: 6.170343
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] OBSTACLE x: 49.358299, OBSTACLE y: 97.277502, DRONE x: 49.454812, DRONE y: 95.607832,
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 10.941102, Sumx: 0.000000, Sumy: -0.875288
-[2024-01-15 13:56:32] OBSTACLE x: 49.358299, OBSTACLE y: 97.277502, DRONE x: 49.454812, DRONE y: 95.607832,
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 10.941102, Sumx: 0.000000, Sumy: -0.875288
-[2024-01-15 13:56:32] DRONE x: 49.454812, DRONE y: 95.607832, COMMAND x: 2, COMMAND y: 6, REP x: -0.000000, REP y: 10.941102
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:32] DRONE: Command_force received from server
-[2024-01-15 13:56:32] OBSTACLE x: 49.358299, OBSTACLE y: 97.277502, DRONE x: 50.902733, DRONE y: 93.191652,
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 0.612835, Sumx: 0.000000, Sumy: -0.049027
-[2024-01-15 13:56:32] OBSTACLE x: 49.358299, OBSTACLE y: 97.277502, DRONE x: 50.902733, DRONE y: 93.191652,
-[2024-01-15 13:56:32] REP x: -0.000000, REP y: 0.612835, Sumx: 0.000000, Sumy: -0.049027
-[2024-01-15 13:56:32] DRONE x: 50.902733, DRONE y: 93.191652, COMMAND x: 2, COMMAND y: 6, REP x: -0.000000, REP y: 0.612835
-[2024-01-15 13:56:32] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] OBSTACLE x: 49.358299, OBSTACLE y: 97.277502, DRONE x: 52.626693, DRONE y: 94.677144,
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: 0.446133, Sumx: 0.000000, Sumy: -0.035691
-[2024-01-15 13:56:33] OBSTACLE x: 49.358299, OBSTACLE y: 97.277502, DRONE x: 52.626693, DRONE y: 94.677144,
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: 0.446133, Sumx: 0.000000, Sumy: -0.035691
-[2024-01-15 13:56:33] DRONE x: 52.626693, DRONE y: 94.677144, COMMAND x: 2, COMMAND y: 6, REP x: -0.000000, REP y: 0.446133
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: 38.444463, Sumx: 0.000000, Sumy: -3.075557
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: 38.444463, Sumx: 0.000000, Sumy: -3.075557
-[2024-01-15 13:56:33] DRONE x: 54.488674, DRONE y: 98.196824, COMMAND x: 2, COMMAND y: 6, REP x: -0.000000, REP y: 38.444463
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] DRONE x: 56.419664, DRONE y: 83.734432, COMMAND x: 2, COMMAND y: 6, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] DRONE x: 58.385159, DRONE y: 79.503237, COMMAND x: 2, COMMAND y: 6, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] DRONE x: 60.367906, DRONE y: 80.387639, COMMAND x: 2, COMMAND y: 6, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] DRONE x: 62.359280, DRONE y: 83.829840, COMMAND x: 2, COMMAND y: 6, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] DRONE x: 64.354967, DRONE y: 88.550940, COMMAND x: 2, COMMAND y: 6, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] DRONE x: 66.352810, DRONE y: 93.911490, COMMAND x: 2, COMMAND y: 6, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: 750.051010, Sumx: 0.000000, Sumy: -60.004081
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: 750.051010, Sumx: 0.000000, Sumy: -60.004081
-[2024-01-15 13:56:33] DRONE x: 68.351732, DRONE y: 99.591766, COMMAND x: 2, COMMAND y: 6, REP x: -0.000000, REP y: 750.051010
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] DRONE x: 70.351193, DRONE y: 5.000000, COMMAND x: 2, COMMAND y: 5, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] DRONE x: 72.350924, DRONE y: 5.000000, COMMAND x: 2, COMMAND y: 5, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] DRONE x: 74.350789, DRONE y: 7.500000, COMMAND x: 2, COMMAND y: 5, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] DRONE x: 76.350721, DRONE y: 11.250000, COMMAND x: 2, COMMAND y: 5, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] DRONE x: 78.350688, DRONE y: 15.625000, COMMAND x: 2, COMMAND y: 5, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] DRONE x: 80.350671, DRONE y: 20.312500, COMMAND x: 2, COMMAND y: 5, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] DRONE x: 82.350662, DRONE y: 25.156250, COMMAND x: 2, COMMAND y: 5, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:33] DRONE x: 84.350658, DRONE y: 30.078125, COMMAND x: 2, COMMAND y: 5, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:33] DRONE: Command_force received from server
-[2024-01-15 13:56:33] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 86.350656, DRONE y: 35.039062, COMMAND x: 0, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 86.350656, DRONE y: 35.539062, COMMAND x: 0, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 86.350656, DRONE y: 36.289062, COMMAND x: 0, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 86.350656, DRONE y: 37.164062, COMMAND x: 0, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 86.350656, DRONE y: 38.101562, COMMAND x: 0, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 86.350656, DRONE y: 39.070312, COMMAND x: 0, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 86.350656, DRONE y: 40.054688, COMMAND x: 0, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 86.350656, DRONE y: 41.046875, COMMAND x: 0, COMMAND y: 1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 86.350656, DRONE y: 42.042969, COMMAND x: -1, COMMAND y: 2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 85.850656, DRONE y: 43.541016, COMMAND x: -1, COMMAND y: 2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 85.100656, DRONE y: 45.290039, COMMAND x: -1, COMMAND y: 2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 84.225656, DRONE y: 47.164551, COMMAND x: -1, COMMAND y: 2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 83.288156, DRONE y: 49.101807, COMMAND x: -1, COMMAND y: 2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 82.319406, DRONE y: 51.070435, COMMAND x: -1, COMMAND y: 2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 81.335031, DRONE y: 53.054749, COMMAND x: -1, COMMAND y: 2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 80.342844, DRONE y: 55.046906, COMMAND x: -1, COMMAND y: 2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:34] DRONE: Command_force received from server
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:34] DRONE x: 79.346750, DRONE y: 57.042984, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:34] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] DRONE x: 78.348703, DRONE y: 59.541023, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] DRONE x: 77.349679, DRONE y: 62.290043, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] DRONE x: 76.350168, DRONE y: 65.164553, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] DRONE x: 75.350412, DRONE y: 68.101808, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] DRONE x: 74.350534, DRONE y: 71.070435, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] DRONE x: 73.350595, DRONE y: 74.054749, COMMAND x: -1, COMMAND y: 3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] DRONE x: 72.350626, DRONE y: 77.046906, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] DRONE x: 72.850626, DRONE y: 77.046906, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] DRONE x: 73.600626, DRONE y: 77.046906, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] DRONE x: 74.475626, DRONE y: 77.046906, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] DRONE x: 75.413126, DRONE y: 77.046906, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] DRONE x: 76.381876, DRONE y: 77.046906, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] DRONE x: 77.366251, DRONE y: 77.046906, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] DRONE x: 78.358438, DRONE y: 77.046906, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:35] DRONE: Command_force received from server
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:35] DRONE x: 79.354532, DRONE y: 77.046906, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:35] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 80.352579, DRONE y: 77.046906, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 77.046906, COMMAND x: 0, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 76.546906, COMMAND x: 0, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 75.796906, COMMAND x: 0, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 74.921906, COMMAND x: 0, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 73.984406, COMMAND x: 0, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 73.015656, COMMAND x: 0, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 72.031281, COMMAND x: 0, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 71.039093, COMMAND x: 0, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 70.042999, COMMAND x: 0, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 69.044953, COMMAND x: 0, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 68.045929, COMMAND x: 0, COMMAND y: -2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 66.546417, COMMAND x: 0, COMMAND y: -2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 64.796661, COMMAND x: 0, COMMAND y: -2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 62.921784, COMMAND x: 0, COMMAND y: -2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 60.984345, COMMAND x: 0, COMMAND y: -2, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:36] DRONE: Command_force received from server
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:36] DRONE x: 81.351602, DRONE y: 59.015625, COMMAND x: 0, COMMAND y: -3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:36] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] DRONE x: 81.351602, DRONE y: 56.531265, COMMAND x: 0, COMMAND y: -3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] DRONE x: 81.351602, DRONE y: 53.789086, COMMAND x: 0, COMMAND y: -3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] DRONE x: 81.351602, DRONE y: 50.917996, COMMAND x: 0, COMMAND y: -3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] DRONE x: 81.351602, DRONE y: 47.982451, COMMAND x: 0, COMMAND y: -3, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] DRONE x: 81.351602, DRONE y: 45.014678, COMMAND x: 1, COMMAND y: -4, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] DRONE x: 81.851602, DRONE y: 41.530792, COMMAND x: 1, COMMAND y: -4, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] DRONE x: 82.601602, DRONE y: 37.788849, COMMAND x: 1, COMMAND y: -4, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] DRONE x: 83.476602, DRONE y: 33.917877, COMMAND x: 1, COMMAND y: -4, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] DRONE x: 84.414102, DRONE y: 29.982391, COMMAND x: 1, COMMAND y: -4, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] DRONE x: 85.382852, DRONE y: 26.014649, COMMAND x: 1, COMMAND y: -4, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] DRONE x: 86.367227, DRONE y: 22.030777, COMMAND x: 1, COMMAND y: -4, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
-[2024-01-15 13:56:37] DRONE x: 87.359415, DRONE y: 18.038841, COMMAND x: 1, COMMAND y: -4, REP x: -0.000000, REP y: -0.000000
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:37] DRONE: Command_force received from server
-[2024-01-15 13:56:37] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:38] DRONE: Command_force received from server
-[2024-01-15 13:56:38] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:39] DRONE: Command_force received from server
-[2024-01-15 13:56:39] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:40] DRONE: Command_force received from server
-[2024-01-15 13:56:40] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:40] DRONE: Command_force received from server
-[2024-01-15 13:56:40] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:40] DRONE: Command_force received from server
-[2024-01-15 13:56:40] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:40] DRONE: Command_force received from server
-[2024-01-15 13:56:40] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:40] DRONE: Command_force received from server
-[2024-01-15 13:56:40] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:40] DRONE: Command_force received from server
-[2024-01-15 13:56:40] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:40] DRONE: Command_force received from server
-[2024-01-15 13:56:40] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:40] DRONE: Command_force received from server
-[2024-01-15 13:56:40] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:40] DRONE: Command_force received from server
-[2024-01-15 13:56:40] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:40] DRONE: Command_force received from server
-[2024-01-15 13:56:40] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:40] DRONE: Command_force received from server
-[2024-01-15 13:56:40] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:40] DRONE: Command_force received from server
-[2024-01-15 13:56:40] DRONE: Drone_pos sent to server
-[2024-01-15 13:56:40] killed
+[2024-02-10 17:23:52] DRONE: Initial drone_pos sent to server
+[2024-02-10 17:23:52] DRONE: Command_force received from server
+[2024-02-10 17:23:52] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:52] DRONE: Command_force received from server
+[2024-02-10 17:23:52] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:52] DRONE: Command_force received from server
+[2024-02-10 17:23:52] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:52] DRONE: Command_force received from server
+[2024-02-10 17:23:52] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:52] DRONE: Command_force received from server
+[2024-02-10 17:23:52] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:52] DRONE: Command_force received from server
+[2024-02-10 17:23:52] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:52] DRONE: Command_force received from server
+[2024-02-10 17:23:52] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:52] DRONE: Command_force received from server
+[2024-02-10 17:23:52] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:52] DRONE: Command_force received from server
+[2024-02-10 17:23:52] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:52] DRONE: Command_force received from server
+[2024-02-10 17:23:52] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:52] DRONE: Command_force received from server
+[2024-02-10 17:23:52] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] DRONE x: 50.000000, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] DRONE x: 50.500000, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] DRONE x: 51.250000, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] DRONE x: 52.125000, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] DRONE x: 53.062500, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] DRONE x: 54.031250, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] DRONE x: 55.015625, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] DRONE x: 56.007812, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] DRONE x: 57.003906, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] DRONE x: 58.001953, DRONE y: 50.000000, COMMAND x: 1, COMMAND y: 0, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:53] DRONE x: 59.000977, DRONE y: 50.000000, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 60.500488, DRONE y: 49.500000,
+[2024-02-10 17:23:53] REP x: 0.484695, REP y: -0.000000, Sumx: -0.038776, Sumy: 0.000000
+[2024-02-10 17:23:53] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 60.500488, DRONE y: 49.500000,
+[2024-02-10 17:23:53] REP x: 0.484695, REP y: -0.000000, Sumx: -0.038776, Sumy: 0.000000
+[2024-02-10 17:23:53] DRONE x: 60.500488, DRONE y: 49.500000, COMMAND x: 2, COMMAND y: -1, REP x: 0.484695, REP y: -0.000000
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:53] DRONE: Command_force received from server
+[2024-02-10 17:23:53] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 62.007897, DRONE y: 48.750000,
+[2024-02-10 17:23:53] REP x: 0.323346, REP y: -0.000000, Sumx: -0.025868, Sumy: 0.000000
+[2024-02-10 17:23:53] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 62.007897, DRONE y: 48.750000,
+[2024-02-10 17:23:53] REP x: 0.323346, REP y: -0.000000, Sumx: -0.025868, Sumy: 0.000000
+[2024-02-10 17:23:53] DRONE x: 62.007897, DRONE y: 48.750000, COMMAND x: 2, COMMAND y: -1, REP x: 0.323346, REP y: -0.000000
+[2024-02-10 17:23:53] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 63.599928, DRONE y: 47.875000,
+[2024-02-10 17:23:54] REP x: 0.020522, REP y: -0.000000, Sumx: -0.001642, Sumy: 0.000000
+[2024-02-10 17:23:54] OBSTACLE x: 63.755227, OBSTACLE y: 52.428719, DRONE x: 63.599928, DRONE y: 47.875000,
+[2024-02-10 17:23:54] REP x: 0.020522, REP y: -0.000000, Sumx: -0.001642, Sumy: 0.000000
+[2024-02-10 17:23:54] DRONE x: 63.599928, DRONE y: 47.875000, COMMAND x: 2, COMMAND y: -1, REP x: 0.020522, REP y: -0.000000
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] DRONE x: 65.385683, DRONE y: 46.937500, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] DRONE x: 67.278560, DRONE y: 45.968750, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] DRONE x: 69.224998, DRONE y: 44.984375, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] DRONE x: 71.198218, DRONE y: 43.992188, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] DRONE x: 73.184827, DRONE y: 42.996094, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] DRONE x: 75.178132, DRONE y: 41.998047, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] DRONE x: 77.174785, DRONE y: 40.999023, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] DRONE x: 79.173111, DRONE y: 39.999512, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] DRONE x: 81.172274, DRONE y: 38.999756, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] DRONE x: 83.171856, DRONE y: 37.999878, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] REP x: -0.000000, REP y: -0.000000, Sumx: 0.000000, Sumy: 0.000000
+[2024-02-10 17:23:54] DRONE x: 85.171646, DRONE y: 36.999939, COMMAND x: 2, COMMAND y: -1, REP x: -0.000000, REP y: -0.000000
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:54] DRONE: Command_force received from server
+[2024-02-10 17:23:54] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:55] DRONE: Command_force received from server
+[2024-02-10 17:23:55] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:56] DRONE: Command_force received from server
+[2024-02-10 17:23:56] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:56] DRONE: Command_force received from server
+[2024-02-10 17:23:56] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:56] DRONE: Command_force received from server
+[2024-02-10 17:23:56] DRONE: Drone_pos sent to server
+[2024-02-10 17:23:56] killed
