@@ -2,6 +2,11 @@
 #include <signal.h>
 #include <string.h>
 #include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <strings.h>
+#include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include "../include/utility.c"
@@ -12,24 +17,17 @@
 
 
 
+
 // Global variables
 double target_pos[NUM_TARGETS*2],obstacle_pos[NUM_OBSTACLES*2],drone_pos[6];
 struct shared_data data;
+int sockfd;
 
-// Signal handler for watchdog
-void signal_handler(int signo, siginfo_t *siginfo, void *context){
-    if(signo == SIGINT){
-        writeToLogFile(targetlogpath,"killed");
-        exit(1);
-        
-    }
-    if(signo == SIGUSR1){
-        pid_t wd_pid = siginfo->si_pid;
-        kill(wd_pid, SIGUSR2);
-        writeToLogFile(targetlogpath,"signal received");
-    }
+
+void error(char *msg) {
+    perror(msg);
+    exit(0);
 }
-
 
 
 // Checks if target is reached
@@ -42,19 +40,7 @@ void target_update(double *drone_pos, double *target_pos) {
             break;
         }
     }
-    
-    // Check if the first target (out of the unreached targets) is reached
-    if ((fabs(drone_pos[4] - target_pos[j]) < POSITION_THRESHOLD &&
-        fabs(drone_pos[5] - target_pos[j + 1]) < POSITION_THRESHOLD) ||
-        (fabs(drone_pos[2] - target_pos[j]) < POSITION_THRESHOLD &&
-        fabs(drone_pos[3] - target_pos[j + 1]) < POSITION_THRESHOLD)) {
 
-        // Reached targets will be 0,0
-        target_pos[j] = 0;
-        target_pos[j+1] = 0;
-
-        
-    }
 }
 
 
@@ -73,56 +59,66 @@ void makeTargs(double drone_pos[]){
     }
 }
 
+
+void setupSocketConnection(char *hostname, int portno) {
+    struct sockaddr_in serv_addr;
+    struct hostent *server;
+
+    sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    if (sockfd < 0) 
+        error("ERROR opening socket");
+    
+    server = gethostbyname(hostname);
+    if (server == NULL) {
+        fprintf(stderr, "ERROR, no such host\n");
+        exit(0);
+    }
+
+    bzero((char *) &serv_addr, sizeof(serv_addr));
+    serv_addr.sin_family = AF_INET;
+    bcopy((char *)server->h_addr, (char *)&serv_addr.sin_addr.s_addr, server->h_length);
+    serv_addr.sin_port = htons(portno);
+
+    if (connect(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) 
+        error("ERROR connecting");
+}
+
+
 int main(int argc, char* argv[]){
-    // SIGNALS
-    struct sigaction signal;
-    signal.sa_sigaction = signal_handler;
-    signal.sa_flags = SA_SIGINFO;
-    sigaction(SIGINT, &signal, NULL);
-    sigaction(SIGUSR1, &signal, NULL);
+    if (argc < 3) {
+        fprintf(stderr,"usage %s hostname port\n", argv[0]);
+        exit(0);
+    }
+    int portno = atoi(argv[2]);
+    setupSocketConnection(argv[1], portno);
+
     clearLogFile(targetlogpath);
 
-    // PIPES
-    int target_server[2], server_target[2];
-    sscanf(argv[1], args_format,  &target_server[0], &target_server[1], &server_target[0], &server_target[1]);
-    close(target_server[0]); //Close unnecessary pipes
-    close(server_target[1]);
-
-    // Pids for Watchdog
-    pid_t target_pid;
-    target_pid=getpid();
-    my_write(target_server[1], &target_pid, target_server[0],sizeof(target_pid));
-    char logMessage[80];
-    sprintf(logMessage, "PID = %d\n",target_pid);
-    writeToLogFile(targetlogpath, logMessage);
-
-
-    // Get the initial drone position from drone
-    my_read(server_target[0],&data,target_server[1],sizeof(data));
-    memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));  
-
-    // Generate targets (only once) and send it to obstacle
+    // Generate targets (only once) and send it to server
     makeTargs(drone_pos); 
-    memcpy(data.target_pos, target_pos,sizeof(target_pos));
-    write(target_server[1],&data,sizeof(data));
+    memcpy(data.target_pos, target_pos, sizeof(target_pos));
+
+    // Writing the initial data to the server
+    if (write(sockfd, &data, sizeof(data)) < 0) 
+        error("ERROR writing to socket");
     writeToLogFile(targetlogpath, "TARGET: Initial target_pos sent to server");
 
-    while(1){
-        // Receive drone position from drone
-        my_read(server_target[0],&data,target_server[1],sizeof(data));
+    while(1) {
+        // Receive updated drone position from server
+        if (read(sockfd, &data, sizeof(data)) < 0) 
+            error("ERROR reading from socket");
         memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
         writeToLogFile(targetlogpath, "TARGET: drone_pos received from server");
         
         target_update(drone_pos, target_pos); // Check if drone reached the target
 
-        // copy updated target position to shared data and send it
+        // Copy updated target position to shared data and send it
         memcpy(data.target_pos, target_pos, sizeof(target_pos));
-        my_write(target_server[1], &data, server_target[0], sizeof(data));
+        if (write(sockfd, &data, sizeof(data)) < 0) 
+            error("ERROR writing to socket");
         writeToLogFile(targetlogpath, "TARGET: Updated target_pos sent to server");
-
     }
-    // Clean up
-    close(target_server[0]);
-    close(server_target[1]);
-}
 
+    // Clean up
+    close(sockfd);
+}
