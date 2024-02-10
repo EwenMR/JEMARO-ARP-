@@ -105,7 +105,7 @@ int main(int argc, char *argv[]){
         }
     }else if(strcmp(argv[1], "server") == 0){
         printf("THIS IS SERVER\n");
-        for (int i=0; i<5; i++){
+        for (int i=0; i<NUM_PROCESSES; i++){
             // Fork children
             pid_t pid = fork(); 
             all_pid[i]=pid;
@@ -150,7 +150,7 @@ int main(int argc, char *argv[]){
         }
         // Terminate if any of the children are terminated
         int stat;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < NUM_PROCESSES; i++) {
             pid_t pid = wait(&stat);
             printf("Child %d terminated with status %d\n", pid, stat);
         }

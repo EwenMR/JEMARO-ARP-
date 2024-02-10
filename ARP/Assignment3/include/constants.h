@@ -21,7 +21,7 @@
 
 
 #define BOARD_SIZE 100
-#define NUM_PROCESSES 7
+#define NUM_PROCESSES 5
 #define NUM_OBSTACLES 10
 #define NUM_TARGETS 9
 

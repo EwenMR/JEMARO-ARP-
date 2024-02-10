@@ -12,6 +12,9 @@
 #include <sys/select.h>
 #include <sys/time.h>
 #include <time.h>
+#include <sys/types.h> 
+#include <sys/socket.h>
+#include <netinet/in.h>
 #include "../include/utility.c"
 #include "../include/constants.h"
 #include "../include/log.c"
@@ -130,72 +133,108 @@ int main(int argc, char *argv[])
     // Initialize the variables and copy it to shared data
     int command_force[2]={0,0};
     memcpy(data.command_force, command_force, sizeof(command_force));
+
+
+    //SOCKETS ------------------------------------------------------------
+
+    int sockfd, newsockfd, portno, clilen, pid;
+    struct sockaddr_in serv_addr, cli_addr;
+
+    if (argc < 2) {
+        fprintf(stderr,"ERROR, no port provided\n");
+        exit(1);
+    }
+    sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    if (sockfd < 0) 
+    perror("ERROR opening socket");
+    bzero((char *) &serv_addr, sizeof(serv_addr));
+    portno = atoi(argv[1]);
+    serv_addr.sin_family = AF_INET;
+    serv_addr.sin_addr.s_addr = INADDR_ANY;
+    serv_addr.sin_port = htons(portno);
+    if (bind(sockfd, (struct sockaddr *) &serv_addr,
+            sizeof(serv_addr)) < 0) 
+            perror("ERROR on binding");
+    listen(sockfd,5);
+    clilen = sizeof(cli_addr);
+    //------------------------------------------------------------
     
 
     while(1){
-        fd_set reading;
-        FD_ZERO(&reading);
+        newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
+        if (newsockfd < 0) 
+            perror("ERROR on accept");
+        pid = fork();
+        if (pid < 0)
+            perror("ERROR on fork");
+        if (pid == 0)  {
+            close(sockfd);
 
-        for(int i=0; i<6;i++){
-            FD_SET(rec_pipes[i][0], &reading);
-        }
-        for (int i = 0; i < 6; i++) {
-            if (rec_pipes[i][0] > max_pipe_fd) {
-                max_pipe_fd = rec_pipes[i][0];
+            // dostuff(newsockfd);
+            char buffer[256];
+            int num;
+            num = read(newsockfd,buffer,255);
+            printf("NUMBER %d WAS SENT FROM CLIENT\n", num);
+
+
+            // Wait for message
+            // Check if message is OI or TI
+            // Echo
+            // Send back the window size
+
+            // Receive target 
+            // Receive Obstacle
+            exit(0);
+        }else{
+            fd_set reading;
+            FD_ZERO(&reading);
+
+            for(int i=0; i<NUM_PROCESSES-1;i++){
+                FD_SET(rec_pipes[i][0], &reading);
             }
-        }
-        int ret_val= 0;
-        ret_val = select(max_pipe_fd, &reading, NULL, NULL, NULL);
-        for(int j=0; j<(NUM_PROCESSES-2); j++){
-            if(ret_val>0){
+            for (int i = 0; i < NUM_PROCESSES-1; i++) {
+                if (rec_pipes[i][0] > max_pipe_fd) {
+                    max_pipe_fd = rec_pipes[i][0];
+                }
+            }
+            int ret_val= 0;
+            ret_val = select(max_pipe_fd, &reading, NULL, NULL, NULL);
+            for(int j=0; j<(NUM_PROCESSES-2); j++){
+                if(ret_val>0){
 
-                if(FD_ISSET(rec_pipes[j][0],&reading)){ // Only from pipes that are updated
-                    my_read(rec_pipes[j][0],&updated_data,rec_pipes[j][1], sizeof(data)); 
+                    if(FD_ISSET(rec_pipes[j][0],&reading)){ // Only from pipes that are updated
+                        my_read(rec_pipes[j][0],&updated_data,rec_pipes[j][1], sizeof(data)); 
 
-                    switch (j){
-                    case 0: //window
-                        writeToLogFile(serverlogpath, "Window: User input received");
-                        key=updated_data.key; // Only copy the updated variables to local 
-                        data.key=updated_data.key; // Update shared data with the updated variables
-                        my_write(server_keyboard[1],&data,server_keyboard[0],sizeof(data));
-                        
-                        break;
-                    case 1: //keyboard
-                        writeToLogFile(serverlogpath, "Keyboard: Command force received from keyboard");
-                        memcpy(command_force, updated_data.command_force, sizeof(updated_data.command_force)); // Store it as local variable
-                        memcpy(data.command_force, updated_data.command_force, sizeof(updated_data.command_force)); //Copy it to the shared data
-                        my_write(server_drone[1],&data,server_drone[0],sizeof(data)); // Send the shared data to drone
-                        break;
+                        switch (j){
+                        case 0: //window
+                            writeToLogFile(serverlogpath, "Window: User input received");
+                            key=updated_data.key; // Only copy the updated variables to local 
+                            data.key=updated_data.key; // Update shared data with the updated variables
+                            my_write(server_keyboard[1],&data,server_keyboard[0],sizeof(data));
+                            
+                            break;
+                        case 1: //keyboard
+                            writeToLogFile(serverlogpath, "Keyboard: Command force received from keyboard");
+                            memcpy(command_force, updated_data.command_force, sizeof(updated_data.command_force)); // Store it as local variable
+                            memcpy(data.command_force, updated_data.command_force, sizeof(updated_data.command_force)); //Copy it to the shared data
+                            my_write(server_drone[1],&data,server_drone[0],sizeof(data)); // Send the shared data to drone
+                            break;
 
-                    case 2: //drone
-                        writeToLogFile(serverlogpath, "Drone: New drone_pos received from drone");
-                        memcpy(drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
-                        memcpy(data.drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
-                        my_write(server_target[1],&data,server_target[0],sizeof(data));
-                        my_write(server_window[1],&data,server_window[0],sizeof(data)); 
-                        break;
+                        case 2: //drone
+                            writeToLogFile(serverlogpath, "Drone: New drone_pos received from drone");
+                            memcpy(drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
+                            memcpy(data.drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
+                            my_write(server_target[1],&data,server_target[0],sizeof(data));
+                            my_write(server_window[1],&data,server_window[0],sizeof(data)); 
+                            break;
 
-                    case 3: //obstacle
-                        writeToLogFile(serverlogpath, "Obstacle: obstacle_pos received from obstacle");
-                        memcpy(obst_pos, updated_data.obst_pos, sizeof(updated_data.obst_pos));
-                        memcpy(data.obst_pos, updated_data.obst_pos, sizeof(updated_data.obst_pos));
-                        my_write(server_drone[1],&data,server_drone[0],sizeof(data));
-                        break;
-
-                    case 4: //target
-                        writeToLogFile(serverlogpath, "Target: Target_pos received from target");
-                        memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
-                        memcpy(data.target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
-                        my_write(server_obstacle[1],&data,rec_pipes[3][0],sizeof(data));
-                        break;
-
-                    default:
-                        break;
+                        default:
+                            break;
+                        }
                     }
                 }
             }
         }
-
     }
 
 
