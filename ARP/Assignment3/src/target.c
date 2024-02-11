@@ -85,38 +85,52 @@ void setupSocketConnection(char *hostname, int portno) {
 
 
 int main(int argc, char* argv[]){
+    clearLogFile(targetlogpath);
+
     if (argc < 3) {
         fprintf(stderr,"usage %s hostname port\n", argv[0]);
         exit(0);
     }
     int portno = atoi(argv[2]);
-    setupSocketConnection(argv[1], portno);
+    
+    setupSocketConnection(argv[3], portno);
 
-    clearLogFile(targetlogpath);
+    
 
     // Generate targets (only once) and send it to server
     makeTargs(drone_pos); 
     memcpy(data.target_pos, target_pos, sizeof(target_pos));
 
     // Writing the initial data to the server
-    if (write(sockfd, &data, sizeof(data)) < 0) 
-        error("ERROR writing to socket");
-    writeToLogFile(targetlogpath, "TARGET: Initial target_pos sent to server");
+    // if (write(sockfd, &data, sizeof(data)) < 0) 
+    //     error("ERROR writing to socket");
+    // writeToLogFile(targetlogpath, "TARGET: Initial target_pos sent to server");
 
     while(1) {
-        // Receive updated drone position from server
-        if (read(sockfd, &data, sizeof(data)) < 0) 
-            error("ERROR reading from socket");
-        memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
-        writeToLogFile(targetlogpath, "TARGET: drone_pos received from server");
         
-        target_update(drone_pos, target_pos); // Check if drone reached the target
+        char test[50];
+        strcpy(test, "TARGET");
+        if (write(sockfd, test, sizeof(test)) < 0) 
+            error("ERROR writing to socket");
+        sleep(10000);
+
+        // strcpy(test, "TARGET");
+        // if (write(sockfd, test, sizeof(test)) < 0) 
+        //     error("ERROR writing to socket");
+
+        // Receive updated drone position from server
+        // if (read(sockfd, &data, sizeof(data)) < 0) 
+        //     error("ERROR reading from socket");
+        // memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
+        // writeToLogFile(targetlogpath, "TARGET: drone_pos received from server");
+        
+        // target_update(drone_pos, target_pos); // Check if drone reached the target
 
         // Copy updated target position to shared data and send it
-        memcpy(data.target_pos, target_pos, sizeof(target_pos));
-        if (write(sockfd, &data, sizeof(data)) < 0) 
-            error("ERROR writing to socket");
-        writeToLogFile(targetlogpath, "TARGET: Updated target_pos sent to server");
+        // memcpy(data.target_pos, target_pos, sizeof(target_pos));
+        // if (write(sockfd, &data, sizeof(data)) < 0) 
+        //     error("ERROR writing to socket");
+        // writeToLogFile(targetlogpath, "TARGET: Updated target_pos sent to server");
     }
 
     // Clean up

@@ -19,12 +19,12 @@ void summon(char **programArgs){
 
 int main(int argc, char *argv[]){
     // arguments to summon child konsole
-    char *argsServer[] = {"./build/server", "placeholder",NULL};
+    char *argsServer[] = {"konsole", "-e","./build/server", "placeholder", "portno",NULL};
     char *argsWindow[] = {"konsole", "-e", "./build/window", "placeholder",NULL};
     char *argsDrone[] = {"./build/drone", "placeholder",NULL};
     char *argsKeyboard[] = {"./build/keyboard", "placeholder",NULL};
-    char *argsObstacle[] = {"./build/obstacle", "placeholder", NULL};
-    char *argsTarget[] =  {"./build/target", "placeholder", NULL};
+    char *argsObstacle[] = {"./build/obstacle", "placeholder", "portno","hostname", NULL};
+    char *argsTarget[] =  {"./build/target", "placeholder", "portno","hostname",NULL};
     char *argsWatchdog[] = {"./build/watchdog", "placeholder",NULL};
 
     // Alternative way to summon child with konsoles for all
@@ -71,10 +71,15 @@ int main(int argc, char *argv[]){
 
     printf("THIS IS MASTER!!\n");
     printf("%s\n", argv[1]);
+    char portno[10];
+    strcpy(portno,argv[2]);
+    printf("PORT num = %s\n", portno);
 
     if (strcmp(argv[1], "client") == 0){
         printf("THIS IS CLIENT\n");
         //run obst and target
+        char hostname[50];
+        strcpy(hostname,argv[3]);
         for(int i=0; i<2; i++){
             pid_t pid = fork(); 
             all_pid[i]=pid;
@@ -87,11 +92,15 @@ int main(int argc, char *argv[]){
                 if(i==0){
                     sprintf(args, args_format,  obstacle_server[0], obstacle_server[1], server_obstacle[0], server_obstacle[1]);
                     argsObstacle[1]=args;
+                    argsObstacle[2]=portno;
+                    argsObstacle[3]=hostname;
                     summon(argsObstacle);
 
                 }else if(i==1){ //TARGET
                     sprintf(args, args_format,  target_server[0],   target_server[1],   server_target[0],   server_target[1]);
                     argsTarget[1]=args;
+                    argsTarget[2]=portno;
+                    argsTarget[3]=hostname;
                     summon(argsTarget);
             }else { //else if parent
                 printf("Summoned child with pid %d\n", pid);
@@ -122,7 +131,13 @@ int main(int argc, char *argv[]){
                                                 obstacle_server[0], obstacle_server[1], server_obstacle[0], server_obstacle[1],
                                                 target_server[0],   target_server[1],   server_target[0],   server_target[1],
                                                 wd_server[0], wd_server[1], server_wd[0], server_wd[1]);
-                    argsServer[1]=args;
+                    argsServer[3]=args;
+                    argsServer[4]=portno;
+                    printf("arg0: %s\n", argsServer[0]);
+                    printf("arg1: %s\n", argsServer[1]);
+                    printf("arg2: %s\n", argsServer[2]);
+                    printf("arg3: %s\n", argsServer[3]);
+                    printf("arg4: %s\n", argsServer[4]);
                     summon(argsServer);
 
                 }else if(i==1){ //WINDOW
@@ -142,7 +157,7 @@ int main(int argc, char *argv[]){
                 }else if(i==4){ //WATCH DOG
                     sprintf(args, "%d %d", server_wd[0], server_wd[1]);
                     argsWatchdog[1]=args;
-                    summon(argsWatchdog);
+                    // summon(argsWatchdog);
                 }   
             }else { //else if parent
                 printf("Summoned child with pid %d\n", pid);

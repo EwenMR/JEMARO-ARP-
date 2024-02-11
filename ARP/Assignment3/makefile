@@ -35,7 +35,7 @@ run:
 	./build/master
 
 runClient:
-	./build/master "client"
+	./build/master "client" 8080 localhost
 
 runServer:
-	./build/master "server"
+	./build/master "server" 8080

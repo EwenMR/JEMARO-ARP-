@@ -97,7 +97,11 @@ int main(int argc, char* argv[]){
         exit(0);
     }
     int portno = atoi(argv[2]);
-    setupSocketConnection(argv[1], portno);
+    char hostname[50];
+    strcpy(hostname, argv[3]);
+    // int portno = PORTNO;
+    // setupSocketConnection(argv[2], portno);
+    setupSocketConnection(argv[3], portno);
 
     struct shared_data data; // Ensure this struct is defined to match the expected data format for both sending and receiving
     int seconds, new_seconds, remainder;
@@ -122,13 +126,16 @@ int main(int argc, char* argv[]){
         memcpy(data.obst_pos, obstacle_pos, sizeof(obstacle_pos));
 
         // Send data to server
-        if (write(sockfd, &data, sizeof(data)) < 0) 
+        // if (write(sockfd, &data, sizeof(data)) < 0) 
+        char test[50];
+        strcpy(test, "OBSTACLE");
+        if (write(sockfd, test, sizeof(test)) < 0) 
             error("ERROR writing to socket");
 
         // Optionally read a response or acknowledgement from the server
         // if (read(sockfd, &data, sizeof(data)) < 0) 
         //     error("ERROR reading from socket");
-
+        sleep(10);
         usleep(50000); // Control the frequency of updates
     }
 

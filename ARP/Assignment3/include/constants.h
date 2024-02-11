@@ -37,6 +37,7 @@
 #define OBSTACLE_REFRESH_RATE 10
 
 #define WD_TIMER_THRESH 3
+#define PORTNO 8080
 
 struct shared_data{
     double drone_pos[6]; // Array to store the position of drone

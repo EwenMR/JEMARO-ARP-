@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
 {   
     // Delete everything written in logfile
     clearLogFile(serverlogpath);
+    char test[50];
 
     // SIGNALS FOR THE WATCHDOG
     struct sigaction sig_act;
@@ -122,7 +123,6 @@ int main(int argc, char *argv[])
     my_write(server_wd[1],all_pids,sizeof(all_pids),sizeof(all_pids));
     writeToLogFile(serverlogpath, "SERVER: Pid sent to watchdog");
     
-
     // Local variables
     struct shared_data data, updated_data;
     double drone_pos[6];// Array to store the position of drone
@@ -134,28 +134,39 @@ int main(int argc, char *argv[])
     int command_force[2]={0,0};
     memcpy(data.command_force, command_force, sizeof(command_force));
 
-
     //SOCKETS ------------------------------------------------------------
 
     int sockfd, newsockfd, portno, clilen, pid;
     struct sockaddr_in serv_addr, cli_addr;
 
+    
     if (argc < 2) {
         fprintf(stderr,"ERROR, no port provided\n");
         exit(1);
     }
+
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
-    if (sockfd < 0) 
-    perror("ERROR opening socket");
+    writeToLogFile(serverlogpath, "SERVER: Created socket instance");
+
+    if (sockfd < 0) {
+        perror("ERROR opening socket");
+    }
+
     bzero((char *) &serv_addr, sizeof(serv_addr));
-    portno = atoi(argv[1]);
+    portno = atoi(argv[2]);
+    // portno = PORTNO;
+    sprintf(logMessage, "port number = %d\n",portno);
+    writeToLogFile(serverlogpath, logMessage);
+    
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_addr.s_addr = INADDR_ANY;
     serv_addr.sin_port = htons(portno);
-    if (bind(sockfd, (struct sockaddr *) &serv_addr,
-            sizeof(serv_addr)) < 0) 
-            perror("ERROR on binding");
+
+    if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
+        perror("ERROR on binding");
+    }
     listen(sockfd,5);
+    writeToLogFile(serverlogpath, "SERVER:  Listening");
     clilen = sizeof(cli_addr);
     //------------------------------------------------------------
     
@@ -164,6 +175,7 @@ int main(int argc, char *argv[])
 
         // COMMUNICATION WITH CLIENT ---------------------------------------
         newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
+        writeToLogFile(serverlogpath, "SERVER: Accepted connection");
         if (newsockfd < 0) 
             perror("ERROR on accept");
         pid = fork();
@@ -174,9 +186,14 @@ int main(int argc, char *argv[])
 
             // dostuff(newsockfd);
             char buffer[256];
-            int num;
-            num = read(newsockfd,buffer,255);
-            printf("NUMBER %d WAS SENT FROM CLIENT\n", num);
+            // int num;
+            int bytes_read; // Variable to store the number of bytes read
+            char test[50];
+            // Read data from the socket into the test array
+            bytes_read = read(newsockfd, test, sizeof(test) - 1);
+            
+            sprintf(logMessage, "%s SENT A MESSAGE\n", test);
+            writeToLogFile(serverlogpath, logMessage);
 
 
             // Wait for message
@@ -186,7 +203,9 @@ int main(int argc, char *argv[])
 
             // Receive target 
             // Receive Obstacle
-            exit(0);
+            // Store it as local variables
+            // send it to the necessary processes
+            // exit(0);
             //---------------------------------------------------------------------
         }else{
             fd_set reading;
