@@ -13,13 +13,13 @@
 #include "../include/utility.c"
 
 // Global variables
-int all_timer[NUM_PROCESSES-1-2];
-pid_t all_pids[NUM_PROCESSES-2];
+int all_timer[NUM_PROCESSES-1];
+pid_t all_pids[NUM_PROCESSES];
 char logMessage[80];
 
 // Send signals to all children processes to terminate
 void kill_all(){
-    for(int i=0; i<(NUM_PROCESSES-1-2); i++){
+    for(int i=0; i<(NUM_PROCESSES-1); i++){
             kill(all_pids[i],SIGINT);
         }
     writeToLogFile(wdlogpath,"kill all");
@@ -53,20 +53,18 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
             writeToLogFile(wdlogpath, logMessage);
 
             all_timer[3]=0;
+        }if(siginfo->si_pid == all_pids[3]){
+            sprintf(logMessage, "Signal sent from Obstacle");
+            writeToLogFile(wdlogpath, logMessage);
+
+            all_timer[4]=0;
         }
-        // if(siginfo->si_pid == all_pids[3]){
-        //     sprintf(logMessage, "Signal sent from Obstacle");
-        //     writeToLogFile(wdlogpath, logMessage);
+        if(siginfo->si_pid == all_pids[4]){
+            sprintf(logMessage, "Signal sent from Target");
+            writeToLogFile(wdlogpath, logMessage);
 
-        //     all_timer[4]=0;
-        // }
-        // if(siginfo->si_pid == all_pids[4]){
-        //     sprintf(logMessage, "Signal sent from Target");
-        //     writeToLogFile(wdlogpath, logMessage);
-
-        //     all_timer[5]=0;
-        // }
-        if(siginfo->si_pid == all_pids[3]){
+            all_timer[5]=0;
+        }if(siginfo->si_pid == all_pids[5]){
             sprintf(logMessage, "Signal sent from Server");
             writeToLogFile(wdlogpath, logMessage);
 
@@ -95,27 +93,27 @@ int main(int argc, char* argv[]){
     
     // Read and store all pids of children processes
     my_read(server_wd[0], all_pids, server_wd[1], sizeof(all_pids));
-    all_pids[NUM_PROCESSES-1-2]=getpid();
+    all_pids[NUM_PROCESSES-1]=getpid();
 
     // Log all pids to the logfile
     char logMessage[80];
-    sprintf(logMessage, "WD PID %d\n",all_pids[NUM_PROCESSES-1-2]);
+    sprintf(logMessage, "WD PID %d\n",all_pids[NUM_PROCESSES-1]);
     writeToLogFile(wdlogpath, logMessage);
-    for(int i=0; i<NUM_PROCESSES-2; i++){
+    for(int i=0; i<NUM_PROCESSES; i++){
         char logMessage[80];
         sprintf(logMessage, "PID %d = %d\n",i,all_pids[i]);
         writeToLogFile(wdlogpath, logMessage);
     }
 
     // INITIALIZATION
-    printf("%d\n",NUM_PROCESSES-1-2);
-    for (int i=0; i<NUM_PROCESSES-1-2;i++){
+    printf("%d\n",NUM_PROCESSES-1);
+    for (int i=0; i<NUM_PROCESSES-1;i++){
         all_timer[i]=0;
     }
 
     while(1){
         // Send signals to all processes
-        for(int i=0; i<(NUM_PROCESSES-1-2); i++){
+        for(int i=0; i<(NUM_PROCESSES-1); i++){
             if(kill(all_pids[i],0)==0){ //If signal is properly sent
                 all_timer[i]=0;
                 sprintf(logMessage, "Signal sent to %d\n",all_pids[i]);
@@ -131,7 +129,7 @@ int main(int argc, char* argv[]){
         
         
         int kill = 0;  // Initialize as false
-        for (int i = 0; i < (NUM_PROCESSES-1-2); i++) {
+        for (int i = 0; i < (NUM_PROCESSES-1); i++) {
             if (all_timer[i] > WD_TIMER_THRESH) { // If any of the processes ignored the signal for more than threshold
                 writeToLogFile(wdlogpath, "Exeeded threshold");
                 kill = 1;  // Set kill to true
