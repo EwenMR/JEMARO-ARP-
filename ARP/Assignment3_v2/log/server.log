@@ -1,10 +1,10 @@
-[2024-02-14 17:53:15] SERVER: Pid recieved
-[2024-02-14 17:53:15] SERVER: Pid recieved
-[2024-02-14 17:53:15] SERVER: Pid recieved
-[2024-02-14 17:53:15] PID = 16844
+[2024-02-14 18:04:06] SERVER: Pid recieved
+[2024-02-14 18:04:06] SERVER: Pid recieved
+[2024-02-14 18:04:06] SERVER: Pid recieved
+[2024-02-14 18:04:06] PID = 17192
 
-[2024-02-14 17:53:15] SERVER: Pid sent to watchdog
-[2024-02-14 17:53:15] SERVER: Created socket instance
-[2024-02-14 17:53:15] port number = 8080
+[2024-02-14 18:04:06] SERVER: Pid sent to watchdog
+[2024-02-14 18:04:06] SERVER: Created socket instance
+[2024-02-14 18:04:06] port number = 8080
 
-[2024-02-14 17:53:15] SERVER:  Listening
+[2024-02-14 18:04:06] SERVER:  Listening
