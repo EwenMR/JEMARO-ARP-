@@ -157,12 +157,22 @@ int main(int argc, char *argv[])
         perror("ERROR opening socket");
     }
 
+    int flags = fcntl(sockfd, F_GETFL, 0);
+    if (flags == -1) {
+        perror("Failed to get socket flags");
+    }
+
+    if (fcntl(sockfd, F_SETFL, flags | O_NONBLOCK) == -1) {
+        perror("Failed to set non-blocking mode");
+    }
+
     bzero((char *) &serv_addr, sizeof(serv_addr));
     portno = atoi(argv[2]);
     // portno = PORTNO;
     sprintf(logMessage, "port number = %d\n",portno);
     writeToLogFile(serverlogpath, logMessage);
     
+    memset(&serv_addr, 0, sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_addr.s_addr = INADDR_ANY;
     serv_addr.sin_port = htons(portno);
