@@ -18,6 +18,7 @@
 #include "../include/utility.c"
 #include "../include/constants.h"
 #include "../include/log.c"
+// #define FD_SETSIZE 2
 
 
 // Signal handler for watchdog
@@ -139,9 +140,9 @@ int main(int argc, char *argv[])
     int sockfd, newsockfd, portno, clilen, pid;
     struct sockaddr_in serv_addr, cli_addr;
     fd_set read_fds;
-    char buffer[256];
+    char buffer[50];
     FD_ZERO(&read_fds);
-    FD_SET(sockfd, &read_fds); // Add the listening socket to the set
+    // FD_SET(sockfd, &read_fds); // Add the listening socket to the set
 
 
     
@@ -150,12 +151,16 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    sockfd = socket(AF_INET, SOCK_STREAM, 0); // Initialize sockfd
     writeToLogFile(serverlogpath, "SERVER: Created socket instance");
 
     if (sockfd < 0) {
         perror("ERROR opening socket");
+        exit(1);
     }
+
+    // Add sockfd to the read_fds set after it's initialized
+    FD_SET(sockfd, &read_fds);  
 
     int flags = fcntl(sockfd, F_GETFL, 0);
     if (flags == -1) {
@@ -171,8 +176,9 @@ int main(int argc, char *argv[])
     // portno = PORTNO;
     sprintf(logMessage, "port number = %d\n",portno);
     writeToLogFile(serverlogpath, logMessage);
-    
+
     memset(&serv_addr, 0, sizeof(serv_addr));
+
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_addr.s_addr = INADDR_ANY;
     serv_addr.sin_port = htons(portno);
@@ -187,16 +193,43 @@ int main(int argc, char *argv[])
     
 
     while(1){
-        fd_set tmp_fds = read_fds;
-        if (select(FD_SETSIZE, &tmp_fds, NULL, NULL, NULL) < 0) {
+        // fd_set tmp_fds = read_fds;
+        // writeToLogFile(serverlogpath, "before select");
+
+
+        /// TRYING TO TROUBLESHOOT RIGHT HERE
+        struct timeval timeout;
+        timeout.tv_sec = 5;  // Wait for 5 seconds
+        timeout.tv_usec = 0;
+
+        // int ans = select(2, &tmp_fds, NULL, NULL, &timeout);
+        // writeToLogFile(serverlogpath, "after test select");
+        // if (ans == -1) {
+        //     // Error handling
+        //     perror("Error in select");
+        //     writeToLogFile(serverlogpath, "Error in select");
+        // } else {
+        //     // Log the return value
+        //     sprintf(logMessage, "select return is %d\n", ans);
+        //     writeToLogFile(serverlogpath, logMessage);
+        // }
+
+        if (select(FD_SETSIZE, &read_fds, NULL, NULL, &timeout) < 0) {
+            // writeToLogFile(serverlogpath, "inside select");
             perror("ERROR in select");
             exit(1);
         }
 
+        // UNTIL HERE
+
         // COMMUNICATION WITH CLIENT ---------------------------------------
         for (int i = 0; i < FD_SETSIZE; ++i) {
-            if (FD_ISSET(i, &tmp_fds)) {
+            // writeToLogFile(serverlogpath, "inside for loop");
+            if (FD_ISSET(i, &read_fds)) {
+                writeToLogFile(serverlogpath, "FD_ISSET\n");
+
                 if (i == sockfd) {  // New connection
+                    writeToLogFile(serverlogpath,"NEW CONNECTION\n");
                     clilen = sizeof(cli_addr);
                     newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
                     if (newsockfd < 0) {
@@ -204,8 +237,11 @@ int main(int argc, char *argv[])
                         exit(1);
                     }
                     FD_SET(newsockfd, &read_fds);
-                    printf("New connection established\n");
+                    writeToLogFile(serverlogpath,"New connection established\n");
+                    
+
                 } else {  // Existing client
+                    writeToLogFile(serverlogpath, "Connected to client\n");
                     int bytes_read = read(i, buffer, sizeof(buffer) - 1);
                     if (bytes_read < 0) {
                         perror("ERROR reading from socket");
@@ -216,12 +252,25 @@ int main(int argc, char *argv[])
                         printf("Connection closed\n");
                     } else { // Message received
                         buffer[bytes_read] = '\0';
+
+                        // // Code to check if data is sent from obstacle or target
+                        // if (buffer[0] == 'O'){
+                        //     // change the buffer into list
+                        //     // store the data into obstacle[]
+                        // }else if(buffer[0] == 'T'){
+                        //     // change the buffer into list
+                        //     // store the data into target[]
+                        // }else{
+                        //     perror("Client send the data in wrong format\n");
+                        // }
+
                         sprintf(logMessage, "PID = %s\n",buffer);
                         writeToLogFile(serverlogpath,logMessage);
                         // printf("Message received: %s\n", buffer);
                     }
                 }
             }
+            // writeToLogFile(serverlogpath, "NO FD_ISSET\n");
         }
 
         // newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);

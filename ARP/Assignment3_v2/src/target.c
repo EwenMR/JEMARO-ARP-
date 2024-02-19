@@ -102,16 +102,24 @@ int main(int argc, char* argv[]){
     memcpy(data.target_pos, target_pos, sizeof(target_pos));
 
     // Writing the initial data to the server
-    if (write(sockfd, &target_pos, sizeof(target_pos)) < 0) 
-        error("ERROR writing to socket");
-    writeToLogFile(targetlogpath, "TARGET: Initial target_pos sent to server");
+    // if (write(sockfd, &target_pos, sizeof(target_pos)) < 0) 
+    //     error("ERROR writing to socket");
+    // writeToLogFile(targetlogpath, "TARGET: Initial target_pos sent to server");
 
     while(1) {
+        // Writing the initial data to the server
+        // if (write(sockfd, &target_pos, sizeof(target_pos)) < 0) {
+        //     writeToLogFile(targetlogpath, "TARGET: Error writing to socket");
+        // }else{
+        //     writeToLogFile(targetlogpath, "TARGET: Initial target_pos sent to server");
+        // }
         
-        // char test[50];
-        // strcpy(test, "TARGET");
-        // if (write(sockfd, test, sizeof(test)) < 0) 
-        //     error("ERROR writing to socket");
+
+        
+        char test[50];
+        strcpy(test, "TARGET");
+        if (write(sockfd, test, sizeof(test)) < 0) 
+            error("ERROR writing to socket");
         // sleep(10000);
 
         // strcpy(test, "TARGET");
