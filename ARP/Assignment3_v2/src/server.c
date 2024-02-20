@@ -234,6 +234,19 @@ int main(int argc, char *argv[])
                         printf("Connection closed\n");
                     } else { // Message received
                         buffer[bytes_read] = '\0';
+                        sprintf(logMessage, "target position: %s\n",buffer);
+                        writeToLogFile(serverlogpath,logMessage);
+
+                        char *token = strtok(buffer, " ");
+                        int index = 0;
+
+                        // Convert each token to a float and store it in target_pos array
+                        while (token != NULL && index < 20) {
+                            target_pos[index] = atof(token);
+                            printf("%f ", target_pos[index]);
+                            token = strtok(NULL, " ");
+                            index++;
+                        }
 
                         // // Code to check if data is sent from obstacle or target
                         // if (buffer[0] == 'O'){
@@ -249,8 +262,15 @@ int main(int argc, char *argv[])
                         // change string to list
                         // store it in target_pos
 
-                        sprintf(logMessage, "target position: %s\n",buffer);
-                        writeToLogFile(serverlogpath,logMessage);
+                        
+                        
+                        if ((sizeof(target_pos))>0){
+                            // memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
+                            memcpy(data.target_pos, target_pos, sizeof(target_pos));
+
+                            my_write(server_window[1],&data,server_window[0],sizeof(data));
+                        }
+                        
                         // printf("Message received: %s\n", buffer);
                     }
                 }

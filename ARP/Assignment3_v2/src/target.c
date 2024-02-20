@@ -165,7 +165,7 @@ int main(int argc, char* argv[]){
         // strcpy(test, "TARGET");
         if (write(sockfd, str, sizeof(str)) < 0) 
             error("ERROR writing to socket");
-        // sleep(10000);
+        sleep(10000);
 
         // strcpy(test, "TARGET");
         // if (write(sockfd, test, sizeof(test)) < 0) 
