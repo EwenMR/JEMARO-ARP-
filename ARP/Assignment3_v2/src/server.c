@@ -18,7 +18,6 @@
 #include "../include/utility.c"
 #include "../include/constants.h"
 #include "../include/log.c"
-// #define FD_SETSIZE 2
 
 
 // Signal handler for watchdog
@@ -142,8 +141,6 @@ int main(int argc, char *argv[])
     fd_set read_fds;
     char buffer[50];
     FD_ZERO(&read_fds);
-    // FD_SET(sockfd, &read_fds); // Add the listening socket to the set
-
 
     
     if (argc < 2) {
@@ -193,26 +190,11 @@ int main(int argc, char *argv[])
     
 
     while(1){
-        // fd_set tmp_fds = read_fds;
-        // writeToLogFile(serverlogpath, "before select");
-
 
         /// TRYING TO TROUBLESHOOT RIGHT HERE
         struct timeval timeout;
         timeout.tv_sec = 5;  // Wait for 5 seconds
         timeout.tv_usec = 0;
-
-        // int ans = select(2, &tmp_fds, NULL, NULL, &timeout);
-        // writeToLogFile(serverlogpath, "after test select");
-        // if (ans == -1) {
-        //     // Error handling
-        //     perror("Error in select");
-        //     writeToLogFile(serverlogpath, "Error in select");
-        // } else {
-        //     // Log the return value
-        //     sprintf(logMessage, "select return is %d\n", ans);
-        //     writeToLogFile(serverlogpath, logMessage);
-        // }
 
         if (select(FD_SETSIZE, &read_fds, NULL, NULL, &timeout) < 0) {
             // writeToLogFile(serverlogpath, "inside select");
@@ -264,7 +246,10 @@ int main(int argc, char *argv[])
                         //     perror("Client send the data in wrong format\n");
                         // }
 
-                        sprintf(logMessage, "PID = %s\n",buffer);
+                        // change string to list
+                        // store it in target_pos
+
+                        sprintf(logMessage, "target position: %s\n",buffer);
                         writeToLogFile(serverlogpath,logMessage);
                         // printf("Message received: %s\n", buffer);
                     }
@@ -273,27 +258,12 @@ int main(int argc, char *argv[])
             // writeToLogFile(serverlogpath, "NO FD_ISSET\n");
         }
 
-        // newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
-        // writeToLogFile(serverlogpath, "SERVER: Accepted connection");
         if (newsockfd < 0) 
             perror("ERROR on accept");
         pid = fork();
         if (pid < 0)
             perror("ERROR on fork");
         if (pid == 0)  {
-            // close(sockfd);
-
-            // // dostuff(newsockfd);
-            // char buffer[256];
-            // // int num;
-            // int bytes_read; // Variable to store the number of bytes read
-            // char test[50];
-            // // Read data from the socket into the test array
-            // bytes_read = read(newsockfd, test, sizeof(test) - 1);
-            
-            // sprintf(logMessage, "%s SENT A MESSAGE\n", test);
-            // writeToLogFile(serverlogpath, logMessage);
-
 
             // Wait for message
             // Check if message is OI or TI

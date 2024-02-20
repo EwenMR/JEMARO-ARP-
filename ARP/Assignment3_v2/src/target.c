@@ -19,7 +19,7 @@
 
 
 // Global variables
-double target_pos[NUM_TARGETS*2],obstacle_pos[NUM_OBSTACLES*2],drone_pos[6];
+double target_pos[NUM_TARGETS*2],obstacle_pos[NUM_OBSTACLES*2];
 struct shared_data data;
 int sockfd;
 
@@ -31,7 +31,7 @@ void error(char *msg) {
 
 
 // Checks if target is reached
-void target_update(double *drone_pos, double *target_pos) {
+void target_update(double *target_pos) {
     int j=0;
     for (int i = 0; i < NUM_TARGETS * 2; i += 2) {
         if(target_pos[i]==0 &&target_pos[i+1]==0){ // Only check the targets that are not 0,0
@@ -45,17 +45,17 @@ void target_update(double *drone_pos, double *target_pos) {
 
 
 // make the targets coordinates
-void makeTargs(double drone_pos[]){
+void makeTargs(){
     for (int i=0; i< NUM_TARGETS*2; i+=2){
         target_pos[i]   = ((double)rand() / RAND_MAX) * BOARD_SIZE;
         target_pos[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;
 
         // check if they aren't within threshold of drone
-        while(fabs(target_pos[i] - drone_pos[4]) < TARGET_THRESH  && fabs(target_pos[i+1] - drone_pos[5]) < TARGET_THRESH) {
-            // Regenerate target_pos coordinates
-            target_pos[i] = ((double)rand() / RAND_MAX) * BOARD_SIZE;
-            target_pos[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;
-        }
+        // while(fabs(target_pos[i] - drone_pos[4]) < TARGET_THRESH  && fabs(target_pos[i+1] - drone_pos[5]) < TARGET_THRESH) {
+        //     // Regenerate target_pos coordinates
+        //     target_pos[i] = ((double)rand() / RAND_MAX) * BOARD_SIZE;
+        //     target_pos[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;
+        // }
     }
 }
 
@@ -98,7 +98,7 @@ int main(int argc, char* argv[]){
     
 
     // Generate targets (only once) and send it to server
-    makeTargs(drone_pos); 
+    makeTargs(); 
     memcpy(data.target_pos, target_pos, sizeof(target_pos));
 
     // Writing the initial data to the server
@@ -113,12 +113,57 @@ int main(int argc, char* argv[]){
         // }else{
         //     writeToLogFile(targetlogpath, "TARGET: Initial target_pos sent to server");
         // }
-        
+
+        // char target_str[256]; // Adjust the size according to the maximum expected string length
+        // int offset = 0; // Offset to keep track of the current position in the target_str buffer
+
+        // // Convert each float to a string and concatenate them with spaces
+        // for (int i = 0; i < 20; ++i) {
+        //     offset += sprintf(target_str + offset, "%.2f ", target_pos[i]);
+        // }
+
+        // // Remove the trailing space
+        // if (offset > 0) {
+        //     target_str[offset - 1] = '\0';
+        // }
+
+        // char logMessage[256];
+        // snprintf(logMessage, sizeof(logMessage), "%.255s\n", target_str);
+
+        // writeToLogFile(targetlogpath,logMessage);
+
+                
 
         
-        char test[50];
-        strcpy(test, "TARGET");
-        if (write(sockfd, test, sizeof(test)) < 0) 
+        // int test[50];
+        // for (int i=0; i<10; i++){
+        //     test[i]= i;
+        // }
+        int totalDigits = 0;
+
+        for (int i = 0; i < 20; i++) {
+            // Count the number of digits for each integer
+            int numDigits = snprintf(NULL, 0, "%.2f", target_pos[i]);
+            totalDigits += numDigits;
+        }
+        totalDigits += 10; // Account for spaces and null terminator
+
+        // Create a string buffer
+        char str[totalDigits];
+
+        // Convert the array elements to string and concatenate them
+        int offset = 0;
+        for (int i = 0; i < 10; i++) {
+            offset += snprintf(str + offset, totalDigits - offset, "%.2f ", target_pos[i]);
+        }
+
+        // Null terminate the string
+        str[offset - 1] = '\0'; // Remove the extra space at the end
+
+
+        
+        // strcpy(test, "TARGET");
+        if (write(sockfd, str, sizeof(str)) < 0) 
             error("ERROR writing to socket");
         // sleep(10000);
 
