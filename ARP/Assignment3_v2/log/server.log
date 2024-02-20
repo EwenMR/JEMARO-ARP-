@@ -1,57 +1,60 @@
-[2024-02-20 16:01:36] SERVER: Pid recieved
-[2024-02-20 16:01:36] SERVER: Pid recieved
-[2024-02-20 16:01:36] SERVER: Pid recieved
-[2024-02-20 16:01:36] PID = 77544
+[2024-02-20 17:36:28] SERVER: Pid recieved
+[2024-02-20 17:36:28] SERVER: Pid recieved
+[2024-02-20 17:36:28] SERVER: Pid recieved
+[2024-02-20 17:36:28] PID = 85630
 
-[2024-02-20 16:01:36] SERVER: Pid sent to watchdog
-[2024-02-20 16:01:36] SERVER: Created socket instance
-[2024-02-20 16:01:36] port number = 8080
+[2024-02-20 17:36:28] SERVER: Pid sent to watchdog
+[2024-02-20 17:36:28] SERVER: Created socket instance
+[2024-02-20 17:36:28] port number = 8080
 
-[2024-02-20 16:01:36] SERVER:  Listening
-[2024-02-20 16:01:40] FD_ISSET
+[2024-02-20 17:36:28] SERVER:  Listening
+[2024-02-20 17:36:31] FD_ISSET
 
-[2024-02-20 16:01:40] NEW CONNECTION
+[2024-02-20 17:36:31] NEW CONNECTION
 
-[2024-02-20 16:01:40] New connection established
+[2024-02-20 17:36:31] New connection established
 
-[2024-02-20 16:01:40] FD_ISSET
+[2024-02-20 17:36:31] FD_ISSET
 
-[2024-02-20 16:01:40] Connected to client
+[2024-02-20 17:36:31] Connected to client
 
-[2024-02-20 16:01:40] target position: OBSTACLE
+[2024-02-20 17:36:31] target position: 84.02 39.44 78.31 79.84 91.16 19.76 33.52 76.82 27.78 55.40 47.74 62.89 36.48 
 
-[2024-02-20 16:01:40] Drone: New drone_pos received from drone
-[2024-02-20 16:01:40] FD_ISSET
+[2024-02-20 17:36:31] Drone: New drone_pos received from drone
+[2024-02-20 17:36:31] FD_ISSET
 
-[2024-02-20 16:01:40] NEW CONNECTION
+[2024-02-20 17:36:31] NEW CONNECTION
 
-[2024-02-20 16:01:40] New connection established
+[2024-02-20 17:36:31] New connection established
 
-[2024-02-20 16:01:40] FD_ISSET
+[2024-02-20 17:36:31] FD_ISSET
 
-[2024-02-20 16:01:40] FD_ISSET
+[2024-02-20 17:36:31] Connected to client
 
-[2024-02-20 16:01:40] Connected to client
+[2024-02-20 17:36:31] FD_ISSET
 
-[2024-02-20 16:01:40] target position: @
+[2024-02-20 17:36:31] FD_ISSET
 
-[2024-02-20 16:01:40] NEW CONNECTION
+[2024-02-20 17:36:31] Connected to client
 
-[2024-02-20 16:01:40] FD_ISSET
+[2024-02-20 17:36:31] Connected to client
 
-[2024-02-20 16:01:40] Connected to client
+[2024-02-20 17:36:33] Obstacle position: 1.63 24.29 13.72 80.42 15.67 40.09 12.98 10.88 99.89 21.83 51.29 83.91 61.26 2
 
-[2024-02-20 16:01:40] target position: 84.02 39.44 78.31 79.84 91.16 19.76 33.52 76.82 2
+[2024-02-20 17:36:33] Drone: New drone_pos received from drone
+[2024-02-20 17:36:33] FD_ISSET
 
-[2024-02-20 16:01:40] FD_ISSET
+[2024-02-20 17:36:33] Connected to client
 
-[2024-02-20 16:01:40] Connected to client
+[2024-02-20 17:36:33] FD_ISSET
 
-[2024-02-20 16:01:40] target position: 7.78 55.40
+[2024-02-20 17:36:33] Connected to client
 
-[2024-02-20 16:01:40] FD_ISSET
+[2024-02-20 17:36:33] Drone: New drone_pos received from drone
+[2024-02-20 17:36:43] Obstacle position: 40.02 89.15 28.33 35.25 80.77 91.90 6.98 94.93 52.60 8.61 19.22 66.32 89.02 34
 
-[2024-02-20 16:01:40] Connected to client
+[2024-02-20 17:36:43] Drone: New drone_pos received from drone
+[2024-02-20 17:36:43] FD_ISSET
 
-[2024-02-20 16:01:40] target position: 
+[2024-02-20 17:36:43] Connected to client
 

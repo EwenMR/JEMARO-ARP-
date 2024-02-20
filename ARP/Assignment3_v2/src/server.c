@@ -56,8 +56,6 @@ int main(int argc, char *argv[])
     int server_window[2];
     int server_keyboard[2];
     int server_drone[2];
-    int server_obstacle[2];
-    int server_target[2];
     int server_wd[2];
 
     int rec_pipes[NUM_PROCESSES-1][2];
@@ -74,15 +72,11 @@ int main(int argc, char *argv[])
     sscanf(argv[1],server_format,   &rec_pipes[0][0],   &rec_pipes[0][1], &server_window[0],   &server_window[1],
                                     &rec_pipes[1][0],   &rec_pipes[1][1], &server_keyboard[0], &server_keyboard[1],
                                     &rec_pipes[2][0],   &rec_pipes[2][1], &server_drone[0],    &server_drone[1],
-                                    &rec_pipes[3][0],   &rec_pipes[3][1], &server_obstacle[0], &server_obstacle[1],
-                                    &rec_pipes[4][0],   &rec_pipes[4][1], &server_target[0],   &server_target[1],
-                                    &rec_pipes[5][0],   &rec_pipes[5][1], &server_wd[0],       &server_wd[1]); // Get the fds of the pipe to watchdog
+                                    &rec_pipes[3][0],   &rec_pipes[3][1], &server_wd[0],       &server_wd[1]); // Get the fds of the pipe to watchdog
     
     close(server_drone[0]); // Close unnecessary pipes
     close(server_keyboard[0]);
     close(server_window[0]);
-    close(server_obstacle[0]);
-    close(server_target[0]);
     close(server_wd[0]);
     for(int i=0; i< NUM_PROCESSES-1; i++){
         close(rec_pipes[i][1]);
@@ -90,7 +84,7 @@ int main(int argc, char *argv[])
     
 
     //Read all pids of children processes using select
-    pid_t all_pids[NUM_PROCESSES];
+    pid_t all_pids[NUM_PROCESSES-2];
     fd_set reading;
    
     FD_ZERO(&reading);
@@ -115,7 +109,7 @@ int main(int argc, char *argv[])
 
     // Get pid of itself and log it
     all_pids[NUM_PROCESSES-2] = getpid();
-    char logMessage[80];
+    char logMessage[256];
     sprintf(logMessage, "PID = %d\n",server_pid);
     writeToLogFile(serverlogpath, logMessage);
 
@@ -139,7 +133,7 @@ int main(int argc, char *argv[])
     int sockfd, newsockfd, portno, clilen, pid;
     struct sockaddr_in serv_addr, cli_addr;
     fd_set read_fds;
-    char buffer[50];
+    char buffer[80];
     FD_ZERO(&read_fds);
 
     
@@ -186,7 +180,6 @@ int main(int argc, char *argv[])
     listen(sockfd,5);
     writeToLogFile(serverlogpath, "SERVER:  Listening");
     clilen = sizeof(cli_addr);
-    //------------------------------------------------------------
     
 
     while(1){
@@ -234,42 +227,51 @@ int main(int argc, char *argv[])
                         printf("Connection closed\n");
                     } else { // Message received
                         buffer[bytes_read] = '\0';
-                        sprintf(logMessage, "target position: %s\n",buffer);
-                        writeToLogFile(serverlogpath,logMessage);
+                        
+                        char new_buffer[80];
+                        char process_char = buffer[0];
+                        strcpy(new_buffer, buffer+1);
 
                         char *token = strtok(buffer, " ");
                         int index = 0;
 
+                        double received[NUM_OBSTACLES*2];
+
                         // Convert each token to a float and store it in target_pos array
-                        while (token != NULL && index < 20) {
-                            target_pos[index] = atof(token);
-                            printf("%f ", target_pos[index]);
+                        while (token != NULL && index < NUM_OBSTACLES*2) {
+                            received[index] = atof(token);
                             token = strtok(NULL, " ");
                             index++;
                         }
 
-                        // // Code to check if data is sent from obstacle or target
-                        // if (buffer[0] == 'O'){
-                        //     // change the buffer into list
-                        //     // store the data into obstacle[]
-                        // }else if(buffer[0] == 'T'){
-                        //     // change the buffer into list
-                        //     // store the data into target[]
-                        // }else{
-                        //     perror("Client send the data in wrong format\n");
-                        // }
+                        // Code to check if data is sent from obstacle or target
+                        if (process_char == 'O'){
+                            sprintf(logMessage, "Obstacle position: %s\n",new_buffer);
+                            writeToLogFile(serverlogpath,logMessage);
+                            if ((sizeof(received))>0){
+                                // memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
+                                memcpy(data.obst_pos, received, sizeof(received));
+                                my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+                            }
+                        }else if(process_char == 'T'){
+                            sprintf(logMessage, "target position: %s\n",new_buffer);
+                            writeToLogFile(serverlogpath,logMessage);
+                            if ((sizeof(received))>0){
+                                // memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
+
+                                memcpy(data.target_pos, received, sizeof(received));
+                                my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+                            }
+                        }else{
+                            perror("Client send the data in wrong format\n");
+                        }
 
                         // change string to list
                         // store it in target_pos
 
                         
                         
-                        if ((sizeof(target_pos))>0){
-                            // memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
-                            memcpy(data.target_pos, target_pos, sizeof(target_pos));
-
-                            my_write(server_window[1],&data,server_window[0],sizeof(data));
-                        }
+                        
                         
                         // printf("Message received: %s\n", buffer);
                     }
@@ -296,7 +298,8 @@ int main(int argc, char *argv[])
             // send it to the necessary processes
             // exit(0);
             //---------------------------------------------------------------------
-        }else{
+        }
+        else{
             fd_set reading;
             FD_ZERO(&reading);
 
@@ -335,7 +338,6 @@ int main(int argc, char *argv[])
                             writeToLogFile(serverlogpath, "Drone: New drone_pos received from drone");
                             memcpy(drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
                             memcpy(data.drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
-                            my_write(server_target[1],&data,server_target[0],sizeof(data));
                             my_write(server_window[1],&data,server_window[0],sizeof(data)); 
                             break;
 
@@ -353,8 +355,6 @@ int main(int argc, char *argv[])
     close(server_drone[1]);
     close(server_keyboard[1]);
     close(server_window[1]);
-    close(server_obstacle[1]);
-    close(server_target[1]);
     close(server_wd[1]);
     for(int i=0; i< NUM_PROCESSES-1; i++){
         close(rec_pipes[i][0]);

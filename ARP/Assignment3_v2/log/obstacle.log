@@ -1,3 +1,8 @@
-[2024-02-10 20:25:04] PID = 24984
-
-[2024-02-10 20:25:08] killed
+[2024-02-20 17:36:31] START
+[2024-02-20 17:36:31] got pipes
+[2024-02-20 17:36:33] 84.018772 39.438293
+[2024-02-20 17:36:33] received targets
+[2024-02-20 17:36:33] generated obstacles
+[2024-02-20 17:36:33] sent obstacles to server
+[2024-02-20 17:36:43] regenerated targets
+[2024-02-20 17:36:43] sent obstacles to server

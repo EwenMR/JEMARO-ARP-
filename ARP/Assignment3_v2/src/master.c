@@ -46,11 +46,12 @@ int main(int argc, char *argv[]){
     int drone_server[2];
     int server_drone[2];
 
-    int obstacle_server[2];
-    int server_obstacle[2];
+    int target_obstacle[2];
 
-    int target_server[2];
-    int server_target[2];
+    // int server_obstacle[2];
+
+    // int target_server[2];
+    // int server_target[2];
 
     int wd_server[2];
     int server_wd[2];
@@ -59,8 +60,7 @@ int main(int argc, char *argv[]){
     if (pipe(window_server)   == -1 ||  pipe(server_window)   == -1 ||
         pipe(keyboard_server) == -1 ||  pipe(server_keyboard) == -1 ||
         pipe(drone_server)    == -1 ||  pipe(server_drone)    == -1 ||
-        pipe(obstacle_server) == -1 ||  pipe(server_obstacle) == -1 ||
-        pipe(target_server)   == -1 ||  pipe(server_target)   == -1 ||
+        pipe(target_obstacle) == -1 || 
         pipe(wd_server) == -1 ||  pipe(server_wd) == -1 ) {
         perror("pipe");
         exit(EXIT_FAILURE);
@@ -90,14 +90,14 @@ int main(int argc, char *argv[]){
                     exit(EXIT_FAILURE);
                 }
                 if(i==0){
-                    sprintf(args, args_format,  obstacle_server[0], obstacle_server[1], server_obstacle[0], server_obstacle[1]);
+                    sprintf(args, client_args_format,  target_obstacle[0], target_obstacle[1]);
                     argsObstacle[1]=args;
                     argsObstacle[2]=portno;
                     argsObstacle[3]=hostname;
                     summon(argsObstacle);
 
                 }else if(i==1){ //TARGET
-                    sprintf(args, args_format,  target_server[0],   target_server[1],   server_target[0],   server_target[1]);
+                    sprintf(args, client_args_format,  target_obstacle[0],   target_obstacle[1]);
                     argsTarget[1]=args;
                     argsTarget[2]=portno;
                     argsTarget[3]=hostname;
@@ -128,8 +128,6 @@ int main(int argc, char *argv[]){
                     sprintf(args,server_format, window_server[0],   window_server[1],   server_window[0],   server_window[1],
                                                 keyboard_server[0], keyboard_server[1], server_keyboard[0], server_keyboard[1],
                                                 drone_server[0],    drone_server[1],    server_drone[0],    server_drone[1],
-                                                obstacle_server[0], obstacle_server[1], server_obstacle[0], server_obstacle[1],
-                                                target_server[0],   target_server[1],   server_target[0],   server_target[1],
                                                 wd_server[0], wd_server[1], server_wd[0], server_wd[1]);
                     argsServer[3]=args;
                     argsServer[4]=portno;

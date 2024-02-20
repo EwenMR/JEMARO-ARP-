@@ -23,7 +23,7 @@
 #define BOARD_SIZE 100
 #define NUM_PROCESSES 5
 #define NUM_OBSTACLES 10
-#define NUM_TARGETS 9
+#define NUM_TARGETS 10
 
 #define WINDOW_COL 0.99
 #define SCORE_WINDOW_ROW 0.20
@@ -54,7 +54,8 @@ char *obstaclelogpath = "./log/obstacle.log"; // Path for the log file
 char *targetlogpath = "./log/target.log"; // Path for the log file
 char *wdlogpath = "./log/watchdog.log"; // Path for the log file
 char *keyboardlogpath = "./log/keyboard.log"; // Path for the log file
-char server_format[100]= "%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d";
+char server_format[100]= "%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d|%d %d";
 char args_format[80]="%d %d|%d %d";
+char client_args_format[80] = "%d %d";
 
 #endif

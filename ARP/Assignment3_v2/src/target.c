@@ -95,11 +95,23 @@ int main(int argc, char* argv[]){
     
     setupSocketConnection(argv[3], portno);
 
+    int target_obstacle[2];
+    sscanf(argv[1], client_args_format,  &target_obstacle[0], &target_obstacle[1]);
     
-
     // Generate targets (only once) and send it to server
     makeTargs(); 
+    writeToLogFile(targetlogpath, "generated targets");
+    char logmessage[80];
+    sprintf(logmessage, "%f %f", target_pos[0], target_pos[1]);
+    writeToLogFile(targetlogpath,logmessage);
+
+    
+    my_write(target_obstacle[1],&target_pos,target_obstacle[0],sizeof(target_pos));
+    writeToLogFile(targetlogpath, "sent targets to obstacle");
+
+
     memcpy(data.target_pos, target_pos, sizeof(target_pos));
+
 
     // Writing the initial data to the server
     // if (write(sockfd, &target_pos, sizeof(target_pos)) < 0) 
@@ -107,83 +119,37 @@ int main(int argc, char* argv[]){
     // writeToLogFile(targetlogpath, "TARGET: Initial target_pos sent to server");
 
     while(1) {
-        // Writing the initial data to the server
-        // if (write(sockfd, &target_pos, sizeof(target_pos)) < 0) {
-        //     writeToLogFile(targetlogpath, "TARGET: Error writing to socket");
-        // }else{
-        //     writeToLogFile(targetlogpath, "TARGET: Initial target_pos sent to server");
-        // }
-
-        // char target_str[256]; // Adjust the size according to the maximum expected string length
-        // int offset = 0; // Offset to keep track of the current position in the target_str buffer
-
-        // // Convert each float to a string and concatenate them with spaces
-        // for (int i = 0; i < 20; ++i) {
-        //     offset += sprintf(target_str + offset, "%.2f ", target_pos[i]);
-        // }
-
-        // // Remove the trailing space
-        // if (offset > 0) {
-        //     target_str[offset - 1] = '\0';
-        // }
-
-        // char logMessage[256];
-        // snprintf(logMessage, sizeof(logMessage), "%.255s\n", target_str);
-
-        // writeToLogFile(targetlogpath,logMessage);
-
-                
-
-        
-        // int test[50];
-        // for (int i=0; i<10; i++){
-        //     test[i]= i;
-        // }
         int totalDigits = 0;
-
-        for (int i = 0; i < 20; i++) {
-            // Count the number of digits for each integer
+        for (int i = 0; i < NUM_TARGETS * 2; i++) {
+            // Count the number of digits for each float
             int numDigits = snprintf(NULL, 0, "%.2f", target_pos[i]);
             totalDigits += numDigits;
         }
-        totalDigits += 10; // Account for spaces and null terminator
+        totalDigits += (NUM_TARGETS * 2 - 1) * 2; // Account for spaces between numbers and the null terminator
+        totalDigits += 2; // Account for the leading 'T' and the null terminator
 
         // Create a string buffer
         char str[totalDigits];
 
-        // Convert the array elements to string and concatenate them
-        int offset = 0;
-        for (int i = 0; i < 10; i++) {
+        // Add 'T' as the first character in the string
+        str[0] = 'T';
+
+        // Convert the array elements to strings and concatenate them with spaces
+        int offset = 1;
+        for (int i = 0; i < NUM_TARGETS * 2; i++) {
             offset += snprintf(str + offset, totalDigits - offset, "%.2f ", target_pos[i]);
         }
 
         // Null terminate the string
         str[offset - 1] = '\0'; // Remove the extra space at the end
 
-
-        
-        // strcpy(test, "TARGET");
-        if (write(sockfd, str, sizeof(str)) < 0) 
+        // Write the string to the socket
+        if (write(sockfd, str, strlen(str) + 1) < 0) {
             error("ERROR writing to socket");
+        }
+        writeToLogFile(targetlogpath, "sent targets to server");
         sleep(10000);
 
-        // strcpy(test, "TARGET");
-        // if (write(sockfd, test, sizeof(test)) < 0) 
-        //     error("ERROR writing to socket");
-
-        // Receive updated drone position from server
-        // if (read(sockfd, &data, sizeof(data)) < 0) 
-        //     error("ERROR reading from socket");
-        // memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
-        // writeToLogFile(targetlogpath, "TARGET: drone_pos received from server");
-        
-        // target_update(drone_pos, target_pos); // Check if drone reached the target
-
-        // Copy updated target position to shared data and send it
-        // memcpy(data.target_pos, target_pos, sizeof(target_pos));
-        // if (write(sockfd, &data, sizeof(data)) < 0) 
-        //     error("ERROR writing to socket");
-        // writeToLogFile(targetlogpath, "TARGET: Updated target_pos sent to server");
     }
 
     // Clean up
