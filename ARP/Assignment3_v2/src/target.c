@@ -132,10 +132,10 @@ int main(int argc, char* argv[]){
         char str[totalDigits];
 
         // Add 'T' as the first character in the string
-        str[0] = 'T';
+        int set  = snprintf(str, totalDigits, "T[10] ");
 
         // Convert the array elements to strings and concatenate them with spaces
-        int offset = 1;
+        int offset = set;
         for (int i = 0; i < NUM_TARGETS * 2; i++) {
             offset += snprintf(str + offset, totalDigits - offset, "%.2f ", target_pos[i]);
         }
