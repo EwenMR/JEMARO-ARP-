@@ -226,54 +226,43 @@ int main(int argc, char *argv[])
                         FD_CLR(i, &read_fds);
                         printf("Connection closed\n");
                     } else { // Message received
-                        int header_size = 0;
-                        if (sscanf(buffer, "T[%d]", &header_size) == 1){
-                            char *complete = malloc(header_size +1);
-                            if (complete == NULL){
-                                perror("error allocating memory");
-                                exit(1);
-                            }
-                            strncpy(complete, buffer, bytes_read);
-                            int remaining = header_size - bytes_read;
-                            int total = bytes_read;
-                            while (remaining > 0){
-                                bytes_read = recv(i, complete + total, remaining, 0);
-                                if (bytes_read < 0){
-                                    perror("ERROR reading from socket");
-                                    exit(1);
-                                } else if (bytes_read == 0){
-                                    close(i);
-                                    FD_CLR(i, &read_fds);
-                                    printf("connection closed unexpectedly\n");
-                                    break;
-                                } else {
-                                    total += bytes_read;
-                                    remaining -= bytes_read;
-                                }
-                            }
-                            complete[header_size] = '\0';
-                            printf("complete message %s", complete);
+                        
+                        char *data_start =strchr(buffer, ']');
+                        if (data_start == NULL){
+                            perror("No ] found");
+                            continue;
+                        }
 
-                            char *data_start = strchr(complete, ']');
-                            if (data_start == NULL){
-                                printf("Invalid messga eformat: data start not found\n");
-                                free(complete);
-                                continue;
-                            }
-                            data_start++;
+                        data_start++;
+                        ssize_t length = strlen(data_start);
+                        
+                        char new_buffer[length +1];
+                        char process_char = buffer[0];
+                        strncpy(new_buffer, data_start, length);
+                        new_buffer[length] = '\0';
 
-                            char *token = strtok(buffer, " ");
-                            char new_buffer[80];
-                            strcpy(new_buffer, data_start);
-                            int index = 0;
-                            double received[NUM_OBSTACLES*2]; 
+                        char *token = strtok(buffer, " ");
+                        int index = 0;
 
-                            while (token != NULL && index < NUM_OBSTACLES*2) {
+                        double received[NUM_OBSTACLES*2];
+
+                        // Convert each token to a float and store it in target_pos array
+                        while (token != NULL && index < NUM_OBSTACLES*2) {
                             received[index] = atof(token);
                             token = strtok(NULL, " ");
                             index++;
+                        }
+
+                        // Code to check if data is sent from obstacle or target
+                        if (process_char == 'O'){
+                            sprintf(logMessage, "Obstacle position: %s\n",new_buffer);
+                            writeToLogFile(serverlogpath,logMessage);
+                            if ((sizeof(received))>0){
+                                // memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
+                                memcpy(data.obst_pos, received, sizeof(received));
+                                my_write(server_drone[1],&data,server_drone[0],sizeof(data));
                             }
-                            
+                        }else if(process_char == 'T'){
                             sprintf(logMessage, "target position: %s\n",new_buffer);
                             writeToLogFile(serverlogpath,logMessage);
                             if ((sizeof(received))>0){
@@ -281,64 +270,20 @@ int main(int argc, char *argv[])
 
                                 memcpy(data.target_pos, received, sizeof(received));
                                 my_write(server_drone[1],&data,server_drone[0],sizeof(data));
-
-                            free(complete);
+                            }
+                        }else{
+                            perror("Client send the data in wrong format\n");
                         }
 
-
-
-
-
-
-                        // buffer[bytes_read] = '\0';
-                        
-                        // char new_buffer[80];
-                        // char process_char = buffer[0];
-                        // strcpy(new_buffer, buffer+1);
-
-                        // char *token = strtok(buffer, " ");
-                        // int index = 0;
-
-                        // double received[NUM_OBSTACLES*2];
-
-                        // // Convert each token to a float and store it in target_pos array
-                        // while (token != NULL && index < NUM_OBSTACLES*2) {
-                        //     received[index] = atof(token);
-                        //     token = strtok(NULL, " ");
-                        //     index++;
-                        // }
-
-                        // // Code to check if data is sent from obstacle or target
-                        // if (process_char == 'O'){
-                        //     sprintf(logMessage, "Obstacle position: %s\n",new_buffer);
-                        //     writeToLogFile(serverlogpath,logMessage);
-                        //     if ((sizeof(received))>0){
-                        //         // memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
-                        //         memcpy(data.obst_pos, received, sizeof(received));
-                        //         my_write(server_drone[1],&data,server_drone[0],sizeof(data));
-                        //     }
-                        // }else if(process_char == 'T'){
-                        //     sprintf(logMessage, "target position: %s\n",new_buffer);
-                        //     writeToLogFile(serverlogpath,logMessage);
-                        //     if ((sizeof(received))>0){
-                        //         // memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
-
-                        //         memcpy(data.target_pos, received, sizeof(received));
-                        //         my_write(server_drone[1],&data,server_drone[0],sizeof(data));
-                        //     }
-                        // }else{
-                        //     perror("Client send the data in wrong format\n");
-                        // }
-
-                        // change string to list
-                        // store it in target_pos
+                    //     // change string to list
+                    //     // store it in target_pos
 
                         
                         
                         
                         
-                        // printf("Message received: %s\n", buffer);
-                    }
+                    //     // printf("Message received: %s\n", buffer);
+                    // }
                 }
             }
             // writeToLogFile(serverlogpath, "NO FD_ISSET\n");
@@ -426,4 +371,5 @@ int main(int argc, char *argv[])
 
     return 0; 
 } 
-}
+        
+    
