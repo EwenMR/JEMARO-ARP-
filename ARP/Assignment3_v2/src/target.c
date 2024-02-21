@@ -59,6 +59,38 @@ void makeTargs(){
     }
 }
 
+char *change_targ_str(){
+    int totalDigits = 0;
+    for (int i = 0; i < NUM_TARGETS * 2; i++) {
+        // Count the number of digits for each float
+        int numDigits = snprintf(NULL, 0, "%.2f", target_pos[i]);
+        totalDigits += numDigits;
+    }
+    totalDigits += (NUM_TARGETS * 2 - 1) * 2; // Account for spaces between numbers and the null terminator
+    totalDigits += 2; // Account for the leading 'T' and the null terminator
+
+    // Create a string buffer
+    char* str = (char*)malloc((totalDigits + 1) * sizeof(char)); // +1 for null terminator
+    if (str == NULL) {
+        // Handle memory allocation failure
+        return NULL;
+    }
+
+    // Add 'T' as the first character in the string
+    str[0] = 'T';
+
+    // Convert the array elements to strings and concatenate them with spaces
+    int offset = 1;
+    for (int i = 0; i < NUM_TARGETS * 2; i++) {
+        offset += snprintf(str + offset, totalDigits - offset, "%.2f ", target_pos[i]);
+    }
+
+    // Null terminate the string
+    str[offset - 1] = '\0'; // Remove the extra space at the end
+    writeToLogFile(targetlogpath, str);
+    return str;
+}
+
 
 void setupSocketConnection(char *hostname, int portno) {
     struct sockaddr_in serv_addr;
@@ -84,6 +116,28 @@ void setupSocketConnection(char *hostname, int portno) {
 }
 
 
+void target(int *target_obstacle){
+    // Generate targets (only once) and send it to server
+    makeTargs(); 
+    writeToLogFile(targetlogpath, "generated targets");
+    char logmessage[80];
+    sprintf(logmessage, "%f %f", target_pos[0], target_pos[1]);
+    writeToLogFile(targetlogpath,logmessage);
+
+    
+    my_write(target_obstacle[1],&target_pos,target_obstacle[0],sizeof(target_pos));
+    writeToLogFile(targetlogpath, "sent targets to obstacle");
+    // memcpy(data.target_pos, target_pos, sizeof(target_pos));
+
+
+    char *str = change_targ_str();
+    if (write(sockfd, str, strlen(str) + 1) < 0) {
+        error("ERROR writing to socket");
+    }
+    writeToLogFile(targetlogpath, "sent targets to server");
+
+}
+
 int main(int argc, char* argv[]){
     clearLogFile(targetlogpath);
 
@@ -98,57 +152,20 @@ int main(int argc, char* argv[]){
     int target_obstacle[2];
     sscanf(argv[1], client_args_format,  &target_obstacle[0], &target_obstacle[1]);
     
-    // Generate targets (only once) and send it to server
-    makeTargs(); 
-    writeToLogFile(targetlogpath, "generated targets");
-    char logmessage[80];
-    sprintf(logmessage, "%f %f", target_pos[0], target_pos[1]);
-    writeToLogFile(targetlogpath,logmessage);
 
+    char TI[2];
+    TI[0] = 'T';
+    TI[1] = 'I';
+    if (write(sockfd, TI, strlen(TI)) < 0) {
+        error("ERROR writing to socket");
+    }
     
-    my_write(target_obstacle[1],&target_pos,target_obstacle[0],sizeof(target_pos));
-    writeToLogFile(targetlogpath, "sent targets to obstacle");
+    target(target_obstacle);
 
-
-    memcpy(data.target_pos, target_pos, sizeof(target_pos));
-
-
-    // Writing the initial data to the server
-    // if (write(sockfd, &target_pos, sizeof(target_pos)) < 0) 
-    //     error("ERROR writing to socket");
-    // writeToLogFile(targetlogpath, "TARGET: Initial target_pos sent to server");
 
     while(1) {
-        int totalDigits = 0;
-        for (int i = 0; i < NUM_TARGETS * 2; i++) {
-            // Count the number of digits for each float
-            int numDigits = snprintf(NULL, 0, "%.2f", target_pos[i]);
-            totalDigits += numDigits;
-        }
-        totalDigits += (NUM_TARGETS * 2 - 1) * 2; // Account for spaces between numbers and the null terminator
-        totalDigits += 2; // Account for the leading 'T' and the null terminator
-
-        // Create a string buffer
-        char str[totalDigits];
-
-        // Add 'T' as the first character in the string
-        str[0] = 'T';
-
-        // Convert the array elements to strings and concatenate them with spaces
-        int offset = 1;
-        for (int i = 0; i < NUM_TARGETS * 2; i++) {
-            offset += snprintf(str + offset, totalDigits - offset, "%.2f ", target_pos[i]);
-        }
-
-        // Null terminate the string
-        str[offset - 1] = '\0'; // Remove the extra space at the end
-
-        // Write the string to the socket
-        if (write(sockfd, str, strlen(str) + 1) < 0) {
-            error("ERROR writing to socket");
-        }
-        writeToLogFile(targetlogpath, "sent targets to server");
-        sleep(10000);
+        
+        
 
     }
 

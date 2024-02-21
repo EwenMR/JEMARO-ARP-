@@ -129,35 +129,32 @@ int main(int argc, char *argv[])
     memcpy(data.command_force, command_force, sizeof(command_force));
 
     //SOCKETS ------------------------------------------------------------
-
     int sockfd, newsockfd, portno, clilen, pid;
     struct sockaddr_in serv_addr, cli_addr;
     fd_set read_fds;
     char buffer[80];
+    char new_buffer[80];
+    int index = 0;
+    double received[NUM_OBSTACLES*2];
     FD_ZERO(&read_fds);
 
-    
+    sockfd = socket(AF_INET, SOCK_STREAM, 0); // Initialize sockfd
+    writeToLogFile(serverlogpath, "SERVER: Created socket instance");
+    // Add sockfd to the read_fds set after it's initialized
+    FD_SET(sockfd, &read_fds); 
+    int flags = fcntl(sockfd, F_GETFL, 0); 
+
     if (argc < 2) {
         fprintf(stderr,"ERROR, no port provided\n");
         exit(1);
     }
-
-    sockfd = socket(AF_INET, SOCK_STREAM, 0); // Initialize sockfd
-    writeToLogFile(serverlogpath, "SERVER: Created socket instance");
-
     if (sockfd < 0) {
         perror("ERROR opening socket");
         exit(1);
     }
-
-    // Add sockfd to the read_fds set after it's initialized
-    FD_SET(sockfd, &read_fds);  
-
-    int flags = fcntl(sockfd, F_GETFL, 0);
     if (flags == -1) {
         perror("Failed to get socket flags");
     }
-
     if (fcntl(sockfd, F_SETFL, flags | O_NONBLOCK) == -1) {
         perror("Failed to set non-blocking mode");
     }
@@ -183,8 +180,6 @@ int main(int argc, char *argv[])
     
 
     while(1){
-
-        /// TRYING TO TROUBLESHOOT RIGHT HERE
         struct timeval timeout;
         timeout.tv_sec = 5;  // Wait for 5 seconds
         timeout.tv_usec = 0;
@@ -194,8 +189,6 @@ int main(int argc, char *argv[])
             perror("ERROR in select");
             exit(1);
         }
-
-        // UNTIL HERE
 
         // COMMUNICATION WITH CLIENT ---------------------------------------
         for (int i = 0; i < FD_SETSIZE; ++i) {
@@ -217,63 +210,87 @@ int main(int argc, char *argv[])
 
                 } else {  // Existing client
                     writeToLogFile(serverlogpath, "Connected to client\n");
-                    int bytes_read = read(i, buffer, sizeof(buffer) - 1);
-                    if (bytes_read < 0) {
-                        perror("ERROR reading from socket");
-                        exit(1);
-                    } else if (bytes_read == 0) { // Connection closed
-                        close(i);
-                        FD_CLR(i, &read_fds);
-                        printf("Connection closed\n");
-                    } else { // Message received
-                        buffer[bytes_read] = '\0';
-                        
-                        char new_buffer[80];
-                        char process_char = buffer[0];
-                        strcpy(new_buffer, buffer+1);
 
-                        char *token = strtok(buffer, " ");
-                        int index = 0;
 
-                        double received[NUM_OBSTACLES*2];
-
-                        // Convert each token to a float and store it in target_pos array
-                        while (token != NULL && index < NUM_OBSTACLES*2) {
-                            received[index] = atof(token);
-                            token = strtok(NULL, " ");
-                            index++;
-                        }
-
-                        // Code to check if data is sent from obstacle or target
-                        if (process_char == 'O'){
-                            sprintf(logMessage, "Obstacle position: %s\n",new_buffer);
-                            writeToLogFile(serverlogpath,logMessage);
-                            if ((sizeof(received))>0){
-                                // memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
-                                memcpy(data.obst_pos, received, sizeof(received));
-                                my_write(server_drone[1],&data,server_drone[0],sizeof(data));
-                            }
-                        }else if(process_char == 'T'){
-                            sprintf(logMessage, "target position: %s\n",new_buffer);
-                            writeToLogFile(serverlogpath,logMessage);
-                            if ((sizeof(received))>0){
-                                // memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
-
-                                memcpy(data.target_pos, received, sizeof(received));
-                                my_write(server_drone[1],&data,server_drone[0],sizeof(data));
-                            }
+                    int bytes_received = recv(sockfd, buffer, sizeof(buffer), 0);
+                    if (bytes_received > 0) {
+                        buffer[bytes_received] = '\0'; // Null-terminate the received data
+                        // Process received data
+                        float received_targets[NUM_TARGETS * 2];
+                        char temp;
+                        int num_matched = sscanf(buffer, "%c%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f",
+                                                &temp,&received_targets[0], &received_targets[1], &received_targets[2], &received_targets[3],
+                                                &received_targets[4], &received_targets[5], &received_targets[6], &received_targets[7],
+                                                &received_targets[8], &received_targets[9], &received_targets[10], &received_targets[11],
+                                                &received_targets[12], &received_targets[13], &received_targets[14], &received_targets[15],
+                                                &received_targets[16], &received_targets[17], &received_targets[18], &received_targets[19]);
+                        // num_matched should be equal to NUM_TARGETS * 2 if all floats were successfully read
+                        if (num_matched != NUM_TARGETS * 2) {
+                            // Handle error in parsing received data
                         }else{
-                            perror("Client send the data in wrong format\n");
+                            for(int i=0; i<NUM_TARGETS*2;i++){
+                                printf("%f ",received_targets[i]);
+                            }
+                            
                         }
+                        
 
-                        // change string to list
-                        // store it in target_pos
 
-                        
-                        
-                        
-                        
-                        // printf("Message received: %s\n", buffer);
+
+                    // int bytes_read = read(i, buffer, sizeof(buffer) - 1);
+                    // if (bytes_read < 0) {
+                    //     perror("ERROR reading from socket");
+                    //     exit(1);
+                    // } else if (bytes_read == 0) { // Connection closed
+                    //     close(i);
+                    //     FD_CLR(i, &read_fds);
+                    //     printf("Connection closed\n");
+                    // } else { // Message received
+                    //     buffer[bytes_read] = '\0';
+                    //     // char temp_buff[bytes_read];
+                    //     // for (int i=0;i<bytes_read;i++){
+                    //     //     temp_buff[i]=buffer[i];
+                    //     // }
+                    //     writeToLogFile(serverlogpath,buffer);
+
+                    //     if(buffer[1] != 'I'){ // THIS IS TO MAKE SURE WHEN TI IS SENT, IT DOESNT TRY TO CONVERT THE I INTO DOUBLE
+                    //         strcpy(new_buffer, buffer+1);
+                    //         char *token = strtok(new_buffer, " ");
+                    //         // Convert each token to a float and store it in target_pos array
+                    //         while (token != NULL && index < NUM_OBSTACLES*2) {
+                    //             received[index] = atof(token);
+                    //             token = strtok(NULL, " ");
+                    //             index++;
+                    //         }
+                    //     }
+                    //     if (buffer[0] == 'O' && buffer[1]=='I'){//If "OI" is sent
+                    //         writeToLogFile(serverlogpath, "GOT OI");
+                    //         //     //send back OI
+                    //         //     // send window size
+
+                    //     }else if (buffer[0] == 'O'){ // If obstacle positions are sent
+                    //         sprintf(logMessage, "Obstacle position: %s\n",new_buffer);
+                    //         writeToLogFile(serverlogpath,logMessage);
+                    //         if ((sizeof(received))>0){
+                    //             memcpy(data.obst_pos, received, sizeof(received));
+                    //             my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+                    //         }
+
+                    //     }else if(buffer[0] == 'T' && buffer[1]=='I'){ //If "TI" is sent
+                    //          writeToLogFile(serverlogpath, "GOT TI");
+                    //         //     //Send back TI
+                    //         //     // send window size
+
+                    //     }else if(buffer[0] == 'T'){ //If target positions are sent
+                    //         sprintf(logMessage, "target position: %s\n",new_buffer);
+                    //         writeToLogFile(serverlogpath,logMessage);
+                    //         if ((sizeof(received))>0){
+                    //             memcpy(data.target_pos, received, sizeof(received));
+                    //             my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+                    //         }
+                    //     }else{
+                    //         perror("Client send the data in wrong format\n");
+                    //     }
                     }
                 }
             }
@@ -292,10 +309,6 @@ int main(int argc, char *argv[])
             // Echo
             // Send back the window size
 
-            // Receive target 
-            // Receive Obstacle
-            // Store it as local variables
-            // send it to the necessary processes
             // exit(0);
             //---------------------------------------------------------------------
         }

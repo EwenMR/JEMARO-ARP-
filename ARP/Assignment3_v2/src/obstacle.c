@@ -106,14 +106,18 @@ int main(int argc, char* argv[]){
     int target_obstacle[2];
     sscanf(argv[1], client_args_format,  &target_obstacle[0], &target_obstacle[1]);
     writeToLogFile(obstaclelogpath, "got pipes");
-    sleep(2);
     my_read(target_obstacle[0],&target_pos,target_obstacle[1],sizeof(target_pos));
 
     char logmessage[80];
     sprintf(logmessage, "%f %f", target_pos[0], target_pos[1]);
     writeToLogFile(obstaclelogpath,logmessage);
 
-    writeToLogFile(obstaclelogpath, "received targets");
+    char OI[2];
+    OI[0] = 'O';
+    OI[1] = 'I';
+    if (write(sockfd, OI, strlen(OI) + 1) < 0) {
+        error("ERROR writing to socket");
+    }
 
 
     struct shared_data data; // Ensure this struct is defined to match the expected data format for both sending and receiving
@@ -170,6 +174,7 @@ int main(int argc, char* argv[]){
 
         // Null terminate the string
         str[offset - 1] = '\0'; // Remove the extra space at the end
+        writeToLogFile(obstaclelogpath, str);
 
         // Write the string to the socket
         if (write(sockfd, str, strlen(str) + 1) < 0) {
@@ -182,18 +187,7 @@ int main(int argc, char* argv[]){
 
 
 
-
-        // // Send data to server
-        // // if (write(sockfd, &data, sizeof(data)) < 0) 
-        // char test[50];
-        // strcpy(test, "OBSTACLE");
-        // if (write(sockfd, test, sizeof(test)) < 0) 
-        //     error("ERROR writing to socket");
-
-        // Optionally read a response or acknowledgement from the server
-        // if (read(sockfd, &data, sizeof(data)) < 0) 
-        //     error("ERROR reading from socket");
-        sleep(10);
+        sleep(3);
         usleep(50000); // Control the frequency of updates
     }
 

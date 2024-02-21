@@ -1,10 +1,4 @@
-[2024-02-20 17:36:28] PID = 85605
+[2024-02-21 18:09:17] PID = 109961
 
-[2024-02-20 17:36:28] DRONE: Initial drone_pos sent to server
-[2024-02-20 17:36:31] DRONE: Command_force received from server
-[2024-02-20 17:36:31] DRONE: Drone_pos sent to server
-[2024-02-20 17:36:33] DRONE: Command_force received from server
-[2024-02-20 17:36:33] DRONE: Drone_pos sent to server
-[2024-02-20 17:36:43] DRONE: Command_force received from server
-[2024-02-20 17:36:43] DRONE: Drone_pos sent to server
-[2024-02-20 17:36:56] killed
+[2024-02-21 18:09:17] DRONE: Initial drone_pos sent to server
+[2024-02-21 18:09:35] killed
