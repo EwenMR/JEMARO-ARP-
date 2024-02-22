@@ -22,8 +22,8 @@
 // VARIABLES
 struct shared_data data;
 int xy[2]; // xy = force direction of x,y as such -> [0,1]
-double drone_pos[6]={BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2};
-double obst_pos[NUM_OBSTACLES*2], target_pos[NUM_TARGETS*2];
+float drone_pos[6]={BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2,BOARD_SIZE/2};
+float obst_pos[NUM_OBSTACLES*2], target_pos[NUM_TARGETS*2];
 char logMessage[100]; 
 
 
@@ -41,15 +41,15 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
 }
 
 // Calculate the angle at which the drone is coming at the obstacle
-double calculateAngle(double x1, double y1, double x2, double y2) {
-    double angleRadians = atan2(y2 - y1, x2 - x1);
+float calculateAngle(float x1, float y1, float x2, float y2) {
+    float angleRadians = atan2(y2 - y1, x2 - x1);
     return angleRadians;
 }
 
 
 // Calculate the drone position using the force
-double calc_drone_pos(double force,double x1,double x2){
-    double x;
+float calc_drone_pos(float force,float x1,float x2){
+    float x;
     x= (force*T*T-M*x2+2*M*x1+K*T*x1)/(M+K*T); //Eulers method
 
     // Dont let it go outside of the window
@@ -63,7 +63,7 @@ double calc_drone_pos(double force,double x1,double x2){
 }
 
 // This is to stop the drone, will be used to stop the drone position from being updated if stationary
-double stop(double *drone_pos){
+float stop(float *drone_pos){
     for(int i=0; i<4; i++){
         drone_pos[i]=drone_pos[i+2];}
     return *drone_pos;
@@ -71,18 +71,18 @@ double stop(double *drone_pos){
 
 
 // Calculate repulsive force associated with the obstacles and the walls
-double *calc_repulsive(double* obstacle_pos, double* drone_pos, int* xy){
-    double sumx=0,sumy=0;
+float *calc_repulsive(float* obstacle_pos, float* drone_pos, int* xy){
+    float sumx=0,sumy=0;
     
     // Repulsive force for the obstacles
     for(int i = 0; i < NUM_OBSTACLES; i++){
-        double p_q = sqrt(pow(obstacle_pos[2*i] - drone_pos[4], 2) + pow(obstacle_pos[2*i+1] - drone_pos[5],2));
-        double p_wall[] = {drone_pos[4], drone_pos[5], BOARD_SIZE-drone_pos[4], BOARD_SIZE-drone_pos[5]};
+        float p_q = sqrt(pow(obstacle_pos[2*i] - drone_pos[4], 2) + pow(obstacle_pos[2*i+1] - drone_pos[5],2));
+        float p_wall[] = {drone_pos[4], drone_pos[5], BOARD_SIZE-drone_pos[4], BOARD_SIZE-drone_pos[5]};
         if(p_q <= p){
             sprintf(logMessage, "OBSTACLE x: %f, OBSTACLE y: %f, DRONE x: %f, DRONE y: %f,", obst_pos[i*2], obst_pos[i*2+1], drone_pos[4],drone_pos[5]);
             writeToLogFile(dronelogpath, logMessage);
 
-            double angle= calculateAngle(drone_pos[4],drone_pos[5],obstacle_pos[i*2],obstacle_pos[i*2+1]);
+            float angle= calculateAngle(drone_pos[4],drone_pos[5],obstacle_pos[i*2],obstacle_pos[i*2+1]);
             if(obstacle_pos[2*i]>drone_pos[4] && xy[0]>0){
                 sumx -= pow((1/p_q)-(1/p), 2)*cos(angle);
             }else if(obstacle_pos[2*i]<drone_pos[4] && xy[0]<0){
@@ -106,13 +106,13 @@ double *calc_repulsive(double* obstacle_pos, double* drone_pos, int* xy){
         }
 
     }
-    double* rep = (double*)malloc(2 * sizeof(double));
+    float* rep = (float*)malloc(2 * sizeof(float));
     if (rep == NULL) {
         // Handle memory allocation failure
         exit(EXIT_FAILURE); // Or handle it in a way that suits your program
     }
 
-    // double result[2];
+    // float result[2];
     rep[0] = -0.5 * n * sumx;
     rep[1] = -0.5 * n * sumy;
     sprintf(logMessage, "REP x: %f, REP y: %f, Sumx: %f, Sumy: %f", rep[0], rep[1], sumx, sumy);
@@ -122,9 +122,9 @@ double *calc_repulsive(double* obstacle_pos, double* drone_pos, int* xy){
 
 
 // Get the new drone_pos using calc_function and store the previous drone_poss
-void update_pos(double* drone_pos,double* obstacle_pos, int* xy){
-    double new_posx,new_posy;
-    double repx,repy,attx,atty;
+void update_pos(float* drone_pos,float* obstacle_pos, int* xy){
+    float new_posx,new_posy;
+    float repx,repy,attx,atty;
     repx = calc_repulsive(obstacle_pos, drone_pos,xy)[0];
     repy = calc_repulsive(obstacle_pos, drone_pos,xy)[1];
     // attx = calc_attractive(target_pos, drone_pos,xy)[0];
@@ -198,8 +198,11 @@ int main(int argc, char *argv[]) {
 
 
     while (1) {
-        // 3 Receive command force
+        // 3 Receive command force or target position, or obstacle position
         my_read(server_drone[0], &data, drone_server[1], sizeof(data));
+        sprintf(logMessage, "%f %f", data.target_pos[0],data.target_pos[1]);
+        writeToLogFile(dronelogpath,logMessage);
+        
         memcpy(xy, data.command_force, sizeof(data.command_force));
         memcpy(obst_pos, data.obst_pos, sizeof(data.obst_pos));
         writeToLogFile(dronelogpath, "DRONE: Command_force received from server");

@@ -19,21 +19,21 @@
 #include "../include/utility.c"
 
 
-double drone_pos[6], obstacle_pos[NUM_OBSTACLES*2],target_pos[NUM_TARGETS*2];
+float drone_pos[6], obstacle_pos[NUM_OBSTACLES*2],target_pos[NUM_TARGETS*2];
 int sockfd;
 
 void makeObs() {
     for (int i = 0; i < NUM_OBSTACLES*2; i+=2) {
         // generating obstacle coordinates
-        obstacle_pos[i]   = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
-        obstacle_pos[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
+        obstacle_pos[i]   = rand() % BOARD_SIZE;  // Random value between 0 and 100
+        obstacle_pos[i+1] = rand() % BOARD_SIZE;  // Random value between 0 and 100
 
         for(int j=0; j<NUM_TARGETS*2; j+=2){
             while (obstacle_pos[i]   >= target_pos[j] - OBS_THRESH   && obstacle_pos[i]   <= target_pos[j] + OBS_THRESH && 
                    obstacle_pos[i+1] >= target_pos[j+1] - OBS_THRESH && obstacle_pos[i+1] <= target_pos[j+1] + OBS_THRESH) {
                 // Regenerate obstacle-coordinate
-                obstacle_pos[i]   = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
-                obstacle_pos[i+1] = ((double)rand() / RAND_MAX) * BOARD_SIZE;  // Random value between 0 and 100
+                obstacle_pos[i]   = rand()%BOARD_SIZE;  // Random value between 0 and 100
+                obstacle_pos[i+1] = rand()%BOARD_SIZE;  // Random value between 0 and 100
             }
         }
     }
@@ -108,13 +108,12 @@ int main(int argc, char* argv[]){
     writeToLogFile(obstaclelogpath, "got pipes");
     my_read(target_obstacle[0],&target_pos,target_obstacle[1],sizeof(target_pos));
 
+
     char logmessage[80];
     sprintf(logmessage, "%f %f", target_pos[0], target_pos[1]);
     writeToLogFile(obstaclelogpath,logmessage);
 
-    char OI[2];
-    OI[0] = 'O';
-    OI[1] = 'I';
+    char OI[]="OI";
     if (write(sockfd, OI, strlen(OI) + 1) < 0) {
         error("ERROR writing to socket");
     }
@@ -147,47 +146,67 @@ int main(int argc, char* argv[]){
         // Assuming data.obst_pos and other necessary fields are properly declared in shared_data
         memcpy(data.obst_pos, obstacle_pos, sizeof(obstacle_pos));
 
+        char obstacle_msg[MSG_LEN];
+        sprintf(obstacle_msg, "O[%d] ", NUM_OBSTACLES*2);
+
+        for (int i = 0; i < NUM_OBSTACLES*2; ++i) {
+            // Append obstacle information to obstacle_msg
+            sprintf(obstacle_msg + strlen(obstacle_msg), "%.3f,%.3f", 
+            (float)target_pos[2*i], (float)target_pos[2*i+1]);
+
+            // Add a separator if there are more obstacles
+            if (i < NUM_OBSTACLES*2 - 1) {
+                sprintf(obstacle_msg + strlen(obstacle_msg), "|");
+            }
+        }
+        // Write the string to the socket
+        if (write(sockfd, obstacle_msg, strlen(obstacle_msg) + 1) < 0) {
+            writeToLogFile(obstaclelogpath,"ERROR writing to socket");
+        }else{
+            writeToLogFile(obstaclelogpath, obstacle_msg);
+        }
+        
         
 
 
-        //-------------------------------------------------------------------------
-        int totalDigits = 0;
-        for (int i = 0; i < NUM_OBSTACLES * 2; i++) {
-            // Count the number of digits for each float
-            int numDigits = snprintf(NULL, 0, "%.2f", obstacle_pos[i]);
-            totalDigits += numDigits;
-        }
-        totalDigits += (NUM_OBSTACLES * 2 - 1) * 2; // Account for spaces between numbers and the null terminator
-        totalDigits += 2; // Account for the leading 'T' and the null terminator
+        // //-------------------------------------------------------------------------
+        // int totalDigits = 0;
+        // for (int i = 0; i < NUM_OBSTACLES * 2; i++) {
+        //     // Count the number of digits for each float
+        //     int numDigits = snprintf(NULL, 0, "%.2f", obstacle_pos[i]);
+        //     totalDigits += numDigits;
+        // }
+        // totalDigits += (NUM_OBSTACLES * 2 - 1) * 2; // Account for spaces between numbers and the null terminator
+        // totalDigits += 2; // Account for the leading 'T' and the null terminator
 
-        // Create a string buffer
-        char str[totalDigits];
+        // // Create a string buffer
+        // char str[totalDigits];
 
-        // Add 'T' as the first character in the string
-        str[0] = 'O';
+        // // Add 'T' as the first character in the string
+        // str[0] = 'O';
 
-        // Convert the array elements to strings and concatenate them with spaces
-        int offset = 1;
-        for (int i = 0; i < NUM_OBSTACLES * 2; i++) {
-            offset += snprintf(str + offset, totalDigits - offset, "%.2f ", obstacle_pos[i]);
-        }
+        // // Convert the array elements to strings and concatenate them with spaces
+        // int offset = 1;
+        // for (int i = 0; i < NUM_OBSTACLES * 2; i++) {
+        //     offset += snprintf(str + offset, totalDigits - offset, "%.2f ", obstacle_pos[i]);
+        // }
 
-        // Null terminate the string
-        str[offset - 1] = '\0'; // Remove the extra space at the end
-        writeToLogFile(obstaclelogpath, str);
+        // // Null terminate the string
+        // str[offset - 1] = '\0'; // Remove the extra space at the end
+        // writeToLogFile(obstaclelogpath, str);
 
-        // Write the string to the socket
-        if (write(sockfd, str, strlen(str) + 1) < 0) {
-            error("ERROR writing to socket");
-        }
-        writeToLogFile(obstaclelogpath, "sent obstacles to server");
+        // // Write the string to the socket
+        // if (write(sockfd, str, strlen(str) + 1) < 0) {
+        //     error("ERROR writing to socket");
+        // }
+        // writeToLogFile(obstaclelogpath, "sent obstacles to server");
         //---------------------------------------------------------------------
 
 
 
 
 
-        sleep(3);
+        sleep(5);
         usleep(50000); // Control the frequency of updates
     }
 

@@ -24,6 +24,7 @@
 #define NUM_PROCESSES 5
 #define NUM_OBSTACLES 10
 #define NUM_TARGETS 10
+#define MSG_LEN 1024
 
 #define WINDOW_COL 0.99
 #define SCORE_WINDOW_ROW 0.20
@@ -40,9 +41,9 @@
 #define PORTNO 8080
 
 struct shared_data{
-    double drone_pos[6]; // Array to store the position of drone
-    double obst_pos[NUM_OBSTACLES*2];
-    double target_pos[NUM_TARGETS*2];
+    float drone_pos[6]; // Array to store the position of drone
+    float obst_pos[NUM_OBSTACLES*2];
+    float target_pos[NUM_TARGETS*2];
     int key;
     int command_force[2];
 };

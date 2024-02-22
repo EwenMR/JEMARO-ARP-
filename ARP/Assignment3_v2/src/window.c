@@ -120,9 +120,9 @@ int main(int argc, char* argv[]) {
 
     // Local variables
     struct shared_data data;
-    double drone_pos[6]; //position of the drone (t-2,t-1,t)
-    double target_pos[NUM_TARGETS*2];
-    double obstacle_pos[NUM_OBSTACLES*2];
+    float drone_pos[6]; //position of the drone (t-2,t-1,t)
+    float target_pos[NUM_TARGETS*2];
+    float obstacle_pos[NUM_OBSTACLES*2];
     int key;
     int first=0;
     
