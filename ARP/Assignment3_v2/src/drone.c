@@ -121,6 +121,8 @@ float *calc_repulsive(float* obstacle_pos, float* drone_pos, int* xy){
 }
 
 
+
+
 // Get the new drone_pos using calc_function and store the previous drone_poss
 void update_pos(float* drone_pos,float* obstacle_pos, int* xy){
     float new_posx,new_posy;
@@ -159,6 +161,30 @@ void update_pos(float* drone_pos,float* obstacle_pos, int* xy){
 }
 
 
+void target_update(float *drone_pos, float *target_pos) {
+    int j=0;
+    for (int i = 0; i < NUM_TARGETS * 2; i += 2) {
+        if(target_pos[i]==0 &&target_pos[i+1]==0){ // Only check the targets that are not 0,0
+        }else{
+            j=i;
+            break;
+        }
+    }
+    
+    // Check if the first target (out of the unreached targets) is reached
+    if ((fabs(drone_pos[4] - target_pos[j]) < POSITION_THRESHOLD &&
+        fabs(drone_pos[5] - target_pos[j + 1]) < POSITION_THRESHOLD) ||
+        (fabs(drone_pos[2] - target_pos[j]) < POSITION_THRESHOLD &&
+        fabs(drone_pos[3] - target_pos[j + 1]) < POSITION_THRESHOLD)) {
+
+        // Reached targets will be 0,0
+        target_pos[j] = 0;
+        target_pos[j+1] = 0;
+
+        
+    }
+}
+
 
 
 int main(int argc, char *argv[]) {
@@ -192,53 +218,15 @@ int main(int argc, char *argv[]) {
 
 
     // Send initial drone position to other processes
-    for (int i=0; i< NUM_TARGETS*2; i+=2){
-        target_pos[i]   = rand() % BOARD_SIZE;
-        target_pos[i+1] = rand() % BOARD_SIZE;
-
-    }
     memcpy(data.drone_pos,drone_pos, sizeof(drone_pos));
-    memcpy(data.target_pos,target_pos, sizeof(target_pos));
     my_write(drone_server[1],&data, server_drone[0],sizeof(data));
     writeToLogFile(dronelogpath, "DRONE: Initial drone_pos sent to server");
 
     char rec_msg[MAX_MSG_LEN];
     while (1) {
-        // my_read(server_drone[0], &rec_msg, drone_server[1], sizeof(rec_msg));
-        // writeToLogFile(serverlogpath,rec_msg);
-        // // Send to interface.c
-        // int totalObstacles,totalTargets;
-        // int index = 0;
-        // if(rec_msg[0]=="O"){
-        //     sscanf(rec_msg, "O[%d]", &totalObstacles);
-        //     char *token = strtok(rec_msg + 5, "|");
-        //     while (token != NULL && index < totalObstacles*2) {
-        //         sscanf(token, "%f,%f", &data.obst_pos[index*2], &data.obst_pos[index*2+1]);
-        //         token = strtok(NULL, "|");
-        //         index++;
-        //     }
-        // }else if(rec_msg[0]=="T"){
-        //     sscanf(rec_msg, "T[%d]", &totalTargets);
-        //     char *token = strtok(rec_msg + 5, "|");
-        //     while (token != NULL && index < totalTargets*2) {
-        //         sscanf(token, "%f,%f", &data.target_pos[index*2], &data.target_pos[index*2+1]);
-        //         token = strtok(NULL, "|");
-        //         index++;
-        //     }
-        // }
-        
-
-        
-        // // memcpy(data.obst_pos, temp_pos, sizeof(temp_pos));
-        // my_write(server_drone[1],&data,server_drone[0],sizeof(data));
-        // fflush(stdout);
-
-
-
-
-
         // 3 Receive command force or target position, or obstacle position
         my_read(server_drone[0], &data, drone_server[1], sizeof(data));
+        memcpy(target_pos,data.target_pos,sizeof(data.target_pos));
         sprintf(logMessage, "T:%f %f O:%f %f", data.target_pos[0],data.target_pos[1],data.obst_pos[0],data.obst_pos[1]);
         writeToLogFile(dronelogpath,logMessage);
         
@@ -254,6 +242,13 @@ int main(int argc, char *argv[]) {
 
         // Send updated drone_pos to window and target
         memcpy(data.drone_pos, drone_pos, sizeof(drone_pos));
+        target_update(drone_pos,target_pos);
+        memcpy(data.target_pos,target_pos,sizeof(target_pos));
+        sprintf(logMessage, "Drone pos:%f %f %f %f", data.drone_pos[0],data.drone_pos[1],data.drone_pos[2],data.drone_pos[3]);
+        writeToLogFile(dronelogpath,logMessage);
+        sprintf(logMessage, "T:%f %f %f %f", data.target_pos[0],data.target_pos[1],data.target_pos[2],data.target_pos[3]);
+        writeToLogFile(dronelogpath,logMessage);
+
         my_write(drone_server[1], &data, server_drone[0],sizeof(data));
         writeToLogFile(dronelogpath, "DRONE: Drone_pos sent to server");
     }

@@ -231,6 +231,8 @@ int main(int argc, char *argv[])
                         writeToLogFile(serverlogpath, "Drone: New drone_pos received from drone");
                         memcpy(drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
                         memcpy(data.drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
+                        memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
+                        memcpy(data.target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
                         my_write(server_window[1],&data,server_window[0],sizeof(data)); 
                         break;
 

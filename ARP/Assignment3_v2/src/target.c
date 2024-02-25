@@ -24,6 +24,7 @@ struct shared_data data;
 int sockfd;
 char logmessage[MSG_LEN];
 char target_msg[MSG_LEN];
+float window_x, window_y;
 
 void error(char *msg) {
     perror(msg);
@@ -31,18 +32,18 @@ void error(char *msg) {
 }
 
 
-// Checks if target is reached
-void target_update(float *target_pos) {
-    int j=0;
-    for (int i = 0; i < NUM_TARGETS * 2; i += 2) {
-        if(target_pos[i]==0 &&target_pos[i+1]==0){ // Only check the targets that are not 0,0
-        }else{
-            j=i;
-            break;
-        }
-    }
+// // Checks if target is reached
+// void target_update(float *target_pos) {
+//     int j=0;
+//     for (int i = 0; i < NUM_TARGETS * 2; i += 2) {
+//         if(target_pos[i]==0 &&target_pos[i+1]==0){ // Only check the targets that are not 0,0
+//         }else{
+//             j=i;
+//             break;
+//         }
+//     }
 
-}
+// }
 
 
 // make the targets coordinates
@@ -53,16 +54,23 @@ void makeTargs(){
         target_pos[i+1] = rand() % BOARD_SIZE;
 
     }
-}
+    sprintf(target_msg, "T[%d] ", NUM_TARGETS*2);
 
-// char *change_targ_str(){
-//     char targ_str[NUM_TARGETS];
-//     int offset = sprintf(targ_str, "T[%d]", NUM_TARGETS);
-//     for (int i = 0; i < NUM_TARGETS; ++i) {
-//         offset += sprintf(targ_str + offset, "%.3f,%.3f", (float)target_pos[2*i], (float)target_pos[2*i+1]);
-//     }
-//     return *targ_str;
-// }
+    for (int i = 0; i < NUM_TARGETS; ++i) {
+        // Append obstacle information to target_msg
+        sprintf(target_msg + strlen(target_msg), "%.3f,%.3f", 
+        (float)target_pos[2*i], (float)target_pos[2*i+1]);
+
+        // Add a separator if there are more obstacles
+        if (i < NUM_TARGETS*2 - 1) {
+            sprintf(target_msg + strlen(target_msg), "|");
+        }
+        sprintf(logmessage, "%f %f",target_pos[2*i],target_pos[2*i+1]);
+        writeToLogFile(targetlogpath,logmessage);
+    }
+    writeToLogFile(targetlogpath,"SEND");
+    writeToLogFile(targetlogpath,target_msg);
+}
 
 
 void setupSocketConnection(char *hostname, int portno) {
@@ -129,57 +137,17 @@ int main(int argc, char* argv[]){
 
     
     
-    
-    
+    int ready;
+        int bytes_read, bytes_written;
+
+    write_then_wait_echo(sockfd,target_msg,strlen(target_msg));
 
     while(1) {
-        sprintf(target_msg, "T[%d] ", NUM_TARGETS*2);
-
-        for (int i = 0; i < NUM_TARGETS; ++i) {
-            // Append obstacle information to target_msg
-            sprintf(target_msg + strlen(target_msg), "%.3f,%.3f", 
-            (float)target_pos[2*i], (float)target_pos[2*i+1]);
-
-            // Add a separator if there are more obstacles
-            if (i < NUM_TARGETS*2 - 1) {
-                sprintf(target_msg + strlen(target_msg), "|");
-            }
-            sprintf(logmessage, "%f %f",target_pos[2*i],target_pos[2*i+1]);
-            writeToLogFile(targetlogpath,logmessage);
-        }
-        // Write the string to the socket
+        //NON? BLOCK READ
+        //IF GE, GENERATE
+        //IF STOP, STOP
+        //ELSE
         
-        // sprintf(logmessage,"%c, %c", target_msg[0],target_msg[1]);
-        // writeToLogFile(targetlogpath,logmessage);
-        // if (write(sockfd, target_msg, strlen(target_msg) + 1) < 0) {
-        //     error("ERROR writing to socket");
-        // }
-        // writeToLogFile(targetlogpath, target_msg);
-        // sleep(5);
-
-
-
-        int ready;
-        int bytes_read, bytes_written;
-        writeToLogFile(targetlogpath,"SEND");
-        writeToLogFile(targetlogpath,target_msg);
-        bytes_written = write(sockfd, target_msg, strlen(target_msg));
-        if (bytes_written < 0) {perror("ERROR writing to socket");}
-        printf("[SOCKET] Sent: %s\n", target_msg);
-
-        // Clear the buffer
-        bzero(target_msg, MSG_LEN);
-
-        while (target_msg[0] == '\0'){
-            // Data is available for reading, so read from the socket
-            bytes_read = read(sockfd, target_msg, bytes_written);
-            if (bytes_read < 0) {perror("ERROR reading from socket");} 
-            else if (bytes_read == 0) {printf("Connection closed!\n"); return 0;}
-        }
-        // Print the received message
-        // sprintf(logmessage,"[SOCKET] Echo received: %s\n", target_msg);
-        writeToLogFile(targetlogpath, "ECHO");
-        writeToLogFile(targetlogpath,target_msg);
         sleep(5);
     }
 

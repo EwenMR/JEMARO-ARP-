@@ -78,6 +78,8 @@ int calc_score(struct timeval start, struct timeval finish) {
 
 
 
+
+
 int main(int argc, char* argv[]) {
     // INITIALIZATION
     initscr();
@@ -178,6 +180,7 @@ int main(int argc, char* argv[]) {
         writeToLogFile(windowlogpath, "WINDOW: Drone_pos, Target_pos, Obst_pos received from server");
         sprintf(logMessage, "T:%f %f O:%f %f", data.target_pos[0],data.target_pos[1],data.obst_pos[0],data.obst_pos[1]);
         writeToLogFile(windowlogpath,logMessage);
+        
         if(target_pos[0]!=(float)(0) && target_pos[1]!=(float)(0)){
             started=true;
             writeToLogFile(windowlogpath,"STARTED");
@@ -217,7 +220,6 @@ int main(int argc, char* argv[]) {
         wrefresh(score);
         
         // If all targets are reached, Game finished
-        
         if(started == true){
             game_set = true;
         }
@@ -237,17 +239,6 @@ int main(int argc, char* argv[]) {
             sleep(2);
             exit(EXIT_SUCCESS);
         }
-        // if(target_pos[NUM_TARGETS*2-2]== 0 && target_pos[NUM_TARGETS*2-1]==0){ 
-        //     finish_time = current_time();
-        //     int your_score = calc_score(start_time, finish_time);
-
-        //     werase(win);
-        //     box(win, 0, 0);
-        //     mvwprintw(win, LINES/2, COLS/2, "SCORE IS %d", your_score);
-        //     wrefresh(win);
-        //     sleep(2);
-        //     exit(EXIT_SUCCESS);
-        // }
         
         // Send user input to keyboard manager
         key=wgetch(win); // wait for user input

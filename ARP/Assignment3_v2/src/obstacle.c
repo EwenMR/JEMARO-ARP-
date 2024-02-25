@@ -21,9 +21,10 @@
 
 float drone_pos[6], obstacle_pos[NUM_OBSTACLES*2],target_pos[NUM_TARGETS*2];
 int sockfd;
+float window_x, window_y;
 
 void makeObs() {
-    for (int i = 0; i < NUM_OBSTACLES; i+=2) {
+    for (int i = 0; i < NUM_OBSTACLES*2; i+=2) {
         // generating obstacle coordinates
         obstacle_pos[i]   = rand() % BOARD_SIZE;  // Random value between 0 and 100
         obstacle_pos[i+1] = rand() % BOARD_SIZE;  // Random value between 0 and 100
