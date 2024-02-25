@@ -40,105 +40,6 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
 }
 
 
-// Reads a message from the socket, with select() system call, then does an echo.
-int read_then_echo_unblocked(int sockfd, char socket_msg[]) {
-    int ready;
-    int bytes_read, bytes_written;
-    fd_set read_fds;
-    struct timeval timeout;
-    timeout.tv_sec = 0;
-    timeout.tv_usec = 0;
-
-    // Clear the buffer
-    bzero(socket_msg, MSG_LEN);
-
-    // Initialize the set of file descriptors to monitor for reading
-    FD_ZERO(&read_fds);
-    FD_SET(sockfd, &read_fds);
-
-    // Use select to check if the socket is ready for reading
-    ready = select(sockfd + 1, &read_fds, NULL, NULL, &timeout);
-    if (ready < 0) {perror("ERROR in select");} 
-    else if (ready == 0) {return 0;}  // No data available
-
-    // Data is available for reading, so read from the socket
-    bytes_read = read(sockfd, socket_msg, MSG_LEN - 1);
-    if (bytes_read < 0) {perror("ERROR reading from socket");} 
-    else if (bytes_read == 0) {return 0;}  // Connection closed
-    else if (socket_msg[0] == '\0') {return 0;} // Empty string
-
-    // Print the received message
-    printf("[SOCKET] Received: %s\n", socket_msg);
-
-    // Echo the message back to the client
-    bytes_written = write(sockfd, socket_msg, bytes_read);
-    if (bytes_written < 0) {perror("ERROR writing to socket");}
-    else{printf("[SOCKET] Echo sent: %s\n", socket_msg); return 1;}
-}
-
-// Writes a message into the socket, then loops/waits until a valid echo is read.
-void write_then_wait_echo(int sockfd, char socket_msg[], size_t msg_size){
-    int ready;
-    int bytes_read, bytes_written;
-
-    bytes_written = write(sockfd, socket_msg, msg_size);
-    if (bytes_written < 0) {perror("ERROR writing to socket");}
-    printf("[SOCKET] Sent: %s\n", socket_msg);
-
-    // Clear the buffer
-    bzero(socket_msg, MSG_LEN);
-
-    while (socket_msg[0] == '\0'){
-        // Data is available for reading, so read from the socket
-        bytes_read = read(sockfd, socket_msg, bytes_written);
-        if (bytes_read < 0) {perror("ERROR reading from socket");} 
-        else if (bytes_read == 0) {printf("Connection closed!\n"); return;}
-    }
-    // Print the received message
-    printf("[SOCKET] Echo received: %s\n", socket_msg);
-}
-
-// Reads a message from the pipe with select() system call.
-int read_pipe_unblocked(int pipefd, char msg[]){
-    struct timeval timeout;
-    timeout.tv_sec = 0;
-    timeout.tv_usec = 0;
-    fd_set read_pipe;
-    FD_ZERO(&read_pipe);
-    FD_SET(pipefd, &read_pipe);
-
-    char buffer[MSG_LEN];
-
-    int ready_km = select(pipefd + 1, &read_pipe, NULL, NULL, &timeout);
-    if (ready_km == -1) {perror("Error in select");}
-
-    if (ready_km > 0 && FD_ISSET(pipefd, &read_pipe)) {
-        ssize_t bytes_read_pipe = read(pipefd, buffer, MSG_LEN);
-        if (bytes_read_pipe > 0) {
-            strcpy(msg, buffer);
-            return 1;
-        }
-        else{return 0;}
-    }
-}
-
-// Reads a message from the socket, then does an echo.
-void read_then_echo(int sockfd, char socket_msg[]){
-    int bytes_read, bytes_written;
-    bzero(socket_msg, MSG_LEN);
-
-    // READ from the socket
-    bytes_read = read(sockfd, socket_msg, MSG_LEN - 1);
-    if (bytes_read < 0) perror("ERROR reading from socket");
-    else if (bytes_read == 0) {return;}  // Connection closed
-    else if (socket_msg[0] == '\0') {return;} // Empty string
-    printf("[SOCKET] Received: %s\n", socket_msg);
-    
-    // ECHO data into socket
-    bytes_written = write(sockfd, socket_msg, bytes_read);
-    if (bytes_written < 0) {perror("ERROR writing to socket");}
-    printf("[SOCKET] Echo sent: %s\n", socket_msg);
-}
 
 
 int main(int argc, char *argv[]) 
@@ -162,24 +63,14 @@ int main(int argc, char *argv[])
     // Initialize the variables and copy it to shared data
     int command_force[2]={0,0};
     memcpy(data.command_force, command_force, sizeof(command_force));
+    struct timeval timeout2;
+    timeout2.tv_sec = 0;  // Wait for 5 seconds
+    timeout2.tv_usec = 0;
 
 
-    // // local variables for sockets
-    // int sockfd, newsockfd, portno, clilen, pid;
-    // struct sockaddr_in serv_addr, cli_addr;
-    // // fd_set read_fds;
-    // char buffer[MSG_LEN];
-    // FD_ZERO(&read_fds);
-
-
-
-    ///////////////////////////////////////////
-    /* SENDING THE PID TO WATCHDOG*/
-    ///////////////////////////////////////////
-
-    pid_t server_pid,wd_pid;
-    server_pid=getpid();
-
+    ////////////////////////////////////////////////////
+    /* INITIALIZATION OF PIPES*/
+    ////////////////////////////////////////////////////
     int server_window[2];
     int server_keyboard[2];
     int server_drone[2];
@@ -200,6 +91,12 @@ int main(int argc, char *argv[])
         close(rec_pipes[i][1]);
     }
     
+
+    ///////////////////////////////////////////
+    /* SENDING THE PID TO WATCHDOG*/
+    ///////////////////////////////////////////
+    pid_t server_pid,wd_pid;
+    server_pid=getpid();
 
     //Read all pids of children processes using select
     pid_t all_pids[NUM_PROCESSES-2];
@@ -292,7 +189,6 @@ int main(int argc, char *argv[])
 
 
     while(1){
-
         ///////////////////////////////////////////
         /* COMMUNICATION WITHIN SERVER USING PIPES*/
         ///////////////////////////////////////////
@@ -309,9 +205,6 @@ int main(int argc, char *argv[])
             }
         }
         int ret_val= 0;
-        struct timeval timeout2;
-        timeout2.tv_sec = 0;  // Wait for 5 seconds
-        timeout2.tv_usec = 0;
         ret_val = select(max_pipe_fd, &reading2, NULL, NULL, &timeout2);
         for(int j=0; j<(NUM_PROCESSES-2); j++){
             if(ret_val>0){
@@ -348,35 +241,9 @@ int main(int argc, char *argv[])
             }
         }
 
-        
-        ///////////////////////////////////////////
-        /* COMMUNICATION WITH CLIENT USING SOCKETS */
-        ///////////////////////////////////////////
-
-        char obstacles_msg[MSG_LEN];
-        if (read_then_echo_unblocked(obstacle_sockfd, obstacles_msg) == 1){
-            writeToLogFile(serverlogpath,obstacles_msg);
-            // Send to interface.c
-            int totalObstacles;
-            int index = 0;
-            sscanf(obstacles_msg, "O[%d]", &totalObstacles);
-            // float temp_pos[totalObstacles*2];
-
-            char *token = strtok(obstacles_msg + 5, "|");
-            while (token != NULL && index < totalObstacles*2) {
-                sscanf(token, "%f,%f", &data.obst_pos[index*2], &data.obst_pos[index*2+1]);
-                token = strtok(NULL, "|");
-                index++;
-            }
-            // memcpy(data.obst_pos, temp_pos, sizeof(temp_pos));
-            my_write(server_drone[1],&data,server_drone[0],sizeof(data));
-            fflush(stdout);
-        }
-
         //////////////////////////////////////////////////////
         /* Handle socket from targets.c */
         /////////////////////////////////////////////////////
-
         char targets_msg[MSG_LEN];
         if (read_then_echo_unblocked(target_sockfd, targets_msg) == 1){
             writeToLogFile(serverlogpath,targets_msg);
@@ -387,16 +254,42 @@ int main(int argc, char *argv[])
 
             char *token = strtok(targets_msg + 5, "|");
             while (token != NULL && index < totalTargets*2) {
-                sscanf(token, "%f,%f", &data.target_pos[index*2], &data.target_pos[index*2+1]);
+                sscanf(token, "%f,%f", &target_pos[index*2], &target_pos[index*2+1]);
                 token = strtok(NULL, "|");
                 index++;
             }
-            // memcpy(data.target_pos, temp_pos, sizeof(temp_pos));
+            memcpy(data.target_pos, target_pos, sizeof(target_pos));
+            sprintf(logMessage, "T:%f %f O:%f %f", data.target_pos[0],data.target_pos[1],data.obst_pos[0],data.obst_pos[1]);
+            writeToLogFile(serverlogpath,logMessage);
             my_write(server_drone[1],&data,server_drone[0],sizeof(data));
-
-            printf("[PIPE] Sent to interface.c: %s\n", targets_msg);
             fflush(stdout);
         }
+
+        
+        ///////////////////////////////////////////
+        /* COMMUNICATION WITH CLIENT USING SOCKETS */
+        ///////////////////////////////////////////
+        char obstacles_msg[MSG_LEN];
+        if (read_then_echo_unblocked(obstacle_sockfd, obstacles_msg) == 1){
+            writeToLogFile(serverlogpath,obstacles_msg);
+            int totalObstacles;
+            int index = 0;
+            sscanf(obstacles_msg, "O[%d]", &totalObstacles);
+
+            char *token = strtok(obstacles_msg + 5, "|");
+            while (token != NULL && index < totalObstacles*2) {
+                sscanf(token, "%f,%f", &obst_pos[index*2], &obst_pos[index*2+1]);
+                token = strtok(NULL, "|");
+                index++;
+            }
+            memcpy(data.obst_pos, obst_pos, sizeof(obst_pos));
+            sprintf(logMessage, "T:%f %f O:%f %f", data.target_pos[0],data.target_pos[1],data.obst_pos[0],data.obst_pos[1]);
+            writeToLogFile(serverlogpath,logMessage);
+            my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+            fflush(stdout);
+        }
+
+        
 
 
         if (newsockfd < 0) 

@@ -23,12 +23,12 @@ float drone_pos[6], obstacle_pos[NUM_OBSTACLES*2],target_pos[NUM_TARGETS*2];
 int sockfd;
 
 void makeObs() {
-    for (int i = 0; i < NUM_OBSTACLES*2; i+=2) {
+    for (int i = 0; i < NUM_OBSTACLES; i+=2) {
         // generating obstacle coordinates
         obstacle_pos[i]   = rand() % BOARD_SIZE;  // Random value between 0 and 100
         obstacle_pos[i+1] = rand() % BOARD_SIZE;  // Random value between 0 and 100
 
-        for(int j=0; j<NUM_TARGETS*2; j+=2){
+        for(int j=0; j<NUM_TARGETS; j+=2){
             while (obstacle_pos[i]   >= target_pos[j] - OBS_THRESH   && obstacle_pos[i]   <= target_pos[j] + OBS_THRESH && 
                    obstacle_pos[i+1] >= target_pos[j+1] - OBS_THRESH && obstacle_pos[i+1] <= target_pos[j+1] + OBS_THRESH) {
                 // Regenerate obstacle-coordinate
@@ -92,8 +92,11 @@ void setupSocketConnection(char *hostname, int portno) {
 // Function definitions for makeObs, get_time, and update remain unchanged
 
 int main(int argc, char* argv[]){
+
     clearLogFile(obstaclelogpath);
     writeToLogFile(obstaclelogpath, "START");
+    sleep(1);
+    srand((unsigned int)time(NULL));
     if (argc < 3) {
         fprintf(stderr, "usage %s hostname port\n", argv[0]);
         exit(0);
@@ -152,7 +155,7 @@ int main(int argc, char* argv[]){
         for (int i = 0; i < NUM_OBSTACLES*2; ++i) {
             // Append obstacle information to obstacle_msg
             sprintf(obstacle_msg + strlen(obstacle_msg), "%.3f,%.3f", 
-            (float)target_pos[2*i], (float)target_pos[2*i+1]);
+            (float)obstacle_pos[2*i], (float)obstacle_pos[2*i+1]);
 
             // Add a separator if there are more obstacles
             if (i < NUM_OBSTACLES*2 - 1) {
@@ -198,7 +201,7 @@ int main(int argc, char* argv[]){
 
 
         // sleep(2);
-        // usleep(50000); // Control the frequency of updates
+        usleep(50000); // Control the frequency of updates
     }
 
     close(sockfd); // Clean up the socket

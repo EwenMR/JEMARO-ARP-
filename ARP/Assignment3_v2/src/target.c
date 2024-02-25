@@ -47,6 +47,7 @@ void target_update(float *target_pos) {
 
 // make the targets coordinates
 void makeTargs(){
+
     for (int i=0; i< NUM_TARGETS*2; i+=2){
         target_pos[i]   = rand() % BOARD_SIZE;
         target_pos[i+1] = rand() % BOARD_SIZE;
@@ -106,6 +107,8 @@ void send_target_to_obstacle(int *target_obstacle){
 
 int main(int argc, char* argv[]){
     clearLogFile(targetlogpath);
+    srand((unsigned int)time(NULL));
+    // srand(time(NULL));
 
     if (argc < 3) {
         fprintf(stderr,"usage %s hostname port\n", argv[0]);
@@ -119,7 +122,6 @@ int main(int argc, char* argv[]){
     if (write(sockfd, TI, strlen(TI) + 1) < 0) {
         error("ERROR writing to socket");
     }
-
     int target_obstacle[2];
     sscanf(argv[1], client_args_format,  &target_obstacle[0], &target_obstacle[1]);
     send_target_to_obstacle(target_obstacle);
@@ -133,7 +135,7 @@ int main(int argc, char* argv[]){
     while(1) {
         sprintf(target_msg, "T[%d] ", NUM_TARGETS*2);
 
-        for (int i = 0; i < NUM_TARGETS*2; ++i) {
+        for (int i = 0; i < NUM_TARGETS; ++i) {
             // Append obstacle information to target_msg
             sprintf(target_msg + strlen(target_msg), "%.3f,%.3f", 
             (float)target_pos[2*i], (float)target_pos[2*i+1]);
@@ -142,6 +144,8 @@ int main(int argc, char* argv[]){
             if (i < NUM_TARGETS*2 - 1) {
                 sprintf(target_msg + strlen(target_msg), "|");
             }
+            sprintf(logmessage, "%f %f",target_pos[2*i],target_pos[2*i+1]);
+            writeToLogFile(targetlogpath,logmessage);
         }
         // Write the string to the socket
         
@@ -176,7 +180,7 @@ int main(int argc, char* argv[]){
         // sprintf(logmessage,"[SOCKET] Echo received: %s\n", target_msg);
         writeToLogFile(targetlogpath, "ECHO");
         writeToLogFile(targetlogpath,target_msg);
-
+        sleep(5);
     }
 
     // Clean up

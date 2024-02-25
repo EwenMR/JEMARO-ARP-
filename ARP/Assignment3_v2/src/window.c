@@ -132,6 +132,10 @@ int main(int argc, char* argv[]) {
     init_pair(2, COLOR_RED, COLOR_BLACK);
     init_pair(3, COLOR_GREEN, COLOR_BLACK);
 
+    bool started;
+    started = false;
+    bool game_set;
+    game_set=false;
     
     while (1) {
         werase(win);
@@ -172,8 +176,12 @@ int main(int argc, char* argv[]) {
         memcpy(target_pos, data.target_pos, sizeof(data.target_pos));
         memcpy(obstacle_pos, data.obst_pos, sizeof(data.obst_pos));
         writeToLogFile(windowlogpath, "WINDOW: Drone_pos, Target_pos, Obst_pos received from server");
-
-        
+        sprintf(logMessage, "T:%f %f O:%f %f", data.target_pos[0],data.target_pos[1],data.obst_pos[0],data.obst_pos[1]);
+        writeToLogFile(windowlogpath,logMessage);
+        if(target_pos[0]!=(float)(0) && target_pos[1]!=(float)(0)){
+            started=true;
+            writeToLogFile(windowlogpath,"STARTED");
+        }
 
         double scalex,scaley; // get the scale, to scale up the window to the real world scale
         scalex=(double)BOARD_SIZE /((double)xmax*(WINDOW_COL-0.01));
@@ -209,7 +217,16 @@ int main(int argc, char* argv[]) {
         wrefresh(score);
         
         // If all targets are reached, Game finished
-        if(target_pos[NUM_TARGETS*2-2]== 0 && target_pos[NUM_TARGETS*2-1]==0){ 
+        
+        if(started == true){
+            game_set = true;
+        }
+        for (int i=0; i<NUM_TARGETS*2; i++){
+            if(target_pos[i]!=0){
+                game_set=false;
+            }
+        }
+        if(game_set==true){
             finish_time = current_time();
             int your_score = calc_score(start_time, finish_time);
 
@@ -220,6 +237,17 @@ int main(int argc, char* argv[]) {
             sleep(2);
             exit(EXIT_SUCCESS);
         }
+        // if(target_pos[NUM_TARGETS*2-2]== 0 && target_pos[NUM_TARGETS*2-1]==0){ 
+        //     finish_time = current_time();
+        //     int your_score = calc_score(start_time, finish_time);
+
+        //     werase(win);
+        //     box(win, 0, 0);
+        //     mvwprintw(win, LINES/2, COLS/2, "SCORE IS %d", your_score);
+        //     wrefresh(win);
+        //     sleep(2);
+        //     exit(EXIT_SUCCESS);
+        // }
         
         // Send user input to keyboard manager
         key=wgetch(win); // wait for user input
