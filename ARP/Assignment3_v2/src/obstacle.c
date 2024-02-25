@@ -115,7 +115,7 @@ int main(int argc, char* argv[]){
 
     char OI[]="OI";
     if (write(sockfd, OI, strlen(OI) + 1) < 0) {
-        error("ERROR writing to socket");
+        writeToLogFile(obstaclelogpath,"ERROR writing to socket");
     }
 
 
@@ -160,54 +160,45 @@ int main(int argc, char* argv[]){
             }
         }
         // Write the string to the socket
-        if (write(sockfd, obstacle_msg, strlen(obstacle_msg) + 1) < 0) {
-            writeToLogFile(obstaclelogpath,"ERROR writing to socket");
-        }else{
-            writeToLogFile(obstaclelogpath, obstacle_msg);
+        // if (write(sockfd, obstacle_msg, strlen(obstacle_msg) + 1) < 0) {
+        //     writeToLogFile(obstaclelogpath,"ERROR writing to socket");
+        // }else{
+        //     writeToLogFile(obstaclelogpath, obstacle_msg);
+        // }
+        
+
+        int ready;
+        int bytes_read, bytes_written;
+
+        bytes_written = write(sockfd, obstacle_msg, strlen(obstacle_msg));
+        writeToLogFile(obstaclelogpath,"SEND");
+        writeToLogFile(obstaclelogpath, obstacle_msg);
+        if (bytes_written < 0) {perror("ERROR writing to socket");}
+        printf("[SOCKET] Sent: %s\n", obstacle_msg);
+
+        // Clear the buffer
+        bzero(obstacle_msg, MSG_LEN);
+
+        while (obstacle_msg[0] == '\0'){
+            // Data is available for reading, so read from the socket
+            bytes_read = read(sockfd, obstacle_msg, bytes_written);
+            if (bytes_read < 0) {perror("ERROR reading from socket");} 
+            else if (bytes_read == 0) {printf("Connection closed!\n"); return 0;}
         }
+        // Print the received message
+        // sprintf(logmessage,"[SOCKET] Echo received: %s\n", obstacle_msg);
+        writeToLogFile(obstaclelogpath,"ECHO");
+        writeToLogFile(obstaclelogpath,obstacle_msg);
+
         
-        
-
-
-        // //-------------------------------------------------------------------------
-        // int totalDigits = 0;
-        // for (int i = 0; i < NUM_OBSTACLES * 2; i++) {
-        //     // Count the number of digits for each float
-        //     int numDigits = snprintf(NULL, 0, "%.2f", obstacle_pos[i]);
-        //     totalDigits += numDigits;
-        // }
-        // totalDigits += (NUM_OBSTACLES * 2 - 1) * 2; // Account for spaces between numbers and the null terminator
-        // totalDigits += 2; // Account for the leading 'T' and the null terminator
-
-        // // Create a string buffer
-        // char str[totalDigits];
-
-        // // Add 'T' as the first character in the string
-        // str[0] = 'O';
-
-        // // Convert the array elements to strings and concatenate them with spaces
-        // int offset = 1;
-        // for (int i = 0; i < NUM_OBSTACLES * 2; i++) {
-        //     offset += snprintf(str + offset, totalDigits - offset, "%.2f ", obstacle_pos[i]);
-        // }
-
-        // // Null terminate the string
-        // str[offset - 1] = '\0'; // Remove the extra space at the end
-        // writeToLogFile(obstaclelogpath, str);
-
-        // // Write the string to the socket
-        // if (write(sockfd, str, strlen(str) + 1) < 0) {
-        //     error("ERROR writing to socket");
-        // }
-        // writeToLogFile(obstaclelogpath, "sent obstacles to server");
-        //---------------------------------------------------------------------
 
 
 
 
 
-        sleep(5);
-        usleep(50000); // Control the frequency of updates
+
+        // sleep(2);
+        // usleep(50000); // Control the frequency of updates
     }
 
     close(sockfd); // Clean up the socket

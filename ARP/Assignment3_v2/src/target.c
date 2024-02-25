@@ -22,7 +22,8 @@
 float target_pos[NUM_TARGETS*2],obstacle_pos[NUM_OBSTACLES*2];
 struct shared_data data;
 int sockfd;
-
+char logmessage[MSG_LEN];
+char target_msg[MSG_LEN];
 
 void error(char *msg) {
     perror(msg);
@@ -91,7 +92,7 @@ void send_target_to_obstacle(int *target_obstacle){
     // Generate targets (only once) and send it to server
     makeTargs(); 
     writeToLogFile(targetlogpath, "generated targets");
-    char logmessage[80];
+    
     sprintf(logmessage, "%f %f", target_pos[0], target_pos[1]);
     writeToLogFile(targetlogpath,logmessage);
 
@@ -127,10 +128,9 @@ int main(int argc, char* argv[]){
     
     
     
-
+    
 
     while(1) {
-        char target_msg[MSG_LEN];
         sprintf(target_msg, "T[%d] ", NUM_TARGETS*2);
 
         for (int i = 0; i < NUM_TARGETS*2; ++i) {
@@ -144,53 +144,42 @@ int main(int argc, char* argv[]){
             }
         }
         // Write the string to the socket
-        char logmessage[MAX_MSG_LEN];
-        sprintf(logmessage,"%c, %c", target_msg[0],target_msg[1]);
-        writeToLogFile(targetlogpath,logmessage);
-        if (write(sockfd, target_msg, strlen(target_msg) + 1) < 0) {
-            error("ERROR writing to socket");
-        }
-        writeToLogFile(targetlogpath, target_msg);
-        sleep(5);
-
-
-
-
-        // int totalDigits = 0;
-        // for (int i = 0; i < NUM_TARGETS * 2; i++) {
-        //     // Count the number of digits for each float
-        //     int numDigits = snprintf(NULL, 0, "%.2f", target_pos[i]);
-        //     totalDigits += numDigits;
-        // }
-        // totalDigits += (NUM_TARGETS * 2 - 1) * 2; // Account for spaces between numbers and the null terminator
-        // totalDigits += 2; // Account for the leading 'T' and the null terminator
-
-        // // Create a string buffer
-        // char str[totalDigits];
-
-        // // Add 'T' as the first character in the string
-        // int set  = snprintf(str, totalDigits, "T[%d] ",NUM_TARGETS);
-
-        // // Convert the array elements to strings and concatenate them with spaces
-        // int offset = set;
-        // for (int i = 0; i < NUM_TARGETS * 2; i++) {
-        //     offset += snprintf(str + offset, totalDigits - offset, "%.2f ", target_pos[i]);
-        // }
-
-        // // Null terminate the string
-        // str[offset - 1] = '\0'; // Remove the extra space at the end
-
-        // // Write the string to the socket
-        // if (write(sockfd, str, strlen(str) + 1) < 0) {
+        
+        // sprintf(logmessage,"%c, %c", target_msg[0],target_msg[1]);
+        // writeToLogFile(targetlogpath,logmessage);
+        // if (write(sockfd, target_msg, strlen(target_msg) + 1) < 0) {
         //     error("ERROR writing to socket");
         // }
-        // writeToLogFile(targetlogpath, "sent targets to server");
-        // sleep(10000);
+        // writeToLogFile(targetlogpath, target_msg);
+        // sleep(5);
 
-        
+
+
+        int ready;
+        int bytes_read, bytes_written;
+        writeToLogFile(targetlogpath,"SEND");
+        writeToLogFile(targetlogpath,target_msg);
+        bytes_written = write(sockfd, target_msg, strlen(target_msg));
+        if (bytes_written < 0) {perror("ERROR writing to socket");}
+        printf("[SOCKET] Sent: %s\n", target_msg);
+
+        // Clear the buffer
+        bzero(target_msg, MSG_LEN);
+
+        while (target_msg[0] == '\0'){
+            // Data is available for reading, so read from the socket
+            bytes_read = read(sockfd, target_msg, bytes_written);
+            if (bytes_read < 0) {perror("ERROR reading from socket");} 
+            else if (bytes_read == 0) {printf("Connection closed!\n"); return 0;}
+        }
+        // Print the received message
+        // sprintf(logmessage,"[SOCKET] Echo received: %s\n", target_msg);
+        writeToLogFile(targetlogpath, "ECHO");
+        writeToLogFile(targetlogpath,target_msg);
 
     }
 
     // Clean up
     close(sockfd);
+    return 0;
 }

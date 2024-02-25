@@ -200,7 +200,7 @@ int main(int argc, char *argv[]) {
     while (1) {
         // 3 Receive command force or target position, or obstacle position
         my_read(server_drone[0], &data, drone_server[1], sizeof(data));
-        sprintf(logMessage, "%f %f", data.target_pos[0],data.target_pos[1]);
+        sprintf(logMessage, "T:%f %f O:%f %f", data.target_pos[0],data.target_pos[1],data.obst_pos[0],data.obst_pos[1]);
         writeToLogFile(dronelogpath,logMessage);
         
         memcpy(xy, data.command_force, sizeof(data.command_force));

@@ -18,7 +18,12 @@
 #include "../include/utility.c"
 #include "../include/constants.h"
 #include "../include/log.c"
-
+struct shared_data data, updated_data;
+float drone_pos[6];// Array to store the position of drone
+float obst_pos[NUM_OBSTACLES*2];
+float target_pos[NUM_TARGETS*2];
+int key; 
+    
 
 // Signal handler for watchdog
 void signal_handler(int signo, siginfo_t *siginfo, void *context){
@@ -32,6 +37,107 @@ void signal_handler(int signo, siginfo_t *siginfo, void *context){
         kill(wd_pid, SIGUSR2);
         writeToLogFile(serverlogpath,"signal received");
     }
+}
+
+
+// Reads a message from the socket, with select() system call, then does an echo.
+int read_then_echo_unblocked(int sockfd, char socket_msg[]) {
+    int ready;
+    int bytes_read, bytes_written;
+    fd_set read_fds;
+    struct timeval timeout;
+    timeout.tv_sec = 0;
+    timeout.tv_usec = 0;
+
+    // Clear the buffer
+    bzero(socket_msg, MSG_LEN);
+
+    // Initialize the set of file descriptors to monitor for reading
+    FD_ZERO(&read_fds);
+    FD_SET(sockfd, &read_fds);
+
+    // Use select to check if the socket is ready for reading
+    ready = select(sockfd + 1, &read_fds, NULL, NULL, &timeout);
+    if (ready < 0) {perror("ERROR in select");} 
+    else if (ready == 0) {return 0;}  // No data available
+
+    // Data is available for reading, so read from the socket
+    bytes_read = read(sockfd, socket_msg, MSG_LEN - 1);
+    if (bytes_read < 0) {perror("ERROR reading from socket");} 
+    else if (bytes_read == 0) {return 0;}  // Connection closed
+    else if (socket_msg[0] == '\0') {return 0;} // Empty string
+
+    // Print the received message
+    printf("[SOCKET] Received: %s\n", socket_msg);
+
+    // Echo the message back to the client
+    bytes_written = write(sockfd, socket_msg, bytes_read);
+    if (bytes_written < 0) {perror("ERROR writing to socket");}
+    else{printf("[SOCKET] Echo sent: %s\n", socket_msg); return 1;}
+}
+
+// Writes a message into the socket, then loops/waits until a valid echo is read.
+void write_then_wait_echo(int sockfd, char socket_msg[], size_t msg_size){
+    int ready;
+    int bytes_read, bytes_written;
+
+    bytes_written = write(sockfd, socket_msg, msg_size);
+    if (bytes_written < 0) {perror("ERROR writing to socket");}
+    printf("[SOCKET] Sent: %s\n", socket_msg);
+
+    // Clear the buffer
+    bzero(socket_msg, MSG_LEN);
+
+    while (socket_msg[0] == '\0'){
+        // Data is available for reading, so read from the socket
+        bytes_read = read(sockfd, socket_msg, bytes_written);
+        if (bytes_read < 0) {perror("ERROR reading from socket");} 
+        else if (bytes_read == 0) {printf("Connection closed!\n"); return;}
+    }
+    // Print the received message
+    printf("[SOCKET] Echo received: %s\n", socket_msg);
+}
+
+// Reads a message from the pipe with select() system call.
+int read_pipe_unblocked(int pipefd, char msg[]){
+    struct timeval timeout;
+    timeout.tv_sec = 0;
+    timeout.tv_usec = 0;
+    fd_set read_pipe;
+    FD_ZERO(&read_pipe);
+    FD_SET(pipefd, &read_pipe);
+
+    char buffer[MSG_LEN];
+
+    int ready_km = select(pipefd + 1, &read_pipe, NULL, NULL, &timeout);
+    if (ready_km == -1) {perror("Error in select");}
+
+    if (ready_km > 0 && FD_ISSET(pipefd, &read_pipe)) {
+        ssize_t bytes_read_pipe = read(pipefd, buffer, MSG_LEN);
+        if (bytes_read_pipe > 0) {
+            strcpy(msg, buffer);
+            return 1;
+        }
+        else{return 0;}
+    }
+}
+
+// Reads a message from the socket, then does an echo.
+void read_then_echo(int sockfd, char socket_msg[]){
+    int bytes_read, bytes_written;
+    bzero(socket_msg, MSG_LEN);
+
+    // READ from the socket
+    bytes_read = read(sockfd, socket_msg, MSG_LEN - 1);
+    if (bytes_read < 0) perror("ERROR reading from socket");
+    else if (bytes_read == 0) {return;}  // Connection closed
+    else if (socket_msg[0] == '\0') {return;} // Empty string
+    printf("[SOCKET] Received: %s\n", socket_msg);
+    
+    // ECHO data into socket
+    bytes_written = write(sockfd, socket_msg, bytes_read);
+    if (bytes_written < 0) {perror("ERROR writing to socket");}
+    printf("[SOCKET] Echo sent: %s\n", socket_msg);
 }
 
 
@@ -52,23 +158,18 @@ int main(int argc, char *argv[])
     ////////////////////////////////////////////////////
     /* INITIALIZATION OF LOCAL VARIABLES*/
     ////////////////////////////////////////////////////
-    struct shared_data data, updated_data;
-    double drone_pos[6];// Array to store the position of drone
-    double obst_pos[NUM_OBSTACLES*2];
-    double target_pos[NUM_TARGETS*2];
-    int key; 
     
     // Initialize the variables and copy it to shared data
     int command_force[2]={0,0};
     memcpy(data.command_force, command_force, sizeof(command_force));
 
 
-    // local variables for sockets
-    int sockfd, newsockfd, portno, clilen, pid;
-    struct sockaddr_in serv_addr, cli_addr;
-    fd_set read_fds;
-    char buffer[MSG_LEN];
-    FD_ZERO(&read_fds);
+    // // local variables for sockets
+    // int sockfd, newsockfd, portno, clilen, pid;
+    // struct sockaddr_in serv_addr, cli_addr;
+    // // fd_set read_fds;
+    // char buffer[MSG_LEN];
+    // FD_ZERO(&read_fds);
 
 
 
@@ -140,39 +241,24 @@ int main(int argc, char *argv[])
     ///////////////////////////////////////////
     /* SOCKET CONNECTION*/
     ///////////////////////////////////////////
+    // local variables for sockets
+    int sockfd, newsockfd, portno, clilen, pid;
+    struct sockaddr_in serv_addr, cli_addr;
+    char buffer[MSG_LEN];
+
     if (argc < 2) {
         fprintf(stderr,"ERROR, no port provided\n");
         exit(1);
     }
 
     sockfd = socket(AF_INET, SOCK_STREAM, 0); // Initialize sockfd
-    writeToLogFile(serverlogpath, "SERVER: Created socket instance");
-
     if (sockfd < 0) {
         perror("ERROR opening socket");
         exit(1);
     }
 
-    // Add sockfd to the read_fds set after it's initialized
-    FD_SET(sockfd, &read_fds);  
-
-    int flags = fcntl(sockfd, F_GETFL, 0);
-    if (flags == -1) {
-        perror("Failed to get socket flags");
-    }
-
-    if (fcntl(sockfd, F_SETFL, flags | O_NONBLOCK) == -1) {
-        perror("Failed to set non-blocking mode");
-    }
-
     bzero((char *) &serv_addr, sizeof(serv_addr));
     portno = atoi(argv[2]);
-    // portno = PORTNO;
-    sprintf(logMessage, "port number = %d\n",portno);
-    writeToLogFile(serverlogpath, logMessage);
-    
-
-    memset(&serv_addr, 0, sizeof(serv_addr));
 
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_addr.s_addr = INADDR_ANY;
@@ -186,121 +272,27 @@ int main(int argc, char *argv[])
     clilen = sizeof(cli_addr);
 
 
+
+    int target_sockfd = 0;
+    int obstacle_sockfd=0;
+    while(target_sockfd == 0 || obstacle_sockfd == 0){
+        newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
+        if (newsockfd < 0) {perror("ERROR on accept");}
+
+        char socket_msg[MSG_LEN];
+        read_then_echo(newsockfd, socket_msg);
+
+        if (socket_msg[0] == 'O'){obstacle_sockfd = newsockfd;}
+        else if(socket_msg[0] == 'T'){target_sockfd = newsockfd;}
+        else {close(newsockfd);}
+    }
+
+    // Variable: To compare current and previous data
+    char prev_drone_msg[MSG_LEN] = "";
+
+
     while(1){
-        // RECEIVE WINDOW SIZE FROM WINDOW.C
-        struct timeval timeout;
-        timeout.tv_sec = 5;  // Wait for 5 seconds
-        timeout.tv_usec = 0;
 
-        if (select(FD_SETSIZE, &read_fds, NULL, NULL, &timeout) < 0) {
-            // writeToLogFile(serverlogpath, "inside select");
-            perror("ERROR in select");
-            exit(1);
-        }
-        
-        ///////////////////////////////////////////
-        /* COMMUNICATION WITH CLIENT USING SOCKETS */
-        ///////////////////////////////////////////
-        for (int i = 0; i < FD_SETSIZE; ++i) {
-            if (FD_ISSET(i, &read_fds)) {
-                if (i == sockfd) {  // New connection
-                    clilen = sizeof(cli_addr);
-                    newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
-                    if (newsockfd < 0) {
-                        perror("ERROR on accept");
-                        exit(1);
-                    }
-                    FD_SET(newsockfd, &read_fds);
-                    writeToLogFile(serverlogpath,"New connection established\n");
-                    
-
-                } else {  // Existing client
-                    int bytes_read = read(i, buffer, sizeof(buffer) - 1);
-                    writeToLogFile(serverlogpath,buffer);
-
-                    //Echo
-                    int bytes_written = write(i,buffer, bytes_read);
-                    if (bytes_written < 0) {perror("ERROR writing to socket");}
-                    
-                    
-                    if (bytes_read < 0) {
-                        perror("ERROR reading from socket");
-                        exit(1);
-                    } else if (bytes_read == 0) { // Connection closed
-                        close(i);
-                        FD_CLR(i, &read_fds);
-                        printf("Connection closed\n");
-                    } else { // Message received
-                        buffer[bytes_read] = '\0';
-                        writeToLogFile(serverlogpath,buffer);
-
-
-                        if (buffer[0]=='O' && buffer[1]=='I'){//identification done
-                            //SEND BACK SCREEN SIZE
-                            writeToLogFile(serverlogpath,"OI RECEIVED");
-                        }else if(buffer[0]=='T' && buffer[1]=='I'){
-                            writeToLogFile(serverlogpath,"TI RECEIVED");//identification done
-                            //SEND BACK SCREEN SIZE
-                        }else if(buffer[0]=='O'){//obstacle positions sent
-                            writeToLogFile(serverlogpath,"Obstacle received");
-                            //PARSE THE DATA TO STRING
-                            int totalObstacles;
-                            int index = 0;
-                            sscanf(buffer, "O[%d]", &totalObstacles);
-
-                            char *token = strtok(buffer + 5, "|");
-                            while (token != NULL && index < totalObstacles*2) {
-                                data.obst_pos[index] = atof(token);
-                                token = strtok(NULL, "|");
-                                index++;
-                                
-                            }
-                            my_write(server_drone[1],&data,server_drone[0],sizeof(data));
-
-
-                        }else if(buffer[0]=='T'){//target positions sent
-                            writeToLogFile(serverlogpath,"Target received");
-                            //PARSE THE DATA TO STRING
-                            int totalTargets;
-                            int index = 0;
-                            sscanf(buffer, "T[%d]", &totalTargets);
-                            float temp_pos[totalTargets*2];
-
-                            char *token = strtok(buffer + 5, "|");
-                            while (token != NULL && index < totalTargets*2) {
-                                sscanf(token, "%f,%f", &temp_pos[index*2], &temp_pos[index*2+1]);
-                                // temp_pos[index] = atof(token);
-                                token = strtok(NULL, "|");
-                                index++;
-                            }
-                            sprintf(logMessage, "temp pos is : %f %f %f %f", temp_pos[0],temp_pos[1],temp_pos[2],temp_pos[3]);
-                            writeToLogFile(serverlogpath,logMessage);
-
-                            memcpy(data.target_pos, temp_pos, sizeof(temp_pos));
-                            sprintf(logMessage, "%f %f", data.target_pos[0],data.target_pos[1]);
-                            writeToLogFile(serverlogpath,logMessage);
-                            my_write(server_drone[1],&data,server_drone[0],sizeof(data));
-
-
-                        }else{
-                            writeToLogFile(serverlogpath,"Client send the data in wrong format\n");
-                        }
-                        
-                        
-                        
-
-
-
-                    }
-                }
-            }
-            // writeToLogFile(serverlogpath, "NO FD_ISSET\n");
-        }
-
-        if (newsockfd < 0) 
-            perror("ERROR on accept");
-
-        
         ///////////////////////////////////////////
         /* COMMUNICATION WITHIN SERVER USING PIPES*/
         ///////////////////////////////////////////
@@ -355,17 +347,167 @@ int main(int argc, char *argv[])
                 }
             }
         }
+
+        
+        ///////////////////////////////////////////
+        /* COMMUNICATION WITH CLIENT USING SOCKETS */
+        ///////////////////////////////////////////
+
+        char obstacles_msg[MSG_LEN];
+        if (read_then_echo_unblocked(obstacle_sockfd, obstacles_msg) == 1){
+            writeToLogFile(serverlogpath,obstacles_msg);
+            // Send to interface.c
+            int totalObstacles;
+            int index = 0;
+            sscanf(obstacles_msg, "O[%d]", &totalObstacles);
+            // float temp_pos[totalObstacles*2];
+
+            char *token = strtok(obstacles_msg + 5, "|");
+            while (token != NULL && index < totalObstacles*2) {
+                sscanf(token, "%f,%f", &data.obst_pos[index*2], &data.obst_pos[index*2+1]);
+                token = strtok(NULL, "|");
+                index++;
+            }
+            // memcpy(data.obst_pos, temp_pos, sizeof(temp_pos));
+            my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+            fflush(stdout);
+        }
+
+        //////////////////////////////////////////////////////
+        /* Handle socket from targets.c */
+        /////////////////////////////////////////////////////
+
+        char targets_msg[MSG_LEN];
+        if (read_then_echo_unblocked(target_sockfd, targets_msg) == 1){
+            writeToLogFile(serverlogpath,targets_msg);
+            int totalTargets;
+            int index = 0;
+            sscanf(targets_msg, "T[%d]", &totalTargets);
+            // float temp_pos[totalTargets*2];
+
+            char *token = strtok(targets_msg + 5, "|");
+            while (token != NULL && index < totalTargets*2) {
+                sscanf(token, "%f,%f", &data.target_pos[index*2], &data.target_pos[index*2+1]);
+                token = strtok(NULL, "|");
+                index++;
+            }
+            // memcpy(data.target_pos, temp_pos, sizeof(temp_pos));
+            my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+
+            printf("[PIPE] Sent to interface.c: %s\n", targets_msg);
+            fflush(stdout);
+        }
+
+
+        if (newsockfd < 0) 
+            perror("ERROR on accept");
+
+        
     }
 
 
     // clean up
-    close(server_drone[1]);
-    close(server_keyboard[1]);
-    close(server_window[1]);
-    close(server_wd[1]);
-    for(int i=0; i< NUM_PROCESSES-1; i++){
-        close(rec_pipes[i][0]);
-    }
+    // close(server_drone[1]);
+    // close(server_keyboard[1]);
+    // close(server_window[1]);
+    // close(server_wd[1]);
+    // for(int i=0; i< NUM_PROCESSES-1; i++){
+    //     close(rec_pipes[i][0]);
+    // }
 
     return 0; 
 } 
+
+
+        // for (int i = 0; i < FD_SETSIZE; ++i) {
+        //     if (FD_ISSET(i, &read_fds)) {
+        //         if (i == sockfd) {  // New connection
+        //             clilen = sizeof(cli_addr);
+        //             newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
+        //             if (newsockfd < 0) {
+        //                 perror("ERROR on accept");
+        //                 exit(1);
+        //             }
+        //             FD_SET(newsockfd, &read_fds);
+        //             writeToLogFile(serverlogpath,"New connection established\n");
+                    
+
+        //         } else {  // Existing client
+        //             int bytes_read = read(i, buffer, sizeof(buffer) - 1);
+        //             writeToLogFile(serverlogpath,buffer);
+
+        //             //Echo
+        //             int bytes_written = write(i,buffer, bytes_read);
+        //             if (bytes_written < 0) {perror("ERROR writing to socket");}
+                    
+                    
+        //             if (bytes_read < 0) {
+        //                 perror("ERROR reading from socket");
+        //                 exit(1);
+        //             } else if (bytes_read == 0) { // Connection closed
+        //                 close(i);
+        //                 FD_CLR(i, &read_fds);
+        //                 printf("Connection closed\n");
+        //             } else { // Message received
+        //                 buffer[bytes_read] = '\0';
+        //                 writeToLogFile(serverlogpath,buffer);
+
+
+        //                 if (buffer[0]=='O' && buffer[1]=='I'){//identification done
+        //                     //SEND BACK SCREEN SIZE
+        //                     writeToLogFile(serverlogpath,"OI RECEIVED");
+        //                 }else if(buffer[0]=='T' && buffer[1]=='I'){
+        //                     writeToLogFile(serverlogpath,"TI RECEIVED");//identification done
+        //                     //SEND BACK SCREEN SIZE
+        //                 }
+        //                 if(buffer[0]=='O'&&buffer[1]!='I'){//obstacle positions sent
+        //                     writeToLogFile(serverlogpath,"Obstacle received");
+        //                     //PARSE THE DATA TO STRING
+        //                     int totalObstacles;
+        //                     int index = 0;
+        //                     sscanf(buffer, "O[%d]", &totalObstacles);
+        //                     float temp_pos[totalObstacles*2];
+
+        //                     char *token = strtok(buffer + 5, "|");
+        //                     while (token != NULL && index < totalObstacles*2) {
+        //                         sscanf(token, "%f,%f", &temp_pos[index*2], &temp_pos[index*2+1]);
+        //                         // data.obst_pos[index] = atof(token);
+        //                         token = strtok(NULL, "|");
+        //                         index++;
+                                
+        //                     }
+        //                     memcpy(data.obst_pos, temp_pos, sizeof(temp_pos));
+        //                     my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+        //                 }
+        //                 if(buffer[0]=='T' && buffer[1]!='I'){//target positions sent
+        //                     writeToLogFile(serverlogpath,"Target received");
+        //                     //PARSE THE DATA TO STRING
+        //                     int totalTargets;
+        //                     int index = 0;
+        //                     sscanf(buffer, "T[%d]", &totalTargets);
+        //                     float temp_pos[totalTargets*2];
+
+        //                     char *token = strtok(buffer + 5, "|");
+        //                     while (token != NULL && index < totalTargets*2) {
+        //                         sscanf(token, "%f,%f", &temp_pos[index*2], &temp_pos[index*2+1]);
+        //                         // temp_pos[index] = atof(token);
+        //                         token = strtok(NULL, "|");
+        //                         index++;
+        //                     }
+
+        //                     writeToLogFile(serverlogpath,buffer);
+        //                     memcpy(data.target_pos, temp_pos, sizeof(temp_pos));
+        //                     my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+
+
+        //                 }
+                        
+                        
+                        
+
+
+
+        //             }
+        //         }
+        //     }
+            // writeToLogFile(serverlogpath, "NO FD_ISSET\n");

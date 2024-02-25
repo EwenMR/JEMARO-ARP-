@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 {   
     // Delete everything written in logfile
     clearLogFile(serverlogpath);
-    char test[50];
+    
 
     // SIGNALS FOR THE WATCHDOG
     struct sigaction sig_act;
@@ -48,8 +48,34 @@ int main(int argc, char *argv[])
     sigaction(SIGINT, &sig_act, NULL);
     sigaction(SIGUSR1, &sig_act, NULL);
 
+
+    ////////////////////////////////////////////////////
+    /* INITIALIZATION OF LOCAL VARIABLES*/
+    ////////////////////////////////////////////////////
+    struct shared_data data, updated_data;
+    float drone_pos[6];// Array to store the position of drone
+    float obst_pos[NUM_OBSTACLES*2];
+    float target_pos[NUM_TARGETS*2];
+    int key; 
     
-    // SENDING THE PID TO WATCHDOG
+    // Initialize the variables and copy it to shared data
+    int command_force[2]={0,0};
+    memcpy(data.command_force, command_force, sizeof(command_force));
+
+
+    // local variables for sockets
+    int sockfd, newsockfd, portno, clilen, pid;
+    struct sockaddr_in serv_addr, cli_addr;
+    fd_set read_fds;
+    char buffer[MSG_LEN];
+    FD_ZERO(&read_fds);
+
+
+
+    ///////////////////////////////////////////
+    /* SENDING THE PID TO WATCHDOG*/
+    ///////////////////////////////////////////
+
     pid_t server_pid,wd_pid;
     server_pid=getpid();
 
@@ -59,15 +85,6 @@ int main(int argc, char *argv[])
     int server_wd[2];
 
     int rec_pipes[NUM_PROCESSES-1][2];
-    //Rec_pipes in order of
-    /*
-    WINDOW
-    KEYBOARD
-    DRONE
-    OBSTACLE
-    TARGET
-    WD
-    */
 
     sscanf(argv[1],server_format,   &rec_pipes[0][0],   &rec_pipes[0][1], &server_window[0],   &server_window[1],
                                     &rec_pipes[1][0],   &rec_pipes[1][1], &server_keyboard[0], &server_keyboard[1],
@@ -116,27 +133,13 @@ int main(int argc, char *argv[])
     // Send all pids to watchdog
     my_write(server_wd[1],all_pids,sizeof(all_pids),sizeof(all_pids));
     writeToLogFile(serverlogpath, "SERVER: Pid sent to watchdog");
-    
-    // Local variables
-    struct shared_data data, updated_data;
-    double drone_pos[6];// Array to store the position of drone
-    double obst_pos[NUM_OBSTACLES*2];
-    double target_pos[NUM_TARGETS*2];
-    int key;
 
-    // Initialize the variables and copy it to shared data
-    int command_force[2]={0,0};
-    memcpy(data.command_force, command_force, sizeof(command_force));
 
-    //SOCKETS ------------------------------------------------------------
 
-    int sockfd, newsockfd, portno, clilen, pid;
-    struct sockaddr_in serv_addr, cli_addr;
-    fd_set read_fds;
-    char buffer[80];
-    FD_ZERO(&read_fds);
 
-    
+    ///////////////////////////////////////////
+    /* SOCKET CONNECTION*/
+    ///////////////////////////////////////////
     if (argc < 2) {
         fprintf(stderr,"ERROR, no port provided\n");
         exit(1);
@@ -167,6 +170,7 @@ int main(int argc, char *argv[])
     // portno = PORTNO;
     sprintf(logMessage, "port number = %d\n",portno);
     writeToLogFile(serverlogpath, logMessage);
+    
 
     memset(&serv_addr, 0, sizeof(serv_addr));
 
@@ -180,11 +184,10 @@ int main(int argc, char *argv[])
     listen(sockfd,5);
     writeToLogFile(serverlogpath, "SERVER:  Listening");
     clilen = sizeof(cli_addr);
-    
+
 
     while(1){
-
-        /// TRYING TO TROUBLESHOOT RIGHT HERE
+        // RECEIVE WINDOW SIZE FROM WINDOW.C
         struct timeval timeout;
         timeout.tv_sec = 5;  // Wait for 5 seconds
         timeout.tv_usec = 0;
@@ -194,17 +197,13 @@ int main(int argc, char *argv[])
             perror("ERROR in select");
             exit(1);
         }
-
-        // UNTIL HERE
-
-        // COMMUNICATION WITH CLIENT ---------------------------------------
+        
+        ///////////////////////////////////////////
+        /* COMMUNICATION WITH CLIENT USING SOCKETS */
+        ///////////////////////////////////////////
         for (int i = 0; i < FD_SETSIZE; ++i) {
-            // writeToLogFile(serverlogpath, "inside for loop");
             if (FD_ISSET(i, &read_fds)) {
-                writeToLogFile(serverlogpath, "FD_ISSET\n");
-
                 if (i == sockfd) {  // New connection
-                    writeToLogFile(serverlogpath,"NEW CONNECTION\n");
                     clilen = sizeof(cli_addr);
                     newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
                     if (newsockfd < 0) {
@@ -216,8 +215,14 @@ int main(int argc, char *argv[])
                     
 
                 } else {  // Existing client
-                    writeToLogFile(serverlogpath, "Connected to client\n");
-                    int bytes_read = recv(i, buffer, sizeof(buffer), 0);
+                    int bytes_read = read(i, buffer, sizeof(buffer) - 1);
+                    writeToLogFile(serverlogpath,buffer);
+
+                    //Echo
+                    int bytes_written = write(i,buffer, bytes_read);
+                    if (bytes_written < 0) {perror("ERROR writing to socket");}
+                    
+                    
                     if (bytes_read < 0) {
                         perror("ERROR reading from socket");
                         exit(1);
@@ -226,64 +231,72 @@ int main(int argc, char *argv[])
                         FD_CLR(i, &read_fds);
                         printf("Connection closed\n");
                     } else { // Message received
-                        
-                        char *data_start =strchr(buffer, ']');
-                        if (data_start == NULL){
-                            perror("No ] found");
-                            continue;
-                        }
+                        buffer[bytes_read] = '\0';
+                        writeToLogFile(serverlogpath,buffer);
 
-                        data_start++;
-                        ssize_t length = strlen(data_start);
-                        
-                        char new_buffer[length +1];
-                        char process_char = buffer[0];
-                        strncpy(new_buffer, data_start, length);
-                        new_buffer[length] = '\0';
 
-                        char *token = strtok(buffer, " ");
-                        int index = 0;
+                        if (buffer[0]=='O' && buffer[1]=='I'){//identification done
+                            //SEND BACK SCREEN SIZE
+                            writeToLogFile(serverlogpath,"OI RECEIVED");
+                        }else if(buffer[0]=='T' && buffer[1]=='I'){
+                            writeToLogFile(serverlogpath,"TI RECEIVED");//identification done
+                            //SEND BACK SCREEN SIZE
+                        }else if(buffer[0]=='O'){//obstacle positions sent
+                            writeToLogFile(serverlogpath,"Obstacle received");
+                            //PARSE THE DATA TO STRING
+                            int totalObstacles;
+                            int index = 0;
+                            sscanf(buffer, "O[%d]", &totalObstacles);
+                            float temp_pos[totalObstacles*2];
 
-                        double received[NUM_OBSTACLES*2];
-
-                        // Convert each token to a float and store it in target_pos array
-                        while (token != NULL && index < NUM_OBSTACLES*2) {
-                            received[index] = atof(token);
-                            token = strtok(NULL, " ");
-                            index++;
-                        }
-
-                        // Code to check if data is sent from obstacle or target
-                        if (process_char == 'O'){
-                            sprintf(logMessage, "Obstacle position: %s\n",new_buffer);
-                            writeToLogFile(serverlogpath,logMessage);
-                            if ((sizeof(received))>0){
-                                // memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
-                                memcpy(data.obst_pos, received, sizeof(received));
-                                my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+                            char *token = strtok(buffer + 5, "|");
+                            while (token != NULL && index < totalObstacles*2) {
+                                sscanf(token, "%f,%f", &temp_pos[index*2], &temp_pos[index*2+1]);
+                                // data.obst_pos[index] = atof(token);
+                                token = strtok(NULL, "|");
+                                index++;
+                                
                             }
-                        }else if(process_char == 'T'){
-                            sprintf(logMessage, "target position: %s\n",new_buffer);
+                            memcpy(data.obst_pos, temp_pos, sizeof(temp_pos));
+                            sprintf(logMessage, "%f %f", data.obst_pos[0],data.obst_pos[1]);
                             writeToLogFile(serverlogpath,logMessage);
-                            if ((sizeof(received))>0){
-                                // memcpy(target_pos, updated_data.target_pos, sizeof(updated_data.target_pos));
+                            my_write(server_drone[1],&data,server_drone[0],sizeof(data));
 
-                                memcpy(data.target_pos, received, sizeof(received));
-                                my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+
+                        }else if(buffer[0]=='T'){//target positions sent
+                            writeToLogFile(serverlogpath,"Target received");
+                            //PARSE THE DATA TO STRING
+                            int totalTargets;
+                            int index = 0;
+                            sscanf(buffer, "T[%d]", &totalTargets);
+                            float temp_pos[totalTargets*2];
+
+                            char *token = strtok(buffer + 5, "|");
+                            while (token != NULL && index < totalTargets*2) {
+                                sscanf(token, "%f,%f", &temp_pos[index*2], &temp_pos[index*2+1]);
+                                // temp_pos[index] = atof(token);
+                                token = strtok(NULL, "|");
+                                index++;
                             }
+                            sprintf(logMessage, "temp pos is : %f %f %f %f", temp_pos[0],temp_pos[1],temp_pos[2],temp_pos[3]);
+                            writeToLogFile(serverlogpath,logMessage);
+
+                            memcpy(data.target_pos, temp_pos, sizeof(temp_pos));
+                            sprintf(logMessage, "%f %f", data.target_pos[0],data.target_pos[1]);
+                            writeToLogFile(serverlogpath,logMessage);
+                            my_write(server_drone[1],&data,server_drone[0],sizeof(data));
+
+
                         }else{
-                            perror("Client send the data in wrong format\n");
+                            writeToLogFile(serverlogpath,"Client send the data in wrong format\n");
                         }
+                        
+                        
+                        
 
-                    //     // change string to list
-                    //     // store it in target_pos
 
-                        
-                        
-                        
-                        
-                    //     // printf("Message received: %s\n", buffer);
-                    // }
+
+                    }
                 }
             }
             // writeToLogFile(serverlogpath, "NO FD_ISSET\n");
@@ -291,68 +304,58 @@ int main(int argc, char *argv[])
 
         if (newsockfd < 0) 
             perror("ERROR on accept");
-        pid = fork();
-        if (pid < 0)
-            perror("ERROR on fork");
-        if (pid == 0)  {
 
-            // Wait for message
-            // Check if message is OI or TI
-            // Echo
-            // Send back the window size
+        
+        ///////////////////////////////////////////
+        /* COMMUNICATION WITHIN SERVER USING PIPES*/
+        ///////////////////////////////////////////
 
-            // Receive target 
-            // Receive Obstacle
-            // Store it as local variables
-            // send it to the necessary processes
-            // exit(0);
-            //---------------------------------------------------------------------
+        fd_set reading2;
+        FD_ZERO(&reading2);
+
+        for(int i=0; i<NUM_PROCESSES-1;i++){
+            FD_SET(rec_pipes[i][0], &reading2);
         }
-        else{
-            fd_set reading;
-            FD_ZERO(&reading);
-
-            for(int i=0; i<NUM_PROCESSES-1;i++){
-                FD_SET(rec_pipes[i][0], &reading);
+        for (int i = 0; i < NUM_PROCESSES-1; i++) {
+            if (rec_pipes[i][0] > max_pipe_fd) {
+                max_pipe_fd = rec_pipes[i][0];
             }
-            for (int i = 0; i < NUM_PROCESSES-1; i++) {
-                if (rec_pipes[i][0] > max_pipe_fd) {
-                    max_pipe_fd = rec_pipes[i][0];
-                }
-            }
-            int ret_val= 0;
-            ret_val = select(max_pipe_fd, &reading, NULL, NULL, NULL);
-            for(int j=0; j<(NUM_PROCESSES-2); j++){
-                if(ret_val>0){
+        }
+        int ret_val= 0;
+        struct timeval timeout2;
+        timeout2.tv_sec = 0;  // Wait for 5 seconds
+        timeout2.tv_usec = 0;
+        ret_val = select(max_pipe_fd, &reading2, NULL, NULL, &timeout2);
+        for(int j=0; j<(NUM_PROCESSES-2); j++){
+            if(ret_val>0){
 
-                    if(FD_ISSET(rec_pipes[j][0],&reading)){ // Only from pipes that are updated
-                        my_read(rec_pipes[j][0],&updated_data,rec_pipes[j][1], sizeof(data)); 
+                if(FD_ISSET(rec_pipes[j][0],&reading2)){ // Only from pipes that are updated
+                    my_read(rec_pipes[j][0],&updated_data,rec_pipes[j][1], sizeof(data)); 
 
-                        switch (j){
-                        case 0: //window
-                            writeToLogFile(serverlogpath, "Window: User input received");
-                            key=updated_data.key; // Only copy the updated variables to local 
-                            data.key=updated_data.key; // Update shared data with the updated variables
-                            my_write(server_keyboard[1],&data,server_keyboard[0],sizeof(data));
-                            
-                            break;
-                        case 1: //keyboard
-                            writeToLogFile(serverlogpath, "Keyboard: Command force received from keyboard");
-                            memcpy(command_force, updated_data.command_force, sizeof(updated_data.command_force)); // Store it as local variable
-                            memcpy(data.command_force, updated_data.command_force, sizeof(updated_data.command_force)); //Copy it to the shared data
-                            my_write(server_drone[1],&data,server_drone[0],sizeof(data)); // Send the shared data to drone
-                            break;
+                    switch (j){
+                    case 0: //window
+                        writeToLogFile(serverlogpath, "Window: User input received");
+                        key=updated_data.key; // Only copy the updated variables to local 
+                        data.key=updated_data.key; // Update shared data with the updated variables
+                        my_write(server_keyboard[1],&data,server_keyboard[0],sizeof(data));
+                        
+                        break;
+                    case 1: //keyboard
+                        writeToLogFile(serverlogpath, "Keyboard: Command force received from keyboard");
+                        memcpy(command_force, updated_data.command_force, sizeof(updated_data.command_force)); // Store it as local variable
+                        memcpy(data.command_force, updated_data.command_force, sizeof(updated_data.command_force)); //Copy it to the shared data
+                        my_write(server_drone[1],&data,server_drone[0],sizeof(data)); // Send the shared data to drone
+                        break;
 
-                        case 2: //drone
-                            writeToLogFile(serverlogpath, "Drone: New drone_pos received from drone");
-                            memcpy(drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
-                            memcpy(data.drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
-                            my_write(server_window[1],&data,server_window[0],sizeof(data)); 
-                            break;
+                    case 2: //drone
+                        writeToLogFile(serverlogpath, "Drone: New drone_pos received from drone");
+                        memcpy(drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
+                        memcpy(data.drone_pos, updated_data.drone_pos, sizeof(updated_data.drone_pos));
+                        my_write(server_window[1],&data,server_window[0],sizeof(data)); 
+                        break;
 
-                        default:
-                            break;
-                        }
+                    default:
+                        break;
                     }
                 }
             }
@@ -371,5 +374,3 @@ int main(int argc, char *argv[])
 
     return 0; 
 } 
-        
-    
