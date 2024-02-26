@@ -253,11 +253,11 @@ int main(int argc, char* argv[]) {
             data.key=key;
             my_write(window_server[1],&data,window_server[0],sizeof(data));
             writeToLogFile(windowlogpath, "WINDOW: User input sent to server");
-            if((char)key==' '){ //if space was pressed, close window
-                close(window_server[1]);
-                close(server_window[0]);
-                exit(EXIT_SUCCESS);
-            }
+            // if((char)key==' '){ //if space was pressed, close window
+            //     close(window_server[1]);
+            //     close(server_window[0]);
+            //     exit(EXIT_SUCCESS);
+            // }
         }
     }
 

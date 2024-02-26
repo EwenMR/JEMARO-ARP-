@@ -268,10 +268,11 @@ int main(int argc, char *argv[])
         if(command_force[0] == -100 && command_force[1] == -100){
             sprintf(logMessage, "command forces %d %d", data.command_force[0], data.command_force[1]);
             writeToLogFile(serverlogpath, logMessage);
-            char stop[MSG_LEN];
+            char stop[5];
             sprintf(stop, "STOP");
             write(target_sockfd, stop, strlen(stop));
             write(obstacle_sockfd, stop, strlen(stop));
+            sleep(3);
             // checking
             // writeToLogFile(serverlogpath, stop);
 

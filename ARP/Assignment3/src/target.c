@@ -129,10 +129,10 @@ int main(int argc, char* argv[]){
     int target_obstacle[2];
     sscanf(argv[1], client_args_format,  &target_obstacle[0], &target_obstacle[1]);
     
-    char status[MSG_LEN];
+    char status[5];
     char TI[]="TI";
     write_then_wait_echo(sockfd, TI, strlen(TI) + 1);
-    char rec_msg[MAX_MSG_LEN];
+    char rec_msg[MSG_LEN];
     read_then_echo(sockfd, rec_msg);
     // read(sockfd, rec_msg, strlen(rec_msg));
     writeToLogFile(targetlogpath,"WINDOWSIZE");
@@ -153,20 +153,21 @@ int main(int argc, char* argv[]){
 
     while(1) {
         //NON? BLOCK READ
-        read_then_echo_unblocked(sockfd, status, window_x, window_y);
+        read_then_echo(sockfd, rec_msg);
         //IF GE, GENERATE
-        if(strcmp(status, "GE") == 0){
+        if(strcmp(rec_msg, "GE") == 0){
             send_target_to_obstacle(target_obstacle);
+            write_then_wait_echo(sockfd,target_msg,strlen(target_msg));
         }
         //IF STOP, STOP
-        else if (strcmp(status, "STOP") == 0){
-            sprintf(logMessage, "GAME TERMINATED");
-            writeToLogFile(targetlogpath, logMessage);
+        else if (strcmp(rec_msg, "STOP") == 0){
+            writeToLogFile(targetlogpath, "GAME TERMINATED");
             exit(EXIT_SUCCESS);
+        }else{
+            usleep(50000);
         }
         //ELSE
         
-        sleep(5);
     }
 
     // Clean up

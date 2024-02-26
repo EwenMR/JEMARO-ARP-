@@ -127,9 +127,6 @@ int main(int argc, char* argv[]){
     sprintf(logmessage, "%f %f", target_pos[0], target_pos[1]);
     writeToLogFile(obstaclelogpath,logmessage);
 
-
-    char status[MSG_LEN];
-
     struct shared_data data; // Ensure this struct is defined to match the expected data format for both sending and receiving
     int seconds, new_seconds, remainder;
     bool first = true;
@@ -170,12 +167,6 @@ int main(int argc, char* argv[]){
                 sprintf(obstacle_msg + strlen(obstacle_msg), "|");
             }
         }
-        // Write the string to the socket
-        // if (write(sockfd, obstacle_msg, strlen(obstacle_msg) + 1) < 0) {
-        //     writeToLogFile(obstaclelogpath,"ERROR writing to socket");
-        // }else{
-        //     writeToLogFile(obstaclelogpath, obstacle_msg);
-        // }
         
 
         int ready;
@@ -191,20 +182,16 @@ int main(int argc, char* argv[]){
 
         while (obstacle_msg[0] == '\0'){
             // Data is available for reading, so read from the socket
-            bytes_read = read(sockfd, obstacle_msg, bytes_written);
-            if (bytes_read < 0) {perror("ERROR reading from socket");} 
-            else if (bytes_read == 0) {printf("Connection closed!\n"); return 0;}
-        }
-        writeToLogFile(obstaclelogpath,"ECHO");
-        writeToLogFile(obstaclelogpath,obstacle_msg);
+            read_then_echo(sockfd, obstacle_msg);
 
-        
-        // non blocking read and echo for STOP
-        read_then_echo_unblocked(sockfd, status, window_x, window_y);
-        if(strcmp(status, "STOP") == 0){
+
+            if(strcmp(obstacle_msg, "STOP") == 0){
             writeToLogFile(obstaclelogpath, "GAME TERMINATED");
             exit(EXIT_SUCCESS);
         }
+        }
+
+    
 
 
 
