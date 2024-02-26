@@ -58,11 +58,11 @@ The file receives the drone, target and obstalce positions and sends the updated
 
 
 ## obstacle.c
-The role of the `obstacle.c` file is to create and manage the random spawning of the obstacle positions. The file reads the drone position as to not create an obstacle too close to the drone to avoid any unwanted behaviour. The obstacles file is made into a socket client that sends its positions via sockets to an external server from another gorup. The signal handling is done as to send a signal to the watchdog as the previous processes.
+The role of the `obstacle.c` file is to create and manage the random spawning of the obstacle positions. The file reads the drone position as to not create an obstacle too close to the drone to avoid any unwanted behaviour. The obstacles file is made into a socket client that sends its positions via sockets to an external server from another gorup. 
 
 
 ## target.c
-The `target.c` file creates the random target positions as long as they are not within a certain threshold of the drone's position. Like the obstacles file the targets file is a socket client that sends its positions to an external socket server using sockets. Along the other processes the signal handling is done such that the signal is sent to the watchdog.
+The `target.c` file creates the random target positions as long as they are not within a certain threshold of the drone's position. Like the obstacles file the targets file is a socket client that sends its positions to an external socket server using sockets.
 
 
 
