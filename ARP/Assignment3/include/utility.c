@@ -1,12 +1,17 @@
 // #ifndef UTILITY_H
 // #define UTILITY_H
 
-#include <stdio.h>
 #include <unistd.h>
-#include <stdlib.h>
 #include "./constants.h"
-#include <stdio.h>
 #include <time.h>
+#include <stdio.h>      // For standard I/O operations
+#include <stdlib.h>     // For standard library functions such as exit()
+#include <unistd.h>     // For POSIX operating system API
+#include <string.h>     // For string manipulation functions
+#include <sys/types.h>  // For data types used in system calls
+#include <sys/socket.h> // For socket-related functions
+#include <netinet/in.h> // For Internet address structures
+#include <netdb.h>      // For network database operations such as gethostbyname()
 
 void writeToLogFile(const char *logpath, const char *logMessage) {
     FILE *logFile = fopen(logpath, "a");  // Open file in append mode
@@ -29,6 +34,7 @@ void writeToLogFile(const char *logpath, const char *logMessage) {
 
     fclose(logFile);
 }
+
 
 
 void clearLogFile(const char *logpath) {
