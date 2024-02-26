@@ -10,7 +10,7 @@ Team Members: Ewen Gay-Semenkoff, Kohei Tateyama
 
 # Short definition of all Active Components
 
-There are 5 folders `build`, `include`, `src`, `log` and `resources`  as well as a makefile. The build folder holds all the compiled and executbale files that are made by running the makefile. The `include` directory contains header files `constants.h`, `log.c`, `utility.c` . The `src` directory contains `drone.c`, `keyboardManager.c`, `master.c`, `server.c`, `watchdog.c` and `window.c`. The `log` directory contains the log files for debugging and observability.
+There are 5 folders `build`, `include`, `src`, `log` and `resources`  as well as a makefile. The build folder holds all the compiled and executbale files that are made by running the makefile. The `include` directory contains header files `constants.h`, `log.c`, `utility.c` . The `src` directory contains `drone.c`, `keyboardManager.c`, `master.c`, `server.c`, `watchdog.c`, `window.c`, `obstacle.c`, and `target.c`. The `log` directory contains the log files for debugging and observability.
 
 
 ## constants.h
