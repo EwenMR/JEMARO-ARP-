@@ -182,7 +182,7 @@ int main(int argc, char* argv[]){
 
         while (obstacle_msg[0] == '\0'){
             // Data is available for reading, so read from the socket
-            read_then_echo(sockfd, obstacle_msg);
+            read(sockfd, obstacle_msg,MSG_LEN);
 
 
             if(strcmp(obstacle_msg, "STOP") == 0){
@@ -192,12 +192,6 @@ int main(int argc, char* argv[]){
         }
 
     
-
-
-
-
-
-        // sleep(2);
         usleep(50000); // Control the frequency of updates
     }
 

@@ -56,25 +56,25 @@ void ncursesSetup(WINDOW **display, WINDOW **score)
     
 }
 
-struct timeval current_time() {
-    /*
-    Returns the current time using gettimeofday.
-    */
-    struct timeval time_now;
-    gettimeofday(&time_now, NULL);
-    return time_now;
-}
+// struct timeval current_time() {
+//     /*
+//     Returns the current time using gettimeofday.
+//     */
+//     struct timeval time_now;
+//     gettimeofday(&time_now, NULL);
+//     return time_now;
+// }
 
-int calc_score(struct timeval start, struct timeval finish) {
-    // Calculate the difference in seconds between two timeval structs
-    int time_passed = (int)(finish.tv_sec - start.tv_sec);
-    if(time_passed<10){
-        return 100;
-    }else{
-        return 110 - time_passed;
-    }
+// int calc_score(struct timeval start, struct timeval finish) {
+//     // Calculate the difference in seconds between two timeval structs
+//     int time_passed = (int)(finish.tv_sec - start.tv_sec);
+//     if(time_passed<10){
+//         return 100;
+//     }else{
+//         return 110 - time_passed;
+//     }
     
-}
+// }
 
 
 
@@ -85,8 +85,8 @@ int main(int argc, char* argv[]) {
     initscr();
     noecho();
     cbreak();
-    struct timeval start_time, finish_time;
-    start_time = current_time();
+    // struct timeval start_time, finish_time;
+    // start_time = current_time();
     clearLogFile(windowlogpath);
 
     // WINDOW INITIALIZATION
@@ -227,25 +227,25 @@ int main(int argc, char* argv[]) {
         wrefresh(score);
         
         // If all targets are reached, Game finished
-        if(started == true){
-            game_set = true;
-        }
-        for (int i=0; i<NUM_TARGETS*2; i++){
-            if(target_pos[i]!=0){
-                game_set=false;
-            }
-        }
-        if(game_set==true){
-            finish_time = current_time();
-            int your_score = calc_score(start_time, finish_time);
+        // if(started == true){
+        //     game_set = true;
+        // }
+        // for (int i=0; i<NUM_TARGETS*2; i++){
+        //     if(target_pos[i]!=0){
+        //         game_set=false;
+        //     }
+        // }
+        // if(game_set==true){
+        //     finish_time = current_time();
+        //     int your_score = calc_score(start_time, finish_time);
 
-            werase(win);
-            box(win, 0, 0);
-            mvwprintw(win, LINES/2, COLS/2, "SCORE IS %d", your_score);
-            wrefresh(win);
-            sleep(2);
-            exit(EXIT_SUCCESS);
-        }
+        //     werase(win);
+        //     box(win, 0, 0);
+        //     mvwprintw(win, LINES/2, COLS/2, "SCORE IS %d", your_score);
+        //     wrefresh(win);
+        //     sleep(2);
+        //     exit(EXIT_SUCCESS);
+        // }
         
         // Send user input to keyboard manager
         key=wgetch(win); // wait for user input
@@ -253,11 +253,11 @@ int main(int argc, char* argv[]) {
             data.key=key;
             my_write(window_server[1],&data,window_server[0],sizeof(data));
             writeToLogFile(windowlogpath, "WINDOW: User input sent to server");
-            // if((char)key==' '){ //if space was pressed, close window
-            //     close(window_server[1]);
-            //     close(server_window[0]);
-            //     exit(EXIT_SUCCESS);
-            // }
+            if((char)key==' '){ //if space was pressed, close window
+                close(window_server[1]);
+                close(server_window[0]);
+                exit(EXIT_SUCCESS);
+            }
         }
     }
 

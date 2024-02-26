@@ -266,33 +266,12 @@ int main(int argc, char *argv[])
 
         // if space bar is pressed to exit
         if(command_force[0] == -100 && command_force[1] == -100){
-            sprintf(logMessage, "command forces %d %d", data.command_force[0], data.command_force[1]);
-            writeToLogFile(serverlogpath, logMessage);
-            char stop[5];
+            char stop[MSG_LEN];
             sprintf(stop, "STOP");
             write(target_sockfd, stop, strlen(stop));
             write(obstacle_sockfd, stop, strlen(stop));
             sleep(3);
-            // checking
-            // writeToLogFile(serverlogpath, stop);
-
-            // write_then_wait_echo(sockfd, stop, sizeof(stop));
-            // // checks
-            // sprintf(logMessage, "GAME STOP sent");
-            // writeToLogFile(serverlogpath, logMessage);
         }
-
-        // send GE if all target pos are 0
-
-        // this version doesn't check if they're all zeors
-        // for(int e = 0; e < NUM_TARGETS*2; e++){
-        //     if(target_pos[e] == 0){
-        //         char game_end[MSG_LEN];
-        //         sprintf(game_end, "GE");
-        //         write(target_sockfd, game_end, strlen(game_end));
-        //         writeToLogFile(serverlogpath, "GAME END NEW TARGETS REQUESTED");
-        //     }
-        // }
 
         // send GE if all target pos are 0
         bool all_targets_zero = true;
@@ -307,6 +286,7 @@ int main(int argc, char *argv[])
             sprintf(game_end, "GE");
             write(target_sockfd, game_end, strlen(game_end));
             writeToLogFile(serverlogpath, "GAME END NEW TARGETS REQUESTED");
+            writeToLogFile(serverlogpath, game_end);
         }
 
 

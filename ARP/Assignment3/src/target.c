@@ -147,20 +147,20 @@ int main(int argc, char* argv[]){
     
     
     int ready;
-        int bytes_read, bytes_written;
+    int bytes_read, bytes_written;
 
     write_then_wait_echo(sockfd,target_msg,strlen(target_msg));
 
     while(1) {
-        //NON? BLOCK READ
-        read_then_echo(sockfd, rec_msg);
+        just_read(sockfd, rec_msg);
         //IF GE, GENERATE
         if(strcmp(rec_msg, "GE") == 0){
-            send_target_to_obstacle(target_obstacle);
+            writeToLogFile(targetlogpath,rec_msg);
+            // send_target_to_obstacle(target_obstacle);
+            makeTargs();
+            // write(sockfd,rec_msg,MSG_LEN);
             write_then_wait_echo(sockfd,target_msg,strlen(target_msg));
-        }
-        //IF STOP, STOP
-        else if (strcmp(rec_msg, "STOP") == 0){
+        }else if (strcmp(rec_msg, "STOP") == 0){
             writeToLogFile(targetlogpath, "GAME TERMINATED");
             exit(EXIT_SUCCESS);
         }else{

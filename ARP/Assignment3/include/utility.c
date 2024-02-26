@@ -137,6 +137,17 @@ void read_then_echo(int sockfd, char socket_msg[]){
     if (bytes_written < 0) {perror("ERROR writing to socket");}
 }
 
+void just_read(int sockfd, char socket_msg[]){
+    int bytes_read, bytes_written;
+    bzero(socket_msg, MSG_LEN);
+
+    // READ from the socket
+    bytes_read = read(sockfd, socket_msg, MSG_LEN - 1);
+    if (bytes_read < 0) perror("ERROR reading from socket");
+    else if (bytes_read == 0) {return;}  // Connection closed
+    else if (socket_msg[0] == '\0') {return;} // Empty string
+}
+
 void error(char *msg);
 void setupSocketConnection(char *hostname, int portno);
 
