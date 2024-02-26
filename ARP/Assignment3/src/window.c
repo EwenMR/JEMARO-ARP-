@@ -16,67 +16,10 @@
 #include "../include/log.c"
 #include "../include/constants.h"
 
-// Signal handler for watchdog
-void signal_handler(int signo, siginfo_t *siginfo, void *context){
-    if(signo == SIGINT){
-        writeToLogFile(windowlogpath,"killed");
-        exit(1);
-        
-    }
-    if(signo == SIGUSR1){
-        pid_t wd_pid = siginfo->si_pid;
-        kill(wd_pid, SIGUSR2);
-        writeToLogFile(windowlogpath,"signal received");
-    }
-}
-
-
-WINDOW *create_newwin(int height, int width, int starty, int startx)
-{
-    WINDOW *local_win;
-
-    local_win = newwin(height, width, starty, startx);
-    box(local_win, 0, 0);
-    wrefresh(local_win);
-
-    return local_win;
-}
-
-void ncursesSetup(WINDOW **display, WINDOW **score)
-{
-    int initPos[4] = { // Start position of the window
-        LINES/200,
-        COLS/200,
-        (LINES/200) +LINES*WINDOW_ROW,
-        COLS/200
-    };
-
-    *score = create_newwin(LINES*SCORE_WINDOW_ROW, COLS*WINDOW_COL, initPos[2], initPos[3]);
-    *display = create_newwin(LINES*WINDOW_ROW, COLS*WINDOW_COL, initPos[0], initPos[1]);
-    
-}
-
-// struct timeval current_time() {
-//     /*
-//     Returns the current time using gettimeofday.
-//     */
-//     struct timeval time_now;
-//     gettimeofday(&time_now, NULL);
-//     return time_now;
-// }
-
-// int calc_score(struct timeval start, struct timeval finish) {
-//     // Calculate the difference in seconds between two timeval structs
-//     int time_passed = (int)(finish.tv_sec - start.tv_sec);
-//     if(time_passed<10){
-//         return 100;
-//     }else{
-//         return 110 - time_passed;
-//     }
-    
-// }
-
-
+// Functions
+void signal_handler(int , siginfo_t *, void *);
+WINDOW *create_newwin(int , int , int , int );
+void ncursesSetup(WINDOW **, WINDOW **);
 
 
 
@@ -85,8 +28,6 @@ int main(int argc, char* argv[]) {
     initscr();
     noecho();
     cbreak();
-    // struct timeval start_time, finish_time;
-    // start_time = current_time();
     clearLogFile(windowlogpath);
 
     // WINDOW INITIALIZATION
@@ -127,6 +68,10 @@ int main(int argc, char* argv[]) {
     float obstacle_pos[NUM_OBSTACLES*2];
     int key;
     int first=0;
+    bool started= false;
+    bool game_set=false;
+    int ymax_new, xmax_new;
+    double scalex,scaley; 
     
     // Color of the drone, targets, obstacles
     start_color();
@@ -134,31 +79,26 @@ int main(int argc, char* argv[]) {
     init_pair(2, COLOR_RED, COLOR_BLACK);
     init_pair(3, COLOR_GREEN, COLOR_BLACK);
 
-    bool started;
-    started = false;
-    bool game_set;
-    game_set=false;
+    
     
     while (1) {
+        /////////////////////////////////////////////
+        /*WINDOW INITIALIZATION*/
+        //////////////////////////////////////////////
         werase(win);
         werase(score);
         box(win, 0, 0);
         box(score, 0, 0);
-        
-
-        int ymax_new, xmax_new;
         getmaxyx(stdscr, ymax_new, xmax_new);
         data.windowx=(double)xmax*(WINDOW_COL-0.01);
         data.windowy=(double)ymax*(WINDOW_ROW-0.01);
         sprintf(logMessage,"%d %d",data.windowx,data.windowy);
-        if (started==false){
+        if (started==false){ //only once
             writeToLogFile(windowlogpath,logMessage);
             my_write(window_server[1],&data,window_server[0],sizeof(data));
         }
         
-
-
-        // Change the scale if the window size changes
+        // If the window size changes
         if(ymax != ymax_new || xmax != xmax_new){
             wresize(win, ymax_new*WINDOW_ROW, xmax_new*WINDOW_COL);
             wresize(score, ymax_new *SCORE_WINDOW_ROW, xmax_new *WINDOW_COL);
@@ -181,7 +121,9 @@ int main(int argc, char* argv[]) {
 
         
 
-        // READ SHARED DATA and store it into local variables.
+        //////////////////////////////////////////////////
+        /*COMMUNICATION WITH SERVER*/
+        //////////////////////////////////////////////////
         my_read(server_window[0],&data,server_window[1],sizeof(data));
         memcpy(drone_pos, data.drone_pos, sizeof(data.drone_pos));
         memcpy(target_pos, data.target_pos, sizeof(data.target_pos));
@@ -195,23 +137,28 @@ int main(int argc, char* argv[]) {
             writeToLogFile(windowlogpath,"STARTED");
         }
 
-        double scalex,scaley; // get the scale, to scale up the window to the real world scale
+
+        /////////////////////////////////////////////////////////////
+        /*DISPLAY ON WINDOW*/
+        /////////////////////////////////////////////////////////////
+
+        // get the scale, to scale up the window to the real world scale
         scalex=(double)BOARD_SIZE /((double)xmax*(WINDOW_COL-0.01));
         scaley=(double)BOARD_SIZE/((double)ymax*(WINDOW_ROW-0.01));
 
-        // Print drone and score onto the window
+        // DRONE
         wattron(win,COLOR_PAIR(1));
         mvwprintw(win, (int)(drone_pos[5]/scaley), (int)(drone_pos[4]/scalex), "+");
         wattroff(win,COLOR_PAIR(1));
 
-        // Print obstacles on window
+        // OBSTACLES
         wattron(win,COLOR_PAIR(3));
         for(int i=0; i<(NUM_OBSTACLES*2);i+=2){
             mvwprintw(win, (int)(obstacle_pos[i+1]), (int)(obstacle_pos[i]), "O");
         }
         wattroff(win,COLOR_PAIR(3));
 
-        // Print targets on window
+        // TARGETS
         wattron(win,COLOR_PAIR(2));
         for(int i=2; i<(NUM_TARGETS*2)+2;i+=2){
             if(target_pos[i-2]==0 && target_pos[i-1]==0){
@@ -221,33 +168,16 @@ int main(int argc, char* argv[]) {
         }
         wattroff(win,COLOR_PAIR(2));
 
+
         // Display drone on window
         mvwprintw(score,1,1,"Position of the drone is: %f,%f", drone_pos[4],drone_pos[5]);
         wrefresh(win);
         wrefresh(score);
         
-        // If all targets are reached, Game finished
-        // if(started == true){
-        //     game_set = true;
-        // }
-        // for (int i=0; i<NUM_TARGETS*2; i++){
-        //     if(target_pos[i]!=0){
-        //         game_set=false;
-        //     }
-        // }
-        // if(game_set==true){
-        //     finish_time = current_time();
-        //     int your_score = calc_score(start_time, finish_time);
-
-        //     werase(win);
-        //     box(win, 0, 0);
-        //     mvwprintw(win, LINES/2, COLS/2, "SCORE IS %d", your_score);
-        //     wrefresh(win);
-        //     sleep(2);
-        //     exit(EXIT_SUCCESS);
-        // }
         
-        // Send user input to keyboard manager
+        /////////////////////////////////////////////////////////////
+        /*GET USER INPUT*/
+        /////////////////////////////////////////////////////////////
         key=wgetch(win); // wait for user input
         if (key != ERR) { // If a key was pressed properly
             data.key=key;
@@ -268,4 +198,70 @@ int main(int argc, char* argv[]) {
     endwin();
 
     return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Signal handler for watchdog
+void signal_handler(int signo, siginfo_t *siginfo, void *context){
+    if(signo == SIGINT){
+        writeToLogFile(windowlogpath,"killed");
+        exit(1);
+        
+    }
+    if(signo == SIGUSR1){
+        pid_t wd_pid = siginfo->si_pid;
+        kill(wd_pid, SIGUSR2);
+        writeToLogFile(windowlogpath,"signal received");
+    }
+}
+
+
+WINDOW *create_newwin(int height, int width, int starty, int startx)
+{
+    WINDOW *local_win;
+
+    local_win = newwin(height, width, starty, startx);
+    box(local_win, 0, 0);
+    wrefresh(local_win);
+
+    return local_win;
+}
+
+void ncursesSetup(WINDOW **display, WINDOW **score)
+{
+    int initPos[4] = { // Start position of the window
+        LINES/200,
+        COLS/200,
+        (LINES/200) +LINES*WINDOW_ROW,
+        COLS/200
+    };
+
+    *score = create_newwin(LINES*SCORE_WINDOW_ROW, COLS*WINDOW_COL, initPos[2], initPos[3]);
+    *display = create_newwin(LINES*WINDOW_ROW, COLS*WINDOW_COL, initPos[0], initPos[1]);
+    
 }
