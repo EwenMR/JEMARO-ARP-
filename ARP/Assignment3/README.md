@@ -1,11 +1,11 @@
-# Assignment 2
+# Assignment 3
 Team Name: WhereIsTheMarket?
 
 Team Members: Ewen Gay-Semenkoff, Kohei Tateyama
 
 ## Architecture Sketch
 
-![Architecture sketch](https://github.com/kohei-tateyama/JEMARO/blob/master/ARP/Assignment2/resources/ARP2_flowchart2.jpg)
+![Architecture sketch](https://github.com/kohei-tateyama/JEMARO/blob/master/ARP/Assignment2/resources/Assignment3archi.png)
 
 
 # Short definition of all Active Components
@@ -37,13 +37,13 @@ The `watchdog.c` file is resposnible for the monitoring (the 'health') and manag
 
 ## server.c
 
-The main role `server.c` file is to serve as the central coordinator in a multi-process communication system. Pipes are used to receive and store data (like drone position, obstacle positions, and target positions) in local variables as well as send the data to the necessary processes. Additionally, the file sets up signal handling and sends the server's process ID to the watchdog through pipes. 
+The main role `server.c` file is to serve as the central coordinator in a multi-process communication system. Pipes are used to receive and store data (like drone position) in local variables as well as send the data to the necessary processes. Additionally, in this assignment, the server acts as socket server, which can connect to multiple clients and receive as well as send data. Specifically, in our case the socket server will have the role of connecting to the target and obstacle socket clients from another group. Furthermore, the file sets up signal handling and sends the server's process ID to the watchdog through pipes. 
 
 
 
 ## keyboardManager.c
 
-The `keyboardManager.c` file is made to manage the user input from the keyboard and communicate the corresponding commands to the `drone.c` file to control the drone's movement. Different keys have different associated movements. The code receives the user input from the window, interprets the commands and sends commands using pipes. Signal handling is also implemented to send a signal to the watchdog.
+The `keyboardManager.c` file is made to manage the user input from the keyboard and communicate the corresponding commands to the `drone.c` file to control the drone's movement. Different keys have different associated impacts on the command force which is used to calculate new forces. The code receives the user input from the window, interprets the commands and sends commands using pipes. Signal handling is also implemented to send a signal to the watchdog.
 
 
 ## drone.c
@@ -54,15 +54,15 @@ The `drone.c` files as briefly alluded to in the previous part is made to contro
 ## window.c
 
 The `window.c` creates the graphical user interface of the game. Using the ncurses library, a main game window with the drone, the obstacles and the targets was made above a smaller window with the position of the drone.
-The file receives and sends the appropriate data through pipes. Once again signal handling is taken care of as to send a signal to the watchdog.
+The file receives the drone, target and obstalce positions and sends the updated data through pipes. Once again signal handling is taken care of as to send a signal to the watchdog.
 
 
 ## obstacle.c
-The role of the `obstacle.c` file is to create and manage the random spawning of the obstacle positions. The file reads the drone position as to not create an obstacle too close to the drone to avoid any unwanted behaviour. The obstacles' positions are sent via pipes. The signal handling is done as to send a signal to the watchdog as the previous processes.
+The role of the `obstacle.c` file is to create and manage the random spawning of the obstacle positions. The file reads the drone position as to not create an obstacle too close to the drone to avoid any unwanted behaviour. The obstacles file is made into a socket client that sends its positions via sockets to an external server from another gorup. The signal handling is done as to send a signal to the watchdog as the previous processes.
 
 
 ## target.c
-The `target.c` file creates the random target positions as long as they are not within a certain threshold of the drone's position. It also checks whether the target has been reached by the drone. Along the other processes the signal handling is done such that the signal is sent to the watchdog.
+The `target.c` file creates the random target positions as long as they are not within a certain threshold of the drone's position. Like the obstacles file the targets file is a socket client that sends its positions to an external socket server using sockets. Along the other processes the signal handling is done such that the signal is sent to the watchdog.
 
 
 
@@ -76,22 +76,26 @@ To clone this project to the local file, enter:
 ```bash
 $ git clone https://github.com/kohei-tateyama/JEMARO.git
 $ git checkout master
-$ cd JEMARO/ARP/Assignment2
+$ cd JEMARO/ARP/Assignment3
 ```
 or unzip the file that is submitted to the aulaweb page.
 
 ### Build and Execute the Project
-In the 'Assignment2' directory, hit:
+In the 'Assignment3' directory, hit:
 
 ```bash
 $ make
 ```
-to compile all the necessary files. And to run the project, enter:
+to compile all the necessary files. And to run the project as a server, enter:
 
 ```bash
-$ make run
+$ ./build/master "server" 8080 (or any available port number)
 ```
-This command will open a konsole window. And  `drone`, `keyboard`, `server`, `window`, and `watchdog`.
+to compile all the necessary files. And to run the project as clients (generating targets and obstacles), enter:
+
+```bash
+$ ./build/master "client" 8080 ip_address
+```
 
 ## Operational instructions
 In the 'window' konsole, there should be a drone displayed as 'X'. Use the keys 
@@ -103,3 +107,21 @@ In the 'window' konsole, there should be a drone displayed as 'X'. Use the keys
 `x` `c` `v` &nbsp; &nbsp;    `m` `,` `.`     
 
 to add velocity to the drone. Press it multiple times to make it move faster. To stop the drone immediately, press the keys `d` or `k`. And to terminate all processes, press `space` in the 'window', or close any of the processes.
+
+
+## What to expect
+The general behaviour between the socket server and socket clients (targets and obstacles) is described below.
+
+The following describes, the nature of the communication between the target client and the socket server:
+![Targets example](https://github.com/kohei-tateyama/JEMARO/blob/master/ARP/Assignment3/resources/TargServ.jpg)
+
+The following describes the nature of the communication between the obstacles client and the socket server:
+![Architecture sketch](https://github.com/kohei-tateyama/JEMARO/blob/master/ARP/Assignment3/resources/ObServ.jpg)
+
+Some recurring features in both images:
+- "TI" and "OI" are used as identifiers, so that the server can identify each client.
+- After the identifiers are received the server sends the window size to the clients so that they may produce correctly scaled target and obstacle positions
+- The positions are sent with an identifier followed by a number in a sqaure bracket stating the amount of positions being sent, the positions have the following format: 'x,y' separated by '|'.
+- The message stop is sent from server to clients to announce the termination of the game. After receiving this message the clients will die.
+- Specifically for the targets client, once all targets have been reached the server sends a Game End message "GE" to make the targets client generate some new target positions.
+- Finally, the messages passed are repeated because an echo from the receiver of the message going either way is mandatory.
