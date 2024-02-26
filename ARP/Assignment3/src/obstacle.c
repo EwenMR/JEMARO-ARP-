@@ -128,7 +128,7 @@ int main(int argc, char* argv[]){
     writeToLogFile(obstaclelogpath,logmessage);
 
 
-
+    char status[MSG_LEN];
 
     struct shared_data data; // Ensure this struct is defined to match the expected data format for both sending and receiving
     int seconds, new_seconds, remainder;
@@ -199,7 +199,12 @@ int main(int argc, char* argv[]){
         writeToLogFile(obstaclelogpath,obstacle_msg);
 
         
-
+        // non blocking read and echo for STOP
+        read_then_echo_unblocked(sockfd, status, window_x, window_y);
+        if(strcmp(status, "STOP") == 0){
+            writeToLogFile(obstaclelogpath, "GAME TERMINATED");
+            exit(EXIT_SUCCESS);
+        }
 
 
 
