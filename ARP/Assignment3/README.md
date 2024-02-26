@@ -113,10 +113,10 @@ to add velocity to the drone. Press it multiple times to make it move faster. To
 The general behaviour between the socket server and socket clients (targets and obstacles) is described below.
 
 The following describes, the nature of the communication between the target client and the socket server:
-![Targets example](https://github.com/kohei-tateyama/JEMARO/blob/master/ARP/Assignment3/resources/TargServ.jpg)
+![Targets example](https://github.com/kohei-tateyama/JEMARO/blob/master/ARP/Assignment3/resources/TargServ.png)
 
 The following describes the nature of the communication between the obstacles client and the socket server:
-![Architecture sketch](https://github.com/kohei-tateyama/JEMARO/blob/master/ARP/Assignment3/resources/ObServ.jpg)
+![Architecture sketch](https://github.com/kohei-tateyama/JEMARO/blob/master/ARP/Assignment3/resources/ObServ.png)
 
 Some recurring features in both images:
 - "TI" and "OI" are used as identifiers, so that the server can identify each client.
