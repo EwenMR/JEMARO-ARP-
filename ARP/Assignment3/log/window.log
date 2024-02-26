@@ -1,0 +1,288 @@
+[2024-02-26 02:22:50] PID = 181310
+
+[2024-02-26 02:22:50] 100 22
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:0.000000 0.000000 O:0.000000 0.000000
+[2024-02-26 02:22:55] 100 22
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:0.000000 0.000000 O:0.000000 0.000000
+[2024-02-26 02:22:55] 100 22
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:0.000000 0.000000 O:0.000000 0.000000
+[2024-02-26 02:22:55] 100 22
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:2.000000 0.000000 O:0.000000 0.000000
+[2024-02-26 02:22:55] 100 22
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:8.000000 10.000000 O:0.000000 0.000000
+[2024-02-26 02:22:55] STARTED
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:55] STARTED
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:55] STARTED
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:55] STARTED
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:55] STARTED
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:55] STARTED
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:55] STARTED
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:55] STARTED
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:55] STARTED
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:55] STARTED
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:55] STARTED
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:55] STARTED
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:55] STARTED
+[2024-02-26 02:22:55] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:55] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:55] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:56] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:56] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:56] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:57] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:57] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:57] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: User input sent to server
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: User input sent to server
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:58] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:58] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:58] STARTED
+[2024-02-26 02:22:59] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:59] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:59] STARTED
+[2024-02-26 02:22:59] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:59] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:59] STARTED
+[2024-02-26 02:22:59] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:59] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:59] STARTED
+[2024-02-26 02:22:59] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:59] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:59] STARTED
+[2024-02-26 02:22:59] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:59] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:59] STARTED
+[2024-02-26 02:22:59] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:59] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:59] STARTED
+[2024-02-26 02:22:59] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:59] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:59] STARTED
+[2024-02-26 02:22:59] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:59] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:59] STARTED
+[2024-02-26 02:22:59] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:59] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:59] STARTED
+[2024-02-26 02:22:59] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:59] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:59] STARTED
+[2024-02-26 02:22:59] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:59] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:59] STARTED
+[2024-02-26 02:22:59] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:59] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:59] STARTED
+[2024-02-26 02:22:59] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:59] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:59] STARTED
+[2024-02-26 02:22:59] WINDOW: Drone_pos, Target_pos, Obst_pos received from server
+[2024-02-26 02:22:59] T:8.000000 10.000000 O:86.000000 1.000000
+[2024-02-26 02:22:59] STARTED
+[2024-02-26 02:22:59] WINDOW: User input sent to server
