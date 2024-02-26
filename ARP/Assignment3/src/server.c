@@ -252,7 +252,9 @@ int main(int argc, char *argv[])
             }
         }
         
-
+        ///////////////////////////////////////////////////////////
+        /*SENDING WINDOW SIZE*/
+        ///////////////////////////////////////////////////////////
         if(window_size_sent==false && windowx != 0 ){
             sprintf(logMessage, "Window size%d %d", data.windowx, data.windowy);
             writeToLogFile(serverlogpath,logMessage);
@@ -264,6 +266,9 @@ int main(int argc, char *argv[])
             window_size_sent=true;
         }
 
+        /////////////////////////////////////////////////////
+        /*STOP AND GE*/
+        //////////////////////////////////////////////////////
         // if space bar is pressed to exit
         if(command_force[0] == -100 && command_force[1] == -100){
             char stop[MSG_LEN];

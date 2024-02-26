@@ -80,6 +80,7 @@ int main(int argc, char* argv[]){
     ///////////////////////////////////////////////
     while(1) {
         just_read(sockfd, rec_msg);
+        writeToLogFile(targetlogpath,rec_msg);
         if(strcmp(rec_msg, "GE") == 0){
             writeToLogFile(targetlogpath,rec_msg);
             makeTargs();
