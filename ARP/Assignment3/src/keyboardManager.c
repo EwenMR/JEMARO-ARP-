@@ -71,9 +71,12 @@ int main(int argc, char *argv[]){
         // Get command force
         switch ((char)key) {
             case ' ': // enter space to exit
-            close(keyboard_server[1]);
-            close(server_keyboard[0]);
-                exit(EXIT_SUCCESS);
+                xy[0] = -100;
+                xy[1] = -100;
+                break;
+            // close(keyboard_server[1]);
+            // close(server_keyboard[0]);
+            //     exit(EXIT_SUCCESS);
 
             // RIGHT 
             case 'o':
