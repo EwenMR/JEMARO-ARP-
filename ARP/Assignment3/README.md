@@ -89,13 +89,15 @@ $ make
 to compile all the necessary files. And to run the project as a server, enter:
 
 ```bash
-$ ./build/master "server" 8080 (or any available port number)
+$ ./build/master "server" 8080 
 ```
-to compile all the necessary files. And to run the project as clients (generating targets and obstacles), enter:
+to compile all the necessary files. "8080" can be any available port number as long as you use the same number on both server and client. And to run the project as clients (generating targets and obstacles), enter:
 
 ```bash
 $ ./build/master "client" 8080 ip_address
 ```
+
+replace the ip_address with the actual ip address of the server side.
 
 ## Operational instructions
 In the 'window' konsole, there should be a drone displayed as 'X'. Use the keys 
