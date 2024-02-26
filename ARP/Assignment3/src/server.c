@@ -264,6 +264,34 @@ int main(int argc, char *argv[])
             window_size_sent=true;
         }
 
+        // if space bar is pressed to exit
+        if(command_force[0] == -100 && command_force[1] == -100){
+            sprintf(logMessage, "command forces %d %d", data.command_force[0], data.command_force[1]);
+            writeToLogFile(serverlogpath, logMessage);
+            char stop[MSG_LEN];
+            sprintf(stop, "STOP");
+            write(target_sockfd, stop, strlen(stop));
+            write(obstacle_sockfd, stop, strlen(stop));
+            // checking
+            // writeToLogFile(serverlogpath, stop);
+
+            // write_then_wait_echo(sockfd, stop, sizeof(stop));
+            // // checks
+            // sprintf(logMessage, "GAME STOP sent");
+            // writeToLogFile(serverlogpath, logMessage);
+        }
+
+        // send GE if all target pos are 0
+        for(int e = 0; e < NUM_TARGETS*2; e++){
+            if(target_pos[e] == 0){
+                char game_end[MSG_LEN];
+                sprintf(game_end, "GE");
+                write(target_sockfd, game_end, strlen(game_end));
+                writeToLogFile(serverlogpath, "GAME END NEW TARGETS REQUESTED");
+            }
+        }
+
+
         //////////////////////////////////////////////////////
         /* Handle socket from targets.c */
         /////////////////////////////////////////////////////
