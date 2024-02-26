@@ -282,13 +282,30 @@ int main(int argc, char *argv[])
         }
 
         // send GE if all target pos are 0
+
+        // this version doesn't check if they're all zeors
+        // for(int e = 0; e < NUM_TARGETS*2; e++){
+        //     if(target_pos[e] == 0){
+        //         char game_end[MSG_LEN];
+        //         sprintf(game_end, "GE");
+        //         write(target_sockfd, game_end, strlen(game_end));
+        //         writeToLogFile(serverlogpath, "GAME END NEW TARGETS REQUESTED");
+        //     }
+        // }
+
+        // send GE if all target pos are 0
+        bool all_targets_zero = true;
         for(int e = 0; e < NUM_TARGETS*2; e++){
-            if(target_pos[e] == 0){
-                char game_end[MSG_LEN];
-                sprintf(game_end, "GE");
-                write(target_sockfd, game_end, strlen(game_end));
-                writeToLogFile(serverlogpath, "GAME END NEW TARGETS REQUESTED");
+            if(target_pos[e] != 0){
+                all_targets_zero =false;
+                break;
             }
+        }
+        if (all_targets_zero){
+            char game_end[MSG_LEN];
+            sprintf(game_end, "GE");
+            write(target_sockfd, game_end, strlen(game_end));
+            writeToLogFile(serverlogpath, "GAME END NEW TARGETS REQUESTED");
         }
 
 
