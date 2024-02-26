@@ -129,7 +129,7 @@ int main(int argc, char* argv[]){
     int target_obstacle[2];
     sscanf(argv[1], client_args_format,  &target_obstacle[0], &target_obstacle[1]);
     
-
+    char status[MSG_LEN];
     char TI[]="TI";
     write_then_wait_echo(sockfd, TI, strlen(TI) + 1);
     char rec_msg[MAX_MSG_LEN];
@@ -153,8 +153,17 @@ int main(int argc, char* argv[]){
 
     while(1) {
         //NON? BLOCK READ
+        read_then_echo_unblocked(sockfd, status, window_x, window_y);
         //IF GE, GENERATE
+        if(strcmp(status, "GE") == 0){
+            send_target_to_obstacle(target_obstacle);
+        }
         //IF STOP, STOP
+        else if (strcmp(status, "STOP") == 0){
+            sprintf(logMessage, "GAME TERMINATED");
+            writeToLogFile(targetlogpath, logMessage);
+            exit(EXIT_SUCCESS);
+        }
         //ELSE
         
         sleep(5);
