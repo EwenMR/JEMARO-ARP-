@@ -122,6 +122,6 @@ Some recurring features in both images:
 - "TI" and "OI" are used as identifiers, so that the server can identify each client.
 - After the identifiers are received the server sends the window size to the clients so that they may produce correctly scaled target and obstacle positions
 - The positions are sent with an identifier followed by a number in a sqaure bracket stating the amount of positions being sent, the positions have the following format: 'x,y' separated by '|'.
-- The message stop is sent from server to clients to announce the termination of the game. After receiving this message the clients will die.
+- The message "STOP" is sent from server to clients to announce the termination of the game. After receiving this message the clients will die.
 - Specifically for the targets client, once all targets have been reached the server sends a Game End message "GE" to make the targets client generate some new target positions.
 - Finally, the messages passed are repeated because an echo from the receiver of the message going either way is mandatory.
