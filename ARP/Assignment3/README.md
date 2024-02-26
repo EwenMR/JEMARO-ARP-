@@ -99,6 +99,14 @@ $ ./build/master "client" 8080 ip_address
 
 replace the ip_address with the actual ip address of the server side.
 
+To run it locally, run
+```bash
+$ make runServer
+```
+```bash
+$ make runClient
+```
+
 ## Operational instructions
 In the 'window' konsole, there should be a drone displayed as 'X'. Use the keys 
 
