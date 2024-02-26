@@ -32,7 +32,7 @@ Furthermore, the master file creates the file descriptors and pipes for the pass
 
 ## watchdog.c
 
-The `watchdog.c` file is resposnible for the monitoring (the 'health') and managaing of the other processes. It checks to see if the processes are running correctly. The program uses 'signals' and 'pipes' to carry out this task. Once it has received the ID of the processes, it sends signals to all processes and waits for a response. If the watchdog receives a signal back from a process, it resets the timer of that process. If the timer were to exceed a defined threshold, a signal would be sent to terminate all processes and exits. In all different files you will find elements that are related to the watchdog for this purpose.
+The `watchdog.c` file is resposnible for the monitoring (the 'health') and managaing of the other processes apart from the obstacles and targets in this assignment. It checks to see if the processes are running correctly. The program uses 'signals' and 'pipes' to carry out this task. Once it has received the ID of the processes, it sends signals to all processes and waits for a response. If the watchdog receives a signal back from a process, it resets the timer of that process. If the timer were to exceed a defined threshold, a signal would be sent to terminate all processes and exits. In all different files you will find elements that are related to the watchdog for this purpose.
 
 
 ## server.c
