@@ -166,8 +166,6 @@ int main(int argc, char* argv[]){
         }else{
             usleep(50000);
         }
-        //ELSE
-        
     }
 
     // Clean up

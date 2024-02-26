@@ -5,7 +5,7 @@
 
 #define KEY_POS 2594
 
-#define MAX_MSG_LEN 300
+#define MAX_MSG_LEN 1024
 #define MAX_LOGGER_LEN 100
 
 
