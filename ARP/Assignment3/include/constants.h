@@ -46,7 +46,7 @@ struct shared_data{
     float target_pos[NUM_TARGETS*2];
     int key;
     int command_force[2];
-    int windowx,windowy;
+    float windowx,windowy;
 };
 
 char *serverlogpath = "./log/server.log"; // Path for the log file

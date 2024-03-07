@@ -21,7 +21,7 @@
 
 float drone_pos[6], obstacle_pos[NUM_OBSTACLES*2],target_pos[NUM_TARGETS*2];
 int sockfd;
-int window_x, window_y;
+float window_x, window_y;
 
 
 void makeObs();
@@ -74,7 +74,7 @@ int main(int argc, char* argv[]){
     read_then_echo(sockfd, rec_msg);
     writeToLogFile(obstaclelogpath,"WINDOWSIZE");
     writeToLogFile(obstaclelogpath,rec_msg);
-    sscanf(rec_msg,"%d %d", &window_x,&window_y);
+    sscanf(rec_msg,"%.3f %.3f", &window_y,&window_x);
 
     
     //Get target positions (to make sure the obstacles dont go on top of targets)
@@ -172,15 +172,15 @@ int main(int argc, char* argv[]){
 void makeObs() {
     for (int i = 0; i < NUM_OBSTACLES*2; i+=2) {
         // generating obstacle coordinates
-        obstacle_pos[i]   = rand() % window_x;  // Random value between 0 and 100
-        obstacle_pos[i+1] = rand() % window_y;  // Random value between 0 and 100
+        obstacle_pos[i]   = rand() % (int)window_x;  // Random value between 0 and 100
+        obstacle_pos[i+1] = rand() % (int)window_y;  // Random value between 0 and 100
 
         for(int j=0; j<NUM_TARGETS; j+=2){
             while (obstacle_pos[i]   >= target_pos[j] - OBS_THRESH   && obstacle_pos[i]   <= target_pos[j] + OBS_THRESH && 
                    obstacle_pos[i+1] >= target_pos[j+1] - OBS_THRESH && obstacle_pos[i+1] <= target_pos[j+1] + OBS_THRESH) {
                 // Regenerate obstacle-coordinate
-                obstacle_pos[i]   = rand()%window_x;  // Random value between 0 and 100
-                obstacle_pos[i+1] = rand()%window_y;  // Random value between 0 and 100
+                obstacle_pos[i]   = rand()%(int)window_x;  // Random value between 0 and 100
+                obstacle_pos[i+1] = rand()%(int)window_y;  // Random value between 0 and 100
             }
         }
     }

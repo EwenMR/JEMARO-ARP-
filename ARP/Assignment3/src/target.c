@@ -23,7 +23,7 @@ float target_pos[NUM_TARGETS*2],obstacle_pos[NUM_OBSTACLES*2];
 struct shared_data data;
 int sockfd;
 char target_msg[MSG_LEN];
-int window_x, window_y;
+float window_x, window_y;
 
 // Functions
 void error(char *);
@@ -65,7 +65,7 @@ int main(int argc, char* argv[]){
     read_then_echo(sockfd, rec_msg);
     writeToLogFile(targetlogpath,"WINDOWSIZE");
     writeToLogFile(targetlogpath,rec_msg);
-    sscanf(rec_msg,"%d %d", &window_x,&window_y);
+    sscanf(rec_msg,"%.3f %.3f", &window_y,&window_x);
     
     // Generate and send target position to obstacle
     sscanf(argv[1], client_args_format,  &target_obstacle[0], &target_obstacle[1]);
@@ -135,8 +135,8 @@ void error(char *msg) {
 void makeTargs(){
     // Get random positions
     for (int i=0; i< NUM_TARGETS*2; i+=2){
-        target_pos[i]   = rand() % window_x;
-        target_pos[i+1] = rand() % window_y;
+        target_pos[i]   = rand() % (int)window_x;
+        target_pos[i+1] = rand() % (int)window_y;
     }
 
     // Convert it into string

@@ -24,8 +24,8 @@ float drone_pos[6];// Array to store the position of drone
 float obst_pos[NUM_OBSTACLES*2];
 float target_pos[NUM_TARGETS*2];
 int key; 
-int windowx=0;
-int windowy=0;
+float windowx=0;
+float windowy=0;
 
 
 // Signal handler for watchdog

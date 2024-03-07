@@ -128,12 +128,12 @@ void write_then_wait_echo(int sockfd, char socket_msg[], size_t msg_size){
 }
 
 // Reads a message from the socket, then does an echo.
-void read_then_echo(int sockfd, char socket_msg[]){
+void read_then_echo(int sockfd, char* socket_msg){
     int bytes_read, bytes_written;
-    bzero(socket_msg, MSG_LEN);
+    bzero(socket_msg, sizeof(socket_msg));
 
     // READ from the socket
-    bytes_read = read(sockfd, socket_msg, MSG_LEN - 1);
+    bytes_read = read(sockfd, socket_msg, sizeof(socket_msg));
     if (bytes_read < 0) perror("ERROR reading from socket");
     else if (bytes_read == 0) {return;}  // Connection closed
     else if (socket_msg[0] == '\0') {return;} // Empty string
