@@ -230,7 +230,7 @@ int main(int argc, char *argv[]) {
         scalex=(float)BOARD_SIZE/(float)data.windowx;
         scaley=(float)BOARD_SIZE/(float)data.windowy;
 
-        printf("WINDOW X = %d WINDOW Y = %d, SCALE X= %f, SCALEY = %f\n\n\n",data.windowx,data.windowy,scalex,scaley);
+        // printf("WINDOW X = %d WINDOW Y = %d, SCALE X= %f, SCALEY = %f\n\n\n",data.windowx,data.windowy,scalex,scaley);
 
 
         sprintf(logMessage, "T:%f %f O:%f %f", data.target_pos[0],data.target_pos[1],data.obst_pos[0],data.obst_pos[1]);

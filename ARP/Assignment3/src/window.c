@@ -92,7 +92,7 @@ int main(int argc, char* argv[]) {
         getmaxyx(stdscr, ymax_new, xmax_new);
         data.windowx=(double)xmax*(WINDOW_COL-0.01);
         data.windowy=(double)ymax*(WINDOW_ROW-0.01);
-        sprintf(logMessage,"%d %d",data.windowx,data.windowy);
+        // sprintf(logMessage,"%d %d",data.windowx,data.windowy);
         if (started==false){ //only once
             writeToLogFile(windowlogpath,logMessage);
             my_write(window_server[1],&data,window_server[0],sizeof(data));

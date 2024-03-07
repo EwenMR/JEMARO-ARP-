@@ -256,10 +256,10 @@ int main(int argc, char *argv[])
         /*SENDING WINDOW SIZE*/
         ///////////////////////////////////////////////////////////
         if(window_size_sent==false && windowx != 0 ){
-            sprintf(logMessage, "Window size%d %d", data.windowx, data.windowy);
+            sprintf(logMessage, "Window size%f %f", data.windowx, data.windowy);
             writeToLogFile(serverlogpath,logMessage);
             char window_msg[MAX_MSG_LEN];
-            sprintf(window_msg, "%d %d", data.windowx, data.windowy);
+            sprintf(window_msg, "%.3f,%.3f", data.windowy, data.windowx);
             write(target_sockfd, window_msg, strlen(window_msg));
             write(obstacle_sockfd, window_msg, strlen(window_msg));
             writeToLogFile(serverlogpath,"WROTE WINDOW SIZE TO CLIENT");
